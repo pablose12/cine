@@ -390,6 +390,32 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--ink-700);font
 @keyframes dcIn{from{opacity:0;transform:translateY(24px) scale(.94)}}
 @media (max-width:760px){.dc{width:150px;height:208px}.dc h4{font-size:15px}.dc .ini{font-size:48px}}
 @media (prefers-reduced-motion:reduce){.dmq{overflow-x:auto}.dmq .row{animation:none}}
+
+/* ---- poster desfocado ---- */
+.pst-wrap{display:grid;grid-template-columns:230px 1fr;gap:34px;align-items:center;margin-top:24px}
+.pst-demo{position:relative;aspect-ratio:2/3;border-radius:16px;overflow:hidden;background:linear-gradient(160deg,#5A62C4,#17154B);box-shadow:var(--shadow-md);transform:rotate(-3deg);margin-left:14px}
+.pst-img{position:absolute;inset:-12px;background-size:cover;background-position:center;filter:blur(22px);will-change:filter}
+.pst-pts{position:absolute;left:10px;bottom:10px;background:rgba(10,10,40,.78);color:#fff;border-radius:12px;padding:5px 12px;display:flex;align-items:baseline;gap:5px;font-size:12px}
+.pst-pts b{font-family:var(--font-display);font-size:24px;font-variant-numeric:tabular-nums}
+.pst-panel{max-width:none}
+.flabel{font-weight:600;font-size:14px;color:var(--ink-700);margin-bottom:8px}
+#v-poster .qwrap{max-width:560px}
+.ptot{font-size:14px}.ptot b{font-family:var(--font-display);font-size:18px;color:var(--pri)}
+.pframe{position:relative;width:min(230px,58vw);aspect-ratio:2/3;margin:4px auto 12px;border-radius:16px;overflow:hidden;background:var(--pri-deep);box-shadow:0 22px 40px -20px rgba(16,16,40,.6);animation:qtPic .7s cubic-bezier(.2,.9,.3,1) both}
+.pframe img{position:absolute;inset:-14px;width:calc(100% + 28px);height:calc(100% + 28px);object-fit:cover;filter:blur(28px);will-change:filter}
+.pframe.done img{transition:filter .6s ease}
+.pframe .ptag{position:absolute;left:10px;top:10px;background:rgba(10,10,40,.75);color:#fff;border-radius:99px;padding:3px 11px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:0;transition:opacity .5s}
+.pframe .ptag.on{opacity:1}
+.ppts{position:absolute;right:10px;bottom:10px;background:rgba(10,10,40,.8);color:#fff;border-radius:14px;padding:6px 14px;display:flex;align-items:baseline;gap:5px;font-size:12px}
+.ppts b{font-family:var(--font-display);font-size:28px;font-variant-numeric:tabular-nums}
+.ppts.low b{color:#F4A81D}
+.ptime{height:5px;border-radius:9px;background:var(--line);margin:0 auto 12px;width:min(230px,58vw);overflow:hidden}.ptime i{display:block;height:100%;background:var(--amber);transform-origin:left}
+.pgain{font-family:var(--font-display);font-weight:800;font-size:22px;color:var(--ok);animation:okPop .6s cubic-bezier(.2,.9,.3,1.3)}
+.pgain.zero{color:var(--bad)}
+.pres{display:flex;flex-direction:column;gap:6px;margin:16px 0}.pres div{display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:6px 12px 6px 6px;font-size:14px}
+.pres img{width:34px;height:50px;object-fit:cover;border-radius:4px;background:var(--pri-100)}
+.pres b{font-variant-numeric:tabular-nums}
+@media (max-width:760px){.pst-wrap{grid-template-columns:1fr}.pst-demo{width:150px;margin:0 auto}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 .dlink{color:var(--pri);font-weight:600;text-decoration:underline;text-underline-offset:2px}
 
@@ -425,6 +451,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--ink-700);font
     <nav class="links" aria-label="Principal">
       <button data-go="how">Como funciona</button>
       <button data-go="levels">Jogar</button>
+      <button data-go="poster">Poster</button>
       <button data-dir="1">Diretores</button>
       <button data-go="medals">Medalhas</button>
     </nav>
@@ -514,6 +541,23 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--ink-700);font
       <div class="mgrid" id="mgrid"></div>
       <p class="mnote">As faixas valem para qualquer tamanho de rodada no jogo por nível, porque contam a porcentagem de acertos. As medalhas que você conquistar ficam salvas neste navegador.</p>
     </section>
+    <section class="sec" id="poster">
+      <div class="eyebrow">Novo modo</div>
+      <h2>Poster <em class="w">desfocado</em>.</h2>
+      <p class="lead">Só a capa do filme, bem borrada. O foco vai ficando nítido com o tempo: quanto antes você acertar o diretor, mais pontos ganha.</p>
+      <div class="pst-wrap">
+        <div class="pst-demo" aria-hidden="true"><div class="pst-img" id="pdImg"></div><div class="pst-pts"><b id="pdPts">100</b><span>pts</span></div></div>
+        <div class="panel pst-panel">
+          <div class="flabel">Dificuldade dos filmes</div>
+          <div class="nchips" id="pLv"></div>
+          <div class="flabel" style="margin-top:16px">Quantos pôsteres?</div>
+          <div class="nchips" id="pN"></div>
+          <p class="sum" id="pSum"></p>
+          <button class="btn primary" id="pStart">Jogar poster desfocado <span aria-hidden="true">→</span></button>
+          <p class="pnote small" id="pBest"></p>
+        </div>
+      </div>
+    </section>
     <section class="sec" id="frases">
       <div class="eyebrow">Frases marcantes</div>
       <h2>Palavras de quem <em class="w">fez cinema</em>.</h2>
@@ -537,6 +581,13 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--ink-700);font
 </main>
 
 <!-- DIRETORES -->
+<main id="v-poster" hidden>
+  <div class="qwrap">
+    <div class="qtop"><span id="pCount">Rodada <b>1</b> de 10</span><span class="ptot">Pontos <b id="pTot">0</b></span><button id="pQuit">← Sair</button></div>
+    <div id="pStage"></div>
+  </div>
+</main>
+
 <main id="v-dir" hidden><div id="dirHost"></div></main>
 
 <!-- QUIZ -->
@@ -622,7 +673,7 @@ const WIKI = {
 const SHOW = {"Coen brothers":"Irmãos Coen"};
 
 const $ = id => document.getElementById(id);
-const views = ["home","quiz","result","duel","dir"];
+const views = ["home","quiz","result","duel","dir","poster"];
 let size = 10;
 let S = null; // estado da partida
 
@@ -1251,7 +1302,7 @@ document.addEventListener("click", e => {
   const dl = e.target.closest("[data-dlvl]"); if (dl){ duel.lvl = dl.dataset.dlvl; renderDuelPanel(); return; }
   const dn = e.target.closest("[data-dn]"); if (dn){ duel.n = +dn.dataset.dn; renderDuelPanel(); return; }
   const ml = e.target.closest("[data-mlvl]"); if (ml){ medalLvl = ml.dataset.mlvl; renderMedals(); return; }
-  const op = e.target.closest(".opt"); if (op){ choose(+op.dataset.i); return; }
+  const op = e.target.closest(".opt"); if (op && op.dataset.i !== undefined){ choose(+op.dataset.i); return; }
 });
 $("logoBtn").onclick = () => show("home");
 $("confirmBtn").onclick = confirmAns;
@@ -1676,6 +1727,126 @@ addEventListener("hashchange",route);route();
   box.addEventListener("mousemove",function(e){var c=e.target.closest&&e.target.closest(".dc");if(!c)return;var r=c.getBoundingClientRect();
     c.style.setProperty("--ry",(((e.clientX-r.left)/r.width-.5)*14).toFixed(1)+"deg");c.style.setProperty("--rx",((.5-(e.clientY-r.top)/r.height)*12).toFixed(1)+"deg")});
   box.addEventListener("mouseout",function(e){var c=e.target.closest&&e.target.closest(".dc");if(c){c.style.setProperty("--ry","0deg");c.style.setProperty("--rx","0deg")}});
+})();
+</script>
+<script>
+(function(){
+  var TMDB="https://image.tmdb.org/t/p/";
+  var T_BLUR=18000,T_MAX=24000;
+  var pool=null;
+  function norm(t){return String(t||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z0-9]+/g," ").trim()}
+  function build(){
+    if(pool) return pool; var D=window.dirData||[]; var by={};
+    D.forEach(function(d){by[d.n]=d;by[d.s]=d});
+    pool=[];
+    DATA.forEach(function(q){
+      var d=by[q.c]||by[window.dirSlug&&window.dirSlug(q.c)]; if(!d) return;
+      var m=splitTitle(q.f),main=norm(m.main),orig=norm(m.orig),same=[],hit=null;
+      d.films.forEach(function(f){ if(+f[0]!==q.y) return; same.push(f); var t=norm(f[1]); if(!hit&&(t===main||t===orig||(main&&(t.indexOf(main)>-1||main.indexOf(t)>-1)))) hit=f });
+      if(!hit&&same.length===1) hit=same[0];
+      if(hit&&hit[4]) pool.push({q:q,p:hit[4]});
+    });
+    return pool;
+  }
+  var cfg={lv:"todos",n:10},N=[5,10,15,25,0];
+  function list(){var b=build();return cfg.lv==="todos"?b:b.filter(function(x){return x.q.n===cfg.lv})}
+  function panel(){
+    var el=document.getElementById("pLv");if(!el)return;
+    var lv=[["todos","Todos"]].concat(Object.keys(LEVELS).map(function(k){return [k,LEVELS[k].name]}));
+    el.innerHTML=lv.map(function(a){return '<button class="nchip wide" data-plv="'+a[0]+'" aria-pressed="'+(a[0]===cfg.lv)+'">'+a[1]+'</button>'}).join("");
+    var tot=list().length;
+    document.getElementById("pN").innerHTML=N.map(function(n){return '<button class="nchip" data-pn="'+n+'" aria-pressed="'+(n===cfg.n)+'">'+(n===0?"Todos":n)+'</button>'}).join("");
+    var n=cfg.n||tot; n=Math.min(n,tot);
+    document.getElementById("pSum").textContent=n+" pôsteres · até 100 pontos cada, no máximo "+(n*100)+" · cerca de "+Math.max(1,Math.round(n*0.4))+" min";
+    var b=lsGet("pstBest");var bb=b&&b[cfg.lv+"-"+cfg.n];
+    document.getElementById("pBest").textContent=bb?("Seu recorde nesta combinação: "+bb+" pontos."):"Ainda sem recorde nesta combinação.";
+  }
+  document.addEventListener("click",function(e){
+    var a=e.target.closest("[data-plv]");if(a){cfg.lv=a.dataset.plv;panel();return}
+    a=e.target.closest("[data-pn]");if(a){cfg.n=+a.dataset.pn;panel();return}
+  });
+  panel();
+  /* demo animado da home */
+  (function(){
+    var im=document.getElementById("pdImg"),pt=document.getElementById("pdPts");if(!im)return;
+    var cand=build().filter(function(x){return x.q.n==="facil"}),pick=cand[Math.floor(Math.random()*cand.length)];
+    if(pick) im.style.backgroundImage="url("+TMDB+"w342"+pick.p+")";
+    var t0=null,reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+    function tick(ts){
+      if(t0==null)t0=ts;var c=((ts-t0)%7000)/7000,k=Math.min(1,c/.8);
+      im.style.filter="blur("+(22*(1-k)*(1-k)).toFixed(1)+"px)";
+      pt.textContent=Math.max(10,Math.round(100-90*k));
+      requestAnimationFrame(tick)}
+    if(reduce){im.style.filter="blur(10px)"}else requestAnimationFrame(tick);
+  })();
+
+  /* ---- jogo ---- */
+  var G=null,raf=0;
+  function stage(){return document.getElementById("pStage")}
+  function setTot(){document.getElementById("pTot").textContent=G.total}
+  function start(){
+    var l=shuffle(list());if(cfg.n)l=l.slice(0,cfg.n);
+    if(l.length<2){alert&&0;return}
+    G={items:l,i:0,total:0,res:[],bad:0};show("poster");setTot();round();
+  }
+  function stop(){cancelAnimationFrame(raf);raf=0}
+  function round(){
+    stop();var it=G.items[G.i];if(!it) return end();
+    document.getElementById("pCount").innerHTML="Rodada <b>"+(G.i+1)+"</b> de "+G.items.length;
+    var q=it.q,opts=shuffle([q.c].concat(shuffle(q.w.filter(function(x){return x!==q.c})).slice(0,3)));
+    G.cur={it:it,opts:opts,t:0,done:false,loaded:false};
+    stage().innerHTML='<div class="pframe" id="pf"><img id="pImg" alt="Pôster desfocado de um filme"><span class="ptag" id="pTag"></span><div class="ppts" id="pPts"><b>100</b><span>pts</span></div></div><div class="ptime"><i id="pBar"></i></div>'+
+      '<div class="ask">Quem dirigiu este filme?</div><div class="opts" id="pOpts">'+opts.map(function(o,i){return '<button class="opt" data-pi="'+i+'" disabled><span class="l">'+"ABCD"[i]+'</span><span>'+esc(nm(o))+'</span></button>'}).join("")+'</div><div id="pFb" aria-live="polite"></div>';
+    var im=document.getElementById("pImg");
+    im.onload=function(){if(!G||G.cur.it!==it)return;G.bad=0;G.cur.loaded=true;[].forEach.call(document.querySelectorAll("#pOpts .opt"),function(b){b.disabled=false});var last=performance.now();
+      (function loop(now){ if(!G||G.cur.done) return; var dt=Math.min(100,now-last);last=now;G.cur.t+=dt;frame();if(G.cur.t>=T_MAX)return answer(-1);raf=requestAnimationFrame(loop)})(last)};
+    im.onerror=function(){if(!G||G.cur.it!==it)return;G.bad++;if(G.bad>=3){stage().innerHTML='<div class="panel" style="margin-top:20px"><h3>Não consegui carregar os pôsteres</h3><p class="pnote">Parece que as imagens do TMDB estão fora do ar ou sem conexão. Tente de novo em instantes.</p><button class="btn primary" id="pBack">Voltar ao início</button></div>';return}
+      G.items.splice(G.i,1);if(G.i>=G.items.length)end();else round()};
+    im.src=TMDB+"w500"+it.p;
+  }
+  function pts(){var t=G.cur.t;return Math.max(10,Math.round(100-90*Math.min(1,t/T_BLUR)))}
+  function frame(){
+    var t=G.cur.t,k=Math.min(1,t/T_BLUR),b=28*(1-k)*(1-k);
+    document.getElementById("pImg").style.filter="blur("+b.toFixed(1)+"px)";
+    var p=pts(),e=document.getElementById("pPts");e.firstChild.textContent=p;e.classList.toggle("low",p<=40);
+    var bar=document.getElementById("pBar");bar.style.transform="scaleX("+(1-t/T_MAX).toFixed(3)+")";
+    var tg=document.getElementById("pTag");if(t>6000&&!tg.textContent){tg.textContent=G.cur.it.q.y;tg.classList.add("on")}
+  }
+  function answer(i){
+    var c=G.cur;if(!c||c.done||!c.loaded)return;c.done=true;stop();
+    var q=c.it.q,ok=i>=0&&c.opts[i]===q.c,gain=ok?pts():0;
+    G.total+=gain;G.res.push({q:q,p:c.it.p,ok:ok,gain:gain,t:c.t,timeout:i<0});setTot();
+    [].forEach.call(document.querySelectorAll("#pOpts .opt"),function(b,k){b.disabled=true;if(c.opts[k]===q.c)b.classList.add("ok");else if(k===i)b.classList.add("bad");else b.classList.add("dim")});
+    var pf=document.getElementById("pf");pf.classList.add("done");document.getElementById("pImg").style.filter="blur(0px)";
+    var m=splitTitle(q.f);
+    document.getElementById("pFb").innerHTML='<div style="text-align:center;margin-top:16px"><div class="pgain'+(gain?'':' zero')+'">'+(ok?'+'+gain+' pts':(i<0?'Tempo esgotado':'0 pts'))+'</div><p style="margin:6px 0 14px"><b>'+esc(m.main)+'</b> ('+q.y+') · dirigido por <b>'+esc(nm(q.c))+'</b></p><button class="btn primary" id="pNext">'+(G.i+1>=G.items.length?'Ver resultado':'Próximo pôster')+' <span aria-hidden="true">→</span></button></div>';
+    var nb=document.getElementById("pNext");if(nb)nb.focus({preventScroll:true});
+  }
+  function next(){G.i++;if(G.i>=G.items.length)end();else round()}
+  function end(){
+    stop();var max=G.items.length*100,pc=G.total/max,hits=G.res.filter(function(r){return r.ok}).length;
+    var tier=pc>=.8?["Olho de lince","Você reconhece um filme só pela sombra do cartaz."]:pc>=.55?["Cinéfilo de plantão","Poucos pixels e você já sabia."]:pc>=.3?["Foco em ajuste","Com um pouco mais de nitidez, você chega lá."]:["Ainda desfocado","Respire fundo, a próxima rodada vai mais nítida."];
+    var key=cfg.lv+"-"+cfg.n,b=lsGet("pstBest")||{},rec=!b[key]||G.total>b[key];if(rec){b[key]=G.total;lsSet("pstBest",b)}
+    document.getElementById("pCount").innerHTML="Fim da partida";
+    var avg=hits?Math.round(G.res.filter(function(r){return r.ok}).reduce(function(a,r){return a+r.t},0)/hits/100)/10:0;
+    stage().innerHTML='<div class="panel" style="text-align:center;margin-top:12px"><div class="eyebrow" style="justify-content:center">'+tier[0]+'</div><div style="font-family:var(--font-display);font-size:56px;font-weight:800;color:var(--pri);line-height:1.1">'+G.total+'<span style="font-size:18px;color:var(--ink-700)"> / '+max+'</span></div><p class="pnote">'+tier[1]+'</p><p>'+hits+' de '+G.res.length+' acertos'+(hits?' · tempo médio dos acertos: '+avg.toLocaleString("pt-BR")+' s':'')+'</p>'+(rec?'<p class="pgain">Novo recorde!</p>':'')+
+      '<div class="pres">'+G.res.map(function(r){var m=splitTitle(r.q.f);return '<div><img alt="" src="'+TMDB+'w92'+r.p+'" onerror="this.style.visibility=\'hidden\'"><span style="text-align:left">'+esc(m.main)+' <small style="color:var(--ink-700)">· '+esc(nm(r.q.c))+'</small></span><b style="color:var(--'+(r.ok?'ok':'bad')+')">'+(r.ok?'+'+r.gain:'0')+'</b></div>'}).join("")+'</div>'+
+      '<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><button class="btn primary" id="pAgain">Jogar de novo</button><button class="btn ghost" id="pHome">Voltar ao início</button></div></div>';
+    if(rec&&window.confete)window.confete();
+  }
+  document.addEventListener("click",function(e){
+    if(e.target.closest("#pStart")){start();return}
+    var o=e.target.closest("[data-pi]");if(o&&G){answer(+o.dataset.pi);return}
+    if(e.target.closest("#pNext")){next();return}
+    if(e.target.closest("#pAgain")){start();return}
+    if(e.target.closest("#pHome,#pBack,#pQuit")){stop();G=null;show("home");panel();return}
+  });
+  document.addEventListener("keydown",function(e){
+    if(!G||document.getElementById("v-poster").hidden)return;var k=e.key.toLowerCase();
+    if(G.cur&&!G.cur.done){var i="abcd".indexOf(k);if(i<0)i="1234".indexOf(k);if(i>=0&&k.length===1)answer(i)}
+    else if(k==="enter"&&document.getElementById("pNext")&&document.activeElement.id!=="pNext")next();
+  });
+  window.pstDebug={build:build,list:list,cfg:cfg,start:start};
 })();
 </script>
 </body>
