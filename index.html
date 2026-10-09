@@ -415,6 +415,10 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--ink-700);font
 .pres{display:flex;flex-direction:column;gap:6px;margin:16px 0}.pres div{display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:6px 12px 6px 6px;font-size:14px}
 .pres img{width:34px;height:50px;object-fit:cover;border-radius:4px;background:var(--pri-100)}
 .pres b{font-variant-numeric:tabular-nums}
+.pturn{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin:0 auto 12px;padding:7px 16px;border-radius:99px;font-size:14px;width:fit-content;animation:rise .4s ease both}
+.pturn.t0{background:var(--pri-soft);color:var(--pri)}.pturn.t1{background:var(--amber-soft);color:var(--amber-text)}
+.pturn b{font-family:var(--font-display)}.pturn span{font-variant-numeric:tabular-nums;opacity:.85}
+.pstitle{font-family:var(--font-display);font-weight:700;font-size:19px;line-height:1.2}
 @media (max-width:760px){.pst-wrap{grid-template-columns:1fr}.pst-demo{width:150px;margin:0 auto}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 .dlink{color:var(--pri);font-weight:600;text-decoration:underline;text-underline-offset:2px}
@@ -544,13 +548,19 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--ink-700);font
     <section class="sec" id="poster">
       <div class="eyebrow">Novo modo</div>
       <h2>Poster <em class="w">desfocado</em>.</h2>
-      <p class="lead">Só a capa do filme, bem borrada. O foco vai ficando nítido com o tempo: quanto antes você acertar o diretor, mais pontos ganha.</p>
+      <p class="lead">Só a capa do filme, bem borrada. O foco vai ficando nítido com o tempo: quanto antes você descobrir o nome do filme, mais pontos ganha. Dá para jogar sozinho ou em duas equipes.</p>
       <div class="pst-wrap">
         <div class="pst-demo" aria-hidden="true"><div class="pst-img" id="pdImg"></div><div class="pst-pts"><b id="pdPts">100</b><span>pts</span></div></div>
         <div class="panel pst-panel">
           <div class="flabel">Dificuldade dos filmes</div>
           <div class="nchips" id="pLv"></div>
-          <div class="flabel" style="margin-top:16px">Quantos pôsteres?</div>
+          <div class="flabel" style="margin-top:16px">Como jogar?</div>
+          <div class="nchips" id="pM"></div>
+          <div class="tnames" id="pTeams" hidden style="margin-top:14px">
+            <label class="tin t0"><span>Equipe 1</span><input id="pnA" type="text" maxlength="18" placeholder="Equipe A" autocomplete="off"></label>
+            <label class="tin t1"><span>Equipe 2</span><input id="pnB" type="text" maxlength="18" placeholder="Equipe B" autocomplete="off"></label>
+          </div>
+          <div class="flabel" style="margin-top:16px" id="pNL">Quantos pôsteres?</div>
           <div class="nchips" id="pN"></div>
           <p class="sum" id="pSum"></p>
           <button class="btn primary" id="pStart">Jogar poster desfocado <span aria-hidden="true">→</span></button>
@@ -1748,22 +1758,26 @@ addEventListener("hashchange",route);route();
     });
     return pool;
   }
-  var cfg={lv:"todos",n:10},N=[5,10,15,25,0];
+  var cfg={lv:"todos",n:10,m:"solo"},N=[5,10,15,25,35,50,100,0];
   function list(){var b=build();return cfg.lv==="todos"?b:b.filter(function(x){return x.q.n===cfg.lv})}
+  function per(){var tot=list().length,n=cfg.n||tot;if(cfg.m==="team"){n=cfg.n||Math.floor(tot/2);return Math.max(1,Math.min(n,Math.floor(tot/2)))}return Math.min(n,tot)}
   function panel(){
     var el=document.getElementById("pLv");if(!el)return;
     var lv=[["todos","Todos"]].concat(Object.keys(LEVELS).map(function(k){return [k,LEVELS[k].name]}));
     el.innerHTML=lv.map(function(a){return '<button class="nchip wide" data-plv="'+a[0]+'" aria-pressed="'+(a[0]===cfg.lv)+'">'+a[1]+'</button>'}).join("");
-    var tot=list().length;
+    document.getElementById("pM").innerHTML=[["solo","Sozinho"],["team","Em duas equipes"]].map(function(a){return '<button class="nchip wide" data-pm="'+a[0]+'" aria-pressed="'+(a[0]===cfg.m)+'">'+a[1]+'</button>'}).join("");
+    document.getElementById("pTeams").hidden=cfg.m!=="team";
+    document.getElementById("pNL").textContent=cfg.m==="team"?"Quantos pôsteres para cada equipe?":"Quantos pôsteres?";
     document.getElementById("pN").innerHTML=N.map(function(n){return '<button class="nchip" data-pn="'+n+'" aria-pressed="'+(n===cfg.n)+'">'+(n===0?"Todos":n)+'</button>'}).join("");
-    var n=cfg.n||tot; n=Math.min(n,tot);
-    document.getElementById("pSum").textContent=n+" pôsteres · até 100 pontos cada, no máximo "+(n*100)+" · cerca de "+Math.max(1,Math.round(n*0.4))+" min";
+    var n=per(),tot=cfg.m==="team"?n*2:n;
+    document.getElementById("pSum").textContent=cfg.m==="team"?(n+" pôsteres para cada equipe ("+tot+" no total), alternando a vez · até 100 pontos cada · cerca de "+Math.max(1,Math.round(tot*0.4))+" min"):(n+" pôsteres · até 100 pontos cada, no máximo "+(n*100)+" · cerca de "+Math.max(1,Math.round(n*0.4))+" min");
     var b=lsGet("pstBest");var bb=b&&b[cfg.lv+"-"+cfg.n];
-    document.getElementById("pBest").textContent=bb?("Seu recorde nesta combinação: "+bb+" pontos."):"Ainda sem recorde nesta combinação.";
+    document.getElementById("pBest").textContent=cfg.m==="team"?"Vence a equipe com mais pontos.":(bb?("Seu recorde nesta combinação: "+bb+" pontos."):"Ainda sem recorde nesta combinação.");
   }
   document.addEventListener("click",function(e){
     var a=e.target.closest("[data-plv]");if(a){cfg.lv=a.dataset.plv;panel();return}
     a=e.target.closest("[data-pn]");if(a){cfg.n=+a.dataset.pn;panel();return}
+    a=e.target.closest("[data-pm]");if(a){cfg.m=a.dataset.pm;panel();return}
   });
   panel();
   /* demo animado da home */
@@ -1783,26 +1797,42 @@ addEventListener("hashchange",route);route();
   /* ---- jogo ---- */
   var G=null,raf=0;
   function stage(){return document.getElementById("pStage")}
-  function setTot(){document.getElementById("pTot").textContent=G.total}
+  function tn(i){var v=(document.getElementById(i?"pnB":"pnA")||{}).value;return (v||"").trim()||(i?"Equipe B":"Equipe A")}
   function start(){
-    var l=shuffle(list());if(cfg.n)l=l.slice(0,cfg.n);
-    if(l.length<2){alert&&0;return}
-    G={items:l,i:0,total:0,res:[],bad:0};show("poster");setTot();round();
+    var n=per(),l=shuffle(list());
+    var team=cfg.m==="team";l=l.slice(0,team?n*2:n);if(l.length<2){return}
+    var sp=document.querySelector(".ptot");if(sp)sp.innerHTML='Pontos <b id="pTot">0</b>';
+    G={items:l,i:0,total:0,res:[],bad:0,team:team,names:[tn(0),tn(1)],sc:[0,0]};
+    show("poster");setTot2();round();
+  }
+  function setTot2(){
+    var sp=document.querySelector(".ptot");
+    if(G.team)sp.innerHTML=esc(G.names[0])+' <b>'+G.sc[0]+'</b> × <b>'+G.sc[1]+'</b> '+esc(G.names[1]);
+    else sp.innerHTML='Pontos <b id="pTot">'+G.total+'</b>';
   }
   function stop(){cancelAnimationFrame(raf);raf=0}
   function round(){
     stop();var it=G.items[G.i];if(!it) return end();
-    document.getElementById("pCount").innerHTML="Rodada <b>"+(G.i+1)+"</b> de "+G.items.length;
-    var q=it.q,opts=shuffle([q.c].concat(shuffle(q.w.filter(function(x){return x!==q.c})).slice(0,3)));
+    document.getElementById("pCount").innerHTML="Rodada <b>"+(G.i+1)+"</b> de "+G.items.length;if(G.team)setTot2();
+    var q=it.q,opts=makeOpts(it);
     G.cur={it:it,opts:opts,t:0,done:false,loaded:false};
-    stage().innerHTML='<div class="pframe" id="pf"><img id="pImg" alt="Pôster desfocado de um filme"><span class="ptag" id="pTag"></span><div class="ppts" id="pPts"><b>100</b><span>pts</span></div></div><div class="ptime"><i id="pBar"></i></div>'+
-      '<div class="ask">Quem dirigiu este filme?</div><div class="opts" id="pOpts">'+opts.map(function(o,i){return '<button class="opt" data-pi="'+i+'" disabled><span class="l">'+"ABCD"[i]+'</span><span>'+esc(nm(o))+'</span></button>'}).join("")+'</div><div id="pFb" aria-live="polite"></div>';
+    var tm=G.team?(G.i%2):0;
+    stage().innerHTML=(G.team?'<div class="pturn t'+tm+'">Vez da equipe <b>'+esc(G.names[tm])+'</b></div>':'')+'<div class="pframe" id="pf"><img id="pImg" alt="Pôster desfocado de um filme"><span class="ptag" id="pTag"></span><div class="ppts" id="pPts"><b>100</b><span>pts</span></div></div><div class="ptime"><i id="pBar"></i></div>'+
+      '<div class="ask">Qual é este filme?</div><div class="opts" id="pOpts">'+opts.map(function(o,i){return '<button class="opt" data-pi="'+i+'" disabled><span class="l">'+"ABCD"[i]+'</span><span>'+esc(o.t)+'</span></button>'}).join("")+'</div><div id="pFb" aria-live="polite"></div>';
     var im=document.getElementById("pImg");
     im.onload=function(){if(!G||G.cur.it!==it)return;G.bad=0;G.cur.loaded=true;[].forEach.call(document.querySelectorAll("#pOpts .opt"),function(b){b.disabled=false});var last=performance.now();
       (function loop(now){ if(!G||G.cur.done) return; var dt=Math.min(100,now-last);last=now;G.cur.t+=dt;frame();if(G.cur.t>=T_MAX)return answer(-1);raf=requestAnimationFrame(loop)})(last)};
     im.onerror=function(){if(!G||G.cur.it!==it)return;G.bad++;if(G.bad>=3){stage().innerHTML='<div class="panel" style="margin-top:20px"><h3>Não consegui carregar os pôsteres</h3><p class="pnote">Parece que as imagens do TMDB estão fora do ar ou sem conexão. Tente de novo em instantes.</p><button class="btn primary" id="pBack">Voltar ao início</button></div>';return}
       G.items.splice(G.i,1);if(G.i>=G.items.length)end();else round()};
     im.src=TMDB+"w500"+it.p;
+  }
+  function makeOpts(it){
+    var q=it.q,m=splitTitle(q.f).main,seen={},all=build();seen[norm(m)]=1;
+    var cand=shuffle(all.filter(function(x){return x.q!==q&&Math.abs(x.q.y-q.y)<=15&&(x.q.n===q.n||Math.random()<.4)}));
+    var out=[];
+    for(var k=0;k<cand.length&&out.length<3;k++){var t=splitTitle(cand[k].q.f).main,nt=norm(t);if(seen[nt])continue;seen[nt]=1;out.push({t:t,ok:false})}
+    if(out.length<3){var more=shuffle(all);for(var k2=0;k2<more.length&&out.length<3;k2++){var t2=splitTitle(more[k2].q.f).main,n2=norm(t2);if(seen[n2])continue;seen[n2]=1;out.push({t:t2,ok:false})}}
+    out.push({t:m,ok:true});return shuffle(out);
   }
   function pts(){var t=G.cur.t;return Math.max(10,Math.round(100-90*Math.min(1,t/T_BLUR)))}
   function frame(){
@@ -1814,25 +1844,32 @@ addEventListener("hashchange",route);route();
   }
   function answer(i){
     var c=G.cur;if(!c||c.done||!c.loaded)return;c.done=true;stop();
-    var q=c.it.q,ok=i>=0&&c.opts[i]===q.c,gain=ok?pts():0;
-    G.total+=gain;G.res.push({q:q,p:c.it.p,ok:ok,gain:gain,t:c.t,timeout:i<0});setTot();
-    [].forEach.call(document.querySelectorAll("#pOpts .opt"),function(b,k){b.disabled=true;if(c.opts[k]===q.c)b.classList.add("ok");else if(k===i)b.classList.add("bad");else b.classList.add("dim")});
+    var q=c.it.q,ok=i>=0&&c.opts[i].ok,gain=ok?pts():0,tm=G.team?(G.i%2):0;
+    G.total+=gain;G.sc[tm]+=gain;G.res.push({q:q,p:c.it.p,ok:ok,gain:gain,t:c.t,timeout:i<0,tm:tm});setTot2();
+    [].forEach.call(document.querySelectorAll("#pOpts .opt"),function(b,k){b.disabled=true;if(c.opts[k].ok)b.classList.add("ok");else if(k===i)b.classList.add("bad");else b.classList.add("dim")});
     var pf=document.getElementById("pf");pf.classList.add("done");document.getElementById("pImg").style.filter="blur(0px)";
-    var m=splitTitle(q.f);
-    document.getElementById("pFb").innerHTML='<div style="text-align:center;margin-top:16px"><div class="pgain'+(gain?'':' zero')+'">'+(ok?'+'+gain+' pts':(i<0?'Tempo esgotado':'0 pts'))+'</div><p style="margin:6px 0 14px"><b>'+esc(m.main)+'</b> ('+q.y+') · dirigido por <b>'+esc(nm(q.c))+'</b></p><button class="btn primary" id="pNext">'+(G.i+1>=G.items.length?'Ver resultado':'Próximo pôster')+' <span aria-hidden="true">→</span></button></div>';
-    var nb=document.getElementById("pNext");if(nb)nb.focus({preventScroll:true});
+    var m=splitTitle(q.f),who=G.team?esc(G.names[tm])+' ':'';
+    document.getElementById("pFb").innerHTML='<div style="text-align:center;margin-top:16px"><div class="pgain'+(gain?'':' zero')+'">'+(ok?who+'+'+gain+' pts':(i<0?'Tempo esgotado':who+'0 pts'))+'</div><p style="margin:6px 0 14px">'+(ok?'':'Era ')+'<b>'+esc(m.main)+'</b> ('+q.y+') · dirigido por <b>'+esc(nm(q.c))+'</b></p><button class="btn primary" id="pNext">'+(G.i+1>=G.items.length?'Ver resultado':(G.team?'Passar a vez':'Próximo pôster'))+' <span aria-hidden="true">→</span></button></div>';
+    var nb=document.getElementById("pNext");if(nb){nb.focus({preventScroll:true});nb.scrollIntoView({block:"nearest",behavior:"smooth"})}
   }
   function next(){G.i++;if(G.i>=G.items.length)end();else round()}
   function end(){
-    stop();var max=G.items.length*100,pc=G.total/max,hits=G.res.filter(function(r){return r.ok}).length;
-    var tier=pc>=.8?["Olho de lince","Você reconhece um filme só pela sombra do cartaz."]:pc>=.55?["Cinéfilo de plantão","Poucos pixels e você já sabia."]:pc>=.3?["Foco em ajuste","Com um pouco mais de nitidez, você chega lá."]:["Ainda desfocado","Respire fundo, a próxima rodada vai mais nítida."];
-    var key=cfg.lv+"-"+cfg.n,b=lsGet("pstBest")||{},rec=!b[key]||G.total>b[key];if(rec){b[key]=G.total;lsSet("pstBest",b)}
+    stop();var max=G.items.length*100,pc=G.total/max,hits=G.res.filter(function(r){return r.ok}).length,html;
     document.getElementById("pCount").innerHTML="Fim da partida";
-    var avg=hits?Math.round(G.res.filter(function(r){return r.ok}).reduce(function(a,r){return a+r.t},0)/hits/100)/10:0;
-    stage().innerHTML='<div class="panel" style="text-align:center;margin-top:12px"><div class="eyebrow" style="justify-content:center">'+tier[0]+'</div><div style="font-family:var(--font-display);font-size:56px;font-weight:800;color:var(--pri);line-height:1.1">'+G.total+'<span style="font-size:18px;color:var(--ink-700)"> / '+max+'</span></div><p class="pnote">'+tier[1]+'</p><p>'+hits+' de '+G.res.length+' acertos'+(hits?' · tempo médio dos acertos: '+avg.toLocaleString("pt-BR")+' s':'')+'</p>'+(rec?'<p class="pgain">Novo recorde!</p>':'')+
-      '<div class="pres">'+G.res.map(function(r){var m=splitTitle(r.q.f);return '<div><img alt="" src="'+TMDB+'w92'+r.p+'" onerror="this.style.visibility=\'hidden\'"><span style="text-align:left">'+esc(m.main)+' <small style="color:var(--ink-700)">· '+esc(nm(r.q.c))+'</small></span><b style="color:var(--'+(r.ok?'ok':'bad')+')">'+(r.ok?'+'+r.gain:'0')+'</b></div>'}).join("")+'</div>'+
-      '<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><button class="btn primary" id="pAgain">Jogar de novo</button><button class="btn ghost" id="pHome">Voltar ao início</button></div></div>';
-    if(rec&&window.confete)window.confete();
+    var rows=G.res.map(function(r){var m=splitTitle(r.q.f);return '<div><img alt="" src="'+TMDB+'w92'+r.p+'" onerror="this.style.visibility=\'hidden\'"><span style="text-align:left">'+esc(m.main)+' <small style="color:var(--ink-700)">· '+(G.team?esc(G.names[r.tm]):esc(nm(r.q.c)))+'</small></span><b style="color:var(--'+(r.ok?'ok':'bad')+')">'+(r.ok?'+'+r.gain:'0')+'</b></div>'}).join("");
+    var btns='<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><button class="btn primary" id="pAgain">Jogar de novo</button><button class="btn ghost" id="pHome">Voltar ao início</button></div>';
+    if(G.team){
+      var a=G.sc[0],b=G.sc[1],tie=a===b,w=a>b?0:1;
+      html='<div class="panel" style="text-align:center;margin-top:12px"><div class="eyebrow" style="justify-content:center">'+(tie?'Empate':'Vitória')+'</div><div style="font-family:var(--font-display);font-size:30px;font-weight:800;color:var(--pri);line-height:1.15;margin:6px 0">'+(tie?'Ninguém desfocou ninguém!':esc(G.names[w])+' leva a taça')+'</div><div style="font-family:var(--font-display);font-size:44px;font-weight:800">'+a+' <span style="font-size:20px;color:var(--ink-700)">×</span> '+b+'</div><p class="pnote">'+esc(G.names[0])+' × '+esc(G.names[1])+' · '+hits+' acertos em '+G.res.length+' pôsteres</p><div class="pres">'+rows+'</div>'+btns+'</div>';
+      if(!tie&&window.confete)window.confete();
+    }else{
+      var tier=pc>=.8?["Olho de lince","Você reconhece um filme só pela sombra do cartaz."]:pc>=.55?["Cinéfilo de plantão","Poucos pixels e você já sabia."]:pc>=.3?["Foco em ajuste","Com um pouco mais de nitidez, você chega lá."]:["Ainda desfocado","Respire fundo, a próxima rodada vai mais nítida."];
+      var key=cfg.lv+"-"+cfg.n,bst=lsGet("pstBest")||{},rec=!bst[key]||G.total>bst[key];if(rec){bst[key]=G.total;lsSet("pstBest",bst)}
+      var avg=hits?Math.round(G.res.filter(function(r){return r.ok}).reduce(function(a,r){return a+r.t},0)/hits/100)/10:0;
+      html='<div class="panel" style="text-align:center;margin-top:12px"><div class="eyebrow" style="justify-content:center">'+tier[0]+'</div><div style="font-family:var(--font-display);font-size:56px;font-weight:800;color:var(--pri);line-height:1.1">'+G.total+'<span style="font-size:18px;color:var(--ink-700)"> / '+max+'</span></div><p class="pnote">'+tier[1]+'</p><p>'+hits+' de '+G.res.length+' acertos'+(hits?' · tempo médio dos acertos: '+avg.toLocaleString("pt-BR")+' s':'')+'</p>'+(rec?'<p class="pgain">Novo recorde!</p>':'')+'<div class="pres">'+rows+'</div>'+btns+'</div>';
+      if(rec&&window.confete)window.confete();
+    }
+    stage().innerHTML=html;
   }
   document.addEventListener("click",function(e){
     if(e.target.closest("#pStart")){start();return}
