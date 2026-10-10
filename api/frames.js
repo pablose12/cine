@@ -29,8 +29,8 @@ module.exports = async (req, res) => {
   const done = (await pool(found, 20, async (f) => {
     const im = await get("/movie/" + f.id + "/images", { include_image_language: "null" }, key);
     const bd = ((im && im.backdrops) || []).filter((b) => !b.iso_639_1 && b.width >= 1280)
-      .sort((a, b) => (b.vote_average - a.vote_average) || (b.vote_count - a.vote_count)).slice(0, 6);
-    return bd.length >= 4 ? { ...f, f: bd.map((b) => b.file_path) } : null;
+      .sort((a, b) => (b.vote_average - a.vote_average) || (b.vote_count - a.vote_count)).slice(0, 12);
+    return bd.length >= 6 ? { ...f, f: bd.map((b) => b.file_path) } : null;
   })).filter(Boolean);
   res.setHeader("Cache-Control", "public, s-maxage=604800, stale-while-revalidate=2592000");
   res.status(200).json(done);
