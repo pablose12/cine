@@ -26,11 +26,19 @@ module.exports = async (req, res) => {
     const m = rs.find((x) => x.poster_path === c.p) || rs[0];
     return m ? { c: c.c, t: c.t, o: c.o, y: c.y, id: m.id, v: m.vote_count || 0 } : null;
   })).filter(Boolean).sort((a, b) => b.v - a.v);
+  const rank = (x) => ({ Clip: 0, Trailer: 1, Teaser: 2 }[x.type]);
   const done = (await pool(found, 20, async (f) => {
-    const im = await get("/movie/" + f.id + "/images", { include_image_language: "null" }, key);
+    const [im, vd] = await Promise.all([
+      get("/movie/" + f.id + "/images", { include_image_language: "null" }, key),
+      get("/movie/" + f.id + "/videos", { language: "en-US", include_video_language: "en,pt,null" }, key),
+    ]);
     const bd = ((im && im.backdrops) || []).filter((b) => !b.iso_639_1 && b.width >= 1280)
       .sort((a, b) => (b.vote_average - a.vote_average) || (b.vote_count - a.vote_count)).slice(0, 12);
-    return bd.length >= 6 ? { ...f, f: bd.map((b) => b.file_path) } : null;
+    if (bd.length < 4) return null;
+    // cenas reais: clipes e trailers do YouTube (o site usa os quadros que o próprio YouTube gera do vídeo)
+    const vs = ((vd && vd.results) || []).filter((x) => x.site === "YouTube" && x.key && [0, 1, 2].includes(rank(x)))
+      .sort((a, b) => rank(a) - rank(b) || (b.official === true) - (a.official === true));
+    return { ...f, f: bd.map((b) => b.file_path), v: vs.slice(0, 3).map((x) => x.key) };
   })).filter(Boolean);
   res.setHeader("Cache-Control", "public, s-maxage=604800, stale-while-revalidate=2592000");
   res.status(200).json(done);
