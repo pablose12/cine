@@ -1299,6 +1299,14 @@ body[data-gt] #v-home .hero2 h1 em{color:var(--ga)}
   .hx-fl{font-size:12px}
   .hx-fl.hx-q{left:10px!important}
 }
+
+/* ===== v24 ===== */
+.hx-stage{position:absolute;top:0;bottom:0;left:50%;width:min(100%,700px);transform:translateX(-50%);z-index:3;pointer-events:none}
+.hx-col.d{animation:hxup 34s linear infinite;margin-top:-50px}
+@media (max-width:900px){.hx-stage{width:min(100%,560px)}}
+.tlp.real::before{background:linear-gradient(180deg,rgba(255,255,255,.12),transparent 35%,rgba(0,0,0,.35))}
+.tlp.real::after{display:none}
+.tlp.real b{text-shadow:0 2px 6px rgba(0,0,0,.7);color:#fff}
 </style>
 </head>
 <body>
@@ -1334,10 +1342,10 @@ body[data-gt] #v-home .hero2 h1 em{color:var(--ga)}
     <div class="hx-r" aria-hidden="true">
       <div class="hx-fade"></div>
       <div class="hx-wall" id="hxWall"></div>
-      <div class="hx-fl hx-q" style="left:14px;top:34%;animation-delay:-1s">Quem dirigiu?</div>
+      <div class="hx-stage"><div class="hx-fl hx-q" style="left:14px;top:34%;animation-delay:-1s">Quem dirigiu?</div>
       <div class="hx-fl" style="right:18px;top:15%;animation-delay:-3s"><span class="hx-m" id="hxA1" style="background:linear-gradient(135deg,#5A62C4,#17154B)">QT</span><span>Quentin Tarantino<small>Diretor · 1963</small></span></div>
       <div class="hx-fl" style="left:28px;bottom:17%;animation-delay:-2s"><span class="hx-m" id="hxA2" style="background:linear-gradient(135deg,#C9772F,#5A2A0E)">GG</span><span>Greta Gerwig<small>87% compatível</small></span></div>
-      <div class="hx-fl hx-k" style="right:34px;bottom:24%;animation-delay:-4s">+100 pts</div>
+      <div class="hx-fl hx-k" style="right:34px;bottom:24%;animation-delay:-4s">+100 pts</div></div>
     </div>
   </section>
   <div class="wrap">
@@ -2568,6 +2576,20 @@ function route(){
 }
 const slugOf=n=>{const s=String(n).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");return DATA.some(x=>x.s===s)?s:null};
 window.dirSlug=slugOf;window.dirData=DATA;window.dirGC=GC;
+window.cineRnd=(function(){
+  function shuf(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),x=a[i];a[i]=a[j];a[j]=x}return a}
+  function fame(d){return (d.films||[]).map(function(f){return f[6]||0}).sort(function(a,b){return b-a}).slice(0,5).reduce(function(s,v){return s+v},0)}
+  var cache=null;
+  function topDirs(n){if(!cache)cache=DATA.filter(function(d){return d.foto}).sort(function(a,b){return fame(b)-fame(a)});return cache.slice(0,n||40)}
+  /* 5 filmes de anos diferentes, com pôster, de um diretor sorteado entre os mais conhecidos, em ordem cronológica */
+  function tlSet(){
+    var c=shuf(topDirs(70));
+    for(var i=0;i<c.length;i++){var seen={},u=[];
+      c[i].films.slice().sort(function(a,b){return (b[6]||0)-(a[6]||0)}).slice(0,14).forEach(function(f){var y=+f[0];if(y&&f[4]&&!seen[y]&&f[6]>=120){seen[y]=1;u.push(f)}});
+      if(u.length>=5){u=shuf(u).slice(0,5).sort(function(a,b){return a[0]-b[0]});return {d:c[i],films:u}}}
+    return null}
+  return {shuf:shuf,topDirs:topDirs,tlSet:tlSet}
+})();
 document.addEventListener("click",e=>{
   const b=e.target.closest("[data-dir]");if(b){location.hash="#diretores";return}
   if(e.target.closest("[data-go]")&&location.hash.startsWith("#diretor"))history.replaceState(null,"",location.pathname+location.search)});
@@ -2585,8 +2607,18 @@ addEventListener("hashchange",route);route();
    ["Nível médio","2010","A Origem","Inception",["Denis Villeneuve","Ridley Scott","Christopher Nolan","David Fincher"],2,"CN"],
    ["Nível difícil","2006","O Labirinto do Fauno","El laberinto del fauno",["Alfonso Cuarón","Guillermo del Toro","Alejandro G. Iñárritu","Pedro Almodóvar"],1,"GT"],
    ["Nível fácil","2019","Parasita","Gisaengchung",["Park Chan-wook","Bong Joon-ho","Kim Jee-woon","Hirokazu Kore-eda"],1,"BJ"],
-   ["Nível médio","2002","Cidade de Deus","Cidade de Deus",["Walter Salles","Fernando Meirelles","José Padilha","Héctor Babenco"],1,"FM"]
+   ["Nível médio","2002","Cidade de Deus","Cidade de Deus",["Walter Salles","Fernando Meirelles","José Padilha","Héctor Babenco"],1,"FM"],
+   ["Nível fácil","1975","Tubarão","Jaws",["Steven Spielberg","George Lucas","Francis Ford Coppola","Ridley Scott"],0,"SS"],
+   ["Nível médio","1980","O Iluminado","The Shining",["Stanley Kubrick","Alfred Hitchcock","Brian De Palma","David Lynch"],0,"SK"],
+   ["Nível médio","2017","Corra!","Get Out",["Jordan Peele","Ari Aster","Jennifer Kent","Robert Eggers"],0,"JP"],
+   ["Nível médio","1982","Blade Runner: O Caçador de Androides","Blade Runner",["Ridley Scott","James Cameron","Paul Verhoeven","John Carpenter"],0,"RS"],
+   ["Nível difícil","1960","Acossado","À bout de souffle",["Jean-Luc Godard","François Truffaut","Éric Rohmer","Claude Chabrol"],0,"JG"],
+   ["Nível fácil","2008","Batman: O Cavaleiro das Trevas","The Dark Knight",["Tim Burton","Christopher Nolan","Zack Snyder","Matt Reeves"],1,"CN"],
+   ["Nível médio","1999","Clube da Luta","Fight Club",["David Fincher","Darren Aronofsky","Danny Boyle","Guy Ritchie"],0,"DF"],
+   ["Nível difícil","1972","O Poderoso Chefão","The Godfather",["Martin Scorsese","Francis Ford Coppola","Brian De Palma","Sidney Lumet"],1,"FC"]
   ];
+  (function(){var s=window.cineRnd?window.cineRnd.shuf(Q):Q;Q.length=0;s.forEach(function(q){var ok=q[4][q[5]],o=window.cineRnd?window.cineRnd.shuf(q[4]):q[4];Q.push([q[0],q[1],q[2],q[3],o,o.indexOf(ok),q[6]])})})();
+  window.cineQ=Q.slice();
   var cards=[].slice.call(st.children), n=0, reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
   function fill(c,q){
     c.querySelector(".t-lvl").textContent=q[0];c.querySelector(".t-ano").textContent=q[1];
@@ -3129,6 +3161,9 @@ addEventListener("hashchange",route);route();
     if((a=e.target.closest("[data-tup],[data-tdn]"))){var c=a.closest(".tlc");move(+c.dataset.k,a.hasAttribute("data-tup")?-1:1)}
   });
   /* demonstração animada da seção */
+  (function(){var d=document.getElementById("tld"),S=window.cineRnd&&window.cineRnd.tlSet();
+    if(d&&S){var ps=d.querySelectorAll(".tlp");S.films.forEach(function(f,k){var p=ps[k];if(!p)return;var im=new Image();im.onload=function(){p.style.backgroundImage="url("+im.src+")";p.style.backgroundSize="cover";p.style.backgroundPosition="center";p.classList.add("real")};im.src="https://image.tmdb.org/t/p/w185"+f[4];p.querySelector("b").textContent=f[0]})}
+  })();
   (function(){var d=document.getElementById("tld");if(!d)return;var on=false,rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
     if(rm){d.classList.add("on");return}
     setInterval(function(){on=!on;d.classList.toggle("on",on)},3600);setTimeout(function(){d.classList.add("on");on=true},900)})();
@@ -3142,12 +3177,11 @@ addEventListener("hashchange",route);route();
   var D=window.dirData||[];
   document.querySelectorAll(".ndir").forEach(function(n){n.textContent=D.length||280});
   var box=document.getElementById("dnPeople");if(!box)return;
-  var names=[["Nolan","Christopher Nolan"],["Fincher","David Fincher"],["Scorsese","Martin Scorsese"],["Kurosawa","Akira Kurosawa"],["Tarantino","Quentin Tarantino"],["Gerwig","Greta Gerwig"],["Villeneuve","Denis Villeneuve"],["Bong","Bong Joon-ho"]];
   var PAL=[["#5A62C4","#17154B"],["#C9772F","#5A2A0E"],["#2F7F8F","#0F2F4A"],["#9A4F9F","#2B1450"],["#3C8B63","#103B2B"],["#B8423D","#4A1414"]];
   function esc(x){return String(x).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
-  box.innerHTML=names.map(function(p,i){
-    var d=D.filter(function(x){return x.n===p[1]||x.n.indexOf(p[0])>=0})[0];
-    var n=d?d.n:p[1],ini=n.split(" ").filter(function(w){return /^[A-ZÀ-Ý]/.test(w)}).map(function(w){return w[0]}).slice(0,2).join(""),c=PAL[i%PAL.length];
+  var pick=window.cineRnd?window.cineRnd.shuf(window.cineRnd.topDirs(40)).slice(0,8):[];
+  box.innerHTML=pick.map(function(d,i){
+    var n=d.n,ini=n.split(" ").filter(function(w){return /^[A-ZÀ-Ý]/.test(w)}).map(function(w){return w[0]}).slice(0,2).join(""),c=PAL[i%PAL.length];
     var tot=d?(d.tot||(d.films&&d.films.length)||""):"";
     var link=d?'#diretor/'+d.s:'#diretores';
     return '<a class="dper" href="'+link+'"><span class="av2" style="background:linear-gradient(135deg,'+c[0]+','+c[1]+')">'+esc(ini)+(d&&d.foto?'<img alt="" loading="lazy" src="https://image.tmdb.org/t/p/w185'+d.foto+'" onerror="this.remove()">':'')+'</span><span>'+esc(n)+(tot?'<small>'+tot+' filmes</small>':'')+'</span></a>'}).join("");
@@ -4025,7 +4059,7 @@ addEventListener("hashchange",route);route();
   var dc=$("donCode");if(dc)dc.addEventListener("input",function(){dc.value=dc.value.toUpperCase().replace(/[^A-Z0-9]/g,"")});
   /* demonstração do teste: círculo e traços girando */
   var R=2*Math.PI*54,SM=[["Stanley Kubrick",94,["Sombrio","Imagem","Autoral"]],["Greta Gerwig",91,["Leve","Intimista","Palavra"]],["Akira Kurosawa",89,["Épico","Dinâmico","Clássico"]],["Pedro Almodóvar",87,["Explícito","Imagem","Autoral"]],["Steven Spielberg",90,["Épico","Comercial","Fantasioso"]],["Agnès Varda",88,["Realista","Palavra","Experimental"]]];
-  var k=0,dmo=$("dmo");
+  var k=0,dmo=$("dmo");SM=window.cineRnd?window.cineRnd.shuf(SM):SM;
   function show1(i){
     var s=SM[i%SM.length],arc=$("dmArc"),p=$("dmPct"),n=$("dmName"),c=$("dmChips");if(!arc)return;
     dmo.classList.add("sw");
@@ -4059,7 +4093,7 @@ addEventListener("hashchange",route);route();
   var wall=document.getElementById("hxWall");
   if(wall&&H.p&&H.p.length){
     var P=H.p.slice();for(var z=P.length-1;z>0;z--){var j=Math.floor(Math.random()*(z+1)),tmp=P[z];P[z]=P[j];P[j]=tmp}
-    H.p=P;var cls=["","b","c"];
+    H.p=P;var cls=window.innerWidth>900?["","b","c","d"]:["","b","c"];
     cls.forEach(function(c,k){
       var items=P.slice(k*9,k*9+9);
       var col=document.createElement("div");col.className="hx-col "+c;
@@ -4067,13 +4101,22 @@ addEventListener("hashchange",route);route();
         var d=document.createElement("div");d.className="hx-po";var pc=PAL[(i+k*2)%PAL.length];
         d.style.setProperty("--c1",pc[0]);d.style.setProperty("--c2",pc[1]);
         var im=pimg(f[0],"w342",f[2]);im.loading="lazy";im.onerror=function(){im.remove()};d.appendChild(im);
-        var b=document.createElement("b");b.textContent=f[1];d.appendChild(b);col.appendChild(d);
+        col.appendChild(d);
       });
       wall.appendChild(col);
     });
   }
   function avatar(id,p){var el=document.getElementById(id);if(!el||!p)return;var im=pimg(p,"w185","");im.onerror=function(){im.remove()};el.appendChild(im)}
-  if(H.d){avatar("hxA1",H.d.qt);avatar("hxA2",H.d.gg)}
+  (function(){var C=window.cineRnd;if(!C)return;var T=C.shuf(C.topDirs(40)),a=T[0],b=T[1];
+    function ini(n){return n.split(" ").filter(function(w){return /^[A-ZÀ-Ý]/.test(w)}).map(function(w){return w[0]}).slice(0,2).join("")}
+    var e1=document.getElementById("hxA1"),e2=document.getElementById("hxA2");
+    if(e1&&a){e1.textContent=ini(a.n);e1.nextSibling.innerHTML=a.n.replace(/[&<>]/g,"")+"<small>Diretor"+(/\d{4}/.test(a.y||"")?" · "+String(a.y).match(/\d{4}/)[0]:"")+"</small>";avatar("hxA1",a.foto)}
+    if(e2&&b){e2.textContent=ini(b.n);e2.nextSibling.innerHTML=b.n.replace(/[&<>]/g,"")+"<small>"+(78+Math.floor(Math.random()*19))+"% compatível</small>";avatar("hxA2",b.foto)}
+    var q=window.cineQ&&window.cineQ[0],mq=document.querySelector(".hx-mq");
+    if(q&&mq){var ok=q[4][q[5]],ot=C.shuf(q[4].filter(function(x){return x!==ok})).slice(0,2),op=C.shuf([ok].concat(ot));
+      mq.querySelector(".hx-tg2").innerHTML="<span>"+q[0].toUpperCase()+"</span><span>"+q[1]+"</span>";mq.querySelector("h4").textContent=q[2];
+      mq.querySelectorAll(".hx-o").forEach(function(el,i){el.className="hx-o"+(op[i]===ok?" r":"");el.innerHTML="<b>"+"ABC"[i]+"</b>"+op[i].replace(/[&<>]/g,"")})}
+    var S=C.tlSet();if(S)H.tl=S.films.map(function(f){return [f[4],f[0]]})})();
   function bg(el,p,w){if(!p||!el)return;var im=new Image();im.onload=function(){el.style.backgroundImage="url("+im.src+")"};im.src=TM+w+p}
   if(H.p)document.querySelectorAll(".hx-mpo").forEach(function(el){var f=H.p[(+el.dataset.pi*7+3)%H.p.length];bg(el.querySelector(".im"),f&&f[0],"w185")});
   if(H.tl)document.querySelectorAll(".hx-mt .pp").forEach(function(el){var f=H.tl[+el.dataset.ti];if(f){el.querySelector("span").textContent=f[1];bg(el,f[0],"w154")}});
