@@ -876,70 +876,6 @@ body.ms-on{padding-bottom:92px}
 @media (max-width:620px){.tlsum2{padding:46px 16px 26px}.tlhero{flex-direction:column;text-align:center;gap:18px}.tlmsg h2{font-size:26px}.tltiles b{font-size:22px}}
 @media (max-width:620px){.tlmsg .eyebrow{justify-content:center}}
 
-/* sequência de frames */
-.sx.fr{--a:#FF7A59;--ai:#2B0D08;background:linear-gradient(135deg,#2a0b10,#4d1220 55%,#1b070c)}
-.sx.fr::before{background:radial-gradient(circle,rgba(255,122,89,.26),transparent 62%)}
-.sx.fr::after{background:radial-gradient(circle,rgba(190,40,90,.34),transparent 62%)}
-.frload{margin-top:16px;font-size:12.5px;color:rgba(255,255,255,.7)}
-.frload summary{cursor:pointer;color:var(--a)}
-.frload input[type=file]{display:block;margin-top:8px;color:#fff;max-width:100%}
-.frload button{margin-top:8px;background:none;border:0;color:var(--a);text-decoration:underline;cursor:pointer;padding:0;font:inherit}
-.frload .frm{margin-top:6px}
-.frbox{max-width:620px;margin:0 auto}
-.frimg{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#12070a;box-shadow:0 22px 40px -20px rgba(16,16,40,.6)}
-.frimg img{width:100%;height:100%;object-fit:cover;display:block;animation:frIn .45s ease both}
-@keyframes frIn{from{opacity:.2;transform:scale(1.03)}}
-.frlb{position:absolute;left:0;right:0;height:8%;background:#000;pointer-events:none}.frlb.t{top:0}.frlb.b{bottom:0}
-.frno{position:absolute;left:12px;top:12%;background:rgba(10,10,30,.75);color:#fff;border-radius:99px;padding:3px 11px;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
-.frthumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}
-.frth{position:relative;aspect-ratio:16/9;border-radius:8px;overflow:hidden;border:2px solid transparent;padding:0;background:#1d0b10;cursor:pointer}
-.frth img{width:100%;height:100%;object-fit:cover;display:block}
-.frth i{position:absolute;left:5px;top:3px;font-style:normal;font-size:11px;font-weight:700;color:#fff;text-shadow:0 1px 3px #000}
-.frth.on{border-color:#FF7A59}
-.frth.lock{cursor:default;display:flex;align-items:center;justify-content:center;opacity:.6;background:repeating-linear-gradient(45deg,#1d0b10 0 8px,#2a1016 8px 16px)}
-.frth.lock i{position:static;font-size:15px;color:rgba(255,255,255,.5)}
-.frctl{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:12px 0 4px;flex-wrap:wrap}
-.frpts{font-size:14px;color:var(--ink-700)}.frpts b{font-family:var(--font-display);font-size:20px;color:var(--pri)}
-.frmore{color:var(--pri);border-color:var(--pri)}.frmore:hover{background:rgba(35,32,110,.08)}.frmore small{opacity:.7;margin-left:6px}
-.tlsum2.frsum{background:linear-gradient(135deg,#2a0b10,#4d1220 58%,#1b070c)}
-.frsum .tlring .tr1{stroke:#FF7A59}.frsum .tltiles b,.frsum .rrw b,.frsum .tlmsg .eyebrow{color:#FF7A59}
-.frsum .btn.tlpri{background:#FF7A59;border-color:#FF7A59;color:#2B0D08}
-.frsum .rrw{grid-template-columns:1fr auto auto}.frsum .rrw small{opacity:.6;margin-left:4px}.frsum .rrw .rd{font-size:13px;opacity:.75}
-@media (max-width:520px){.frd{gap:8px}}
-.btn.frmore{background:transparent;color:var(--pri);border-color:var(--pri)}.btn.frmore:hover{background:rgba(35,32,110,.08);color:var(--pri)}
-.frimg img{transition:transform .6s ease,filter .6s ease}.frth img{transition:transform .6s ease,filter .6s ease}
-.frform{display:flex;gap:10px;max-width:620px;margin:0 auto}
-.frform input{flex:1;min-width:0;font:inherit;font-size:16px;padding:13px 16px;border-radius:14px;border:2px solid var(--line);background:var(--paper);color:var(--ink-900,#14123a)}
-.frform input:focus{outline:none;border-color:#FF7A59;box-shadow:0 0 0 4px rgba(255,122,89,.18)}
-.frform input.okk{border-color:var(--ok);background:var(--ok-soft,#E2F6EA)}.frform input.badd{border-color:var(--bad);background:var(--bad-soft)}
-.frform input.shk{animation:frShk .4s}@keyframes frShk{25%{transform:translateX(-7px)}50%{transform:translateX(7px)}75%{transform:translateX(-4px)}}
-.frhint{max-width:620px;margin:10px auto 0;text-align:center;font-size:14px;color:var(--bad);min-height:20px}
-.frgive{text-align:center;margin-top:4px}.frlink{background:none;border:0;color:var(--ink-700);text-decoration:underline;cursor:pointer;font:inherit;font-size:13.5px;padding:6px}
-@media (max-width:480px){.frform{flex-direction:column}}
-
-.frd{max-width:480px;margin:0 auto;width:100%}
-.frs{position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#05070f;box-shadow:0 26px 40px -20px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.1)}
-.frs .sc{position:absolute;inset:0;width:100%;height:100%;opacity:0;transform:scale(1.04);transition:opacity .7s ease,transform 1.6s ease}
-.frd[data-s="1"] .s1,.frd[data-s="2"] .s2,.frd[data-s="3"] .s3,.frd[data-s="4"] .s4{opacity:1;transform:none}
-.frs .lb{position:absolute;left:0;right:0;height:9%;background:#000;z-index:2}.frs .lb.t{top:0}.frs .lb.b{bottom:0}
-.frs .no{position:absolute;left:10px;top:12%;z-index:3;background:rgba(5,7,20,.75);color:#fff;border-radius:99px;padding:2px 10px;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
-.frs .ok{position:absolute;right:10px;bottom:12%;z-index:3;background:#2FB27A;color:#04281a;border-radius:99px;padding:3px 12px;font-family:var(--font-display);font-weight:800;font-size:14px;opacity:0;transform:translateY(8px) scale(.9);transition:opacity .35s,transform .35s}
-.frd[data-d="1"] .ok{opacity:1;transform:none}
-.frt{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}
-.frt .t{position:relative;aspect-ratio:16/9;border-radius:7px;overflow:hidden;background:repeating-linear-gradient(45deg,#1d0b10 0 7px,#2a1016 7px 14px);border:2px solid transparent;transition:border-color .3s}
-.frt .t svg{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity .5s}
-.frd[data-s="1"] .t1 svg,.frd[data-s="2"] .t1 svg,.frd[data-s="2"] .t2 svg,.frd[data-s="3"] .t1 svg,.frd[data-s="3"] .t2 svg,.frd[data-s="3"] .t3 svg,.frd[data-s="4"] .t svg{opacity:1}
-.frd[data-s="1"] .t1,.frd[data-s="2"] .t2,.frd[data-s="3"] .t3,.frd[data-s="4"] .t4{border-color:var(--a)}
-.frm2{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px}
-.frm2 .fpt{font-size:12.5px;color:rgba(255,255,255,.78);white-space:nowrap}.frm2 .fpt b{font-family:var(--font-display);font-size:26px;color:var(--a);display:inline-block;min-width:2.4ch;text-align:right}
-.frm2 .fin{flex:1;min-width:0;height:40px;border-radius:12px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);display:flex;align-items:center;padding:0 12px;color:#fff;font-size:15px;overflow:hidden;white-space:nowrap}
-.frm2 .fin i{width:2px;height:18px;background:var(--a);margin-left:2px;animation:frCar 1s steps(2) infinite}@keyframes frCar{50%{opacity:0}}
-.frd[data-d="1"] .fin{border-color:#2FB27A;background:rgba(47,178,122,.18)}
-.fcap{text-align:center;margin-top:8px;font-size:11.5px;color:rgba(255,255,255,.5)}
-.frwait{display:flex;align-items:center;justify-content:center}
-.frspin{display:flex;flex-direction:column;align-items:center;gap:12px;color:rgba(255,255,255,.8);font-size:13px}
-.frspin i{width:30px;height:30px;border-radius:50%;border:3px solid rgba(255,255,255,.2);border-top-color:#FF7A59;animation:frSp .8s linear infinite}@keyframes frSp{to{transform:rotate(360deg)}}
-
 </style>
 </head>
 <body>
@@ -954,7 +890,7 @@ body.ms-on{padding-bottom:92px}
       <button data-go="how">Como funciona</button>
       <button data-go="levels">Jogar</button>
       <div class="navdd"><button class="ddb" id="ddb" aria-haspopup="true" aria-expanded="false">Mais modos <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 3.5 3 3 3-3"/></svg></button>
-        <div class="ddm" role="menu"><button data-go="poster" role="menuitem">Poster desfocado</button><button data-go="linha" role="menuitem">Linha do tempo</button><button data-go="descubra" role="menuitem">Descubra seu diretor</button><button data-go="frames" role="menuitem">Sequência de frames</button><button data-duelon="1" role="menuitem">Duelo online</button></div></div>
+        <div class="ddm" role="menu"><button data-go="poster" role="menuitem">Poster desfocado</button><button data-go="linha" role="menuitem">Linha do tempo</button><button data-go="descubra" role="menuitem">Descubra seu diretor</button><button data-duelon="1" role="menuitem">Duelo online</button></div></div>
       <button data-dir="1">Diretores</button>
       <button data-go="medals">Medalhas</button>
     </nav>
@@ -1128,37 +1064,6 @@ body.ms-on{padding-bottom:92px}
         </div></div>
       </div>
     </section>
-    <section class="sec" id="frames">
-      <div class="eyebrow">Sequência de frames</div>
-      <h2>Quatro cenas. <em class="w">Qual é o filme</em>?</h2>
-      <div class="sx fr" id="sxFr"><i class="sprk t" aria-hidden="true"></i><i class="sprk b" aria-hidden="true"></i>
-        <div class="sxl">
-          <p class="sxp">Você vê uma cena de um filme famoso, sem título. Digite o nome do filme. As primeiras cenas são quadros tirados do trailer do filme, que raramente entregam o título, e o último frame é a arte mais famosa dele. Quanto mais cedo acertar, mais pontos.</p>
-          <div class="sxf"><span>Quantos filmes?</span><div class="nchips" id="frRounds" role="group" aria-label="Quantidade de filmes"></div></div>
-          <div class="sxa"><button class="btn amber" id="frGo">Jogar sequência de frames <span aria-hidden="true">→</span></button></div>
-          <p class="sxs" id="frInfo"></p>
-
-        </div>
-        <div class="sxr"><div class="frd" id="frd" data-s="1" aria-hidden="true">
-          <svg width="0" height="0" style="position:absolute"><defs>
-            <radialGradient id="fg1" cx="50%" cy="45%" r="75%"><stop offset="0" stop-color="#27325e"/><stop offset="1" stop-color="#070b1c"/></radialGradient>
-            <radialGradient id="fg2" cx="35%" cy="35%" r="70%"><stop offset="0" stop-color="#ffd9a0"/><stop offset=".55" stop-color="#c26a3a"/><stop offset="1" stop-color="#3a1710"/></radialGradient>
-            <linearGradient id="fg3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9fb4d8"/><stop offset="1" stop-color="#2b3552"/></linearGradient>
-            <linearGradient id="fg4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7fb8ff"/><stop offset=".5" stop-color="#27456f"/><stop offset="1" stop-color="#0c1428"/></linearGradient>
-            <symbol id="fs1" viewBox="0 0 160 90"><rect width="160" height="90" fill="url(#fg1)"/><g fill="#fff"><circle cx="18" cy="14" r=".9"/><circle cx="46" cy="30" r=".6"/><circle cx="72" cy="12" r="1"/><circle cx="100" cy="26" r=".7"/><circle cx="130" cy="14" r=".9"/><circle cx="144" cy="52" r=".6"/><circle cx="30" cy="62" r=".7"/><circle cx="64" cy="74" r=".9"/><circle cx="112" cy="70" r=".6"/><circle cx="88" cy="48" r=".5"/><circle cx="8" cy="40" r=".6"/><circle cx="150" cy="78" r=".8"/></g></symbol>
-            <symbol id="fs2" viewBox="0 0 160 90"><rect width="160" height="90" fill="url(#fg1)"/><circle cx="118" cy="62" r="46" fill="url(#fg2)"/><ellipse cx="118" cy="62" rx="70" ry="9" fill="none" stroke="#f3c68a" stroke-width="3" opacity=".75" transform="rotate(-18 118 62)"/><g fill="#fff"><circle cx="20" cy="16" r=".9"/><circle cx="60" cy="22" r=".7"/><circle cx="40" cy="60" r=".8"/><circle cx="84" cy="10" r=".6"/></g></symbol>
-            <symbol id="fs3" viewBox="0 0 160 90"><rect width="160" height="90" fill="url(#fg1)"/><circle cx="130" cy="20" r="26" fill="url(#fg2)" opacity=".85"/><g transform="translate(34 40)"><path d="M0 14 L46 6 L70 14 L46 22 Z" fill="#cdd6ea"/><path d="M46 6 L56 -6 L60 8 Z" fill="#9aa8c8"/><path d="M46 22 L56 34 L60 20 Z" fill="#9aa8c8"/><rect x="-10" y="11" width="12" height="6" fill="#ffb067"/><circle cx="-6" cy="14" r="9" fill="#ffb067" opacity=".35"/></g></symbol>
-            <symbol id="fs4" viewBox="0 0 160 90"><rect width="160" height="90" fill="url(#fg1)"/><ellipse cx="80" cy="96" rx="62" ry="34" fill="#cfd6e6"/><circle cx="80" cy="44" r="30" fill="#e7ebf5"/><ellipse cx="80" cy="46" rx="21" ry="19" fill="url(#fg4)"/><ellipse cx="72" cy="38" rx="7" ry="4" fill="#fff" opacity=".55"/><rect x="62" y="70" width="36" height="6" rx="3" fill="#8f9bb8"/></symbol>
-          </defs></svg>
-          <div class="frs"><i class="lb t"></i><i class="lb b"></i>
-            <svg class="sc s1" viewBox="0 0 160 90"><use href="#fs1"/></svg><svg class="sc s2" viewBox="0 0 160 90"><use href="#fs2"/></svg><svg class="sc s3" viewBox="0 0 160 90"><use href="#fs3"/></svg><svg class="sc s4" viewBox="0 0 160 90"><use href="#fs4"/></svg>
-            <span class="no" id="frdNo">Frame 1 de 4</span><span class="ok" id="frdOk">+45 pts</span></div>
-          <div class="frt"><span class="t t1"><svg viewBox="0 0 160 90"><use href="#fs1"/></svg></span><span class="t t2"><svg viewBox="0 0 160 90"><use href="#fs2"/></svg></span><span class="t t3"><svg viewBox="0 0 160 90"><use href="#fs3"/></svg></span><span class="t t4"><svg viewBox="0 0 160 90"><use href="#fs4"/></svg></span></div>
-          <div class="frm2"><div class="fpt">Acertando agora <b id="frdPts">100</b> pts</div><div class="fin"><span id="frdTx"></span><i></i></div></div>
-          <div class="fcap">Exemplo ilustrativo</div>
-        </div></div>
-      </div>
-    </section>
     <section class="sec" id="frases">
       <div class="eyebrow">Frases marcantes</div>
       <h2>Palavras de quem <em class="w">fez cinema</em>.</h2>
@@ -1190,7 +1095,6 @@ body.ms-on{padding-bottom:92px}
 </main>
 
 <main id="v-tl" hidden><div class="qwrap tlw" id="tlRoot"></div></main>
-<main id="v-frames" hidden><div class="qwrap frw" id="frWrap"><div class="qtop"><span id="frCount">Rodada <b>1</b> de 10</span><span class="streak" id="frStreak" hidden></span><span class="ptot">Pontos <b id="frTot">0</b></span><button id="frQuit">← Sair</button></div><div id="frRoot"></div></div></main>
 <main id="v-dna" hidden><div class="qwrap dnaw" id="dnaRoot"></div></main>
 <main id="v-live" hidden><div class="qwrap livew" id="liveRoot"></div></main>
 
@@ -1279,7 +1183,7 @@ const WIKI = {
 const SHOW = {"Coen brothers":"Irmãos Coen"};
 
 const $ = id => document.getElementById(id);
-const views = ["home","quiz","result","duel","dir","poster","tl","live","dna","frames"];
+const views = ["home","quiz","result","duel","dir","poster","tl","live","dna"];
 let size = 10;
 let S = null; // estado da partida
 
@@ -3457,207 +3361,6 @@ addEventListener("hashchange",route);route();
     root.querySelector(".panel").insertAdjacentHTML("afterbegin",'<div class="lerr" style="background:var(--pri-soft);border-color:var(--pri-100);color:var(--pri)">Você foi convidado para a sala <b>'+code+'</b>. Digite seu nome e toque em Entrar.</div>')}
   window.addEventListener("hashchange",fromHash);setTimeout(fromHash,0);
   window.liveDebug={get st(){return st},Net:Net};
-})();
-</script>
-<script>
-window.FRAMES=[];
-(function(){
-  var IMG="https://image.tmdb.org/t/p/",PTS=[100,70,45,25],NF=4,ROUNDS=[5,10,15,20,30,50,0];
-  var cfg={n:+lsGet("frN")||10};if(ROUNDS.indexOf(cfg.n)<0)cfg.n=10;
-  var root=document.getElementById("frRoot"),G=null;
-  function esc2(x){return String(x==null?"":x).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
-  function valid(a){return Array.isArray(a)?a.filter(function(f){return f&&f.t&&f.y&&Array.isArray(f.f)&&f.f.length>=NF}):[]}
-  var remote=[],rstate="idle";
-  try{var rc=JSON.parse(localStorage.getItem("frRemote3")||"null");if(rc&&Date.now()-rc.t<6048e5&&valid(rc.d).length>=4){remote=valid(rc.d);rstate="ok"}}catch(e){}
-  function loadRemote(){
-    if(rstate==="ok"||rstate==="loading"||(window.FRAMES&&window.FRAMES.length>=4))return;
-    rstate="loading";panel();
-    var parts=[0,1,2,3,4].map(function(k){return fetch("/api/frames?v=3&p="+k).then(function(r){if(!r.ok)throw 0;return r.json()}).catch(function(){return []})});
-    Promise.all(parts).then(function(a){var seen={},v=valid([].concat.apply([],a)).filter(function(f){var k=f.t+f.y;if(seen[k])return false;seen[k]=1;return true});if(v.length<4)throw 0;remote=v;rstate="ok";try{localStorage.setItem("frRemote3",JSON.stringify({t:Date.now(),d:v}))}catch(e){}panel()}).catch(function(){rstate="err";panel()});
-  }
-  function films(){var u=null;try{u=JSON.parse(localStorage.getItem("frData")||"null")}catch(e){}
-    var v=valid(u);if(v.length>=4)return v;v=valid(window.FRAMES);return v.length>=4?v:remote}
-  function usingOwn(){var u=null;try{u=JSON.parse(localStorage.getItem("frData")||"null")}catch(e){}return valid(u).length>=4}
-  function per(){var t=films().length;return Math.min(cfg.n||t,t)}
-  function panel(){
-    var chips=document.getElementById("frRounds"),info=document.getElementById("frInfo"),go=document.getElementById("frGo"),t=films().length;
-    if(chips)chips.innerHTML=ROUNDS.map(function(n){return '<button class="nchip" data-frn="'+n+'" aria-pressed="'+(n===cfg.n)+'">'+(n===0?"Todos":n)+'</button>'}).join("");
-    if(info)info.textContent=t?(t+" filmes famosos disponíveis"+(usingOwn()?" (do seu arquivo frames.json)":"")+". Quanto mais cedo você acertar, mais pontos."):(rstate==="loading"?"Buscando os filmes e as cenas, pode levar alguns segundos na primeira vez…":"Não consegui buscar as cenas agora. Tente de novo em instantes.");
-    if(go){go.disabled=!t;go.style.opacity=t?"":".5"}
-    var rm=document.getElementById("frReset");if(rm)rm.hidden=!usingOwn();
-  }
-  panel();loadRemote();
-  function ld(file){var r=new FileReader();r.onload=function(){var ok=false;try{var j=JSON.parse(r.result);if(valid(j).length>=4){localStorage.setItem("frData",JSON.stringify(valid(j)));ok=true}}catch(e){}
-    var m=document.getElementById("frMsg");if(m)m.textContent=ok?"Arquivo carregado: "+films().length+" filmes.":"Esse arquivo não parece um frames.json válido.";panel()};r.readAsText(file)}
-  document.addEventListener("change",function(e){if(e.target&&e.target.id==="frFile"&&e.target.files[0])ld(e.target.files[0])});
-  document.addEventListener("click",function(e){
-    var a=e.target.closest("[data-frn]");if(a){cfg.n=+a.dataset.frn;lsSet("frN",cfg.n);panel();return}
-    if(e.target.closest("#frReset")){try{localStorage.removeItem("frData")}catch(x){}panel();return}
-    if(e.target.closest("#frGo")){start();return}
-    if(document.getElementById("v-frames").hidden)return;
-    if(e.target.closest("#frQuit,#frBack,#frBack2")){G=null;show("home");return}
-    if(e.target.closest("#frAgain")){start();return}
-    if(e.target.closest("#frCfg")){G=null;goSection("frames");return}
-    if(e.target.closest("#frMore")){more();return}
-    if(e.target.closest("#frSkip")){skip();return}
-    if(e.target.closest("#frNext")){next();return}
-    if((a=e.target.closest("[data-fk]"))){view(+a.dataset.fk);return}
-    if(e.target.closest("#frGive")){finish(false);return}
-  });
-  document.addEventListener("submit",function(e){if(e.target&&e.target.id==="frForm"){e.preventDefault();guess()}});
-  function start(){
-    var all=films();if(all.length<4)return;
-    var n=per(),l=shuffle(all).slice(0,n);
-    G={items:l,i:0,total:0,res:[],streak:0,best:0,all:all,bad:0};
-    if(window.streakUI)streakUI(document.getElementById("frStreak"),0,null);
-    show("frames");l.slice(0,3).forEach(function(x){analyze(x)});round();
-  }
-  /* as 4 cenas, da menos reveladora (pouco votada no TMDB) para a mais icônica */
-  /* ---- ordem das cenas pelo que aparece nelas: detector de rostos no navegador (face-api, tiny face detector) ---- */
-  var FA="https://cdn.jsdelivr.net/npm/@vladmandic/face-api@1.7.12/",det={s:"idle",p:null},ana={};
-  function loadDet(){
-    if(det.p)return det.p;det.s="loading";
-    det.p=new Promise(function(ok,no){var s=document.createElement("script");s.src=FA+"dist/face-api.js";s.async=true;s.onload=function(){ok()};s.onerror=function(){no(new Error("script"))};document.head.appendChild(s)})
-      .then(function(){return window.faceapi.nets.tinyFaceDetector.loadFromUri(FA+"model/")})
-      .then(function(){var c=document.createElement("canvas");c.width=c.height=64;return Promise.resolve(window.faceapi.detectAllFaces(c,new window.faceapi.TinyFaceDetectorOptions({inputSize:160}))).catch(function(){})}) /* aquece o modelo */
-      .then(function(){det.s="ok";return true})
-      .catch(function(){det.s="err";return false});
-    return det.p}
-  function imgLoad(u){return new Promise(function(ok){var i=new Image();i.crossOrigin="anonymous";i.onload=function(){ok(i)};i.onerror=function(){ok(null)};i.src=u})}
-  /* devolve, para cada cena, a fração do quadro ocupada por rostos (0 = nenhum rosto) */
-  function analyze(it){
-    var k=it.t+"|"+it.y;
-    if(!ana[k])ana[k]=loadDet().then(function(ok){if(!ok)return null;
-      var list=it.f.slice(0,12),opt=new window.faceapi.TinyFaceDetectorOptions({inputSize:160,scoreThreshold:.4});
-      return Promise.all(list.map(function(p){return imgLoad(IMG+"w300"+p)})).then(function(ims){var out=[],chain=Promise.resolve();
-        ims.forEach(function(im,i){chain=chain.then(function(){if(!im){out[i]=null;return}
-          return Promise.resolve(window.faceapi.detectAllFaces(im,opt)).then(function(r){var A=im.naturalWidth*im.naturalHeight,s=0;r.forEach(function(x){s+=x.box.width*x.box.height/A});out[i]=s}).catch(function(){out[i]=null})})});
-        return chain.then(function(){return out})})});
-    return Promise.race([ana[k],new Promise(function(ok){setTimeout(function(){ok(null)},3500)})])}
-  /* frame 1 = cena com menos rosto; os seguintes sobem; o último é a cena mais votada (a mais icônica) */
-  function pickFrames(f,sc){
-    var r=f.f.slice(0,12),L=r.length;
-    if(!sc||sc.length<L||sc.some(function(x){return x==null})){ /* sem análise: usa só a ordem de votos */
-      var ix=[L-1,Math.round((L-1)*.62),Math.round((L-1)*.3),0],seen={};ix=ix.filter(function(i){if(seen[i])return false;seen[i]=1;return true});
-      for(var k=0;ix.length<NF&&k<L;k++)if(!seen[k]){seen[k]=1;ix.push(k)}
-      ix.sort(function(a,b){return b-a});return ix.map(function(i){return r[i]})}
-    var rest=[];for(var i=1;i<L;i++)rest.push(i);
-    rest.sort(function(a,b){return (sc[a]-sc[b])||(b-a)});
-    var m=rest.length,pick=[rest[0],rest[Math.round((m-1)*.33)],rest[Math.round((m-1)*.66)]],used={};
-    pick=pick.filter(function(i){if(used[i])return false;used[i]=1;return true});
-    for(var j=0;pick.length<NF-1&&j<m;j++)if(!used[rest[j]]){used[rest[j]]=1;pick.push(rest[j])}
-    pick.sort(function(a,b){return (sc[a]-sc[b])||(b-a)});pick.push(0);
-    return pick.map(function(i){return r[i]})}
-  /* resposta digitada: ignora acento, maiúscula, pontuação e artigo inicial; aceita pequenos erros de digitação */
-  function nz(s){s=String(s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/&/g," e ").replace(/[^a-z0-9]+/g," ").trim();
-    return s.replace(/^(o|a|os|as|um|uma|the|el|la|le|les|il)\s+/,"")}
-  function ed(a,b){var m=a.length,n=b.length,d=[],i,j;for(i=0;i<=m;i++){d[i]=[i]}for(j=1;j<=n;j++)d[0][j]=j;
-    for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[m][n]}
-  function variants(it){var v={},add=function(s){s=nz(s);if(s.length>=3)v[s]=1};
-    [it.t,it.o].forEach(function(s){if(!s)return;add(s);var p=s.split(/\s*[:\-–]\s*/);if(p.length>1){p.forEach(add)}});return Object.keys(v)}
-  function matches(g,it){g=nz(g);if(g.length<2)return false;
-    return variants(it).some(function(v){if(g===v)return true;var tol=v.length>=14?3:v.length>=8?2:v.length>=5?1:0;return tol>0&&Math.abs(g.length-v.length)<=tol&&ed(g,v)<=tol})}
-  /* frames 1 a 3: cenas reais tiradas do trailer/clipes do filme no YouTube; o quarto é a arte mais votada do TMDB */
-  var YT=["sd","hq","mq"];
-  function isYT(p){return typeof p==="string"&&p.indexOf("yt:")===0}
-  function src(C,p,th){if(isYT(p)){var a=p.split(":"),t=(C&&C.tier&&C.tier[p])||0;return "https://i.ytimg.com/vi/"+a[1]+"/"+YT[t]+a[2]+".jpg"}return IMG+(th?"w300":"w1280")+p}
-  function pickYT(it){var ks=(it.v||[]).slice(0,3),pool=[];ks.forEach(function(k){[1,2,3].forEach(function(n){pool.push({k:k,n:n})})});
-    if(pool.length<3)return null;
-    var out=[],used={};shuffle(pool).forEach(function(x){if(out.length<3&&!used[x.k]){used[x.k]=1;out.push(x)}});
-    shuffle(pool).forEach(function(x){if(out.length<3&&out.indexOf(x)<0)out.push(x)});
-    return shuffle(out).map(function(x){return "yt:"+x.k+":"+x.n}).concat([it.f[0]])}
-  function frErr(C){var p=C.fr[C.view];
-    if(isYT(p)){var t=C.tier[p]||0;if(t<YT.length-1){C.tier[p]=t+1;draw();return true}
-      C.fr[C.view]=C.it.f[1+C.view]||C.it.f[1];draw();return true}
-    return false}
-  function round(){
-    var it=G.items[G.i];if(!it)return end();
-    document.getElementById("frCount").innerHTML="Rodada <b>"+(G.i+1)+"</b> de "+G.items.length;
-    document.getElementById("frTot").textContent=G.total;
-    var C=G.cur={it:it,fr:null,shown:1,view:0,done:false,wrong:0,tier:{}};
-    var yt=pickYT(it);if(yt){C.fr=yt;render(C);return}
-    root.innerHTML='<div class="frbox"><div class="frimg frwait" id="frImgBox"><div class="frspin"><i></i><span>Escolhendo as cenas</span></div></div></div>';
-    analyze(it).then(function(sc){if(!G||G.cur!==C)return;C.fr=pickFrames(it,sc);render(C);var nx=G.items[G.i+1];if(nx)analyze(nx)});
-  }
-  function render(C){
-    root.innerHTML='<div class="frbox"><div class="frimg" id="frImgBox"><img id="frImg" alt="Cena de um filme" src="'+src(C,C.fr[0])+'"><span class="frno" id="frNo"></span><span class="frlb t"></span><span class="frlb b"></span></div>'+
-      '<div class="frthumbs" id="frThumbs"></div>'+
-      '<div class="frctl"><div class="frpts" id="frPts"></div><button class="btn dghost frmore" id="frMore"></button></div></div>'+
-      '<div class="ask">Qual é este filme?</div><form class="frform" id="frForm" autocomplete="off"><input id="frIn" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Digite o nome do filme" aria-label="Nome do filme"><button class="btn primary" type="submit">Responder</button></form><div class="frhint" id="frHint" aria-live="polite"></div><div class="frgive"><button type="button" class="frlink" id="frGive">Não sei, mostrar a resposta</button></div><div id="frFb" aria-live="polite"></div>';
-    var im=document.getElementById("frImg");
-    im.onerror=function(){if(!G||G.cur!==C)return;if(frErr(C))return;G.bad++;if(G.bad>=3){root.innerHTML='<div class="panel" style="margin-top:20px"><h3>Não consegui carregar as imagens</h3><p class="pnote">As imagens do TMDB parecem fora do ar ou sem conexão. Tente de novo em instantes.</p><button class="btn primary" id="frBack">Voltar ao início</button></div>';return}
-      G.items.splice(G.i,1);if(G.i>=G.items.length)end();else round()};
-    im.onload=function(){if(G&&G.cur===C)G.bad=0};
-    draw();
-    C.fr.slice(1).forEach(function(p){var x=new Image();x.src=src(C,p)});
-    var inp=document.getElementById("frIn");if(inp)inp.focus({preventScroll:true});
-  }
-  function draw(){
-    var C=G.cur;if(!C)return;
-    document.getElementById("frNo").textContent="Frame "+(C.view+1)+" de "+NF;
-    var im=document.getElementById("frImg");im.src=src(C,C.fr[C.view]);
-    document.getElementById("frThumbs").innerHTML=C.fr.map(function(p,k){return k<C.shown?'<button class="frth'+(k===C.view?' on':'')+'" data-fk="'+k+'" aria-label="Ver frame '+(k+1)+'"><img alt="" onerror="this.style.visibility=\'hidden\'" src="'+src(C,p,true)+'"><i>'+(k+1)+'</i></button>':'<span class="frth lock" aria-hidden="true"><i>'+(k+1)+'</i></span>'}).join("");
-    if(!C.done){var pts=PTS[C.shown-1];document.getElementById("frPts").innerHTML='Acertando agora: <b>'+pts+'</b> pts';
-      var mb=document.getElementById("frMore");if(C.shown<NF){mb.hidden=false;mb.innerHTML='Mostrar mais um frame <small>vale '+PTS[C.shown]+'</small>'}else mb.hidden=true}
-  }
-  function view(k){var C=G&&G.cur;if(!C||k>=C.shown)return;C.view=k;draw()}
-  function more(){var C=G&&G.cur;if(!C||C.done||C.shown>=NF)return;C.shown++;C.view=C.shown-1;draw();if(window.sfx)sfx("tick");var i=document.getElementById("frIn");if(i)i.focus({preventScroll:true})}
-  function guess(){
-    var C=G&&G.cur;if(!C||C.done)return;var inp=document.getElementById("frIn"),g=inp.value;if(!nz(g))return;
-    if(matches(g,C.it)){finish(true);return}
-    C.wrong++;var left=3-C.wrong,h=document.getElementById("frHint");
-    if(left<=0){finish(false);return}
-    h.innerHTML='Não foi esse. '+(left===1?'Resta <b>1 tentativa</b>.':'Restam <b>'+left+' tentativas</b>.')+(C.shown<NF?' Se quiser, mostre mais um frame.':'');
-    inp.classList.remove("shk");void inp.offsetWidth;inp.classList.add("shk");inp.select();if(window.sfx)sfx("bad");
-  }
-  function finish(ok){
-    var C=G.cur;if(!C||C.done)return;C.done=true;
-    var gain=ok?PTS[C.shown-1]:0,it=C.it;
-    G.total+=gain;G.streak=ok?G.streak+1:0;G.best=Math.max(G.best,G.streak);if(window.streakUI)streakUI(document.getElementById("frStreak"),G.streak,ok);
-    if(!ok&&window.sfx)sfx("bad");
-    G.res.push({it:it,ok:ok,gain:gain,fr:C.shown});document.getElementById("frTot").textContent=G.total;
-    var inp=document.getElementById("frIn");if(inp){inp.disabled=true;inp.classList.add(ok?"okk":"badd")}
-    [].forEach.call(document.querySelectorAll("#frForm button,#frGive"),function(b){b.hidden=true});document.getElementById("frHint").textContent="";
-    C.shown=NF;C.view=NF-1;draw();document.getElementById("frPts").innerHTML="";document.getElementById("frMore").hidden=true;
-    var last=G.i+1>=G.items.length;
-    document.getElementById("frFb").innerHTML='<div style="text-align:center;margin-top:16px"><div class="pgain'+(gain?'':' zero')+'">'+(ok?'+'+gain+' pts':'0 pts')+'</div><p style="margin:6px 0 14px">'+(ok?'':'Era ')+'<b>'+esc2(it.t)+'</b> ('+it.y+')'+(it.c?' · dirigido por <b>'+esc2(it.c)+'</b>':'')+'</p><button class="btn primary" id="frNext">'+(last?'Ver resultado':'Próximo filme')+' <span aria-hidden="true">→</span></button></div>';
-    var nb=document.getElementById("frNext");if(nb){nb.focus({preventScroll:true});nb.scrollIntoView({block:"nearest",behavior:"smooth"})}
-  }
-  function next(){G.i++;if(G.i>=G.items.length)end();else round()}
-  var TIERS=[[.8,"Olho de cineasta",["Você reconhece um filme por um simples fotograma.","Poucas cenas e você já sabia de qual filme era.","Memória visual de quem vive dentro da sala escura."]],
-             [.55,"Cinéfilo de plantão",["Na maioria das vezes, uma ou duas cenas bastaram.","Você liga cena e filme com facilidade.","Boa memória visual, só uns frames escaparam."]],
-             [.3,"Plateia atenta",["Alguns filmes pedem mais frames, e tudo bem.","Cena famosa nem sempre entrega o título de primeira.","Com mais partidas, o olho vai ficando treinado."]],
-             [0,"Cena perdida",["Os frames não ajudaram desta vez. Vale uma revanche.","Cinema também se aprende pelos olhos. Tente de novo.","Ainda dá para melhorar: use os quatro frames sem medo."]]];
-  function end(){
-    var max=G.items.length*100,pc=Math.min(1,G.total/max),hits=G.res.filter(function(r){return r.ok}).length;
-    var tr=TIERS.filter(function(t){return pc>=t[0]})[0],phr=tr[2][Math.floor(Math.random()*tr[2].length)];
-    var first=G.res.filter(function(r){return r.ok&&r.fr===1}).length,key="n"+cfg.n,bst=lsGet("frBest")||{},rec=!bst[key]||G.total>bst[key];if(rec){bst[key]=G.total;lsSet("frBest",bst)}
-    var c=2*Math.PI*54;
-    document.getElementById("frCount").innerHTML="Fim da partida";
-    var rows=G.res.map(function(r,i){return '<div class="rrw" style="--i:'+i+'"><span class="rn">'+esc2(r.it.t)+' <small>'+r.it.y+'</small></span><span class="rd">'+(r.ok?'no '+r.fr+'º frame':'errou')+'</span><b>'+(r.ok?'+'+r.gain:'0')+'</b></div>'}).join("");
-    root.innerHTML='<div class="tlsum2 frsum"><i class="sprk t"></i><i class="sprk b"></i><div class="tlhero"><div class="tlringw"><svg class="tlring" viewBox="0 0 132 132" aria-hidden="true"><circle cx="66" cy="66" r="54" class="tr0"/><circle cx="66" cy="66" r="54" class="tr1" id="frRing" stroke-dasharray="'+c.toFixed(1)+'" stroke-dashoffset="'+c.toFixed(1)+'" data-to="'+(c*(1-pc)).toFixed(1)+'"/></svg><div class="tlscore"><b id="frSc">0</b><span>de '+max+' pontos</span></div></div>'+
-      '<div class="tlmsg"><div class="eyebrow">Fim da sessão</div><h2>'+tr[1]+'</h2><p>'+phr+'</p>'+(rec&&G.items.length>=5?'<p class="tlnote"><b>Novo recorde</b> nesta quantidade de filmes.</p>':'')+'</div></div>'+
-      '<div class="tltiles"><div><b>'+hits+'/'+G.res.length+'</b><span>filmes acertados</span></div><div><b>'+first+'</b><span>no primeiro frame</span></div><div><b>'+G.best+'</b><span>maior sequência</span></div></div>'+
-      '<div class="rtl">'+rows+'</div><div class="tlbtns"><button class="btn tlpri" id="frAgain">Jogar de novo</button><button class="btn dghost" id="frCfg">Mudar ajustes</button><button class="btn dghost" id="frBack2">Início</button></div></div>';
-    var rg=document.getElementById("frRing"),sc=document.getElementById("frSc");
-    requestAnimationFrame(function(){requestAnimationFrame(function(){if(rg)rg.style.strokeDashoffset=rg.dataset.to})});
-    var t0=null,to=G.total;(function f(ts){if(t0==null)t0=ts;var k=Math.min(1,(ts-t0)/1100);if(sc)sc.textContent=Math.round(to*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)})(performance.now());
-    if(pc>=.55&&window.confete)window.confete();
-  }
-  (function(){var s=document.getElementById("frames");if(!s)return;
-    if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){io.disconnect();loadDet()}},{rootMargin:"300px"});io.observe(s)}else loadDet()})();
-  window.Modes.frames={open:start,cfg:cfg};
-  window.frDebug={match:matches,pick:pickFrames,analyze:analyze,det:det,get G(){return G},films:films,start:start,loadRemote:loadRemote,get state(){return rstate}};
-  /* demo da home: três cenas vão se abrindo, o nome é digitado e a resposta é aceita */
-  (function(){var d=document.getElementById("frd");if(!d)return;
-    var no=document.getElementById("frdNo"),pt=document.getElementById("frdPts"),tx=document.getElementById("frdTx"),P=[100,70,45,25],WORD="Interestelar",T=null;
-    function set(s,done){d.setAttribute("data-s",String(s));if(done)d.setAttribute("data-d","1");else d.removeAttribute("data-d");no.textContent="Frame "+s+" de 4";pt.textContent=P[s-1]}
-    if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches){set(3,true);tx.textContent=WORD;return}
-    function seq(){set(1,false);tx.textContent="";
-      T=setTimeout(function(){set(2,false);T=setTimeout(function(){set(3,false);var i=0;
-        (function type(){if(i<WORD.length){tx.textContent=WORD.slice(0,++i);T=setTimeout(type,90)}else T=setTimeout(function(){set(3,true);T=setTimeout(function(){set(4,true);T=setTimeout(seq,2200)},900)},350)})()
-      },1900)},1900)}
-    seq()})();
 })();
 </script>
 <script>
