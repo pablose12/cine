@@ -1196,6 +1196,89 @@ body[data-gt] .lb i{background:rgba(255,255,255,.2)}body[data-gt] .lb i::after{b
 body[data-gt] .dbar,body[data-gt] .dprog i,body[data-gt] .pbar{background:rgba(255,255,255,.22)}
 body[data-gt] .dbar i{background:var(--ga)}body[data-gt] .pbar i{background:var(--ga)}
 body[data-gt] .dprev{color:rgba(255,255,255,.8)}body[data-gt] .dprev:hover{color:#fff}
+
+/* ===== v21: landing de cada jogo ===== */
+.gpg{padding:0}
+.hero2{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center;padding:30px 0 6px}
+.hero2 .hl{min-width:0}
+.hero2 h1{font-size:clamp(36px,5.2vw,54px);line-height:1.05;letter-spacing:-.035em;margin:14px 0;text-wrap:balance}
+.hero2 h1 em{font-style:normal;background:none;color:var(--ga);padding:0}
+.hero2 .lead{font-size:16px;line-height:1.55;max-width:480px;margin:0}
+.perks2{display:flex;gap:6px 18px;margin:20px 0 0;padding:0;list-style:none;font-size:13px;flex-wrap:wrap}
+.perks2 li::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--ga);margin-right:8px;vertical-align:1px}
+.art{position:relative;display:flex;align-items:center;justify-content:center;min-width:0}
+.art .stack{margin:0 auto}
+.gpg{overflow-x:clip}
+.art{overflow:visible}
+.gp2{position:relative;margin-top:26px;border-radius:24px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);padding:26px 30px;scroll-margin-top:84px}
+.gtop{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.gtop .seg{margin:0}
+.gsum{font-size:14px}
+.grow{display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin-top:22px}
+.grow .seg{margin:0}
+.gq{display:flex;align-items:center;gap:8px;font-weight:600;font-size:14px}
+.gq small{font-weight:400;margin-left:6px;opacity:.75}
+.gq .gi{color:var(--ga);flex:none}
+.ghint{margin:2px 0 0;font-size:13px}
+.gfoot{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:28px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);flex-wrap:wrap}
+.gfoot .gs{font-size:14px}.gfoot .gs b{color:#fff}
+.gi{vertical-align:-3px;margin-right:7px;flex:none}.gq .gi{margin-right:0}
+.seg.dwhere{margin:22px 0 0}
+.tnames{width:100%}
+.g2c{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+.gcard2{border-radius:18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);padding:20px;display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.gcard2 h4{margin:0;font:700 18px var(--font-display);display:flex;align-items:center;gap:8px}
+.gcard2 p{margin:0;font-size:13.5px;line-height:1.5;opacity:.85}
+.gtag{display:inline-block;border-radius:999px;background:rgba(244,168,29,.2);color:#F4A81D;padding:3px 10px;font:700 10.5px var(--font-body);letter-spacing:.08em;text-transform:uppercase}
+.gtag.g2t{background:rgba(255,255,255,.14);color:#fff}
+.sec.s2,.steps.s2{padding:54px 0 0}
+.sec.s2 h2,.steps.s2 h2{font-size:clamp(26px,3.2vw,34px);margin:10px 0 22px}
+.sec.s2 h2 em{font-style:normal;background:none;color:var(--ga);padding:0}
+.steps.s2 h2 em{font-style:normal;background:none;color:var(--ga)}
+#medals.sec{padding-top:54px}
+body[data-gt] .step{color:#fff}
+.scl{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.scl>div{border-radius:18px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);padding:16px;display:flex;flex-direction:column;gap:8px;align-items:center;text-align:center}
+.scl .bl{width:100%;aspect-ratio:3/2;border-radius:10px;background:linear-gradient(160deg,#5A62C4,#C9772F,#7A2F3F) center/cover;overflow:hidden}
+.scl b{font:800 24px var(--font-display);color:#fff}.scl small{font-size:12.5px;opacity:.8}
+.dgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.dper{display:flex;align-items:center;gap:12px;border-radius:16px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);padding:12px 14px;font:600 14px var(--font-display);color:#fff;text-decoration:none;min-width:0;transition:background .2s,transform .2s}
+.dper:hover{background:rgba(255,255,255,.14);transform:translateY(-2px)}
+.dper small{display:block;font:400 12px var(--font-body);opacity:.75}
+.av2{position:relative;flex:none;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font:800 14px var(--font-display);overflow:hidden;color:#fff}
+.av2 img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top}
+/* pôster: três cartazes */
+.pstack{position:relative;width:min(100%,430px);height:380px;margin:0 auto}
+.pstack .pst-demo{position:absolute;margin:0;width:190px;left:120px;top:0;transform:rotate(2deg);z-index:2}
+.pstack .pst-demo.sd{width:170px;z-index:1;opacity:.95}
+.pstack .pst-demo.sd.l{left:0;top:40px;transform:rotate(-8deg)}
+.pstack .pst-demo.sd.r{left:auto;right:0;top:46px;transform:rotate(9deg)}
+/* linha do tempo / descubra: animação dentro do hero */
+.sx.sxart{display:block;margin:0;padding:0;width:100%}
+.sx.sxart .sxr{width:100%}
+body[data-gt="tl"] .sx.tl{--a:#5EE6C8;--ai:#04302A}
+body[data-gt="tl"] .tlds span{background:#0E0D33}
+body[data-gt="tl"] .tld.on .tlds span{background:#5EE6C8;border-color:#5EE6C8}
+body[data-gt] .tld .tlen span{color:rgba(255,255,255,.85)}
+/* cores do texto dentro do painel */
+body[data-gt] .gp2,body[data-gt] .gp2 .gq{color:#fff}
+body[data-gt] .gsum,body[data-gt] .gfoot .gs,body[data-gt] .ghint,body[data-gt] .gcard2 p,body[data-gt] .hero2 .lead,body[data-gt] .perks2{color:rgba(255,255,255,.8)}
+body[data-gt] .gcard2 h4{color:#fff}
+body[data-gt] .gsum b{color:#fff}
+body[data-gt] #v-home .gp2 .pnote,body[data-gt] #v-home .gp2 .sum{color:rgba(255,255,255,.75)}
+body[data-gt] #v-home .hero2 h1{color:#fff}
+body[data-gt] #v-home .hero2 h1 em{color:var(--ga)}
+@media (max-width:860px){
+  .hero2{grid-template-columns:1fr;gap:20px;padding-top:20px}
+  .gp2{padding:20px 18px}
+  .g2c{grid-template-columns:1fr}
+  .scl,.dgrid{grid-template-columns:repeat(2,1fr)}
+  .pstack{height:340px}
+}
+@media (max-width:480px){
+  .pstack .pst-demo{width:150px;left:calc(50% - 75px)}.pstack .pst-demo.sd{width:120px}.pstack .pst-demo.sd.l{left:0}
+  .gfoot .btn{width:100%;justify-content:center}
+}
 </style>
 </head>
 <body>
@@ -1282,21 +1365,55 @@ body[data-gt] .dprev{color:rgba(255,255,255,.8)}body[data-gt] .dprev:hover{color
 <main id="v-home" data-g="qd" hidden>
   <div class="wrap">
     <div class="gbar"><button class="gback" data-hub="top"><span aria-hidden="true">←</span> Todos os jogos</button></div>
-    <section class="hero" data-g="qd">
-      <div>
-        <div class="eyebrow">Quiz de cinema</div>
-        <h1>Você sabe mesmo <em class="w">quem dirigiu</em> esse filme?</h1>
-        <p class="lead">Um título na tela, quatro diretores e uma única resposta certa. Do blockbuster ao filme esquecido de um mestre: descubra até onde vai o seu repertório.</p>
-        <div class="cta">
-          <button class="btn primary" data-go="levels">Começar o quiz <span aria-hidden="true">→</span></button>
-          <button class="btn ghost" data-go="how">Como funciona</button>
-        </div>
-        <ul class="perks"><li>Gratuito</li><li>4 níveis</li><li>2367 filmes</li><li>Duelo para 2 equipes</li></ul>
-      </div>
-      <div class="stack pre" id="heroStack" aria-hidden="true"><div class="pcard f p0"><div class="tag"><span class="t-lvl"></span><span class="t-ano"></span></div><h3 class="t-tit"></h3><div class="orig t-orig"></div><div class="mini t-opts"></div><div class="who"><div class="mono t-ini"></div><div><small>Dirigido por</small><strong class="t-dir"></strong></div></div><div class="ov"></div></div><div class="pcard f p1"><div class="tag"><span class="t-lvl"></span><span class="t-ano"></span></div><h3 class="t-tit"></h3><div class="orig t-orig"></div><div class="mini t-opts"></div><div class="who"><div class="mono t-ini"></div><div><small>Dirigido por</small><strong class="t-dir"></strong></div></div><div class="ov"></div></div><div class="pcard f p2"><div class="tag"><span class="t-lvl"></span><span class="t-ano"></span></div><h3 class="t-tit"></h3><div class="orig t-orig"></div><div class="mini t-opts"></div><div class="who"><div class="mono t-ini"></div><div><small>Dirigido por</small><strong class="t-dir"></strong></div></div><div class="ov"></div></div></div>
-    </section>
+    <section class="gpg" data-g="qd"><div class="hero2"><div class="hl"><div class="eyebrow">Quiz de cinema</div><h1>Você sabe mesmo <em>quem dirigiu</em> esse filme?</h1><p class="lead">Um título na tela, quatro diretores e uma única resposta certa. Do blockbuster ao filme esquecido de um mestre: descubra até onde vai o seu repertório.</p><ul class="perks2"><li>Gratuito</li><li>4 níveis</li><li>2367 filmes</li><li>Duelo para 2 equipes</li></ul></div><div class="art"><div class="stack pre" id="heroStack" aria-hidden="true"><div class="pcard f p0"><div class="tag"><span class="t-lvl"></span><span class="t-ano"></span></div><h3 class="t-tit"></h3><div class="orig t-orig"></div><div class="mini t-opts"></div><div class="who"><div class="mono t-ini"></div><div><small>Dirigido por</small><strong class="t-dir"></strong></div></div><div class="ov"></div></div><div class="pcard f p1"><div class="tag"><span class="t-lvl"></span><span class="t-ano"></span></div><h3 class="t-tit"></h3><div class="orig t-orig"></div><div class="mini t-opts"></div><div class="who"><div class="mono t-ini"></div><div><small>Dirigido por</small><strong class="t-dir"></strong></div></div><div class="ov"></div></div><div class="pcard f p2"><div class="tag"><span class="t-lvl"></span><span class="t-ano"></span></div><h3 class="t-tit"></h3><div class="orig t-orig"></div><div class="mini t-opts"></div><div class="who"><div class="mono t-ini"></div><div><small>Dirigido por</small><strong class="t-dir"></strong></div></div><div class="ov"></div></div></div>
+    </div></div></section><section class="gp2" id="levels" data-g="qd">
+  <div class="gtop"><div class="seg top2" id="topSeg" role="group" aria-label="Como jogar">
+    <button data-top="solo" aria-pressed="true"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>Sozinho</button>
+    <button data-top="duel" aria-pressed="false"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="3.2"/><circle cx="17" cy="9" r="2.6"/><path d="M2 20c0-3.5 2.8-5.6 6-5.6s6 2.1 6 5.6M15 14.6c3.4-.4 7 1.2 7 5"/></svg>Duelo</button>
+  </div><span class="gsum" id="lvBest"></span></div>
+  <div id="soloSub"><div class="grow"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20v-6M10 20V9M16 20V5M22 20V2"/></svg><span>Modo</span><small>medalhas só valem no modo por nível</small></div><div class="nchips" role="group" aria-label="Modo solo"><button class="nchip" data-mode="level" aria-pressed="true"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20v-6M10 20V9M16 20V5M22 20V2"/></svg>Por nível</button><button class="nchip" data-mode="free" aria-pressed="false"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>Modo livre</button></div></div></div>
 
-    <section class="steps" id="how" data-g="qd">
+  <div id="pn-level">
+    <div class="grow"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20v-6M10 20V9M16 20V5M22 20V2"/></svg><span>Nível</span></div><div class="nchips" id="lvChips" role="group" aria-label="Nível"></div><p class="ghint" id="lvDesc"></p></div>
+    <div class="grow"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Quantas perguntas</span></div><div class="nchips" id="lchips" role="group" aria-label="Quantidade de perguntas"></div></div>
+    <div class="gfoot"><div class="gs" id="lvSum"></div><button class="btn primary" id="lvStart">Começar o jogo <span aria-hidden="true">→</span></button></div>
+  </div>
+
+  <div id="pn-free" hidden>
+    <div class="grow"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Quantas perguntas</span><small>mistura os 4 níveis em partes iguais, sem repetir filme</small></div><div class="nchips" id="fchips"></div></div>
+    <div class="gfoot"><div class="gs"><span id="fsum"></span></div><button class="btn primary" id="fstart">Jogar modo livre <span aria-hidden="true">→</span></button></div>
+    <p class="pnote small">O modo livre não vale medalha. Elas são conquistadas nas rodadas por nível.</p>
+  </div>
+
+  <div id="pn-duel" hidden>
+    <div class="seg dwhere sm" role="group" aria-label="Onde vão jogar">
+      <button data-dwhere="off" aria-pressed="true"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M11 18h2"/></svg>Mesmo aparelho</button>
+      <button data-dwhere="on" aria-pressed="false"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>Online</button>
+    </div>
+    <div id="dOff">
+      <div class="grow"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="9" r="2.6"/><path d="M2 20c0-3.6 3-5.6 7-5.6s7 2 7 5.6"/></svg><span>Equipes</span><small>cada equipe joga no mesmo aparelho, uma por vez</small></div><div class="tnames">
+          <label class="tin t0"><span>Equipe 1</span><input id="dnameA" type="text" maxlength="18" placeholder="Equipe A" autocomplete="off"></label>
+          <label class="tin t1"><span>Equipe 2</span><input id="dnameB" type="text" maxlength="18" placeholder="Equipe B" autocomplete="off"></label>
+        </div></div>
+      <div class="grow"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg><span>Como querem jogar?</span></div><div class="seg" role="group" aria-label="Estilo do duelo">
+          <button data-dscope="free" aria-pressed="true">Livre (todos os níveis)</button>
+          <button data-dscope="level" aria-pressed="false">Nível específico</button>
+        </div><div class="nchips" id="dlvls" hidden></div></div>
+      <div class="grow"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Perguntas por equipe</span></div><div class="nchips" id="dnchips"></div></div>
+      <div class="gfoot"><div class="gs"><span id="dsum"></span></div><button class="btn primary" id="dstart">Começar duelo <span aria-hidden="true">→</span></button></div>
+    </div>
+    <div id="dOn" class="donl" hidden>
+      <div class="grow"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg><span>Seu nome</span></div><div class="lrow" style="margin:0"><input id="donName" type="text" maxlength="16" placeholder="Jogador" autocomplete="off"></div></div>
+      <div class="g2c">
+        <div class="gcard2"><span class="gtag">Anfitrião</span><h4><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg> Criar sala</h4><p>Mande o link ou o código para um amigo. Cada um joga no seu aparelho, ao mesmo tempo, com as mesmas perguntas. Acertar vale 100 pontos, mais até 50 de bônus pela rapidez.</p><button class="btn primary" id="donCreate">Criar sala <span aria-hidden="true">→</span></button></div>
+        <div class="gcard2"><span class="gtag g2t">Convidado</span><h4><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3"/></svg> Entrar com código</h4><p>Digite o código que o anfitrião te mandou.</p><div class="lrow" style="margin:0"><input class="cd" id="donCode" type="text" maxlength="6" placeholder="CÓDIGO" autocomplete="off"><button class="btn ghost" id="donJoin">Entrar</button></div></div>
+      </div>
+      <p class="pnote small">A conexão é direta entre os dois aparelhos, intermediada por um serviço público gratuito só para eles se encontrarem. Nada fica salvo.</p>
+    </div>
+  </div>
+</section>
+
+    <section class="steps s2" id="how" data-g="qd">
       <div class="eyebrow">Como funciona</div>
       <h2>Três passos, sem enrolação.</h2>
       <div class="grid3">
@@ -1306,69 +1423,7 @@ body[data-gt] .dprev{color:rgba(255,255,255,.8)}body[data-gt] .dprev:hover{color
       </div>
     </section>
 
-    <section class="sec" id="levels" data-g="qd">
-      <div class="eyebrow">Jogar</div>
-      <h2>Escolha <em class="w">como jogar</em>.</h2>
-      <p class="lead">Suba de nível e ganhe medalhas, misture tudo no modo livre ou desafie outra equipe em um duelo.</p>
-      <div class="seg top2" id="topSeg" role="group" aria-label="Como jogar">
-        <button data-top="solo" aria-pressed="true"><svg class="ti" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>Sozinho</button>
-        <button data-top="duel" aria-pressed="false"><svg class="ti" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="3.2"/><circle cx="17" cy="9" r="2.6"/><path d="M2 20c0-3.5 2.8-5.6 6-5.6s6 2.1 6 5.6M15 14.6c3.4-.4 7 1.2 7 5"/></svg>Duelo</button>
-      </div>
-      <div class="subrow" id="soloSub"><span class="sublab">Modo</span><div class="nchips" role="group" aria-label="Modo solo">
-        <button class="nchip" data-mode="level" aria-pressed="true"><svg class="ti" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20v-6M10 20V9M16 20V5M22 20V2"/></svg>Por nível</button>
-        <button class="nchip" data-mode="free" aria-pressed="false"><svg class="ti" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>Modo livre</button>
-      </div></div>
-
-      <div id="pn-level">
-        <p class="pnote">Cada rodada sorteia filmes do nível escolhido. Quanto mais alto o nível, menos dicas você tem. Aqui você ganha medalhas.</p>
-        <div class="lsz"><span class="lszl">Quantas perguntas?</span><div class="nchips" id="lchips" role="group" aria-label="Quantidade de perguntas"></div></div>
-        <div class="lvls" id="lvls"></div>
-      </div>
-
-      <div id="pn-free" class="panel" hidden>
-        <h3>Modo livre</h3>
-        <p class="pnote">Jogue sozinho, no seu ritmo, escolhendo quantas perguntas quer. Misturamos os quatro níveis em partes iguais, sem repetir filme.</p>
-        <div class="flabel">Quantas perguntas?</div>
-        <div class="nchips" id="fchips"></div>
-        <p class="sum" id="fsum"></p>
-        <button class="btn primary" id="fstart">Jogar modo livre <span aria-hidden="true">→</span></button>
-        <p class="pnote small">O modo livre não vale medalha. Elas são conquistadas nas rodadas por nível.</p>
-      </div>
-
-            <div id="pn-duel" class="panel" hidden>
-        <h3>Duelo</h3>
-        <div class="seg dwhere" role="group" aria-label="Onde vão jogar">
-          <button data-dwhere="off" aria-pressed="true"><svg class="ti" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M11 18h2"/></svg>Mesmo aparelho</button>
-          <button data-dwhere="on" aria-pressed="false"><svg class="ti" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>Online</button>
-        </div>
-        <div id="dOff">
-        <p class="pnote">Duas equipes, um aparelho. As perguntas alternam entre as equipes e as duas recebem exatamente a mesma dificuldade. Vence quem fizer mais pontos e leva um troféu com o nome da equipe.</p>
-        <div class="tnames">
-          <label class="tin t0"><span>Equipe 1</span><input id="dnameA" type="text" maxlength="18" placeholder="Equipe A" autocomplete="off"></label>
-          <label class="tin t1"><span>Equipe 2</span><input id="dnameB" type="text" maxlength="18" placeholder="Equipe B" autocomplete="off"></label>
-        </div>
-        <div class="flabel">Como querem jogar?</div>
-        <div class="seg" role="group" aria-label="Estilo do duelo">
-          <button data-dscope="free" aria-pressed="true">Livre (todos os níveis)</button>
-          <button data-dscope="level" aria-pressed="false">Nível específico</button>
-        </div>
-        <div class="nchips" id="dlvls" hidden></div>
-        <div class="flabel">Perguntas por equipe</div>
-        <div class="nchips" id="dnchips"></div>
-        <p class="sum" id="dsum"></p>
-        <button class="btn primary" id="dstart">Começar duelo <span aria-hidden="true">→</span></button>
-        </div>
-        <div id="dOn" class="donl" hidden>
-          <p class="pnote">Crie uma sala e mande o link ou o código para um amigo. Cada um joga no seu aparelho, ao mesmo tempo, com as mesmas perguntas. Acertar vale 100 pontos, mais até 50 de bônus pela rapidez.</p>
-          <div class="flabel">Seu nome</div>
-          <div class="lrow"><input id="donName" type="text" maxlength="16" placeholder="Jogador" autocomplete="off"></div>
-          <div class="lrow"><button class="btn primary" id="donCreate">Criar sala <span aria-hidden="true">→</span></button></div>
-          <div class="flabel" style="margin-top:18px">Ou entre numa sala que já existe</div>
-          <div class="lrow"><input class="cd" id="donCode" type="text" maxlength="6" placeholder="CÓDIGO" autocomplete="off"><button class="btn ghost" id="donJoin">Entrar</button></div>
-          <p class="pnote small">A conexão é direta entre os dois aparelhos, intermediada por um serviço público gratuito só para eles se encontrarem. Nada fica salvo.</p>
-        </div>
-      </div>
-    </section>
+    
 
     <section class="sec" id="medals" data-g="qd">
       <div class="eyebrow">Medalhas</div>
@@ -1378,41 +1433,16 @@ body[data-gt] .dprev{color:rgba(255,255,255,.8)}body[data-gt] .dprev:hover{color
       <div class="mgrid" id="mgrid"></div>
       <p class="mnote">As faixas valem para qualquer tamanho de rodada no jogo por nível, porque contam a porcentagem de acertos. As medalhas que você conquistar ficam salvas neste navegador.</p>
     </section>
-    <section class="sec gp" id="poster" data-g="poster">
-      <div class="eyebrow">Jogo</div>
-      <h2>Acerte o <em class="w">Pôster</em>.</h2>
-      <p class="lead">Só a capa do filme, bem borrada. O foco demora a chegar e as faixas de cima e de baixo, onde ficam título e créditos, só clareiam depois da resposta. Quanto mais nítido, menos pontos: descubra o filme cedo. Dá para jogar sozinho ou em duas equipes.</p>
-      <div class="pst-wrap">
-        <div class="pst-demo" aria-hidden="true"><div class="pst-img" id="pdImg"></div><div class="pst-pts"><b id="pdPts">100</b><span>pts</span></div></div>
-        <div class="panel pst-panel">
-          <div class="flabel">Dificuldade dos filmes</div>
-          <div class="nchips" id="pLv"></div>
-          <div class="flabel" style="margin-top:16px">Como jogar?</div>
-          <div class="nchips" id="pM"></div>
-          <div class="tnames" id="pTeams" hidden style="margin-top:14px">
-            <label class="tin t0"><span>Equipe 1</span><input id="pnA" type="text" maxlength="18" placeholder="Equipe A" autocomplete="off"></label>
-            <label class="tin t1"><span>Equipe 2</span><input id="pnB" type="text" maxlength="18" placeholder="Equipe B" autocomplete="off"></label>
-          </div>
-          <div class="flabel" style="margin-top:16px" id="pNL">Quantos pôsteres?</div>
-          <div class="nchips" id="pN"></div>
-          <p class="sum" id="pSum"></p>
-          <button class="btn primary" id="pStart">Jogar Acerte o Pôster <span aria-hidden="true">→</span></button>
-          <p class="pnote small" id="pBest"></p>
-        </div>
-      </div>
-    </section>
-    <section class="sec gp" id="linha" data-g="tl">
-      <div class="eyebrow">Linha do tempo</div>
-      <h2>Coloque a história do cinema <em class="w">em ordem</em>.</h2>
-      <div class="sx tl" id="sxTl"><i class="sprk t" aria-hidden="true"></i><i class="sprk b" aria-hidden="true"></i>
-        <div class="sxl">
-          <p class="sxp">Os filmes de um mesmo diretor aparecem embaralhados. Arraste os pôsteres da esquerda para a direita, do mais antigo ao mais recente, e veja a linha se acender a cada acerto.</p>
-          <div class="sxf"><span>Filmes por rodada</span><div class="nchips" id="tlFilms" role="group" aria-label="Filmes por rodada"></div></div>
-          <div class="sxf"><span>Rodadas, cada uma com um diretor</span><div class="nchips" id="tlRounds" role="group" aria-label="Número de rodadas"></div></div>
-          <div class="sxa"><button class="btn amber" id="tlGo">Jogar a linha do tempo <span aria-hidden="true">→</span></button><button class="btn dghost" id="tlMine">Jogar com meus diretores</button></div>
-          <p class="sxs" id="tlInfo"></p>
-        </div>
-        <div class="sxr"><div class="tld" id="tld" aria-hidden="true">
+    <section class="gpg" id="poster" data-g="poster"><div class="hero2"><div class="hl"><div class="eyebrow">Jogo de pôsteres</div><h1>Acerte o <em>Pôster</em>.</h1><p class="lead">Só a capa do filme, bem borrada. O foco demora a chegar e as faixas de título e créditos só clareiam depois da resposta. Quanto mais nítido, menos pontos: descubra o filme cedo.</p><ul class="perks2"><li>Sozinho ou em duelo</li><li>Até 100 pts por pôster</li><li>Recorde salvo</li></ul></div><div class="art"><div class="pstack" aria-hidden="true"><div class="pst-demo sd l"><div class="pst-img" id="pdImgL"></div></div><div class="pst-demo sd r"><div class="pst-img" id="pdImgR"></div></div><div class="pst-demo"><div class="pst-img" id="pdImg"></div><div class="pst-pts"><b id="pdPts">100</b><span>pts</span></div></div></div></div></div>
+<div class="gp2" id="pPanel">
+  <div class="gtop"><div class="seg top2" id="pM" role="group" aria-label="Como jogar"></div><span class="gsum" id="pBest"></span></div>
+  <div class="grow" id="pTeams" hidden><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="9" r="2.6"/><path d="M2 20c0-3.6 3-5.6 7-5.6s7 2 7 5.6"/></svg><span>Equipes</span><small>cada equipe joga no mesmo aparelho, uma por vez</small></div>
+    <div class="tnames"><label class="tin t0"><span>Equipe 1</span><input id="pnA" type="text" maxlength="18" placeholder="Equipe A" autocomplete="off"></label><label class="tin t1"><span>Equipe 2</span><input id="pnB" type="text" maxlength="18" placeholder="Equipe B" autocomplete="off"></label></div></div>
+  <div class="grow"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20v-6M10 20V9M16 20V5M22 20V2"/></svg><span>Dificuldade</span></div><div class="nchips" id="pLv"></div></div>
+  <div class="grow"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span id="pNL">Quantos pôsteres</span></div><div class="nchips" id="pN"></div></div>
+  <div class="gfoot"><div class="gs"><span id="pSum"></span></div><button class="btn primary" id="pStart">Jogar Acerte o Pôster <span aria-hidden="true">→</span></button></div>
+</div></section><section class="sec s2" data-g="poster"><div class="eyebrow">Como funciona</div><h2>Três passos, <em>sem enrolação</em>.</h2><div class="grid3"><div class="step"><div class="n">01</div><h3>Veja a capa borrada</h3><p>Só a capa do filme, bem desfocada. As faixas de título e créditos só aparecem depois da resposta.</p></div><div class="step"><div class="n">02</div><h3>Escolha o filme</h3><p>Quatro opções. O foco vai chegando com o tempo, e quanto mais nítido o pôster, menos a resposta vale.</p></div><div class="step"><div class="n">03</div><h3>Some pontos</h3><p>Acertar logo vale até 100 pontos. Passados 16 segundos a rodada vale zero. Seu recorde fica salvo neste navegador.</p></div></div></section><section class="sec s2" data-g="poster"><div class="eyebrow">Pontuação</div><h2>Quanto <em>mais nítido</em>, menos pontos.</h2><div class="scl"><div><div class="bl" style="filter:blur(20px)"></div><b>100 pts</b><small>logo ao abrir</small></div><div><div class="bl" style="filter:blur(14px)"></div><b>63 pts</b><small>depois de 4 segundos</small></div><div><div class="bl" style="filter:blur(6px)"></div><b>33 pts</b><small>depois de 8 segundos</small></div><div><div class="bl" style="filter:blur(1px)"></div><b>11 pts</b><small>depois de 12 segundos</small></div></div></section>
+    <section class="gpg" id="linha" data-g="tl"><div class="hero2"><div class="hl"><div class="eyebrow">Linha do tempo</div><h1>Coloque a história do cinema <em>em ordem</em>.</h1><p class="lead">Os filmes de um mesmo diretor aparecem embaralhados. Arraste os pôsteres da esquerda para a direita, do mais antigo ao mais recente, e veja a linha se acender a cada acerto.</p><ul class="perks2"><li>3 a 7 filmes por rodada</li><li>Arraste para ordenar</li><li><span class="ndir">280</span> diretores</li></ul></div><div class="art"><div class="sx tl sxart"><div class="sxr"><div class="tld" id="tld" aria-hidden="true">
           <div class="tlp" style="--o:3;--n:0;--c1:#5A62C4;--c2:#17154B"><b>1941</b></div>
           <div class="tlp" style="--o:0;--n:1;--c1:#C9772F;--c2:#5A2A0E"><b>1957</b></div>
           <div class="tlp" style="--o:4;--n:2;--c1:#2F7F8F;--c2:#0F2F4A"><b>1975</b></div>
@@ -1421,30 +1451,26 @@ body[data-gt] .dprev{color:rgba(255,255,255,.8)}body[data-gt] .dprev:hover{color
           <div class="tlr"><i></i></div>
           <div class="tlds"><span style="--k:0"></span><span style="--k:1"></span><span style="--k:2"></span><span style="--k:3"></span><span style="--k:4"></span></div>
           <div class="tlen"><span>mais antigo</span><span>mais recente</span></div>
-        </div></div>
-      </div>
-    </section>
-    <section class="sec gp" id="descubra" data-g="dna">
-      <div class="eyebrow">Descubra seu diretor</div>
-      <h2>Qual diretor <em class="w">combina com você</em>?</h2>
-      <div class="sx dn" id="sxDna">
-        <div class="sxl">
-          <p class="sxp">Perguntas sobre ritmo, silêncio, medo, humor, amor, imagem e muito mais, cada uma com quatro respostas. No fim, o diretor mais parecido com você aparece com uma carta escrita a partir das suas próprias escolhas e a porcentagem de compatibilidade.</p>
-          <div class="sxf"><span>Quantas perguntas?</span>
-            <div class="dtiles" id="dnTiles" role="group" aria-label="Quantidade de perguntas">
+        </div></div></div></div></div>
+<div class="gp2" id="tlPanel">
+  <div class="gtop"><span class="gq" style="margin:0"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20v-6M10 20V9M16 20V5M22 20V2"/></svg><span>Seu jogo</span></span><span class="gsum" id="tlInfo"></span></div>
+  <div class="grow"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="4"/><path d="M2 21c0-4 3-6.5 7-6.5M16 17l2 2 4-4"/></svg><span>Diretores</span></div><div class="seg sm" id="tlModeSeg" role="group" aria-label="Diretores"><button data-tlmode="rand" aria-pressed="true"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>Aleatórios</button><button data-tlmode="mine" aria-pressed="false"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="4"/><path d="M2 21c0-4 3-6.5 7-6.5M16 17l2 2 4-4"/></svg>Escolher os meus</button></div></div>
+  <div class="grow"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Filmes por rodada</span></div><div class="nchips" id="tlFilms" role="group" aria-label="Filmes por rodada"></div></div>
+  <div id="tlRoundsRow"><div class="grow"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Rodadas</span><small>cada uma com um diretor</small></div><div class="nchips" id="tlRounds" role="group" aria-label="Número de rodadas"></div></div></div>
+  <div class="gfoot"><div class="gs" id="tlSum"></div><button class="btn primary" id="tlGo">Jogar a linha do tempo <span aria-hidden="true">→</span></button></div>
+</div></section><section class="sec s2" data-g="tl"><div class="eyebrow">Como funciona</div><h2>Três passos, <em>sem enrolação</em>.</h2><div class="grid3"><div class="step"><div class="n">01</div><h3>Veja os pôsteres</h3><p>Os filmes de um diretor aparecem embaralhados, sem o ano.</p></div><div class="step"><div class="n">02</div><h3>Arraste para ordenar</h3><p>Do mais antigo, à esquerda, ao mais recente, à direita. No celular a lista fica na vertical e você move cada filme com as setas.</p></div><div class="step"><div class="n">03</div><h3>Confira a ordem</h3><p>Verde acertou, vermelho errou, e o ano aparece embaixo de cada filme.</p></div></div></section><section class="sec s2" id="tlPickSec" data-g="tl" hidden><div class="eyebrow">Diretores</div><h2>Escolha <em>os seus diretores</em>.</h2><div id="tlPickHost"></div></section>
+    <section class="gpg" id="descubra" data-g="dna"><div class="hero2"><div class="hl"><div class="eyebrow">Descubra seu diretor</div><h1>Qual diretor <em>combina com você</em>?</h1><p class="lead">Perguntas sobre ritmo, silêncio, medo, humor, amor, imagem e muito mais, cada uma com quatro respostas. No fim, o diretor mais parecido com você aparece com uma carta escrita a partir das suas próprias escolhas e a porcentagem de compatibilidade.</p><ul class="perks2"><li>Sem certo ou errado</li><li>12 a 36 perguntas</li><li>Cartão para os stories</li></ul></div><div class="art"><div class="sx dn sxart"><div class="sxr"><div class="dmo" id="dmo" aria-hidden="true">
+          <div class="dmr"><svg viewBox="0 0 120 120"><circle class="bg" cx="60" cy="60" r="54"/><circle class="fg" id="dmArc" cx="60" cy="60" r="54"/></svg><div class="num"><b id="dmPct">0</b><span>%</span></div></div>
+          <div class="dmn" id="dmName">&nbsp;</div><div class="dmt">de compatibilidade</div><div class="dmc" id="dmChips"></div><div class="dmx">Exemplo ilustrativo</div>
+        </div></div></div></div></div>
+<div class="gp2" id="dnPanel">
+  <div class="grow"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Quantas perguntas?</span></div><div class="dtiles" id="dnTiles" role="group" aria-label="Quantidade de perguntas">
               <button class="dtile" data-dnq="12" aria-pressed="false"><b>12</b><span>Rápido</span><small>cerca de 3 min</small></button>
               <button class="dtile" data-dnq="24" aria-pressed="true"><b>24</b><span>Completo</span><small>cerca de 6 min</small></button>
               <button class="dtile" data-dnq="36" aria-pressed="false"><b>36</b><span>A fundo</span><small>cerca de 9 min</small></button>
             </div></div>
-          <button class="btn amber" id="dnGo">Começar o teste <span aria-hidden="true">→</span></button>
-          <p class="sxs">Dá para voltar e mudar uma resposta antes de ver o resultado. No final, você ainda recebe um cartão pronto para os stories.</p>
-        </div>
-        <div class="sxr"><div class="dmo" id="dmo" aria-hidden="true">
-          <div class="dmr"><svg viewBox="0 0 120 120"><circle class="bg" cx="60" cy="60" r="54"/><circle class="fg" id="dmArc" cx="60" cy="60" r="54"/></svg><div class="num"><b id="dmPct">0</b><span>%</span></div></div>
-          <div class="dmn" id="dmName">&nbsp;</div><div class="dmt">de compatibilidade</div><div class="dmc" id="dmChips"></div><div class="dmx">Exemplo ilustrativo</div>
-        </div></div>
-      </div>
-    </section>
+  <div class="gfoot"><div class="gs">Dá para voltar e mudar uma resposta antes de ver o resultado.</div><button class="btn primary" id="dnGo">Começar o teste <span aria-hidden="true">→</span></button></div>
+</div></section><section class="sec s2" data-g="dna"><div class="eyebrow">Como funciona</div><h2>Três passos, <em>sem enrolação</em>.</h2><div class="grid3"><div class="step"><div class="n">01</div><h3>Responda sem certo nem errado</h3><p>Perguntas sobre ritmo, silêncio, medo, humor, amor e imagem, cada uma com quatro respostas.</p></div><div class="step"><div class="n">02</div><h3>Veja o diretor</h3><p>O diretor mais parecido com você aparece com a porcentagem de compatibilidade.</p></div><div class="step"><div class="n">03</div><h3>Leia a sua carta</h3><p>Um texto escrito a partir das suas próprias escolhas e um cartão pronto para os stories.</p></div></div></section><section class="sec s2" data-g="dna"><div class="eyebrow">Quem pode aparecer</div><h2><span class="ndir">280</span> diretores, <em>um com a sua cara</em>.</h2><div class="dgrid" id="dnPeople"></div></section>
     
     
   </div>
@@ -1866,8 +1892,16 @@ function renderDuelPanel(){
 /* níveis */
 const LEVEL_N = [10, 15, 25, 30, 50, 0];
 const chipTxt = n => n === 0 ? "Todas" : n;
+let lvSel = lsGet("qd_lv"); if (!LEVELS[lvSel]) lvSel = "medio";
 function renderLevels(){
   $("lchips").innerHTML = LEVEL_N.map(n => `<button class="nchip" data-ln="${n}" aria-pressed="${n === size}">${chipTxt(n)}</button>`).join("");
+  $("lvChips").innerHTML = Object.entries(LEVELS).map(([k,l]) => `<button class="nchip wide" data-lvsel="${k}" aria-pressed="${k === lvSel}">${l.name}</button>`).join("");
+  const L = LEVELS[lvSel], tot = DATA.filter(q => q.n === lvSel).length, sz0 = size || tot, bst = (lsGet("qd_best") || {})[lvSel + "_" + size];
+  $("lvDesc").textContent = L.desc;
+  const tr = bst != null && typeof tierOf === "function" ? tierOf(bst, sz0) : 0;
+  $("lvBest").innerHTML = bst != null ? `Seu melhor: <b>${bst}/${sz0}</b>` + (tr ? ` · medalha <b>${MEDALS[lvSel].nomes[tr - 1]}</b>` : "") : `${tot} filmes neste nível`;
+  $("lvSum").innerHTML = `<b>${sz0} perguntas</b> · nível ${L.name.toLowerCase()} · cerca de ${Math.max(1, Math.round(L.min * sz0 / 10))} min`;
+  return;
   const best = lsGet("qd_best") || {};
   $("lvls").innerHTML = Object.entries(LEVELS).map(([k,l]) => {
     const total = DATA.filter(q => q.n===k).length;
@@ -2209,6 +2243,7 @@ document.addEventListener("click", e => {
   const tp = e.target.closest("#topSeg [data-top]"); if (tp){ setMode(tp.dataset.top === "duel" ? "duel" : (window.__soloMode || "level")); return; }
   const md = e.target.closest("[data-mode]"); if (md){ setMode(md.dataset.mode); return; }
   const lv = e.target.closest("[data-lvl]"); if (lv){ start(lv.dataset.lvl); return; }
+  const ls = e.target.closest("[data-lvsel]"); if (ls){ lvSel = ls.dataset.lvsel; lsSet("qd_lv", lvSel); renderLevels(); return; }
   const sz = e.target.closest("[data-ln]");
   if (sz){ size = +sz.dataset.ln; renderLevels(); return; }
   const fn = e.target.closest("[data-fn]"); if (fn){ freeN = +fn.dataset.fn; renderFreePanel(); return; }
@@ -2224,6 +2259,7 @@ $("nextBtn").onclick = next;
 $("skipBtn").onclick = skipQ;
 $("quit").onclick = () => goSection("levels", S && S.mode !== "level" ? S.mode : "level");
 $("fstart").onclick = () => startFree(freeN);
+$("lvStart").onclick = () => start(lvSel);
 $("dstart").onclick = startDuel;
 $("again").onclick = replay;
 $("other").onclick = () => goSection("levels", S.mode === "free" ? "free" : "level");
@@ -2674,14 +2710,14 @@ addEventListener("hashchange",route);route();
     var el=document.getElementById("pLv");if(!el)return;
     var lv=[["todos","Todos"]].concat(Object.keys(LEVELS).map(function(k){return [k,LEVELS[k].name]}));
     el.innerHTML=lv.map(function(a){return '<button class="nchip wide" data-plv="'+a[0]+'" aria-pressed="'+(a[0]===cfg.lv)+'">'+a[1]+'</button>'}).join("");
-    document.getElementById("pM").innerHTML=[["solo","Sozinho"],["team","Em duas equipes"]].map(function(a){return '<button class="nchip wide" data-pm="'+a[0]+'" aria-pressed="'+(a[0]===cfg.m)+'">'+a[1]+'</button>'}).join("");
+    document.getElementById("pM").innerHTML=[["solo","Sozinho",'<svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>'],["team","Duelo",'<svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="3.2"/><circle cx="17" cy="9" r="2.6"/><path d="M2 20c0-3.5 2.8-5.6 6-5.6s6 2.1 6 5.6M15 14.6c3.4-.4 7 1.2 7 5"/></svg>']].map(function(a){return '<button data-pm="'+a[0]+'" aria-pressed="'+(a[0]===cfg.m)+'">'+a[2]+a[1]+'</button>'}).join("");
     document.getElementById("pTeams").hidden=cfg.m!=="team";
-    document.getElementById("pNL").textContent=cfg.m==="team"?"Quantos pôsteres para cada equipe?":"Quantos pôsteres?";
+    document.getElementById("pNL").textContent=cfg.m==="team"?"Quantos pôsteres para cada equipe":"Quantos pôsteres";
     document.getElementById("pN").innerHTML=N.map(function(n){return '<button class="nchip" data-pn="'+n+'" aria-pressed="'+(n===cfg.n)+'">'+(n===0?"Todos":n)+'</button>'}).join("");
     var n=per(),tot=cfg.m==="team"?n*2:n;
     document.getElementById("pSum").textContent=cfg.m==="team"?(n+" pôsteres para cada equipe ("+tot+" no total), alternando a vez · até 100 pontos cada · cerca de "+Math.max(1,Math.round(tot*0.6))+" min"):(n+" pôsteres · até 100 pontos cada, no máximo "+(n*100)+" · cerca de "+Math.max(1,Math.round(n*0.6))+" min");
     var b=lsGet("pstBest");var bb=b&&b[cfg.lv+"-"+cfg.n];
-    document.getElementById("pBest").textContent=cfg.m==="team"?"Vence a equipe com mais pontos.":(bb?("Seu recorde nesta combinação: "+bb+" pontos."):"Ainda sem recorde nesta combinação.");
+    document.getElementById("pBest").textContent=cfg.m==="team"?"Vence a equipe com mais pontos":(bb?("Seu recorde: "+bb+" pontos"):"Sem recorde nesta combinação");
   }
   document.addEventListener("click",function(e){
     var a=e.target.closest("[data-plv]");if(a){cfg.lv=a.dataset.plv;panel();return}
@@ -2694,6 +2730,9 @@ addEventListener("hashchange",route);route();
     var im=document.getElementById("pdImg"),pt=document.getElementById("pdPts");if(!im)return;
     var cand=build().filter(function(x){return x.q.n==="facil"}),pick=cand[Math.floor(Math.random()*cand.length)];
     if(pick) im.style.backgroundImage="url("+TMDB+"w342"+pick.p+")";
+    (function(){var o=cand.filter(function(x){return x!==pick}),a=o[Math.floor(Math.random()*o.length)],b=o[Math.floor(Math.random()*o.length)],L=document.getElementById("pdImgL"),Rr=document.getElementById("pdImgR");
+      if(a&&L){L.style.backgroundImage="url("+TMDB+"w342"+a.p+")";L.style.filter="blur(7px)"}if(b&&Rr){Rr.style.backgroundImage="url("+TMDB+"w342"+b.p+")";Rr.style.filter="blur(12px)"}
+      var ref=pick||a;if(ref)document.querySelectorAll(".scl .bl").forEach(function(x){x.style.backgroundImage="url("+TMDB+"w342"+ref.p+")"})})();
     var t0=null,reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
     function tick(ts){
       if(t0==null)t0=ts;var c=((ts-t0)%9000)/9000,k=Math.min(1,c/.8);
@@ -2862,13 +2901,22 @@ addEventListener("hashchange",route);route();
   var mine=[];try{mine=JSON.parse(lsGet("tlMine")||"[]")}catch(e){mine=[]}
   function bySlug(sl){return (window.dirData||[]).filter(function(d){return d.s===sl})[0]}
   function horiz(){return window.matchMedia&&window.matchMedia("(min-width:720px)").matches}
-  function info(){var el=document.getElementById("tlInfo");if(el)el.textContent=pool(cfg.n).length+" diretores têm "+cfg.n+" filmes que dão para ordenar."}
+  var tlMode="rand";
+  function eligMine(){return mine.map(bySlug).filter(Boolean).filter(function(d){return item(d,cfg.n)}).length}
+  function info(){var el=document.getElementById("tlInfo");if(el)el.textContent=tlMode==="mine"?(eligMine()+" "+(eligMine()===1?"diretor pronto":"diretores prontos")+" para "+cfg.n+" filmes por rodada"):pool(cfg.n).length+" diretores têm "+cfg.n+" filmes que dão para ordenar";
+    var sm=document.getElementById("tlSum");if(sm){var r=tlMode==="mine"?eligMine():cfg.r;sm.innerHTML="<b>"+r+" "+(r===1?"rodada":"rodadas")+"</b> · "+cfg.n+" filmes cada · cerca de "+Math.max(1,r)+" min"}
+    var g=document.getElementById("tlGo");if(g){g.disabled=tlMode==="mine"&&!eligMine();g.firstChild.nodeValue=tlMode==="mine"?"Jogar com os meus diretores ":"Jogar a linha do tempo "}}
+  function setTlMode(m){tlMode=m;
+    document.querySelectorAll("#tlModeSeg [data-tlmode]").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.tlmode===m)});
+    var rr=document.getElementById("tlRoundsRow");if(rr)rr.hidden=m==="mine";
+    var ps=document.getElementById("tlPickSec");if(ps)ps.hidden=m!=="mine";
+    if(m==="mine")renderPicker();info()}
   /* seleção na seção da home */
   function syncChips(){
     var f=document.getElementById("tlFilms"),r=document.getElementById("tlRounds");
     if(f)f.innerHTML=FILMS.map(function(n){return '<button class="nchip" data-tln="'+n+'" aria-pressed="'+(n===cfg.n)+'">'+n+'</button>'}).join("");
     if(r)r.innerHTML=ROUNDS.map(function(n){return '<button class="nchip" data-tlr="'+n+'" aria-pressed="'+(n===cfg.r)+'">'+n+'</button>'}).join("");
-    info();
+    info();if(tlMode==="mine"&&document.getElementById("tlSel")){drawSel();drawRes()}
   }
   syncChips();
   function open(){show("tl");start(false)}
@@ -2883,13 +2931,15 @@ addEventListener("hashchange",route);route();
   function save(){lsSet("tlMine",JSON.stringify(mine))}
   var qLast="";
   function pickScreen(){
-    show("tl");T=null;
-    var ok=mine.map(bySlug).filter(Boolean),elig=ok.filter(function(d){return item(d,cfg.n)}).length;
-    root.innerHTML='<div class="tltop"><span></span><button id="tlBack">← Início</button></div><div class="panel tlpick"><h3>Jogar com os seus diretores</h3><p class="pnote">Procure e adicione os diretores que você quer. Cada um vira uma rodada, e você ordena os filmes deles do mais antigo ao mais recente.</p>'+
-      '<div class="flabel">Filmes por rodada</div><div class="nchips" id="tlPn">'+FILMS.map(function(n){return '<button class="nchip" data-tpn="'+n+'" aria-pressed="'+(n===cfg.n)+'">'+n+'</button>'}).join("")+'</div>'+
-      '<div class="flabel" style="margin-top:18px">Buscar diretor</div><div class="tlsearch"><input id="tlQ" type="search" placeholder="Digite um nome, por exemplo Almodóvar" autocomplete="off" value="'+esc2(qLast)+'"></div><div class="tlres" id="tlRes"></div>'+
+    T=null;setTlMode("mine");goSection("linha");
+    setTimeout(function(){var h=document.getElementById("tlPickSec");if(h)h.scrollIntoView({behavior:"smooth",block:"start"})},140)
+  }
+  function renderPicker(){
+    var host=document.getElementById("tlPickHost");if(!host)return;
+    host.innerHTML='<p class="pnote">Procure e adicione os diretores que você quer, até 15. Cada um vira uma rodada, e você ordena os filmes deles do mais antigo ao mais recente.</p>'+
+      '<div class="tlsearch"><input id="tlQ" type="search" placeholder="Buscar entre os '+((window.dirData||[]).length||280)+' diretores, por exemplo Almodóvar" autocomplete="off" value="'+esc2(qLast)+'"></div><div class="tlres" id="tlRes"></div>'+
       '<div class="flabel" style="margin-top:18px">Seus diretores <span class="tlcount" id="tlCount"></span></div><div class="tlsel" id="tlSel"></div>'+
-      '<div class="tlbtns left"><button class="btn primary" id="tlPlay">Jogar com estes <span aria-hidden="true">→</span></button><button class="btn ghost" id="tlClear">Limpar lista</button></div><p class="pnote small" id="tlWarn"></p></div>';
+      '<div class="tlbtns left"><button class="btn ghost" id="tlClear">Limpar lista</button></div><p class="pnote small" id="tlWarn"></p>';
     drawSel();drawRes()
   }
   function drawSel(){
@@ -2897,7 +2947,7 @@ addEventListener("hashchange",route);route();
     var ds=mine.map(bySlug).filter(Boolean),good=0;
     el.innerHTML=ds.length?ds.map(function(d){var ok=!!item(d,cfg.n);if(ok)good++;return '<span class="selc'+(ok?'':' bad')+'"><b>'+esc2(d.n)+'</b>'+(ok?'':'<small>poucos filmes para '+cfg.n+'</small>')+'<button data-trm="'+d.s+'" aria-label="Remover '+esc2(d.n)+'">×</button></span>'}).join(""):'<span class="tlempty">Nenhum ainda. Use a busca acima ou toque numa sugestão.</span>';
     var c=document.getElementById("tlCount");if(c)c.textContent=ds.length?"("+good+" "+(good===1?"pronto":"prontos")+" de "+ds.length+")":"";
-    var pl=document.getElementById("tlPlay");if(pl)pl.disabled=good===0;
+    info();
     var w=document.getElementById("tlWarn");if(w)w.textContent=good&&good<ds.length?"Os diretores marcados em vermelho têm poucos filmes com datas diferentes para "+cfg.n+" por rodada e ficam de fora. Diminua o número de filmes para incluí-los.":"";
   }
   function drawRes(){
@@ -3042,15 +3092,16 @@ addEventListener("hashchange",route);route();
     /* seção da home */
     if((a=e.target.closest("#tlFilms [data-tln]"))){cfg.n=+a.dataset.tln;lsSet("tlN",String(cfg.n));syncChips();return}
     if((a=e.target.closest("#tlRounds [data-tlr]"))){cfg.r=+a.dataset.tlr;lsSet("tlR",String(cfg.r));syncChips();return}
-    if(e.target.closest("#tlGo")){open();return}
-    if(e.target.closest("#tlMine")){pickScreen();return}
+    if((a=e.target.closest("[data-tlmode]"))){setTlMode(a.dataset.tlmode);return}
+    if(e.target.closest("#tlGo")){if(tlMode==="mine"){show("tl");start(true)}else open();return}
+    var a2;
+    if((a2=e.target.closest("[data-tsel]"))&&!document.getElementById("v-home").hidden){if(mine.length<15&&mine.indexOf(a2.dataset.tsel)<0){mine.push(a2.dataset.tsel);save()}qLast="";var q0=document.getElementById("tlQ");if(q0){q0.value="";q0.focus()}drawSel();drawRes();return}
+    if((a2=e.target.closest("[data-trm]"))&&!document.getElementById("v-home").hidden){mine=mine.filter(function(x){return x!==a2.dataset.trm});save();drawSel();drawRes();return}
+    if(e.target.closest("#tlClear")){mine=[];save();drawSel();drawRes();return}
     if(document.getElementById("v-tl").hidden)return;
     if(e.target.closest("#tlAgain")){start();return}
-    var a2;if((a2=e.target.closest("[data-tpn]"))){cfg.n=+a2.dataset.tpn;lsSet("tlN",String(cfg.n));pickScreen();return}
     if((a2=e.target.closest("[data-tsel]"))){if(mine.length<15&&mine.indexOf(a2.dataset.tsel)<0){mine.push(a2.dataset.tsel);save()}qLast="";var qq=document.getElementById("tlQ");if(qq){qq.value="";qq.focus()}drawSel();drawRes();return}
     if((a2=e.target.closest("[data-trm]"))){mine=mine.filter(function(x){return x!==a2.dataset.trm});save();drawSel();drawRes();return}
-    if(e.target.closest("#tlClear")){mine=[];save();drawSel();drawRes();return}
-    if(e.target.closest("#tlPlay")){start(true);return}
     if(e.target.closest("#tlCfg")){var cu=T&&T.custom;T=null;if(cu)pickScreen();else goSection("linha");return}
     if(e.target.closest("#tlBack,#tlBack2,#tlQuit")){T=null;show("home");return}
     if(e.target.closest("#tlCheck")){check();return}
@@ -3062,7 +3113,24 @@ addEventListener("hashchange",route);route();
     if(rm){d.classList.add("on");return}
     setInterval(function(){on=!on;d.classList.toggle("on",on)},3600);setTimeout(function(){d.classList.add("on");on=true},900)})();
   document.addEventListener("input",function(e){if(e.target&&e.target.id==="tlQ"){qLast=e.target.value;drawRes()}});
+  setTlMode("rand");
   window.tlDebug={pick:pickScreen,mine:function(){return mine},get T(){return T},start:start,check:check,cfg:cfg,pool:pool,open:open};
+})();
+</script>
+<script>
+(function(){
+  var D=window.dirData||[];
+  document.querySelectorAll(".ndir").forEach(function(n){n.textContent=D.length||280});
+  var box=document.getElementById("dnPeople");if(!box)return;
+  var names=[["Nolan","Christopher Nolan"],["Fincher","David Fincher"],["Scorsese","Martin Scorsese"],["Kurosawa","Akira Kurosawa"],["Tarantino","Quentin Tarantino"],["Gerwig","Greta Gerwig"],["Villeneuve","Denis Villeneuve"],["Bong","Bong Joon-ho"]];
+  var PAL=[["#5A62C4","#17154B"],["#C9772F","#5A2A0E"],["#2F7F8F","#0F2F4A"],["#9A4F9F","#2B1450"],["#3C8B63","#103B2B"],["#B8423D","#4A1414"]];
+  function esc(x){return String(x).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+  box.innerHTML=names.map(function(p,i){
+    var d=D.filter(function(x){return x.n===p[1]||x.n.indexOf(p[0])>=0})[0];
+    var n=d?d.n:p[1],ini=n.split(" ").filter(function(w){return /^[A-ZÀ-Ý]/.test(w)}).map(function(w){return w[0]}).slice(0,2).join(""),c=PAL[i%PAL.length];
+    var tot=d?(d.tot||(d.films&&d.films.length)||""):"";
+    var link=d?'#diretor/'+d.s:'#diretores';
+    return '<a class="dper" href="'+link+'"><span class="av2" style="background:linear-gradient(135deg,'+c[0]+','+c[1]+')">'+esc(ini)+(d&&d.foto?'<img alt="" loading="lazy" src="https://image.tmdb.org/t/p/w185'+d.foto+'" onerror="this.remove()">':'')+'</span><span>'+esc(n)+(tot?'<small>'+tot+' filmes</small>':'')+'</span></a>'}).join("");
 })();
 </script>
 <script>
