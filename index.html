@@ -1133,7 +1133,7 @@ body.ms-on{padding-bottom:92px}
       <h2>Quatro cenas. <em class="w">Qual é o filme</em>?</h2>
       <div class="sx fr" id="sxFr"><i class="sprk t" aria-hidden="true"></i><i class="sprk b" aria-hidden="true"></i>
         <div class="sxl">
-          <p class="sxp">Você vê uma cena de um filme famoso, sem título. Digite o nome do filme. A primeira cena é a que menos entrega, de preferência sem rosto nenhum, e cada frame novo traz uma cena mais conhecida. Quanto mais cedo acertar, mais pontos.</p>
+          <p class="sxp">Você vê uma cena de um filme famoso, sem título. Digite o nome do filme. As primeiras cenas são quadros tirados do trailer do filme, que raramente entregam o título, e o último frame é a arte mais famosa dele. Quanto mais cedo acertar, mais pontos.</p>
           <div class="sxf"><span>Quantos filmes?</span><div class="nchips" id="frRounds" role="group" aria-label="Quantidade de filmes"></div></div>
           <div class="sxa"><button class="btn amber" id="frGo">Jogar sequência de frames <span aria-hidden="true">→</span></button></div>
           <p class="sxs" id="frInfo"></p>
@@ -3468,12 +3468,12 @@ window.FRAMES=[];
   function esc2(x){return String(x==null?"":x).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
   function valid(a){return Array.isArray(a)?a.filter(function(f){return f&&f.t&&f.y&&Array.isArray(f.f)&&f.f.length>=NF}):[]}
   var remote=[],rstate="idle";
-  try{var rc=JSON.parse(localStorage.getItem("frRemote2")||"null");if(rc&&Date.now()-rc.t<6048e5&&valid(rc.d).length>=4){remote=valid(rc.d);rstate="ok"}}catch(e){}
+  try{var rc=JSON.parse(localStorage.getItem("frRemote3")||"null");if(rc&&Date.now()-rc.t<6048e5&&valid(rc.d).length>=4){remote=valid(rc.d);rstate="ok"}}catch(e){}
   function loadRemote(){
     if(rstate==="ok"||rstate==="loading"||(window.FRAMES&&window.FRAMES.length>=4))return;
     rstate="loading";panel();
-    var parts=[0,1,2,3,4].map(function(k){return fetch("/api/frames?v=2&p="+k).then(function(r){if(!r.ok)throw 0;return r.json()}).catch(function(){return []})});
-    Promise.all(parts).then(function(a){var seen={},v=valid([].concat.apply([],a)).filter(function(f){var k=f.t+f.y;if(seen[k])return false;seen[k]=1;return true});if(v.length<4)throw 0;remote=v;rstate="ok";try{localStorage.setItem("frRemote2",JSON.stringify({t:Date.now(),d:v}))}catch(e){}panel()}).catch(function(){rstate="err";panel()});
+    var parts=[0,1,2,3,4].map(function(k){return fetch("/api/frames?v=3&p="+k).then(function(r){if(!r.ok)throw 0;return r.json()}).catch(function(){return []})});
+    Promise.all(parts).then(function(a){var seen={},v=valid([].concat.apply([],a)).filter(function(f){var k=f.t+f.y;if(seen[k])return false;seen[k]=1;return true});if(v.length<4)throw 0;remote=v;rstate="ok";try{localStorage.setItem("frRemote3",JSON.stringify({t:Date.now(),d:v}))}catch(e){}panel()}).catch(function(){rstate="err";panel()});
   }
   function films(){var u=null;try{u=JSON.parse(localStorage.getItem("frData")||"null")}catch(e){}
     var v=valid(u);if(v.length>=4)return v;v=valid(window.FRAMES);return v.length>=4?v:remote}
@@ -3557,32 +3557,46 @@ window.FRAMES=[];
     [it.t,it.o].forEach(function(s){if(!s)return;add(s);var p=s.split(/\s*[:\-–]\s*/);if(p.length>1){p.forEach(add)}});return Object.keys(v)}
   function matches(g,it){g=nz(g);if(g.length<2)return false;
     return variants(it).some(function(v){if(g===v)return true;var tol=v.length>=14?3:v.length>=8?2:v.length>=5?1:0;return tol>0&&Math.abs(g.length-v.length)<=tol&&ed(g,v)<=tol})}
+  /* frames 1 a 3: cenas reais tiradas do trailer/clipes do filme no YouTube; o quarto é a arte mais votada do TMDB */
+  var YT=["sd","hq","mq"];
+  function isYT(p){return typeof p==="string"&&p.indexOf("yt:")===0}
+  function src(C,p,th){if(isYT(p)){var a=p.split(":"),t=(C&&C.tier&&C.tier[p])||0;return "https://i.ytimg.com/vi/"+a[1]+"/"+YT[t]+a[2]+".jpg"}return IMG+(th?"w300":"w1280")+p}
+  function pickYT(it){var ks=(it.v||[]).slice(0,3),pool=[];ks.forEach(function(k){[1,2,3].forEach(function(n){pool.push({k:k,n:n})})});
+    if(pool.length<3)return null;
+    var out=[],used={};shuffle(pool).forEach(function(x){if(out.length<3&&!used[x.k]){used[x.k]=1;out.push(x)}});
+    shuffle(pool).forEach(function(x){if(out.length<3&&out.indexOf(x)<0)out.push(x)});
+    return shuffle(out).map(function(x){return "yt:"+x.k+":"+x.n}).concat([it.f[0]])}
+  function frErr(C){var p=C.fr[C.view];
+    if(isYT(p)){var t=C.tier[p]||0;if(t<YT.length-1){C.tier[p]=t+1;draw();return true}
+      C.fr[C.view]=C.it.f[1+C.view]||C.it.f[1];draw();return true}
+    return false}
   function round(){
     var it=G.items[G.i];if(!it)return end();
     document.getElementById("frCount").innerHTML="Rodada <b>"+(G.i+1)+"</b> de "+G.items.length;
     document.getElementById("frTot").textContent=G.total;
-    var C=G.cur={it:it,fr:null,shown:1,view:0,done:false,wrong:0};
+    var C=G.cur={it:it,fr:null,shown:1,view:0,done:false,wrong:0,tier:{}};
+    var yt=pickYT(it);if(yt){C.fr=yt;render(C);return}
     root.innerHTML='<div class="frbox"><div class="frimg frwait" id="frImgBox"><div class="frspin"><i></i><span>Escolhendo as cenas</span></div></div></div>';
     analyze(it).then(function(sc){if(!G||G.cur!==C)return;C.fr=pickFrames(it,sc);render(C);var nx=G.items[G.i+1];if(nx)analyze(nx)});
   }
   function render(C){
-    root.innerHTML='<div class="frbox"><div class="frimg" id="frImgBox"><img id="frImg" alt="Cena de um filme" src="'+IMG+'w1280'+C.fr[0]+'"><span class="frno" id="frNo"></span><span class="frlb t"></span><span class="frlb b"></span></div>'+
+    root.innerHTML='<div class="frbox"><div class="frimg" id="frImgBox"><img id="frImg" alt="Cena de um filme" src="'+src(C,C.fr[0])+'"><span class="frno" id="frNo"></span><span class="frlb t"></span><span class="frlb b"></span></div>'+
       '<div class="frthumbs" id="frThumbs"></div>'+
       '<div class="frctl"><div class="frpts" id="frPts"></div><button class="btn dghost frmore" id="frMore"></button></div></div>'+
       '<div class="ask">Qual é este filme?</div><form class="frform" id="frForm" autocomplete="off"><input id="frIn" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Digite o nome do filme" aria-label="Nome do filme"><button class="btn primary" type="submit">Responder</button></form><div class="frhint" id="frHint" aria-live="polite"></div><div class="frgive"><button type="button" class="frlink" id="frGive">Não sei, mostrar a resposta</button></div><div id="frFb" aria-live="polite"></div>';
     var im=document.getElementById("frImg");
-    im.onerror=function(){if(!G||G.cur!==C)return;G.bad++;if(G.bad>=3){root.innerHTML='<div class="panel" style="margin-top:20px"><h3>Não consegui carregar as imagens</h3><p class="pnote">As imagens do TMDB parecem fora do ar ou sem conexão. Tente de novo em instantes.</p><button class="btn primary" id="frBack">Voltar ao início</button></div>';return}
+    im.onerror=function(){if(!G||G.cur!==C)return;if(frErr(C))return;G.bad++;if(G.bad>=3){root.innerHTML='<div class="panel" style="margin-top:20px"><h3>Não consegui carregar as imagens</h3><p class="pnote">As imagens do TMDB parecem fora do ar ou sem conexão. Tente de novo em instantes.</p><button class="btn primary" id="frBack">Voltar ao início</button></div>';return}
       G.items.splice(G.i,1);if(G.i>=G.items.length)end();else round()};
     im.onload=function(){if(G&&G.cur===C)G.bad=0};
     draw();
-    C.fr.slice(1).forEach(function(p){var x=new Image();x.src=IMG+"w1280"+p});
+    C.fr.slice(1).forEach(function(p){var x=new Image();x.src=src(C,p)});
     var inp=document.getElementById("frIn");if(inp)inp.focus({preventScroll:true});
   }
   function draw(){
     var C=G.cur;if(!C)return;
     document.getElementById("frNo").textContent="Frame "+(C.view+1)+" de "+NF;
-    var im=document.getElementById("frImg");im.src=IMG+"w1280"+C.fr[C.view];
-    document.getElementById("frThumbs").innerHTML=C.fr.map(function(p,k){return k<C.shown?'<button class="frth'+(k===C.view?' on':'')+'" data-fk="'+k+'" aria-label="Ver frame '+(k+1)+'"><img alt="" src="'+IMG+'w300'+p+'"><i>'+(k+1)+'</i></button>':'<span class="frth lock" aria-hidden="true"><i>'+(k+1)+'</i></span>'}).join("");
+    var im=document.getElementById("frImg");im.src=src(C,C.fr[C.view]);
+    document.getElementById("frThumbs").innerHTML=C.fr.map(function(p,k){return k<C.shown?'<button class="frth'+(k===C.view?' on':'')+'" data-fk="'+k+'" aria-label="Ver frame '+(k+1)+'"><img alt="" onerror="this.style.visibility=\'hidden\'" src="'+src(C,p,true)+'"><i>'+(k+1)+'</i></button>':'<span class="frth lock" aria-hidden="true"><i>'+(k+1)+'</i></span>'}).join("");
     if(!C.done){var pts=PTS[C.shown-1];document.getElementById("frPts").innerHTML='Acertando agora: <b>'+pts+'</b> pts';
       var mb=document.getElementById("frMore");if(C.shown<NF){mb.hidden=false;mb.innerHTML='Mostrar mais um frame <small>vale '+PTS[C.shown]+'</small>'}else mb.hidden=true}
   }
