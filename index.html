@@ -1316,6 +1316,132 @@ body[data-gt] #v-tl .tlc .tt small{color:var(--ink-700)}
 #tlPickHost .pnote{margin-top:0}
 #v-home .wrap{padding-bottom:120px}
 @media (max-width:700px){#v-home .wrap{padding-bottom:84px}}
+/* ===== v26: Filme Intruso (roxo) e Cinedle (azul) ===== */
+body[data-gt="in"]{--g1:#2B1466;--g2:#1A0C47;--ga:#C9A8FF;--gi:#1A0C47}
+body[data-gt="cd"]{--g1:#0F3A8F;--g2:#08235E;--ga:#8EC5FF;--gi:#08235E}
+#v-home[data-g="in"] [data-g]:not([data-g="in"]),
+#v-home[data-g="cd"] [data-g]:not([data-g="cd"]){display:none!important}
+.gcard.in{background:linear-gradient(160deg,#2B1466,#1A0C47 70%);--gl:#C9A8FF;--ac:#C9A8FF}
+.gcard.cd{background:linear-gradient(160deg,#0F3A8F,#08235E 70%);--gl:#8EC5FF;--ac:#8EC5FF}
+.av3{position:relative;flex:none;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;overflow:hidden;font:800 12px var(--font-display);color:#fff;background:linear-gradient(135deg,#5A62C4,#2B1466)}
+.av3 img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top}
+.av3.big{width:68px;height:68px;font-size:20px}
+/* --- Intruso: arte da landing e do card --- */
+.inart{width:100%;max-width:470px;margin:0 auto;transition:opacity .4s}
+.inart.swap .ipr,.inart.swap .inwho2{opacity:0;transform:translateY(8px)}
+.inwho2{margin:0 0 14px;text-align:center;font:600 15px var(--font-display);color:#fff;transition:all .4s}
+.inwho2 b{color:var(--ga)}
+.ipr{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;transition:all .4s}
+.ip{position:relative;aspect-ratio:2/3;border-radius:14px;background:linear-gradient(160deg,#5A62C4,#2B1466) center/cover;box-shadow:0 22px 34px -18px rgba(0,0,0,.7);border:3px solid transparent;transition:transform .5s,border-color .5s,box-shadow .5s;overflow:hidden}
+.ip::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(10,6,40,.85))}
+.ip span{position:absolute;left:8px;right:8px;bottom:8px;z-index:1;font:700 11.5px/1.2 var(--font-display);color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+.hit .ip.intr{border-color:#F4A81D;transform:translateY(-10px) rotate(-2deg);box-shadow:0 26px 40px -16px rgba(244,168,29,.55)}
+.hit .ip.intr::before{content:"Intruso";position:absolute;top:8px;left:8px;z-index:2;border-radius:999px;background:#F4A81D;color:#2A1A10;padding:2px 9px;font:800 10px var(--font-body);letter-spacing:.08em;text-transform:uppercase}
+.hx-mi{display:flex;gap:9px;justify-content:center;align-items:flex-end;padding-bottom:6px}
+.hx-mi .mp{position:relative;width:60px;aspect-ratio:2/3;border-radius:9px;background:linear-gradient(160deg,#5A62C4,#2B1466) center/cover;border:2px solid transparent;box-shadow:0 14px 22px -12px rgba(0,0,0,.7);transition:transform .5s,border-color .5s,opacity .4s}
+.hx-mi.swap .mp{opacity:0}
+.hx-mi.hit .mp.intr{border-color:#F4A81D;transform:translateY(-10px) rotate(-3deg);box-shadow:0 18px 26px -10px rgba(244,168,29,.6)}
+/* --- Cinedle: tiles, arte, jogo --- */
+.cdt{position:relative;border-radius:10px;min-height:60px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:6px 4px;text-align:center;font:600 12.5px/1.15 var(--font-body);color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);animation:cdflip .5s both;animation-delay:calc(var(--i)*.28s);min-width:0;overflow-wrap:break-word;hyphens:auto}
+.cdt small{font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;opacity:.75}
+.cdt b{font-weight:700}
+.cdt i{font-style:normal;font-size:17px;line-height:1;font-weight:800}
+.cdt.g{background:#1F9D6B;border-color:#43c995}
+.cdt.y{background:#F4A81D;border-color:#FFD27A;color:#2A1A10}
+@keyframes cdflip{0%{transform:rotateX(90deg);opacity:0}100%{transform:none;opacity:1}}
+.cdrow.still .cdt{animation:none}
+.lg{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.35);margin:0 2px}
+.lg.g{background:#1F9D6B;border-color:#43c995}.lg.y{background:#F4A81D;border-color:#FFD27A}
+.cdart{width:100%;max-width:520px;margin:0 auto;display:flex;flex-direction:column;gap:9px}
+.cdart .cdrow{display:grid;grid-template-columns:118px minmax(0,1fr);gap:8px;align-items:center;opacity:0;animation:cdrow .4s both;animation-delay:calc(var(--r)*1.1s)}
+@keyframes cdrow{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.cdart .cdts{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:5px}
+.cdart .cdt{min-height:46px;font-size:9.5px;padding:2px;animation-delay:calc(var(--r)*1.1s + var(--i)*.16s)}
+.cdart .cdt i{font-size:13px}
+.cdart .cdwho b{font-size:12px;line-height:1.15}
+.cdart .av3{width:30px;height:30px;font-size:10px}
+.cdwho{display:flex;align-items:center;gap:9px;min-width:0}
+.cdwho b{font:700 13.5px/1.2 var(--font-display);color:inherit;min-width:0}
+.hx-mc{display:flex;flex-direction:column;gap:6px;width:230px}
+.hx-mc .cdrow{display:block;padding:0;background:none;border:0;opacity:0;animation:cdrow .4s both;animation-delay:calc(var(--r)*.9s)}
+.hx-mc .cdrow .cdts{display:grid;grid-template-columns:repeat(6,1fr);gap:5px}
+.hx-mc .cdrow .cdt{min-height:26px;padding:0;border-radius:6px;animation-delay:calc(var(--r)*.9s + var(--i)*.14s)}
+.hx-mc .cdt b,.hx-mc .cdt i,.hx-mc .cdt small{display:none}
+/* tela de jogo: Cinedle */
+.cdw,.inw{max-width:980px}
+.cdhead h2{margin:4px 0 6px;font:800 clamp(24px,3.4vw,34px)/1.1 var(--font-display);color:#fff}
+.cdhead h2 em{font-style:normal;color:var(--ga)}
+.cdhead p{margin:0 0 16px;font-size:14px;color:rgba(255,255,255,.78);max-width:640px}
+.cdsearch{position:relative;max-width:520px;margin-bottom:18px}
+.cdsearch input{width:100%;box-sizing:border-box;border-radius:14px;border:2px solid rgba(255,255,255,.3);background:#F6F7FF;color:#17154B;padding:14px 16px;font:500 16px var(--font-body);outline:none}
+.cdsearch input:focus{border-color:var(--ga);box-shadow:0 0 0 4px rgba(142,197,255,.25)}
+.cdsug{position:absolute;left:0;right:0;top:calc(100% + 6px);z-index:20;border-radius:14px;background:#fff;color:#17154B;box-shadow:0 20px 40px -12px rgba(0,0,0,.55);overflow:hidden}
+.cds{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;border:0;background:#fff;padding:9px 12px;text-align:left;cursor:pointer;color:#17154B;font:inherit}
+.cds .cdwho b{color:#17154B}.cds small{color:#6A6A8E;font-size:12px;white-space:nowrap}
+.cds.on,.cds:hover{background:#E8EAFE}
+.cdno{padding:12px 14px;font-size:13.5px;color:#6A6A8E}
+.cdcols{display:none}
+.cdrows{display:flex;flex-direction:column;gap:10px}
+.cdrow{display:grid;grid-template-columns:1fr;gap:8px;padding:10px;border-radius:16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14)}
+.cdts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+@media (min-width:720px){
+  .cdcols{display:grid;grid-template-columns:190px repeat(6,minmax(0,1fr));gap:6px;padding:0 10px 8px;font:700 10.5px var(--font-body);letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.7);text-align:center}
+  .cdcols span:first-child{text-align:left}
+  .cdrow{grid-template-columns:190px repeat(6,minmax(0,1fr));align-items:center}
+  .cdrow .cdts{display:contents}
+  .cdrow .cdt small{display:none}
+  .cdart .cdrow{grid-template-columns:118px minmax(0,1fr)}
+  .cdart .cdts{display:grid}
+  .cdart .cdt small{display:none}
+}
+.cdend{margin-top:18px;border-radius:20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);padding:22px;animation:cdrow .5s both}
+.cdend.still{animation:none}
+.cdres{display:flex;align-items:center;gap:16px}
+.cdres h3{margin:2px 0;font:800 26px/1.1 var(--font-display);color:#fff}
+.cdres p{margin:0;font-size:14px;color:rgba(255,255,255,.8)}.cdres a{color:var(--ga)}
+.cdres .eyebrow{color:var(--ga)}
+.cdmsg{font:700 18px var(--font-display);margin:16px 0 4px;color:#fff}
+.cdstats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}
+.cdstats div{border-radius:14px;background:rgba(255,255,255,.07);padding:10px 6px;text-align:center}
+.cdstats b{display:block;font:800 24px var(--font-display);color:#fff}.cdstats span{font-size:11.5px;color:rgba(255,255,255,.7)}
+.inbtns{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+/* tela de jogo: Intruso */
+.inlv{display:inline-block;margin:8px 0 6px;border-radius:999px;background:rgba(201,168,255,.18);color:var(--ga);padding:3px 12px;font:700 11px var(--font-body);letter-spacing:.08em;text-transform:uppercase}
+.inq{display:flex;align-items:center;gap:10px 14px;flex-wrap:wrap;margin:6px 0 20px}
+.inq h2{margin:0;font:800 clamp(20px,2.8vw,28px)/1.2 var(--font-display);color:#fff}
+.inq h2 em{font-style:normal;color:var(--ga);text-decoration:underline;text-underline-offset:5px}
+.inwho{display:inline-flex;align-items:center;gap:9px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:5px 14px 5px 5px;color:#fff}
+.inwho b{font:700 16px var(--font-display)}
+.inposters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+@media (max-width:700px){.inposters{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}
+.inp{display:flex;flex-direction:column;gap:8px;text-align:left;background:none;border:0;padding:0;color:#fff;cursor:pointer;font:inherit}
+.inp .im{position:relative;display:block;aspect-ratio:2/3;border-radius:14px;background:linear-gradient(160deg,#5A62C4,#2B1466) center/cover;box-shadow:0 20px 32px -18px rgba(0,0,0,.75);border:3px solid transparent;transition:transform .2s,border-color .25s,box-shadow .25s}
+.inp .fb{position:absolute;left:8px;right:8px;top:50%;transform:translateY(-50%);text-align:center;font:700 13px var(--font-display);color:rgba(255,255,255,.35);z-index:0}
+.inp:not([disabled]):hover .im{transform:translateY(-5px)}
+.inp:focus-visible .im{border-color:var(--ga)}
+.inp .tt{font:700 14px/1.2 var(--font-display);color:#fff}.inp .tt small{display:block;font:400 12px var(--font-body);opacity:.7;margin-top:2px}
+.inp .dr{font:600 12.5px var(--font-body);color:rgba(255,255,255,.85)}
+.inp.intr .im{border-color:#F4A81D;box-shadow:0 24px 36px -16px rgba(244,168,29,.55)}
+.inp.intr .dr{color:#F4A81D}
+.inp.wrong .im{border-color:#E5484D}
+.inp.real{opacity:.78}
+.infb{margin-top:20px;display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.infb p{margin:0;color:rgba(255,255,255,.88);max-width:680px}
+.infb .pgain{font:800 24px var(--font-display);color:#5EE6C8}.infb .pgain.zero{color:#FF8A8A}
+.inres{text-align:center;margin-top:16px}
+.inres .inbtns{justify-content:center}
+.inbig{font:800 64px/1.1 var(--font-display);color:#fff;margin:6px 0}.inbig span{font-size:20px;color:rgba(255,255,255,.65)}
+@media (max-width:600px){.cdres{flex-direction:column;align-items:flex-start}.cdstats{grid-template-columns:repeat(2,1fr)}}
+.lgd{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.lgd>div{border-radius:18px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);padding:16px;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.lgd .cdt{width:96px;animation:none}.lgd p{margin:0;font-size:13px;line-height:1.45;color:rgba(255,255,255,.85)}
+.lvc{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.lvc>div{border-radius:18px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);padding:18px}
+.lvc h3{margin:8px 0 6px;font:800 20px var(--font-display);color:#fff}.lvc p{margin:0;font-size:13.5px;line-height:1.5;color:rgba(255,255,255,.82)}
+.lvc .gtag{background:rgba(201,168,255,.2);color:#C9A8FF}
+@media (max-width:860px){.lgd{grid-template-columns:repeat(2,1fr)}.lvc{grid-template-columns:1fr}}
+body[data-gt="in"] #v-intruso,body[data-gt="cd"] #v-cinedle{color:#fff}
+.cdend .pnote,.infb .pnote{color:rgba(255,255,255,.78)}
 </style>
 </head>
 <body>
@@ -1326,7 +1452,7 @@ body[data-gt] #v-tl .tlc .tt small{color:var(--ink-700)}
     <nav class="links" aria-label="Principal">
       <button data-hub="top">Início</button>
       <div class="navdd"><button class="ddb" id="ddb" aria-haspopup="true" aria-expanded="false">Jogos <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 3.5 3 3 3-3"/></svg></button>
-        <div class="ddm" role="menu"><button data-go="g-qd" role="menuitem">Quem Dirigiu?</button><button data-go="g-poster" role="menuitem">Acerte o Pôster</button><button data-go="g-tl" role="menuitem">Linha do tempo</button><button data-go="g-dna" role="menuitem">Descubra seu diretor</button><button data-duelon="1" role="menuitem">Duelo online</button></div></div>
+        <div class="ddm" role="menu"><button data-go="g-qd" role="menuitem">Quem Dirigiu?</button><button data-go="g-poster" role="menuitem">Acerte o Pôster</button><button data-go="g-tl" role="menuitem">Linha do tempo</button><button data-go="g-dna" role="menuitem">Descubra seu diretor</button><button data-go="g-in" role="menuitem">Filme intruso</button><button data-go="g-cd" role="menuitem">Cinedle</button><button data-duelon="1" role="menuitem">Duelo online</button></div></div>
       <button data-dir="1">Diretores</button>
       <button data-hub="sobre">Sobre</button>
     </nav>
@@ -1362,7 +1488,7 @@ body[data-gt] #v-tl .tlc .tt small{color:var(--ink-700)}
       <div class="eyebrow">Jogos</div>
       <h2>Escolha <em class="w">o que jogar</em>.</h2>
       <p class="lead">Cada jogo testa um jeito diferente de conhecer cinema. Comece por qualquer um.</p>
-      <div class="hgames2"><button class="gcard qd" data-go="g-qd"><span class="tg">2367 filmes</span><div class="art"><div class="hx-mq"><div class="hx-tg2"><span>NÍVEL MÉDIO</span><span>1994</span></div><h4>Pulp Fiction</h4><div class="hx-o"><b>A</b>George Lucas</div><div class="hx-o r"><b>B</b>Quentin Tarantino</div><div class="hx-o"><b>C</b>Guillermo del Toro</div></div></div><div class="tx"><h3>Quem Dirigiu?</h3><p>Um filme na tela, quatro diretores e uma única resposta certa. Níveis, medalhas, modo livre e duelo.</p><span class="go">Jogar <i aria-hidden="true">→</i></span></div></button><button class="gcard ps" data-go="g-poster"><span class="tg">Visual</span><div class="art" style="align-items:flex-start"><div class="hx-mps"><div class="hx-mpo" data-pi="0" style="--a:#C9772F;--b:#5A2A0E;--h:#FFD27A;transform:rotate(-4deg);margin-top:14px"><div class="im" style="animation-delay:0s"></div></div><div class="hx-mpo" data-pi="1" style="--a:#5A62C4;--b:#17154B;--h:#C9CAEC;transform:rotate(3deg);margin-top:0px"><div class="im" style="animation-delay:-1.4s"></div><div class="pt">72<small>pts</small></div></div><div class="hx-mpo" data-pi="2" style="--a:#3C8B63;--b:#103B2B;--h:#BFF6EA;transform:rotate(-2deg);margin-top:14px"><div class="im" style="animation-delay:-2.8s"></div></div><div class="hx-mpo" data-pi="3" style="--a:#B8423D;--b:#4A1414;--h:#FFC8B8;transform:rotate(4deg);margin-top:0px"><div class="im" style="animation-delay:-4.2s"></div></div></div></div><div class="tx"><h3>Acerte o Pôster</h3><p>Só a capa do filme, bem borrada, que vai clareando aos poucos. Quanto antes você acertar, mais pontos.</p><span class="go">Jogar <i aria-hidden="true">→</i></span></div></button><button class="gcard tl" data-go="g-tl"><span class="tg">Ordem</span><div class="art"><div class="hx-mt"><div class="ln"></div><div class="pp" data-ti="0" style="left:10px;--c1:#5A62C4;--c2:#17154B;animation-delay:-0.2s"><span>1950</span></div><span class="dt" style="left:28.5px"></span><div class="pp" data-ti="1" style="left:76px;--c1:#C9772F;--c2:#5A2A0E;animation-delay:-0.7s"><span>1954</span></div><span class="dt" style="left:94.5px"></span><div class="pp" data-ti="2" style="left:142px;--c1:#2F7F8F;--c2:#0F2F4A;animation-delay:-1.2s"><span>1961</span></div><span class="dt" style="left:160.5px"></span><div class="pp" data-ti="3" style="left:208px;--c1:#9A4F9F;--c2:#2B1450;animation-delay:-1.7s"><span>1975</span></div><span class="dt" style="left:226.5px"></span><div class="pp" data-ti="4" style="left:274px;--c1:#3C8B63;--c2:#103B2B;animation-delay:-2.2s"><span>1985</span></div><span class="dt" style="left:292.5px"></span><span class="yr" style="left:0">mais antigo</span><span class="yr" style="right:0">mais recente</span></div></div><div class="tx"><h3>Linha do Tempo</h3><p>Arraste os filmes de um diretor do mais antigo ao mais recente e veja a linha se acender a cada acerto.</p><span class="go">Jogar <i aria-hidden="true">→</i></span></div></button><button class="gcard dn" data-go="g-dna"><span class="tg">Teste</span><div class="art" style="gap:20px"><div class="hx-mr"><svg width="132" height="132" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="44" fill="none" stroke="rgba(94,230,200,.18)" stroke-width="7"/><circle class="rg" cx="50" cy="50" r="44" fill="none" stroke="#5EE6C8" stroke-width="7" stroke-linecap="round" transform="rotate(-90 50 50)"/></svg><div class="pc"><span></span><small>%</small></div></div><div class="hx-chs"><span class="chp" style="left:0;top:0">ritmo lento</span><span class="chp" style="left:30px;top:32px">humor ácido</span><span class="chp" style="left:6px;top:64px">cores fortes</span></div></div><div class="tx"><h3>Descubra seu Diretor</h3><p>Responda sobre ritmo, medo e humor e descubra qual diretor combina com o seu jeito de ver cinema.</p><span class="go">Começar o teste <i aria-hidden="true">→</i></span></div></button><button class="gcard du" data-duelon="1"><span class="tg">2 equipes</span><div class="art"><div class="hx-mv"><div class="tm">Equipe A<b>7</b></div><div class="vs">VS</div><div class="tm">Equipe B<b>5</b></div></div></div><div class="tx"><h3>Duelo</h3><p>Duas equipes no mesmo aparelho ou cada uma no seu celular. Vence quem souber mais.</p><span class="go">Desafiar <i aria-hidden="true">→</i></span></div></button><div class="gcard so" aria-disabled="true"><div class="art"><svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#25226E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9h14l-1.5 12h-11zM9 9l.5 12M15 9l-.5 12M6 9a3 3 0 0 1 2.5-4.7A3 3 0 0 1 12 3a3 3 0 0 1 3.5 1.3A3 3 0 0 1 18 9"/></svg></div><div class="tx"><h3>Mais jogos a caminho</h3><p>O Sou Cinéfilo está crescendo. Novos jeitos de testar o seu repertório vão chegar aqui.</p><span class="go">Em breve</span></div></div></div>
+      <div class="hgames2"><button class="gcard qd" data-go="g-qd"><span class="tg">2367 filmes</span><div class="art"><div class="hx-mq"><div class="hx-tg2"><span>NÍVEL MÉDIO</span><span>1994</span></div><h4>Pulp Fiction</h4><div class="hx-o"><b>A</b>George Lucas</div><div class="hx-o r"><b>B</b>Quentin Tarantino</div><div class="hx-o"><b>C</b>Guillermo del Toro</div></div></div><div class="tx"><h3>Quem Dirigiu?</h3><p>Um filme na tela, quatro diretores e uma única resposta certa. Níveis, medalhas, modo livre e duelo.</p><span class="go">Jogar <i aria-hidden="true">→</i></span></div></button><button class="gcard ps" data-go="g-poster"><span class="tg">Visual</span><div class="art" style="align-items:flex-start"><div class="hx-mps"><div class="hx-mpo" data-pi="0" style="--a:#C9772F;--b:#5A2A0E;--h:#FFD27A;transform:rotate(-4deg);margin-top:14px"><div class="im" style="animation-delay:0s"></div></div><div class="hx-mpo" data-pi="1" style="--a:#5A62C4;--b:#17154B;--h:#C9CAEC;transform:rotate(3deg);margin-top:0px"><div class="im" style="animation-delay:-1.4s"></div><div class="pt">72<small>pts</small></div></div><div class="hx-mpo" data-pi="2" style="--a:#3C8B63;--b:#103B2B;--h:#BFF6EA;transform:rotate(-2deg);margin-top:14px"><div class="im" style="animation-delay:-2.8s"></div></div><div class="hx-mpo" data-pi="3" style="--a:#B8423D;--b:#4A1414;--h:#FFC8B8;transform:rotate(4deg);margin-top:0px"><div class="im" style="animation-delay:-4.2s"></div></div></div></div><div class="tx"><h3>Acerte o Pôster</h3><p>Só a capa do filme, bem borrada, que vai clareando aos poucos. Quanto antes você acertar, mais pontos.</p><span class="go">Jogar <i aria-hidden="true">→</i></span></div></button><button class="gcard tl" data-go="g-tl"><span class="tg">Ordem</span><div class="art"><div class="hx-mt"><div class="ln"></div><div class="pp" data-ti="0" style="left:10px;--c1:#5A62C4;--c2:#17154B;animation-delay:-0.2s"><span>1950</span></div><span class="dt" style="left:28.5px"></span><div class="pp" data-ti="1" style="left:76px;--c1:#C9772F;--c2:#5A2A0E;animation-delay:-0.7s"><span>1954</span></div><span class="dt" style="left:94.5px"></span><div class="pp" data-ti="2" style="left:142px;--c1:#2F7F8F;--c2:#0F2F4A;animation-delay:-1.2s"><span>1961</span></div><span class="dt" style="left:160.5px"></span><div class="pp" data-ti="3" style="left:208px;--c1:#9A4F9F;--c2:#2B1450;animation-delay:-1.7s"><span>1975</span></div><span class="dt" style="left:226.5px"></span><div class="pp" data-ti="4" style="left:274px;--c1:#3C8B63;--c2:#103B2B;animation-delay:-2.2s"><span>1985</span></div><span class="dt" style="left:292.5px"></span><span class="yr" style="left:0">mais antigo</span><span class="yr" style="right:0">mais recente</span></div></div><div class="tx"><h3>Linha do Tempo</h3><p>Arraste os filmes de um diretor do mais antigo ao mais recente e veja a linha se acender a cada acerto.</p><span class="go">Jogar <i aria-hidden="true">→</i></span></div></button><button class="gcard dn" data-go="g-dna"><span class="tg">Teste</span><div class="art" style="gap:20px"><div class="hx-mr"><svg width="132" height="132" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="44" fill="none" stroke="rgba(94,230,200,.18)" stroke-width="7"/><circle class="rg" cx="50" cy="50" r="44" fill="none" stroke="#5EE6C8" stroke-width="7" stroke-linecap="round" transform="rotate(-90 50 50)"/></svg><div class="pc"><span></span><small>%</small></div></div><div class="hx-chs"><span class="chp" style="left:0;top:0">ritmo lento</span><span class="chp" style="left:30px;top:32px">humor ácido</span><span class="chp" style="left:6px;top:64px">cores fortes</span></div></div><div class="tx"><h3>Descubra seu Diretor</h3><p>Responda sobre ritmo, medo e humor e descubra qual diretor combina com o seu jeito de ver cinema.</p><span class="go">Começar o teste <i aria-hidden="true">→</i></span></div></button><button class="gcard in" data-go="g-in"><span class="tg">Olho clínico</span><div class="art"><div class="hx-mi" aria-hidden="true"><span class="mp"></span><span class="mp"></span><span class="mp"></span><span class="mp"></span></div></div><div class="tx"><h3>Filme Intruso</h3><p>Três filmes do mesmo diretor e um intruso no meio. Ache o que não combina, do fácil ao difícil.</p><span class="go">Jogar <i aria-hidden="true">→</i></span></div></button><button class="gcard cd" data-go="g-cd"><span class="tg">Diário</span><div class="art"><div class="hx-mc" aria-hidden="true"></div></div><div class="tx"><h3>Cinedle</h3><p>Um diretor secreto por dia. Chute nomes, siga as cores e chegue nele em 6 tentativas.</p><span class="go">Jogar hoje <i aria-hidden="true">→</i></span></div></button><button class="gcard du" data-duelon="1"><span class="tg">2 equipes</span><div class="art"><div class="hx-mv"><div class="tm">Equipe A<b>7</b></div><div class="vs">VS</div><div class="tm">Equipe B<b>5</b></div></div></div><div class="tx"><h3>Duelo</h3><p>Duas equipes no mesmo aparelho ou cada uma no seu celular. Vence quem souber mais.</p><span class="go">Desafiar <i aria-hidden="true">→</i></span></div></button><div class="gcard so" aria-disabled="true"><div class="art"><svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#25226E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9h14l-1.5 12h-11zM9 9l.5 12M15 9l-.5 12M6 9a3 3 0 0 1 2.5-4.7A3 3 0 0 1 12 3a3 3 0 0 1 3.5 1.3A3 3 0 0 1 18 9"/></svg></div><div class="tx"><h3>Mais jogos a caminho</h3><p>O Sou Cinéfilo está crescendo. Novos jeitos de testar o seu repertório vão chegar aqui.</p><span class="go">Em breve</span></div></div></div>
     </section>
 
     <section class="sec" id="frases">
@@ -1507,7 +1633,17 @@ body[data-gt] #v-tl .tlc .tt small{color:var(--ink-700)}
               <button class="dtile" data-dnq="36" aria-pressed="false"><b>36</b><span>A fundo</span><small>cerca de 9 min</small></button>
             </div></div>
   <div class="gfoot"><div class="gs">Dá para voltar e mudar uma resposta antes de ver o resultado.</div><button class="btn primary" id="dnGo">Começar o teste <span aria-hidden="true">→</span></button></div>
-</div></section><section class="sec s2" data-g="dna"><div class="eyebrow">Como funciona</div><h2>Três passos, <em>sem enrolação</em>.</h2><div class="grid3"><div class="step"><div class="n">01</div><h3>Responda sem certo nem errado</h3><p>Perguntas sobre ritmo, silêncio, medo, humor, amor e imagem, cada uma com quatro respostas.</p></div><div class="step"><div class="n">02</div><h3>Veja o diretor</h3><p>O diretor mais parecido com você aparece com a porcentagem de compatibilidade.</p></div><div class="step"><div class="n">03</div><h3>Leia a sua carta</h3><p>Um texto escrito a partir das suas próprias escolhas e um cartão pronto para os stories.</p></div></div></section><section class="sec s2" data-g="dna"><div class="eyebrow">Quem pode aparecer</div><h2><span class="ndir">280</span> diretores, <em>um com a sua cara</em>.</h2><div class="dgrid" id="dnPeople"></div></section>
+</div></section><section class="sec s2" data-g="dna"><div class="eyebrow">Como funciona</div><h2>Três passos, <em>sem enrolação</em>.</h2><div class="grid3"><div class="step"><div class="n">01</div><h3>Responda sem certo nem errado</h3><p>Perguntas sobre ritmo, silêncio, medo, humor, amor e imagem, cada uma com quatro respostas.</p></div><div class="step"><div class="n">02</div><h3>Veja o diretor</h3><p>O diretor mais parecido com você aparece com a porcentagem de compatibilidade.</p></div><div class="step"><div class="n">03</div><h3>Leia a sua carta</h3><p>Um texto escrito a partir das suas próprias escolhas e um cartão pronto para os stories.</p></div></div></section><section class="sec s2" data-g="dna"><div class="eyebrow">Quem pode aparecer</div><h2><span class="ndir">280</span> diretores, <em>um com a sua cara</em>.</h2><div class="dgrid" id="dnPeople"></div></section><section class="gpg" id="intruso" data-g="in"><div class="hero2"><div class="hl"><div class="eyebrow">Jogo de olho clínico</div><h1>Qual filme <em>não é dele</em>?</h1><p class="lead">Quatro pôsteres: três são do mesmo diretor e um é intruso. Ache o que não combina. No difícil, o intruso tem o nome parecido com o de um filme dele, ou é outro filme com o mesmo título.</p><ul class="perks2"><li>3 níveis</li><li>Pôsteres de verdade</li><li>Recorde por nível</li></ul></div><div class="art"><div class="inart" id="inArt" aria-hidden="true"><p class="inwho2">Qual não é de <b data-who>…</b>?</p><div class="ipr"><div class="ip"><span></span></div><div class="ip"><span></span></div><div class="ip"><span></span></div><div class="ip"><span></span></div></div></div></div></div>
+<div class="gp2" id="inPanel">
+  <div class="gtop"><span class="gq" style="margin:0"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20v-6M10 20V9M16 20V5M22 20V2"/></svg><span>Seu jogo</span></span><span class="gsum" id="inBest"></span></div>
+  <div class="grow"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20v-6M10 20V9M16 20V5M22 20V2"/></svg><span>Nível</span></div><div class="nchips" id="inLv" role="group" aria-label="Nível"></div><p class="ghint" id="inLvDesc"></p></div>
+  <div class="grow"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Rodadas</span><small>um diretor por rodada</small></div><div class="nchips" id="inN" role="group" aria-label="Número de rodadas"></div></div>
+  <div class="gfoot"><div class="gs" id="inSum"></div><button class="btn primary" id="inGo">Jogar o Filme Intruso <span aria-hidden="true">→</span></button></div>
+</div></section><section class="sec s2" data-g="in"><div class="eyebrow">Como funciona</div><h2>Três passos, <em>sem enrolação</em>.</h2><div class="grid3"><div class="step"><div class="n">01</div><h3>Veja os quatro pôsteres</h3><p>Aparece um diretor e quatro filmes, com título e ano. Três são dele.</p></div><div class="step"><div class="n">02</div><h3>Aponte o intruso</h3><p>Toque no filme que não foi dirigido por ele. Acertou ou errou, o jogo mostra quem dirigiu cada um.</p></div><div class="step"><div class="n">03</div><h3>Some acertos</h3><p>Ao final você vê quantos intrusos achou. O melhor resultado de cada nível fica salvo neste navegador.</p></div></div></section><section class="sec s2" data-g="in"><div class="eyebrow">Os níveis</div><h2>Como o intruso é <em>escolhido</em>.</h2><div class="lvc"><div><span class="gtag">Fácil</span><h3>Estilos bem diferentes</h3><p>Diretores muito famosos, e o intruso é de um estilo e de uma época bem diferentes dos outros três.</p></div><div><span class="gtag">Médio</span><h3>Estilos parecidos</h3><p>O intruso é de um diretor com traços parecidos (ritmo, tom, imagem). Só quem conhece a filmografia acerta.</p></div><div><span class="gtag">Difícil</span><h3>Nome que engana</h3><p>Diretores menos óbvios. O intruso tem o nome parecido com o de um filme dele, ou é outro filme com o mesmo título.</p></div></div></section><section class="gpg" id="cinedle" data-g="cd"><div class="hero2"><div class="hl"><div class="eyebrow">Desafio diário</div><h1>Quem é o <em>diretor do dia</em>?</h1><p class="lead">Um diretor secreto por dia, o mesmo para todo mundo. Chute nomes e use as cores para chegar nele: país, nascimento, gênero, número de filmes, estreia e Oscar. Você tem 6 tentativas.</p><ul class="perks2"><li>Um por dia</li><li>6 tentativas</li><li>Sequência de dias</li></ul></div><div class="art"><div class="cdart" id="cdArt" aria-hidden="true"></div></div></div>
+<div class="gp2" id="cdPanel">
+  <div class="gtop"><div class="seg top2" id="cdModeSeg" role="group" aria-label="Modo"><button data-cdmode="daily" aria-pressed="true"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Diretor do dia</button><button data-cdmode="free" aria-pressed="false"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>Treino</button></div><span class="gsum" id="cdStatus"></span></div>
+  <div class="gfoot"><div class="gs" id="cdSum"></div><button class="btn primary" id="cdGo"><span id="cdGoTxt">Jogar o diretor de hoje</span> <span aria-hidden="true">→</span></button></div>
+</div></section><section class="sec s2" data-g="cd"><div class="eyebrow">Como funciona</div><h2>Três passos, <em>sem enrolação</em>.</h2><div class="grid3"><div class="step"><div class="n">01</div><h3>Chute um diretor</h3><p>Digite o nome e escolha na lista. Vale qualquer um dos 280 diretores do site.</p></div><div class="step"><div class="n">02</div><h3>Leia as cores</h3><p>Cada palpite mostra seis pistas. Verde é igual, amarelo é perto, cinza é longe, e a seta aponta para o secreto.</p></div><div class="step"><div class="n">03</div><h3>Acerte em 6</h3><p>Se acertar, a sequência de dias cresce. Depois dá para compartilhar o resultado sem entregar o nome.</p></div></div></section><section class="sec s2" data-g="cd"><div class="eyebrow">As pistas</div><h2>O que cada <em>cor</em> quer dizer.</h2><div class="lgd"><div><div class="cdt g"><b>EUA</b></div><p><b>Verde:</b> igual ao do diretor secreto.</p></div><div><div class="cdt y"><b>Drama</b></div><p><b>Amarelo:</b> perto. Por exemplo, o gênero aparece entre os principais dele, ou o ano é próximo.</p></div><div><div class="cdt n"><b>Japão</b></div><p><b>Cinza:</b> longe, ou diferente.</p></div><div><div class="cdt n"><b>1965</b><i>↑</i></div><p><b>Seta:</b> o valor do secreto é maior. ↑ nasceu depois, ↓ nasceu antes.</p></div></div></section>
     
     
   </div>
@@ -1524,6 +1660,8 @@ body[data-gt] #v-tl .tlc .tt small{color:var(--ink-700)}
 
 <main id="v-tl" hidden><div class="qwrap tlw" id="tlRoot"></div></main>
 <main id="v-dna" hidden><div class="qwrap dnaw" id="dnaRoot"></div></main>
+<main id="v-intruso" hidden><div class="qwrap inw" id="inRoot"></div></main>
+<main id="v-cinedle" hidden><div class="qwrap cdw" id="cdRoot"></div></main>
 <main id="v-live" hidden><div class="qwrap livew" id="liveRoot"></div></main>
 
 <main id="v-dir" hidden><div id="dirHost"></div></main>
@@ -1611,11 +1749,11 @@ const WIKI = {
 const SHOW = {"Coen brothers":"Irmãos Coen"};
 
 const $ = id => document.getElementById(id);
-const views = ["hub","home","quiz","result","duel","dir","poster","tl","live","dna"];
+const views = ["hub","home","quiz","result","duel","dir","poster","tl","live","dna","intruso","cinedle"];
 let size = 10;
 let S = null; // estado da partida
 
-const GT = {quiz:"qd", result:"qd", duel:"qd", live:"qd", poster:"poster", tl:"tl", dna:"dna"};
+const GT = {quiz:"qd", result:"qd", duel:"qd", live:"qd", poster:"poster", tl:"tl", dna:"dna", intruso:"in", cinedle:"cd"};
 function setGT(v){
   const g = v === "home" ? $("v-home").dataset.g : (GT[v] || "");
   if (g) document.body.dataset.gt = g; else delete document.body.dataset.gt;
@@ -2250,7 +2388,7 @@ function renderDuel(){
 
 /* ---------- eventos ---------- */
 function goSection(id, m){
-  const GM = {how:"qd", levels:"qd", medals:"qd", poster:"poster", linha:"tl", descubra:"dna", "g-qd":"qd", "g-poster":"poster", "g-tl":"tl", "g-dna":"dna"};
+  const GM = {how:"qd", levels:"qd", medals:"qd", poster:"poster", linha:"tl", descubra:"dna", "g-qd":"qd", "g-poster":"poster", "g-tl":"tl", "g-dna":"dna", intruso:"in", "g-in":"in", cinedle:"cd", "g-cd":"cd"};
   const g = GM[id];
   if (!g){ const el0 = $(id); if (el0 && $("v-hub").contains(el0)){ show("hub"); setTimeout(() => el0.scrollIntoView({behavior: "smooth"}), 40); return; } }
   if (g){ $("v-home").dataset.g = g; if (!$("v-home").hidden) setGT("home"); }
@@ -4093,6 +4231,303 @@ addEventListener("hashchange",route);route();
     setTimeout(function(){var el=id==="top"?null:document.getElementById(id);if(el)el.scrollIntoView({behavior:"smooth"});else window.scrollTo({top:0,behavior:"smooth"})},40);
   });
 })();
+</script>
+<script>
+(function(){
+  var D=window.dirData||[],C=window.cineRnd;if(!D.length||!C)return;
+  var TMD="https://image.tmdb.org/t/p/w342";
+  function g(i){return document.getElementById(i)}
+  function norm(x){return String(x||"").normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase()}
+  function esc(x){return String(x==null?"":x).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+  function fameOf(d){return d.films.map(function(f){return f[6]||0}).sort(function(a,b){return b-a}).slice(0,5).reduce(function(s,v){return s+v},0)}
+  var RANK=D.filter(function(d){return d.tr&&d.films.length>=4}).sort(function(a,b){return fameOf(b)-fameOf(a)});
+  function ini(n){return n.split(" ").filter(function(w){return /^[A-ZÀ-Ý]/.test(w)}).map(function(w){return w[0]}).slice(0,2).join("")}
+  function dist(a,b){var s=0;for(var i=0;i<8;i++){var x=(a.tr[i]||0)-(b.tr[i]||0);s+=x*x}return Math.sqrt(s)}
+  function okF(f,v){return f[4]&&+f[0]&&(f[6]||0)>=v}
+  function fkey(f){return norm(f[1])+"|"+f[0]}
+  var KEYS={},TOK={},TIT={},STOP={para:1,como:1,mais:1,uma:1,dos:1,das:1,que:1,com:1,sem:1,the:1,and:1,los:1,las:1,del:1,der:1,die:1,filme:1,from:1,with:1,into:1,over:1,arte:1,vida:1,amor:1,mundo:1,noite:1,tempo:1,homem:1,mulher:1,lugar:1,casa:1,dias:1,volta:1,novo:1,nova:1,grande:1,primeiro:1,ultimo:1,historia:1,parte:1,segunda:1,final:1};
+  function toks(t){return norm(t).replace(/[^a-z0-9 ]/g," ").split(/\s+/).filter(function(w){return w.length>=4&&!STOP[w]&&!/^\d+$/.test(w)})}
+  RANK.forEach(function(d){d.films.forEach(function(f){
+    var k=fkey(f);(KEYS[k]=KEYS[k]||{})[d.s]=1;
+    if(okF(f,400)){var tn=norm(f[1]);(TIT[tn]=TIT[tn]||[]).push({d:d,f:f});toks(f[1]).forEach(function(w){(TOK[w]=TOK[w]||[]).push({d:d,f:f})})}})});
+  var LV={
+    facil:{name:"Fácil",desc:"Diretores muito famosos. O intruso é de um estilo e de uma época bem diferentes, dá para sentir.",from:0,to:80,minD:2500,minE:2500,mins:4},
+    medio:{name:"Médio",desc:"O intruso é de um diretor de estilo parecido. Só quem conhece a filmografia de cada um acerta.",from:0,to:170,minD:1200,minE:1200,mins:5},
+    dificil:{name:"Difícil",desc:"Diretores menos óbvios. O intruso tem o nome parecido com o de um filme dele, ou é outro filme com o mesmo título.",from:50,to:280,minD:700,minE:500,mins:7}
+  };
+  var LK=["facil","medio","dificil"];
+  function dfilms(d,v){return d.films.filter(function(f){return okF(f,v)})}
+  function pickDistinct(arr,n){var out=[],ys={};C.shuf(arr).forEach(function(f){if(out.length<n&&!ys[f[0]]){ys[f[0]]=1;out.push(f)}});return out.length===n?out:null}
+  function valid(Dd,real,E,x,lv){
+    if(E.s===Dd.s)return false;var k=fkey(x);if(KEYS[k]&&KEYS[k][Dd.s])return false;
+    for(var i=0;i<real.length;i++){var r=real[i];if(fkey(r)===k)return false;
+      if(norm(r[1])===norm(x[1])&&(lv!=="dificil"||Math.abs(+r[0]-+x[0])<3))return false;
+      if(r[4]===x[4])return false}
+    return true}
+  function round(lvk,used){
+    var lv=LV[lvk],pool=RANK.slice(lv.from,lv.to).filter(function(d){return !used[d.s]&&dfilms(d,lv.minD).length>=3});
+    if(!pool.length)return null;
+    for(var tries=0;tries<40;tries++){
+      var Dd=pool[Math.floor(Math.random()*pool.length)],good=dfilms(Dd,lv.minD),real=null,E=null,x=null,sim=false,exact=false;
+      if(lvk==="dificil"){
+        var baits=C.shuf(good);
+        for(var b=0;b<baits.length&&!x;b++){var bf=baits[b],cands=[];
+          var bt=toks(bf[1]);
+          (TIT[norm(bf[1])]||[]).forEach(function(c){if(c.d.s!==Dd.s)cands.push({c:c,ex:true,sc:9})});
+          bt.forEach(function(w){(TOK[w]||[]).forEach(function(c){if(c.d.s!==Dd.s&&(c.f[6]||0)>=lv.minE){var ct=toks(c.f[1]),sh=bt.filter(function(z){return ct.indexOf(z)>=0}).length;cands.push({c:c,ex:false,sc:sh/Math.max(bt.length,ct.length)})}})});
+          cands=C.shuf(cands).sort(function(a,b){return b.sc-a.sc}).slice(0,10);cands=C.shuf(cands);
+          for(var q=0;q<cands.length&&!x;q++){var cc=cands[q].c,others=good.filter(function(f){return f!==bf&&f[0]!==bf[0]}),pick=pickDistinct(others,2);
+            if(!pick)break;var rr=[bf].concat(pick);
+            if(valid(Dd,rr,cc.d,cc.f,lvk)){real=rr;E=cc.d;x=cc.f;sim=true;exact=cands[q].ex}}}
+      }
+      if(!x){
+        var pr=pickDistinct(good,3);if(!pr)continue;
+        var others=RANK.filter(function(d){return d.s!==Dd.s&&dfilms(d,lv.minE).length>=1&&RANK.indexOf(d)<lv.to});
+        others.sort(function(a,b){return dist(Dd,a)-dist(Dd,b)});
+        var set;
+        if(lvk==="facil"){set=others.slice(Math.floor(others.length/2))}
+        else if(lvk==="medio"){set=others.slice(0,6)}
+        else{set=others.slice(0,8)}
+        set=C.shuf(set);
+        for(var s=0;s<set.length&&!x;s++){var ef=C.shuf(dfilms(set[s],lv.minE));
+          for(var h=0;h<ef.length;h++){if(valid(Dd,pr,set[s],ef[h],lvk)){E=set[s];x=ef[h];real=pr;break}}}
+      }
+      if(!x)continue;
+      var items=C.shuf(real.map(function(f){return {f:f,d:Dd,intr:false}}).concat([{f:x,d:E,intr:true,sim:sim,exact:exact}]));
+      return {d:Dd,e:E,items:items,sim:sim,exact:exact}
+    }
+    return null}
+  /* gera n rodadas sem repetir diretor */
+  function make(lvk,n){var used={},out=[];for(var i=0;i<n*3&&out.length<n;i++){var r=round(lvk,used);if(!r)break;used[r.d.s]=1;out.push(r)}return out}
+  window.cineIn={round:round,make:make,LV:LV};
+
+  /* ---------- estado e preferências ---------- */
+  var cfg={lv:"medio",n:10};
+  try{var c0=JSON.parse(localStorage.getItem("in_cfg")||"null");if(c0&&LV[c0.lv])cfg.lv=c0.lv;if(c0&&[5,10,15].indexOf(c0.n)>=0)cfg.n=c0.n}catch(e){}
+  function save(){try{localStorage.setItem("in_cfg",JSON.stringify(cfg))}catch(e){}}
+  function bests(){try{return JSON.parse(localStorage.getItem("in_best")||"{}")||{}}catch(e){return {}}}
+  var NS=[5,10,15];
+  function panel(){
+    var lv=g("inLv");if(!lv)return;
+    lv.innerHTML=LK.map(function(k){return '<button class="nchip wide" data-inlv="'+k+'" aria-pressed="'+(k===cfg.lv)+'">'+LV[k].name+'</button>'}).join("");
+    g("inN").innerHTML=NS.map(function(n){return '<button class="nchip" data-inn="'+n+'" aria-pressed="'+(n===cfg.n)+'">'+n+'</button>'}).join("");
+    g("inLvDesc").textContent=LV[cfg.lv].desc;
+    g("inSum").innerHTML="<b>"+cfg.n+" rodadas</b> · nível "+LV[cfg.lv].name.toLowerCase()+" · cerca de "+Math.max(2,Math.round(cfg.n*0.45))+" min";
+    var b=bests()[cfg.lv+"_"+cfg.n];g("inBest").innerHTML=b!=null?"Seu melhor: <b>"+b+"/"+cfg.n+"</b>":"Ainda sem recorde"
+  }
+  /* ---------- tela de jogo ---------- */
+  var G=null,root=function(){return g("inRoot")};
+  function img(f){return TMD+f[4]}
+  function poster(it,i){
+    return '<button class="inp" data-ip="'+i+'" aria-label="'+esc(it.f[1])+' ('+it.f[0]+')"><span class="im" style="background-image:url('+img(it.f)+')"><b class="fb">'+esc(it.f[1])+'</b></span><span class="tt">'+esc(it.f[1])+'<small>'+it.f[0]+'</small></span><span class="dr" hidden></span></button>'}
+  function start(){
+    var rs=make(cfg.lv,cfg.n);
+    if(rs.length<3){alert0("Não consegui montar as rodadas. Tente outro nível.");return}
+    G={lv:cfg.lv,n:rs.length,i:0,score:0,streak:0,best:0,rounds:rs,locked:false};
+    show("intruso");draw()
+  }
+  function alert0(m){var r=root();if(r)r.innerHTML='<div class="panel" style="margin-top:20px"><p class="pnote">'+m+'</p></div>'}
+  function draw(){
+    var r=G.rounds[G.i];if(!r){return fin()}
+    G.locked=false;
+    root().innerHTML='<div class="qtop"><span>Rodada <b>'+(G.i+1)+'</b> de '+G.n+'</span><span class="streak" id="inStr"'+(G.streak>1?'':' hidden')+'>'+G.streak+' seguidos</span><span class="ptot">Acertos <b>'+G.score+'</b></span><button id="inQuit">← Sair</button></div>'+
+    '<div class="inlv">Nível '+LV[G.lv].name+'</div>'+
+    '<div class="inq"><h2>Qual destes filmes <em>não</em> foi dirigido por</h2><span class="inwho"><span class="av3">'+esc(ini(r.d.n))+(r.d.foto?'<img alt="" src="https://image.tmdb.org/t/p/w185'+r.d.foto+'" onerror="this.remove()">':'')+'</span><b>'+esc(r.d.n)+'</b></span><h2>?</h2></div>'+
+    '<div class="inposters" id="inPosters">'+r.items.map(poster).join("")+'</div><div id="inFb" aria-live="polite"></div>'
+  }
+  function answer(i){
+    if(!G||G.locked)return;var r=G.rounds[G.i],it=r.items[i];if(!it)return;G.locked=true;
+    var ok=!!it.intr;if(ok){G.score++;G.streak++;if(G.streak>G.best)G.best=G.streak}else G.streak=0;
+    var els=document.querySelectorAll("#inPosters .inp");
+    r.items.forEach(function(x,k){var el=els[k];el.classList.add(x.intr?"intr":"real");el.disabled=true;
+      var dr=el.querySelector(".dr");dr.hidden=false;dr.textContent=(x.intr?"É de ":"")+x.d.n});
+    if(!ok)els[i].classList.add("wrong");
+    var x=r.items.filter(function(z){return z.intr})[0];
+    var note=r.sim?(r.exact?"Mesmo título de um filme dele, mas é outro diretor.":"O nome engana: lembra um filme de "+esc(r.d.n)+", mas não é."):(r.e?"Estilo próximo ao dele: "+esc(r.e.n)+".":"");
+    g("inFb").innerHTML='<div class="infb"><div class="pgain'+(ok?'':' zero')+'">'+(ok?'Acertou!':'Não foi essa')+'</div><p>O intruso era <b>'+esc(x.f[1])+'</b> ('+x.f[0]+'), dirigido por <b>'+esc(x.d.n)+'</b>. '+note+'</p><button class="btn primary" id="inNext">'+(G.i+1>=G.n?'Ver resultado':'Próximo')+' <span aria-hidden="true">→</span></button></div>';
+    var nb=g("inNext");if(nb){nb.focus({preventScroll:true});nb.scrollIntoView({block:"nearest",behavior:"smooth"})}
+    var tot=document.querySelector("#inRoot .ptot b");if(tot)tot.textContent=G.score;
+    var st=g("inStr");if(st){st.hidden=G.streak<2;st.textContent=G.streak+" seguidos"}
+  }
+  function fin(){
+    var k=G.lv+"_"+cfg.n,b=bests(),pct=G.score/G.n,rec=false;
+    if(G.n===cfg.n&&(b[k]==null||G.score>b[k])){b[k]=G.score;rec=true;try{localStorage.setItem("in_best",JSON.stringify(b))}catch(e){}}
+    var t=pct>=.9?["Olho de lince","Nada escapa de você."]:pct>=.7?["Cinéfilo atento","Poucos intrusos passam."]:pct>=.45?["Bom começo","Dá para afiar o olho."]:["Os intrusos venceram","Tente de novo, ou comece pelo nível fácil."];
+    root().innerHTML='<div class="qtop"><span>Fim da partida</span><span></span><button id="inQuit">← Sair</button></div>'+
+    '<div class="panel inres"><div class="eyebrow" style="justify-content:center">'+t[0]+'</div><div class="inbig">'+G.score+'<span> / '+G.n+'</span></div><p class="pnote">'+t[1]+' Nível '+LV[G.lv].name+(G.best>1?' · melhor sequência: '+G.best:'')+(rec?' · <b>novo recorde!</b>':'')+'</p>'+
+    '<div class="inbtns"><button class="btn primary" id="inAgain">Jogar de novo</button><button class="btn ghost" id="inShare">Compartilhar</button><button class="btn ghost" id="inHome">Voltar ao início</button></div></div>'
+  }
+  function share(btn){
+    var txt="Fiz "+G.score+"/"+G.n+" no nível "+LV[G.lv].name+" do Filme Intruso, no Sou Cinéfilo. Será que você acha o intruso?",old=btn.textContent;
+    try{if(navigator.share)navigator.share({text:txt,url:location.origin});else{navigator.clipboard.writeText(txt+" "+location.origin).then(function(){btn.textContent="Copiado!";setTimeout(function(){btn.textContent=old},1800)})}}catch(e){}
+  }
+  document.addEventListener("click",function(e){
+    var t=e.target,a;
+    if((a=t.closest("[data-inlv]"))){cfg.lv=a.dataset.inlv;save();panel();return}
+    if((a=t.closest("[data-inn]"))){cfg.n=+a.dataset.inn;save();panel();return}
+    if(t.closest("#inGo")){start();return}
+    if(g("v-intruso")&&!g("v-intruso").hidden){
+      if((a=t.closest("[data-ip]"))){answer(+a.dataset.ip);return}
+      if(t.closest("#inNext")){G.i++;draw();return}
+      if(t.closest("#inAgain")){start();return}
+      if(t.closest("#inShare")){share(t.closest("#inShare"));return}
+      if(t.closest("#inQuit")||t.closest("#inHome")){panel();goSection("intruso");return}
+    }
+  });
+  panel();
+
+  /* ---------- animações: landing e card da home ---------- */
+  function quartet(){return round("facil",{})}
+  function fillMini(box,sel){
+    var r=quartet();if(!r)return;var els=box.querySelectorAll(sel);
+    box.classList.remove("hit");
+    r.items.forEach(function(it,i){var el=els[i];if(!el)return;el.classList.remove("intr");el.style.backgroundImage="url("+img(it.f)+")";el.dataset.t=it.f[1];el.dataset.y=it.f[0];if(it.intr)el.dataset.i="1";else delete el.dataset.i;
+      var s=el.querySelector("span");if(s)s.textContent=it.f[1]});
+    var d=box.querySelector("[data-who]");if(d)d.textContent=r.d.n;
+    setTimeout(function(){els.forEach(function(el){if(el.dataset.i)el.classList.add("intr")});box.classList.add("hit")},1500)
+  }
+  function loop(box,sel,ms){if(!box)return;fillMini(box,sel);var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;if(rm)return;setInterval(function(){if(document.hidden)return;box.classList.add("swap");setTimeout(function(){fillMini(box,sel);box.classList.remove("swap")},400)},ms)}
+  loop(g("inArt"),".ip",5200);
+  loop(document.querySelector(".hx-mi"),".mp",4200);
+})();
+
+</script>
+<script>
+(function(){
+  var D=window.dirData||[];if(!D.length)return;
+  function g(i){return document.getElementById(i)}
+  function norm(x){return String(x||"").normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase()}
+  function esc(x){return String(x==null?"":x).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+  function fameOf(d){return d.films.map(function(f){return f[6]||0}).sort(function(a,b){return b-a}).slice(0,5).reduce(function(s,v){return s+v},0)}
+  function ini(n){return n.split(" ").filter(function(w){return /^[A-ZÀ-Ý]/.test(w)}).map(function(w){return w[0]}).slice(0,2).join("")}
+  var ALL=D.filter(function(d){return d.foto&&d.tr}).sort(function(a,b){return a.n.localeCompare(b.n,"pt")});
+  var POOL=ALL.slice().sort(function(a,b){return fameOf(b)-fameOf(a)}).slice(0,100).sort(function(a,b){return a.s<b.s?-1:1});
+  function rng(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;var t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+  var ORDER=(function(){var a=POOL.slice(),r=rng(20261010);for(var i=a.length-1;i>0;i--){var j=Math.floor(r()*(i+1)),x=a[i];a[i]=a[j];a[j]=x}return a})();
+  function today(){var n=new Date();return Math.floor(Date.UTC(n.getFullYear(),n.getMonth(),n.getDate())/864e5)}
+  var BASE=Math.floor(Date.UTC(2026,9,10)/864e5);
+  function secretFor(day){return ORDER[((day%ORDER.length)+ORDER.length)%ORDER.length]}
+  function bySlug(s){for(var i=0;i<ALL.length;i++)if(ALL[i].s===s)return ALL[i];return null}
+  function attrs(d){var ys=d.films.map(function(f){return +f[0]}).filter(Boolean);
+    return {pais:d.pais||"?",nasc:+(d.y&&d.y[0])||0,gen:(d.gen&&d.gen[0]&&d.gen[0][0])||"?",gens:(d.gen||[]).slice(0,3).map(function(x){return x[0]}),tot:d.tot||d.films.length,est:ys.length?Math.min.apply(null,ys):0,osc:(d.aw||[]).some(function(a){return a.r==="v"&&/Oscar de Melhor Direção/.test(a.p)})}}
+  function num(a,b,near){if(!a||!b)return {st:"n",ar:""};var df=b-a;return {st:df===0?"g":(Math.abs(df)<=near?"y":"n"),ar:df>0?"↑":df<0?"↓":""}}
+  function compare(gd,sd){
+    var a=attrs(gd),b=attrs(sd),n=num(a.nasc,b.nasc,7),t=num(a.tot,b.tot,3),e=num(a.est,b.est,5);
+    return [
+      {k:"País",t:a.pais,st:a.pais===b.pais?"g":"n",ar:""},
+      {k:"Nascimento",t:a.nasc||"?",st:n.st,ar:n.ar},
+      {k:"Gênero",t:a.gen,st:a.gen===b.gen?"g":(b.gens.indexOf(a.gen)>=0?"y":"n"),ar:""},
+      {k:"Filmes",t:a.tot,st:t.st,ar:t.ar},
+      {k:"Estreia",t:a.est||"?",st:e.st,ar:e.ar},
+      {k:"Oscar de direção",t:a.osc?"Sim":"Não",st:a.osc===b.osc?"g":"n",ar:""}]}
+  window.cineCD={compare:compare,POOL:POOL,ALL:ALL};
+  function tile(c,i,lbl){return '<div class="cdt '+c.st+'" style="--i:'+i+'" aria-label="'+esc(c.k)+': '+esc(c.t)+(c.ar?(c.ar==="↑"?", o secreto é maior":", o secreto é menor"):"")+'">'+(lbl?'<small>'+esc(c.k)+'</small>':'')+'<b>'+esc(c.t)+'</b>'+(c.ar?'<i>'+c.ar+'</i>':'')+'</div>'}
+  function who(d){return '<div class="cdwho"><span class="av3">'+esc(ini(d.n))+(d.foto?'<img alt="" loading="lazy" src="https://image.tmdb.org/t/p/w185'+d.foto+'" onerror="this.remove()">':'')+'</span><b>'+esc(d.n)+'</b></div>'}
+  function row(gd,sd,still){var cs=compare(gd,sd);return '<div class="cdrow'+(still?' still':'')+'">'+who(gd)+'<div class="cdts">'+cs.map(function(c,i){return tile(c,i,true)}).join("")+'</div></div>'}
+  /* ---------- estado ---------- */
+  function jget(k,d){try{var v=JSON.parse(localStorage.getItem(k)||"null");return v==null?d:v}catch(e){return d}}
+  function jset(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+  var MAX=6,S=null,timer=null;
+  function stats(){var s=jget("cd_stats",null)||{};return {played:s.played||0,wins:s.wins||0,streak:s.streak||0,max:s.max||0,last:s.last||0,dist:s.dist||[0,0,0,0,0,0]}}
+  function dayState(){var d=today(),s=jget("cd_state",null);if(!s||s.day!==d)s={day:d,g:[],done:false,won:false};return s}
+  function lp(){
+    var st=dayState(),ss=stats(),el=g("cdStatus"),go=g("cdGoTxt");if(!el)return;
+    var live=ss.streak>0&&(ss.last===today()||ss.last===today()-1)?ss.streak:0;
+    el.innerHTML=st.done?('Hoje: '+(st.won?'<b>acertou em '+st.g.length+'</b>':'<b>não deu dessa vez</b>')+' · sequência <b>'+live+'</b>'):(st.g.length?'Hoje: <b>'+st.g.length+' de '+MAX+'</b> tentativas · sequência <b>'+live+'</b>':'Hoje: <b>ainda não jogou</b> · sequência <b>'+live+'</b>');
+    if(go)go.textContent=st.done?"Ver o resultado de hoje":(st.g.length?"Continuar o diretor de hoje":"Jogar o diretor de hoje");
+    var sm=g("cdSum");if(sm)sm.innerHTML='<b>Cinedle #'+(today()-BASE+1)+'</b> · '+MAX+' tentativas · um diretor novo por dia'
+  }
+  /* ---------- tela de jogo ---------- */
+  function root(){return g("cdRoot")}
+  function open(mode){
+    var day=today();
+    if(mode==="free"){S={mode:"free",day:day,secret:ORDER[Math.floor(Math.random()*ORDER.length)],g:[],done:false,won:false}}
+    else{var st=dayState();S={mode:"daily",day:day,secret:secretFor(day),g:st.g.slice(),done:st.done,won:st.won}}
+    show("cinedle");build();
+    if(S.done)end(true);
+    var inp=g("cdIn");if(inp&&!S.done&&window.matchMedia&&matchMedia("(min-width:720px)").matches)inp.focus({preventScroll:true})
+  }
+  function build(){
+    var n=S.mode==="daily"?"#"+(S.day-BASE+1):"treino";
+    root().innerHTML='<div class="qtop"><span>Cinedle <b>'+n+'</b></span><span class="ptot">Tentativa <b id="cdTry">'+Math.min(S.g.length+1,MAX)+'</b> de '+MAX+'</span><button id="cdQuit">← Sair</button></div>'+
+    '<div class="cdhead"><h2>'+(S.mode==="daily"?'Quem é o <em>diretor do dia</em>?':'Treino: quem é <em>este diretor</em>?')+'</h2><p>Chute um diretor. As cores mostram o quanto ele se parece com o secreto: <i class="lg g"></i> igual, <i class="lg y"></i> perto, <i class="lg n"></i> longe. A seta aponta para onde está o secreto.</p></div>'+
+    '<div class="cdsearch" id="cdBox"><input id="cdIn" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Digite o nome de um diretor" aria-label="Chutar um diretor" role="combobox" aria-expanded="false" aria-controls="cdSug"><div class="cdsug" id="cdSug" role="listbox" hidden></div></div>'+
+    '<div class="cdcols" aria-hidden="true"><span>Diretor</span><span>País</span><span>Nascimento</span><span>Gênero</span><span>Filmes</span><span>Estreia</span><span>Oscar de direção</span></div>'+
+    '<div class="cdrows" id="cdRows">'+S.g.map(function(s){var d=bySlug(s);return d?row(d,S.secret,true):""}).join("")+'</div><div id="cdEnd"></div>';
+    if(S.done){var b=g("cdBox");b.hidden=true}
+  }
+  var sugIdx=-1,sugList=[];
+  function sug(){
+    var q=norm(g("cdIn").value.trim()),box=g("cdSug"),inp=g("cdIn");
+    if(q.length<1){box.hidden=true;inp.setAttribute("aria-expanded","false");sugList=[];return}
+    sugList=ALL.filter(function(d){return S.g.indexOf(d.s)<0&&norm(d.n).indexOf(q)>=0}).sort(function(a,b){var ap=norm(a.n).indexOf(q)===0?0:1,bp=norm(b.n).indexOf(q)===0?0:1;return ap-bp||a.n.localeCompare(b.n,"pt")}).slice(0,6);
+    sugIdx=sugList.length?0:-1;
+    box.innerHTML=sugList.length?sugList.map(function(d,i){return '<button role="option" class="cds'+(i===0?' on':'')+'" data-cdpick="'+d.s+'">'+who(d).replace('<b>','<b>')+'<small>'+esc(d.pais||"")+'</small></button>'}).join(""):'<div class="cdno">Nenhum diretor com esse nome. Tente outro.</div>';
+    box.hidden=false;inp.setAttribute("aria-expanded","true")
+  }
+  function mark(i){var els=document.querySelectorAll("#cdSug .cds");els.forEach(function(e,k){e.classList.toggle("on",k===i)});sugIdx=i}
+  function guess(slug){
+    if(!S||S.done)return;var d=bySlug(slug);if(!d||S.g.indexOf(slug)>=0)return;
+    S.g.push(slug);g("cdIn").value="";g("cdSug").hidden=true;
+    g("cdRows").insertAdjacentHTML("beforeend",row(d,S.secret,false));
+    var win=slug===S.secret.s,over=S.g.length>=MAX;
+    if(S.mode==="daily")jset("cd_state",{day:S.day,g:S.g,done:win||over,won:win});
+    var t=g("cdTry");if(t)t.textContent=Math.min(S.g.length+1,MAX);
+    if(win||over){S.done=true;S.won=win;
+      if(S.mode==="daily"){var ss=stats();ss.played++;if(win){ss.wins++;ss.dist[S.g.length-1]++;ss.streak=(ss.last===S.day-1)?ss.streak+1:1;ss.last=S.day;if(ss.streak>ss.max)ss.max=ss.streak}else{ss.streak=0}jset("cd_stats",ss)}
+      setTimeout(function(){end(false)},6*280+700)}
+    lp()
+  }
+  function emojis(){return S.g.map(function(s){var d=bySlug(s);return compare(d,S.secret).map(function(c){return c.st==="g"?"🟩":c.st==="y"?"🟨":"⬛"}).join("")}).join("\n")}
+  function end(still){
+    var b=g("cdBox");if(b)b.hidden=true;
+    var d=S.secret,ss=stats(),win=S.won,pl=ss.played||0;
+    var head=win?'Você acertou em '+S.g.length+' '+(S.g.length===1?'tentativa':'tentativas')+'!':'Não foi dessa vez.';
+    var stBlock=S.mode==="daily"?'<div class="cdstats"><div><b>'+pl+'</b><span>jogos</span></div><div><b>'+(pl?Math.round(ss.wins/pl*100):0)+'%</b><span>acertos</span></div><div><b>'+ss.streak+'</b><span>sequência</span></div><div><b>'+ss.max+'</b><span>melhor</span></div></div>':'';
+    g("cdEnd").innerHTML='<div class="cdend'+(still?' still':'')+'"><div class="cdres '+(win?'win':'lose')+'"><span class="av3 big">'+esc(ini(d.n))+(d.foto?'<img alt="" src="https://image.tmdb.org/t/p/w185'+d.foto+'" onerror="this.remove()">':'')+'</span><div><div class="eyebrow">'+(win?'Diretor secreto':'O diretor secreto era')+'</div><h3>'+esc(d.n)+'</h3><p>'+esc(d.pais||"")+(d.y&&d.y[0]?' · nasceu em '+esc(d.y[0]):'')+' · <a href="#diretor/'+d.s+'">ver perfil</a></p></div></div><p class="cdmsg">'+head+'</p>'+stBlock+
+    '<div class="inbtns">'+(S.mode==="daily"?'<button class="btn primary" id="cdShare">Compartilhar resultado</button>':'')+'<button class="btn '+(S.mode==="daily"?'ghost':'primary')+'" id="cdFree">Treinar com outro diretor</button><button class="btn ghost" id="cdHome">Voltar ao início</button></div>'+(S.mode==="daily"?'<p class="pnote small" id="cdNext"></p>':'')+'</div>';
+    tick();if(!timer)timer=setInterval(tick,1000)
+  }
+  function tick(){var el=g("cdNext");if(!el||g("v-cinedle").hidden)return;var n=new Date(),nx=new Date(n.getFullYear(),n.getMonth(),n.getDate()+1),s=Math.max(0,Math.floor((nx-n)/1000)),p=function(x){return (x<10?"0":"")+x};el.textContent="Próximo diretor em "+p(Math.floor(s/3600))+":"+p(Math.floor(s%3600/60))+":"+p(s%60)}
+  function share(btn){
+    var txt="Cinedle #"+(S.day-BASE+1)+" "+(S.won?S.g.length:"X")+"/"+MAX+"\n"+emojis()+"\n"+location.origin,old=btn.textContent;
+    try{if(navigator.share)navigator.share({text:txt});else navigator.clipboard.writeText(txt).then(function(){btn.textContent="Copiado!";setTimeout(function(){btn.textContent=old},1800)})}catch(e){}
+  }
+  document.addEventListener("click",function(e){
+    var t=e.target,a;
+    if(t.closest("#cdGo")){var m=(document.querySelector("#cdModeSeg [aria-pressed=true]")||{dataset:{}}).dataset.cdmode;open(m==="free"?"free":"daily");return}
+    if((a=t.closest("[data-cdmode]"))){document.querySelectorAll("#cdModeSeg [data-cdmode]").forEach(function(b){b.setAttribute("aria-pressed",b===a)});var f=a.dataset.cdmode==="free";var gt=g("cdGoTxt");if(f&&gt)gt.textContent="Treinar com um diretor aleatório";else lp();var sm=g("cdSum");if(sm&&f)sm.innerHTML='<b>Treino</b> · não conta para a sequência · um diretor sorteado';return}
+    if(g("v-cinedle")&&!g("v-cinedle").hidden){
+      if((a=t.closest("[data-cdpick]"))){guess(a.dataset.cdpick);return}
+      if(t.closest("#cdShare")){share(t.closest("#cdShare"));return}
+      if(t.closest("#cdFree")){open("free");return}
+      if(t.closest("#cdQuit")||t.closest("#cdHome")){lp();goSection("cinedle");return}
+      if(!t.closest("#cdBox")){var sg=g("cdSug");if(sg)sg.hidden=true}
+    }
+  });
+  document.addEventListener("input",function(e){if(e.target&&e.target.id==="cdIn")sug()});
+  document.addEventListener("keydown",function(e){
+    if(!e.target||e.target.id!=="cdIn")return;
+    if(e.key==="ArrowDown"&&sugList.length){e.preventDefault();mark((sugIdx+1)%sugList.length)}
+    else if(e.key==="ArrowUp"&&sugList.length){e.preventDefault();mark((sugIdx-1+sugList.length)%sugList.length)}
+    else if(e.key==="Enter"&&sugList[sugIdx]){e.preventDefault();guess(sugList[sugIdx].s)}
+    else if(e.key==="Escape"){g("cdSug").hidden=true}
+  });
+  lp();
+  window.cineCD.open=open;window.cineCD.state=function(){return S};
+  /* ---------- animações: landing e card da home ---------- */
+  function rnd(a){return a[Math.floor(Math.random()*a.length)]}
+  function demo(box,rows,lbl){
+    var sec=rnd(POOL),gs=[];
+    while(gs.length<rows-1){var x=rnd(ALL);if(x!==sec&&gs.indexOf(x)<0)gs.push(x)}
+    gs.push(sec);
+    box.innerHTML=gs.map(function(d,k){var cs=compare(d,sec);return '<div class="cdrow dm" style="--r:'+k+'">'+(lbl?who(d):'')+'<div class="cdts">'+cs.map(function(c,i){return tile(c,i,false)}).join("")+'</div></div>'}).join("")
+  }
+  function loop(box,rows,lbl,ms){if(!box)return;demo(box,rows,lbl);var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;if(rm)return;setInterval(function(){if(document.hidden)return;demo(box,rows,lbl)},ms)}
+  loop(g("cdArt"),3,true,6500);
+  loop(document.querySelector(".hx-mc"),3,false,4800);
+})();
+
 </script>
 <script>
 (function(){
