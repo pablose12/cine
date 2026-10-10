@@ -1279,6 +1279,19 @@ body[data-gt] #v-home .hero2 h1 em{color:var(--ga)}
   .pstack .pst-demo{width:150px;left:calc(50% - 75px)}.pstack .pst-demo.sd{width:120px}.pstack .pst-demo.sd.l{left:0}
   .gfoot .btn{width:100%;justify-content:center}
 }
+
+/* ===== v22: tela do Acerte o Pôster, pôster ao lado das respostas ===== */
+@media (min-width:900px){
+  #v-poster .qwrap{max-width:900px}
+  #pStage:has(#pf){display:grid;grid-template-columns:260px minmax(0,1fr);grid-template-rows:auto auto auto 1fr auto;column-gap:44px;align-items:start}
+  #pStage:has(#pf) .pturn{grid-column:1/-1}
+  #pStage:has(#pf) .pframe{grid-column:1;grid-row:2/5;width:260px;margin:4px 0 12px;position:sticky;top:90px}
+  #pStage:has(#pf) .ptime{grid-column:1;grid-row:5;width:260px}
+  #pStage:has(#pf) .ask{grid-column:2;grid-row:2;margin-top:6px}
+  #pStage:has(#pf) .opts{grid-column:2;grid-row:3}
+  #pStage:has(#pf) #pFb{grid-column:2;grid-row:4;align-self:start}
+  #pStage:has(#pf) #pFb>div{text-align:left!important}
+}
 </style>
 </head>
 <body>
