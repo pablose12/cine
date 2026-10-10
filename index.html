@@ -934,6 +934,111 @@ body.ms-on{padding-bottom:92px}
 @media (max-width:900px){.hubhero{grid-template-columns:1fr}.hgames{grid-template-columns:repeat(2,1fr)}.hcard.wide,.hcard.soon{grid-column:auto}.hvis{margin:8px auto 0}}
 @media (max-width:620px){.hgames{grid-template-columns:1fr}.hcard{min-height:0}.hvis{max-width:300px}}
 @media (prefers-reduced-motion:reduce){.hv{animation:none}.hcard,.btn,.gback,.logo svg{transition:none}}
+
+/* ===== Home Sou Cinéfilo: hero azul + cards com arte ===== */
+.hubhero{position:relative;background:var(--pri-deep);color:#fff;overflow:hidden}
+.hubhero .hh{display:grid;grid-template-columns:1fr 1fr;min-height:640px;align-items:center;position:relative;z-index:2}
+.hubhero .hx-t{display:flex;flex-direction:column;gap:20px;padding:56px 0;max-width:520px}
+.hubhero .eyebrow{color:var(--amber)}
+.hubhero h1{font-size:clamp(38px,5.2vw,62px);line-height:1.05;font-weight:700;margin:0;color:#fff;letter-spacing:-.03em}
+.hubhero p.lead{color:var(--pri-100);font-size:17px;line-height:1.6;max-width:480px;margin:0}
+.hubhero .perks{margin:0;color:var(--pri-100)}.hubhero .perks li::before{color:var(--amber)}
+.hubhero+.wrap #games{padding-top:64px}
+.hx-r{position:absolute;top:0;bottom:0;left:50%;right:0;z-index:1;overflow:hidden}
+.hx-fade{position:absolute;left:0;top:0;bottom:0;width:90px;z-index:2;background:linear-gradient(90deg,var(--pri-deep),rgba(23,21,75,0))}
+.hx-wall{position:absolute;left:0;right:0;top:-70px;bottom:-70px;display:flex;gap:14px;justify-content:center;transform:rotate(-6deg) scale(1.06)}
+.hx-col{width:150px;flex:none;display:flex;flex-direction:column;gap:14px;animation:hxup 38s linear infinite}
+.hx-col.b{animation:hxdn 46s linear infinite;margin-top:-90px}.hx-col.c{animation-duration:42s;margin-top:-30px}
+@keyframes hxup{to{transform:translateY(-50%)}}@keyframes hxdn{from{transform:translateY(-50%)}to{transform:translateY(0)}}
+.hx-po{position:relative;flex:none;width:150px;height:222px;border-radius:12px;overflow:hidden;background:linear-gradient(160deg,var(--c1),var(--c2));box-shadow:0 14px 24px -14px rgba(15,16,48,.6)}
+.hx-po img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hx-po::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.1),transparent 30%,rgba(0,0,0,.25))}
+.hx-po b{position:absolute;left:12px;bottom:10px;z-index:1;font:800 22px var(--font-display,'Sora'),sans-serif;letter-spacing:-.03em;color:#fff;opacity:.92;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+.hx-fl{position:absolute;z-index:3;display:flex;align-items:center;gap:10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);box-shadow:0 16px 28px -16px rgba(0,0,0,.6);padding:7px 14px 7px 7px;font:600 13px 'Sora',sans-serif;color:var(--ink);animation:hxfl 6s ease-in-out infinite}
+.hx-fl small{display:block;font:400 11px 'Poppins',sans-serif;color:var(--ink-700)}
+.hx-m{position:relative;width:34px;height:34px;border-radius:50%;overflow:hidden;display:grid;place-items:center;font:800 12px 'Sora',sans-serif;color:#fff;flex:none}
+.hx-m img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hx-fl.hx-q{background:var(--amber);border-color:var(--amber);color:var(--pri-deep);padding:10px 18px;font-size:15px}
+.hx-fl.hx-k{background:var(--pri-deep);border-color:rgba(255,255,255,.25);color:#fff;padding:10px 18px}
+@keyframes hxfl{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+.hgames2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:28px}
+.gcard{position:relative;overflow:hidden;text-align:left;border-radius:24px;display:flex;flex-direction:column;min-height:380px;color:#fff;border:1px solid rgba(255,255,255,.12);cursor:pointer;padding:0;font:inherit;transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s}
+.gcard:hover{transform:translateY(-5px);box-shadow:0 28px 40px -24px var(--gl)}
+.gcard:focus-visible{outline:3px solid var(--amber);outline-offset:4px}
+.gcard::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:28px 28px;-webkit-mask-image:linear-gradient(180deg,#000,transparent 60%);mask-image:linear-gradient(180deg,#000,transparent 60%);pointer-events:none}
+.gcard .art{position:relative;height:178px;flex:none;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.gcard .art::after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,var(--gl),transparent 65%);opacity:.45;left:50%;top:50%;margin:-130px 0 0 -130px;pointer-events:none}
+.gcard .tx{position:relative;margin:0 28px;border-top:1px solid rgba(255,255,255,.14);padding:22px 0 26px;display:flex;flex-direction:column;gap:10px;flex-grow:1}
+.gcard h3{margin:0;font-size:28px;font-weight:800;line-height:1.05;letter-spacing:-.03em}
+.gcard p{margin:0;font-size:14.5px;line-height:1.55;max-width:44ch;opacity:.82}
+.gcard .go{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;color:var(--ac)}
+.gcard .go i{font-style:normal;transition:transform .2s}.gcard:hover .go i{transform:translateX(5px)}
+.gcard .tg{position:absolute;top:18px;right:20px;z-index:2;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.7}
+.gcard.qd{background:linear-gradient(160deg,#1E1C75,#17154B 70%);--gl:#7B78E8;--ac:#F4A81D}
+.gcard.ps{background:linear-gradient(160deg,#3A2410,#2A1A10 70%);--gl:#F4A81D;--ac:#F4A81D}
+.gcard.tl{background:linear-gradient(160deg,#17154B,#0E0D33 70%);--gl:#5EE6C8;--ac:#5EE6C8}
+.gcard.dn{background:linear-gradient(160deg,#083D34,#04302A 70%);--gl:#5EE6C8;--ac:#5EE6C8}
+.gcard.du{background:linear-gradient(160deg,#26238C,#17154B 70%);--gl:#F4A81D;--ac:#F4A81D}
+.gcard.so{background:transparent;border:2px dashed var(--ink-400);color:var(--ink-700);--gl:var(--pri);--ac:var(--ink-700);cursor:default}
+.gcard.so:hover{transform:none;box-shadow:none}.gcard.so::before,.gcard.so .art::after{display:none}
+.gcard.so .art{justify-content:flex-start;align-items:flex-start;padding:28px 28px 0}.gcard.so .tx{border-top-color:transparent}.gcard.so h3{color:var(--ink)}
+/* artes */
+.hx-mq{width:300px;max-width:88%;border-radius:16px;background:var(--paper);color:var(--ink);padding:14px 16px;box-shadow:0 18px 30px -16px #000;transform:rotate(-2deg);text-align:left}
+.hx-tg2{display:flex;justify-content:space-between;font-size:10px;font-weight:600;letter-spacing:.1em;color:var(--ink-700)}
+.hx-mq h4{margin:6px 0 8px;font-size:17px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.hx-o{display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--canvas);border-radius:8px;padding:5px 8px;margin-top:5px;font-size:12px;font-weight:500}
+.hx-o b{display:grid;place-items:center;width:18px;height:18px;border-radius:50%;background:#fff;font:700 10px 'Sora',sans-serif}
+.hx-o.r{animation:hxpk 5s ease-in-out infinite}
+@keyframes hxpk{0%,35%{background:var(--canvas);border-color:var(--line)}45%,90%{background:#DCF2EC;border-color:#0D8A73}100%{background:var(--canvas);border-color:var(--line)}}
+.hx-mps{display:flex;gap:12px;margin-top:26px}
+.hx-mpo{position:relative;flex:none;width:104px;height:190px;border-radius:12px;overflow:hidden;background:linear-gradient(0deg,var(--b),var(--a));box-shadow:0 18px 30px -14px #000}
+.hx-mpo .im{position:absolute;inset:-12px;background:radial-gradient(circle at 50% 38%,var(--h) 0 20%,transparent 21%),linear-gradient(0deg,var(--b),var(--a));background-size:cover;background-position:center;animation:hxbl 7s ease-in-out infinite}
+@keyframes hxbl{0%,100%{filter:blur(16px)}55%{filter:blur(0)}}
+.hx-mpo .pt{position:absolute;left:8px;top:8px;background:rgba(15,10,6,.78);border-radius:9px;padding:3px 9px;font:800 15px 'Sora',sans-serif;color:#fff}.hx-mpo .pt small{font:500 10px 'Poppins',sans-serif;opacity:.8;margin-left:3px}
+.hx-mt{position:relative;width:340px;max-width:96%;height:140px;flex:none}
+.hx-mt .ln{position:absolute;left:8px;right:8px;top:96px;height:3px;border-radius:2px;background:rgba(255,255,255,.2)}
+.hx-mt .ln::after{content:"";position:absolute;left:0;top:0;height:3px;width:100%;border-radius:2px;background:linear-gradient(90deg,transparent,#5EE6C8,transparent);background-size:80px 3px;background-repeat:no-repeat;animation:hxsw 3.2s linear infinite}
+@keyframes hxsw{from{background-position:-80px 0}to{background-position:340px 0}}
+.hx-mt .pp{position:absolute;top:8px;width:50px;height:70px;border-radius:7px;overflow:hidden;background:linear-gradient(160deg,var(--c1),var(--c2));background-size:cover;background-position:center;display:flex;align-items:flex-end;padding:0 0 5px 5px;font:800 11px 'Sora',sans-serif;box-shadow:0 10px 16px -8px #000;animation:hxhp 3.2s ease-in-out infinite}
+.hx-mt .pp span{position:relative;text-shadow:0 1px 6px rgba(0,0,0,.7)}
+@keyframes hxhp{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.hx-mt .dt::before{content:'';position:absolute;left:50%;margin-left:-1px;bottom:100%;margin-bottom:3px;width:2px;height:9px;background:#5EE6C8;opacity:.55}
+.hx-mt .dt{position:absolute;top:91px;width:13px;height:13px;border-radius:50%;background:#0E0D33;border:3px solid #5EE6C8}
+.hx-mt .yr{position:absolute;top:116px;font-size:10px;font-weight:600;opacity:.7}
+@property --n{syntax:'<integer>';inherits:false;initial-value:0}
+.hx-mr{position:relative;width:132px;height:132px;flex:none}.hx-mr svg{display:block}
+.hx-mr .rg{stroke-dasharray:276;stroke-dashoffset:276}
+.hx-mr .pc{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:800 30px 'Sora',sans-serif}
+.hx-mr .pc small{font-size:15px;margin-left:1px}
+.hx-mr .pc span::before{counter-reset:n var(--n);content:counter(n)}
+.hx-mr.on .rg{animation:hxrg 2.6s cubic-bezier(.3,.7,.2,1) .3s both}
+.hx-mr.on .pc span::before{animation:hxcn 2.6s cubic-bezier(.3,.7,.2,1) .3s both}
+@keyframes hxrg{from{stroke-dashoffset:276}to{stroke-dashoffset:36}}
+@keyframes hxcn{from{--n:0}to{--n:87}}
+.hx-chs{position:relative;width:130px;height:96px;flex:none}
+.chp{position:absolute;border-radius:999px;border:1px solid rgba(94,230,200,.5);background:rgba(94,230,200,.12);padding:3px 10px;font-size:11px;font-weight:500;color:#BFF6EA;white-space:nowrap}
+.hx-mv{display:flex;align-items:center;gap:16px}
+.hx-mv .tm{width:112px;border-radius:14px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);padding:12px;text-align:center;font-size:12px;font-weight:600}
+.hx-mv .tm b{display:block;font:800 36px/1.1 'Sora',sans-serif;color:#fff}
+.hx-mv .vs{width:46px;height:46px;border-radius:50%;background:var(--amber);color:var(--pri-deep);display:grid;place-items:center;font:800 15px 'Sora',sans-serif;animation:hxvs 2.4s ease-in-out infinite}
+@keyframes hxvs{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.14) rotate(-8deg)}}
+@media (max-width:900px){
+  .hubhero .hh{grid-template-columns:1fr;min-height:0}
+  .hubhero .hx-t{padding:40px 0 20px;max-width:none}
+  .hx-r{position:relative;left:auto;right:auto;height:380px}
+  .hx-fade{width:0}
+}
+@media (max-width:700px){
+  .hgames2{grid-template-columns:1fr}.gcard{min-height:0}
+  .hx-col,.hx-po{width:120px}.hx-po{height:178px}
+  .hx-fl{font-size:12px}
+}
+@media (prefers-reduced-motion:reduce){
+  .hx-col,.hx-fl,.hx-o.r,.hx-mpo .im,.hx-mt .pp,.hx-mt .ln::after,.hx-mv .vs{animation:none!important}
+  .hx-mr .rg{animation:none!important;stroke-dashoffset:36}.hx-mr .pc span::before{animation:none!important;--n:87}
+  .gcard{transition:none}
+}
 </style>
 </head>
 <body>
@@ -956,23 +1061,31 @@ body.ms-on{padding-bottom:92px}
 </header>
 
 <main id="v-hub">
-  <div class="wrap">
-    <section class="hero hubhero">
-      <div>
+  <section class="hubhero" id="hxHero">
+    <div class="wrap hh">
+      <div class="hx-t">
         <div class="eyebrow">Jogos de cinema</div>
         <h1>Será que você é <em class="w">cinéfilo</em> de verdade?</h1>
         <p class="lead">O Sou Cinéfilo reúne jogos para quem ama filmes: adivinhe diretores, ordene a história do cinema, descubra qual diretor combina com você e desafie os amigos.</p>
-        <div class="cta"><button class="btn primary" data-hub="games">Escolher um jogo <span aria-hidden="true">→</span></button><button class="btn ghost" data-hub="sobre">Sobre o projeto</button></div>
+        <div class="cta"><button class="btn amber" data-hub="games">Escolher um jogo <span aria-hidden="true">→</span></button><button class="btn dghost" data-hub="sobre">Sobre o projeto</button></div>
         <ul class="perks"><li>Grátis</li><li>Sem cadastro</li><li>Para jogar sozinho ou em grupo</li></ul>
       </div>
-      <div class="hvis" aria-hidden="true"><span class="hv hv0"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v5H4zM6 10v11M18 10v11M6 15h12M6 21l12-6M18 21L6 15"/></svg></span><span class="hv hv1"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zM9.2 10a2.8 2.8 0 1 0 5.6 0a2.8 2.8 0 1 0 -5.6 0M9 16h6"/></svg></span><span class="hv hv2"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h18M6 5v5M12 14v5M18 5v5M4.6 12a1.4 1.4 0 1 0 2.8 0a1.4 1.4 0 1 0 -2.8 0M10.6 12a1.4 1.4 0 1 0 2.8 0a1.4 1.4 0 1 0 -2.8 0M16.6 12a1.4 1.4 0 1 0 2.8 0a1.4 1.4 0 1 0 -2.8 0"/></svg></span><span class="hv hv3"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3c0 5 10 5 10 9s-10 4-10 9M17 3c0 5-10 5-10 9s10 4 10 9M9 6.4h6M9 17.6h6"/></svg></span><span class="hv hv4"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5l10 10M13 17l4-4M16 16l3 3M19 5L9 15M7 13l4 4M8 16l-3 3"/></svg></span><span class="hv hv5"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1zM15 11l6-3v8l-6-3"/></svg></span></div>
-    </section>
-
+    </div>
+    <div class="hx-r" aria-hidden="true">
+      <div class="hx-fade"></div>
+      <div class="hx-wall" id="hxWall"></div>
+      <div class="hx-fl hx-q" style="left:14px;top:34%;animation-delay:-1s">Quem dirigiu?</div>
+      <div class="hx-fl" style="right:18px;top:15%;animation-delay:-3s"><span class="hx-m" id="hxA1" style="background:linear-gradient(135deg,#5A62C4,#17154B)">QT</span><span>Quentin Tarantino<small>Diretor · 1963</small></span></div>
+      <div class="hx-fl" style="left:28px;bottom:17%;animation-delay:-2s"><span class="hx-m" id="hxA2" style="background:linear-gradient(135deg,#C9772F,#5A2A0E)">GG</span><span>Greta Gerwig<small>87% compatível</small></span></div>
+      <div class="hx-fl hx-k" style="right:34px;bottom:24%;animation-delay:-4s">+100 pts</div>
+    </div>
+  </section>
+  <div class="wrap">
     <section class="sec" id="games">
       <div class="eyebrow">Jogos</div>
       <h2>Escolha <em class="w">o que jogar</em>.</h2>
       <p class="lead">Cada jogo testa um jeito diferente de conhecer cinema. Comece por qualquer um.</p>
-      <div class="hgames"><button class="hcard k-deep wide" data-go="g-qd"><span class="hg" aria-hidden="true"><svg width="140" height="140" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v5H4zM6 10v11M18 10v11M6 15h12M6 21l12-6M18 21L6 15"/></svg></span><span class="htag">2398 filmes</span><span class="hi"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v5H4zM6 10v11M18 10v11M6 15h12M6 21l12-6M18 21L6 15"/></svg></span><h3>Quem Dirigiu?</h3><p>Um filme na tela, quatro diretores e uma única resposta certa. Tem níveis, medalhas, modo livre e duelo.</p><span class="go">Jogar <i aria-hidden="true">→</i></span></button><button class="hcard k-amber" data-go="g-poster"><span class="hg" aria-hidden="true"><svg width="140" height="140" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zM9.2 10a2.8 2.8 0 1 0 5.6 0a2.8 2.8 0 1 0 -5.6 0M9 16h6"/></svg></span><span class="htag">Visual</span><span class="hi"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zM9.2 10a2.8 2.8 0 1 0 5.6 0a2.8 2.8 0 1 0 -5.6 0M9 16h6"/></svg></span><h3>Pôster Borrado</h3><p>Só a capa do filme, bem borrada, que vai clareando aos poucos. Quanto antes você acertar, mais pontos.</p><span class="go">Jogar <i aria-hidden="true">→</i></span></button><button class="hcard k-pri" data-go="g-tl"><span class="hg" aria-hidden="true"><svg width="140" height="140" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h18M6 5v5M12 14v5M18 5v5M4.6 12a1.4 1.4 0 1 0 2.8 0a1.4 1.4 0 1 0 -2.8 0M10.6 12a1.4 1.4 0 1 0 2.8 0a1.4 1.4 0 1 0 -2.8 0M16.6 12a1.4 1.4 0 1 0 2.8 0a1.4 1.4 0 1 0 -2.8 0"/></svg></span><span class="htag">Ordem</span><span class="hi"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h18M6 5v5M12 14v5M18 5v5M4.6 12a1.4 1.4 0 1 0 2.8 0a1.4 1.4 0 1 0 -2.8 0M10.6 12a1.4 1.4 0 1 0 2.8 0a1.4 1.4 0 1 0 -2.8 0M16.6 12a1.4 1.4 0 1 0 2.8 0a1.4 1.4 0 1 0 -2.8 0"/></svg></span><h3>Linha do Tempo</h3><p>Arraste os filmes de um diretor do mais antigo ao mais recente e veja a linha se acender.</p><span class="go">Jogar <i aria-hidden="true">→</i></span></button><button class="hcard k-mint" data-go="g-dna"><span class="hg" aria-hidden="true"><svg width="140" height="140" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3c0 5 10 5 10 9s-10 4-10 9M17 3c0 5-10 5-10 9s10 4 10 9M9 6.4h6M9 17.6h6"/></svg></span><span class="htag">Teste</span><span class="hi"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3c0 5 10 5 10 9s-10 4-10 9M17 3c0 5-10 5-10 9s10 4 10 9M9 6.4h6M9 17.6h6"/></svg></span><h3>Descubra seu Diretor</h3><p>Responda sobre ritmo, medo e humor e descubra qual diretor combina com o seu jeito de ver cinema.</p><span class="go">Jogar <i aria-hidden="true">→</i></span></button><button class="hcard k-deep" data-duelon="1"><span class="hg" aria-hidden="true"><svg width="140" height="140" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5l10 10M13 17l4-4M16 16l3 3M19 5L9 15M7 13l4 4M8 16l-3 3"/></svg></span><span class="htag">2 equipes</span><span class="hi"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5l10 10M13 17l4-4M16 16l3 3M19 5L9 15M7 13l4 4M8 16l-3 3"/></svg></span><h3>Duelo</h3><p>Duas equipes no mesmo aparelho ou cada uma no seu celular. Vence quem souber mais.</p><span class="go">Jogar <i aria-hidden="true">→</i></span></button><button class="hcard k-paper" data-dir="1"><span class="hg" aria-hidden="true"><svg width="140" height="140" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1zM15 11l6-3v8l-6-3"/></svg></span><span class="htag">280 nomes</span><span class="hi"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1zM15 11l6-3v8l-6-3"/></svg></span><h3>Diretores</h3><p>Filmografia, prêmios e o estilo de cada diretor do quiz, com um cartão para compartilhar.</p><span class="go">Explorar <i aria-hidden="true">→</i></span></button><div class="hcard soon" aria-disabled="true"><span class="htag">Em breve</span><span class="hi"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9h14l-1.5 12h-11zM9 9l.5 12M15 9l-.5 12M6 9a3 3 0 0 1 2.5-4.7A3 3 0 0 1 12 3a3 3 0 0 1 3.5 1.3A3 3 0 0 1 18 9"/></svg></span><h3>Mais jogos a caminho</h3><p>O Sou Cinéfilo está crescendo. Novos jeitos de testar o seu repertório vão chegar aqui.</p></div></div>
+      <div class="hgames2"><button class="gcard qd" data-go="g-qd"><span class="tg">2398 filmes</span><div class="art"><div class="hx-mq"><div class="hx-tg2"><span>NÍVEL MÉDIO</span><span>1994</span></div><h4>Pulp Fiction</h4><div class="hx-o"><b>A</b>George Lucas</div><div class="hx-o r"><b>B</b>Quentin Tarantino</div><div class="hx-o"><b>C</b>Guillermo del Toro</div></div></div><div class="tx"><h3>Quem Dirigiu?</h3><p>Um filme na tela, quatro diretores e uma única resposta certa. Níveis, medalhas, modo livre e duelo.</p><span class="go">Jogar <i aria-hidden="true">→</i></span></div></button><button class="gcard ps" data-go="g-poster"><span class="tg">Visual</span><div class="art" style="align-items:flex-start"><div class="hx-mps"><div class="hx-mpo" data-pi="0" style="--a:#C9772F;--b:#5A2A0E;--h:#FFD27A;transform:rotate(-4deg);margin-top:14px"><div class="im" style="animation-delay:0s"></div></div><div class="hx-mpo" data-pi="1" style="--a:#5A62C4;--b:#17154B;--h:#C9CAEC;transform:rotate(3deg);margin-top:0px"><div class="im" style="animation-delay:-1.4s"></div><div class="pt">72<small>pts</small></div></div><div class="hx-mpo" data-pi="2" style="--a:#3C8B63;--b:#103B2B;--h:#BFF6EA;transform:rotate(-2deg);margin-top:14px"><div class="im" style="animation-delay:-2.8s"></div></div><div class="hx-mpo" data-pi="3" style="--a:#B8423D;--b:#4A1414;--h:#FFC8B8;transform:rotate(4deg);margin-top:0px"><div class="im" style="animation-delay:-4.2s"></div></div></div></div><div class="tx"><h3>Acerte o Pôster</h3><p>Só a capa do filme, bem borrada, que vai clareando aos poucos. Quanto antes você acertar, mais pontos.</p><span class="go">Jogar <i aria-hidden="true">→</i></span></div></button><button class="gcard tl" data-go="g-tl"><span class="tg">Ordem</span><div class="art"><div class="hx-mt"><div class="ln"></div><div class="pp" data-ti="0" style="left:10px;--c1:#5A62C4;--c2:#17154B;animation-delay:-0.2s"><span>1950</span></div><span class="dt" style="left:28.5px"></span><div class="pp" data-ti="1" style="left:76px;--c1:#C9772F;--c2:#5A2A0E;animation-delay:-0.7s"><span>1954</span></div><span class="dt" style="left:94.5px"></span><div class="pp" data-ti="2" style="left:142px;--c1:#2F7F8F;--c2:#0F2F4A;animation-delay:-1.2s"><span>1961</span></div><span class="dt" style="left:160.5px"></span><div class="pp" data-ti="3" style="left:208px;--c1:#9A4F9F;--c2:#2B1450;animation-delay:-1.7s"><span>1975</span></div><span class="dt" style="left:226.5px"></span><div class="pp" data-ti="4" style="left:274px;--c1:#3C8B63;--c2:#103B2B;animation-delay:-2.2s"><span>1985</span></div><span class="dt" style="left:292.5px"></span><span class="yr" style="left:0">mais antigo</span><span class="yr" style="right:0">mais recente</span></div></div><div class="tx"><h3>Linha do Tempo</h3><p>Arraste os filmes de um diretor do mais antigo ao mais recente e veja a linha se acender a cada acerto.</p><span class="go">Jogar <i aria-hidden="true">→</i></span></div></button><button class="gcard dn" data-go="g-dna"><span class="tg">Teste</span><div class="art" style="gap:20px"><div class="hx-mr"><svg width="132" height="132" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="44" fill="none" stroke="rgba(94,230,200,.18)" stroke-width="7"/><circle class="rg" cx="50" cy="50" r="44" fill="none" stroke="#5EE6C8" stroke-width="7" stroke-linecap="round" transform="rotate(-90 50 50)"/></svg><div class="pc"><span></span><small>%</small></div></div><div class="hx-chs"><span class="chp" style="left:0;top:0">ritmo lento</span><span class="chp" style="left:30px;top:32px">humor ácido</span><span class="chp" style="left:6px;top:64px">cores fortes</span></div></div><div class="tx"><h3>Descubra seu Diretor</h3><p>Responda sobre ritmo, medo e humor e descubra qual diretor combina com o seu jeito de ver cinema.</p><span class="go">Começar o teste <i aria-hidden="true">→</i></span></div></button><button class="gcard du" data-duelon="1"><span class="tg">2 equipes</span><div class="art"><div class="hx-mv"><div class="tm">Equipe A<b>7</b></div><div class="vs">VS</div><div class="tm">Equipe B<b>5</b></div></div></div><div class="tx"><h3>Duelo</h3><p>Duas equipes no mesmo aparelho ou cada uma no seu celular. Vence quem souber mais.</p><span class="go">Desafiar <i aria-hidden="true">→</i></span></div></button><div class="gcard so" aria-disabled="true"><div class="art"><svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#25226E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9h14l-1.5 12h-11zM9 9l.5 12M15 9l-.5 12M6 9a3 3 0 0 1 2.5-4.7A3 3 0 0 1 12 3a3 3 0 0 1 3.5 1.3A3 3 0 0 1 18 9"/></svg></div><div class="tx"><h3>Mais jogos a caminho</h3><p>O Sou Cinéfilo está crescendo. Novos jeitos de testar o seu repertório vão chegar aqui.</p><span class="go">Em breve</span></div></div></div>
     </section>
 
     <section class="sec" id="frases">
@@ -3676,6 +3789,35 @@ addEventListener("hashchange",route);route();
     show("hub");
     setTimeout(function(){var el=id==="top"?null:document.getElementById(id);if(el)el.scrollIntoView({behavior:"smooth"});else window.scrollTo({top:0,behavior:"smooth"})},40);
   });
+})();
+</script>
+<script>
+(function(){
+  var H={"p":[["/7EyhcdfiLtH0xa6CZkyYuoWL2GJ.jpg","2005","Batman Begins"],["/ubXNpxL2ASSzY0f8Hxv08pOsV2L.jpg","2018","Pantera Negra"],["/mqN7RxojEiPoh3FTSTwOtwg7KAu.jpg","2008","Homem de Ferro"],["/mCICnh7QBH0gzYaTQChBDDVIKdm.jpg","1999","Clube da Luta"],["/wOMxE93W6KcZTuCeNUByNTSaLLt.jpg","1972","O Poderoso Chefão"],["/dZXYPSEaXCeigR2GEuZoukNmLTf.jpg","1995","Seven - Os Sete Crimes Capitais"],["/4rtsbE9aQ1qw4gv7yYwaNYfWFoS.jpg","2001","Harry Potter e a Pedra Filosofal"],["/811j0Jf2D0mK1U6RxXJoZgOB29n.jpg","2002","Harry Potter e a Câmara Secreta"],["/As0zX43h3w6kD2NS4uVHu9HKdEh.jpg","1997","Titanic"],["/tlvsNCwWEIgwAM23aNzTmMIcPEZ.jpg","2001","O Senhor dos Anéis: A Sociedade do Anel"],["/1HdMUghqlgOIvbsU9ZtO40IPRzl.jpg","2004","Harry Potter e o Prisioneiro de Azkaban"],["/dsvUR5aEVSkB1Sro7nT6Khqik71.jpg","2016","Capitão América: Guerra Civil"],["/dw7X9YPjjAfIxKHW04V64Bb9TB0.jpg","1977","Guerra nas Estrelas"],["/rU4oIKv5I4C59DpcXKmT7kNwGI0.jpg","2003","O Senhor dos Anéis: O Retorno do Rei"],["/tR1XVa5bxgdh2bRw2u0DzrgkO2l.jpg","2014","Interestelar"],["/6UjYycIR6VLYgggfNpmSPJHmFS0.jpg","2009","Bastardos Inglórios"],["/19wxfSXHhuJBRbbfUweCsfXFhpv.jpg","2011","Capitão América: O Primeiro Vingador"],["/d74WpIsH8379TIL4wUxDneRCYv2.jpg","1994","Forrest Gump: O Contador de Histórias"],["/mCs8vxvScCqVM3YFMQIdbrdFEhu.jpg","2002","O Senhor dos Anéis: As Duas Torres"],["/aEV9QmgBqjRTdjsvdCgdK89tavQ.jpg","2011","Thor"],["/xLxgVxFWvb9hhUyCDDXxRPPnFck.jpg","2019","Coringa"],["/4lj1ikfsSmMZNyfdi8R8Tv5tsgb.jpg","2008","Batman: O Cavaleiro das Trevas"],["/vzROjQbgKWMVf2EldXipCcjpuBL.jpg","2010","Homem de Ferro 2"],["/tptjnB2LDbuUWya9Cx5sQtv5hqb.jpg","1994","Pulp Fiction: Tempo de Violência"],["/xfbnEVFKS26YHLuuckP0i58GPlo.jpg","2013","O Lobo de Wall Street"],["/9e3Dz7aCANy5aRUQF745IlNloJ1.jpg","2010","A Origem"],["/j4z01cnbTCaVX69bik1612pSuH6.jpg","2012","Batman: O Cavaleiro das Trevas Ressurge"],["/ar63Sx8jeqk0OOu2uchS477S2zE.jpg","2012","Django Livre"],["/xaKydnMw6wR1MBAjS5seGPVusbs.jpg","2021","Homem-Aranha: Sem Volta Para Casa"],["/erl801HYIodoIBGZeFk0GTwCUBh.jpg","2010","Ilha do Medo"],["/62SAZfLfzhxJWUFJvfIPMw6QUpE.jpg","2015","Divertida Mente"],["/A4kvp7vY1BDLrrQIagRCffLKj1t.jpg","2018","Vingadores: Guerra Infinita"],["/lRRMQhlOLM9xgvjKKFndOmptqKR.jpg","2009","Avatar"],["/1nkwRL17cAGO8A1yu3miRBdvOsl.jpg","2017","Homem-Aranha: De Volta ao Lar"],["/q6725aR8Zs4IwGMXzZT8aC8lh41.jpg","2019","Vingadores: Ultimato"],["/tH64gzAHDFg7EFcgfkkZyHdGM5P.jpg","2015","Mad Max: Estrada da Fúria"]],"d":{"qt":"/1gjcpAa99FAOWGnrUvHEXXsRs7o.jpg","gg":"/dxKAhpkz4XNwmRzMG5QOpXjPZ1N.jpg"},"tl":[["/wNCx5AdhBgSn0ddva3SEUFLs81K.jpg","1950"],["/2f3Aw6GCzpn1qw56xq78dH0VBgn.jpg","1954"],["/7JBlG28700Zx2r4xbVv3n1ssOQU.jpg","1961"],["/9Bggg2bios1LsGUAYXuqd6BuVJl.jpg","1975"],["/gWw6iyVEoWtYLRNeyS9nv6sgXlx.jpg","1985"]]},TM="https://image.tmdb.org/t/p/";
+  var PAL=[["#5A62C4","#17154B"],["#C9772F","#5A2A0E"],["#2F7F8F","#0F2F4A"],["#9A4F9F","#2B1450"],["#3C8B63","#103B2B"],["#B8423D","#4A1414"]];
+  function pimg(p,w,alt){var i=new Image();i.alt=alt||"";i.decoding="async";i.src=TM+w+p;return i}
+  var wall=document.getElementById("hxWall");
+  if(wall&&H.p&&H.p.length){
+    var P=H.p,cls=["","b","c"];
+    cls.forEach(function(c,k){
+      var items=P.filter(function(_,i){return i%3===k}).slice(0,9);
+      var col=document.createElement("div");col.className="hx-col "+c;
+      for(var rep=0;rep<2;rep++)items.forEach(function(f,i){
+        var d=document.createElement("div");d.className="hx-po";var pc=PAL[(i+k*2)%PAL.length];
+        d.style.setProperty("--c1",pc[0]);d.style.setProperty("--c2",pc[1]);
+        var im=pimg(f[0],"w342",f[2]);im.loading="lazy";im.onerror=function(){im.remove()};d.appendChild(im);
+        var b=document.createElement("b");b.textContent=f[1];d.appendChild(b);col.appendChild(d);
+      });
+      wall.appendChild(col);
+    });
+  }
+  function avatar(id,p){var el=document.getElementById(id);if(!el||!p)return;var im=pimg(p,"w185","");im.onerror=function(){im.remove()};el.appendChild(im)}
+  if(H.d){avatar("hxA1",H.d.qt);avatar("hxA2",H.d.gg)}
+  function bg(el,p,w){if(!p||!el)return;var im=new Image();im.onload=function(){el.style.backgroundImage="url("+im.src+")"};im.src=TM+w+p}
+  if(H.p)document.querySelectorAll(".hx-mpo").forEach(function(el){var f=H.p[(+el.dataset.pi*7+3)%H.p.length];bg(el.querySelector(".im"),f&&f[0],"w185")});
+  if(H.tl)document.querySelectorAll(".hx-mt .pp").forEach(function(el){var f=H.tl[+el.dataset.ti];if(f){el.querySelector("span").textContent=f[1];bg(el,f[0],"w154")}});
+  var mr=document.querySelector(".hx-mr");
+  if(mr){if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){mr.classList.add("on");io.disconnect()}})},{threshold:.6});io.observe(mr)}else mr.classList.add("on")}
 })();
 </script>
 </body>
