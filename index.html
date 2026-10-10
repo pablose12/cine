@@ -1116,7 +1116,7 @@ body.ms-on{padding-bottom:92px}
           <div class="sxf"><span>Quantos filmes?</span><div class="nchips" id="frRounds" role="group" aria-label="Quantidade de filmes"></div></div>
           <div class="sxa"><button class="btn amber" id="frGo">Jogar sequência de frames <span aria-hidden="true">→</span></button></div>
           <p class="sxs" id="frInfo"></p>
-          <details class="frload"><summary>Tenho um arquivo frames.json</summary><input type="file" id="frFile" accept=".json,application/json"><div class="frm" id="frMsg"></div><button type="button" id="frReset" hidden>Voltar às imagens do site</button></details>
+
         </div>
         <div class="sxr"><div class="frd" id="frd" data-s="1" aria-hidden="true">
           <div class="f" style="--c1:#3a5a7a;--c2:#0f1d2e"><b>1</b><i></i></div><div class="f" style="--c1:#7a4a3a;--c2:#2e140f"><b>2</b><i></i></div>
@@ -3448,7 +3448,7 @@ window.FRAMES=[];
   function panel(){
     var chips=document.getElementById("frRounds"),info=document.getElementById("frInfo"),go=document.getElementById("frGo"),t=films().length;
     if(chips)chips.innerHTML=ROUNDS.map(function(n){return '<button class="nchip" data-frn="'+n+'" aria-pressed="'+(n===cfg.n)+'">'+(n===0?"Todos":n)+'</button>'}).join("");
-    if(info)info.textContent=t?(t+" filmes famosos disponíveis"+(usingOwn()?" (do seu arquivo frames.json)":"")+". Quanto mais cedo você acertar, mais pontos."):(rstate==="loading"?"Buscando os filmes e as cenas, pode levar alguns segundos na primeira vez…":"Não consegui buscar as cenas agora. Confira se a TMDB_KEY está configurada no Vercel ou carregue um frames.json abaixo.");
+    if(info)info.textContent=t?(t+" filmes famosos disponíveis"+(usingOwn()?" (do seu arquivo frames.json)":"")+". Quanto mais cedo você acertar, mais pontos."):(rstate==="loading"?"Buscando os filmes e as cenas, pode levar alguns segundos na primeira vez…":"Não consegui buscar as cenas agora. Tente de novo em instantes.");
     if(go){go.disabled=!t;go.style.opacity=t?"":".5"}
     var rm=document.getElementById("frReset");if(rm)rm.hidden=!usingOwn();
   }
