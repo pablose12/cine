@@ -1039,6 +1039,112 @@ body.ms-on{padding-bottom:92px}
   .hx-mr .rg{animation:none!important;stroke-dashoffset:36}.hx-mr .pc span::before{animation:none!important;--n:87}
   .gcard{transition:none}
 }
+
+/* ===== v20: páginas de jogo coloridas (mesma cor do card da Home) ===== */
+body[data-gt="qd"]{--g1:#1E1C75;--g2:#17154B;--ga:#F4A81D;--gi:#2A1A10}
+body[data-gt="poster"]{--g1:#3A2410;--g2:#2A1A10;--ga:#F4A81D;--gi:#2A1A10}
+body[data-gt="tl"]{--g1:#17154B;--g2:#0E0D33;--ga:#5EE6C8;--gi:#04302A}
+body[data-gt="dna"]{--g1:#083D34;--g2:#04302A;--ga:#5EE6C8;--gi:#04302A}
+body[data-gt]{background:linear-gradient(160deg,var(--g1),var(--g2)) fixed;color:#fff}
+body[data-gt] header.top{background:rgba(0,0,0,.22);border-bottom-color:rgba(255,255,255,.12)}
+body[data-gt] header.top .logo,body[data-gt] header.top .logo *{color:#fff}
+body[data-gt] nav.links,body[data-gt] nav.links button{color:rgba(255,255,255,.78)}
+body[data-gt] nav.links button:hover{color:#fff}
+body[data-gt] header.top .btn.primary{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.34);color:#fff;box-shadow:none}
+body[data-gt] header.top .btn.primary:hover{background:rgba(255,255,255,.22)}
+body[data-gt] header.top button:not(.btn):not(.logo){border-color:rgba(255,255,255,.28);background:rgba(255,255,255,.08);color:#fff}
+body[data-gt] footer{border-top-color:rgba(255,255,255,.12);color:rgba(255,255,255,.6)}
+body[data-gt] footer *{color:inherit}
+body[data-gt]{background-color:var(--g2)}
+body[data-gt] header.top nav.links button{background:none;border:0;border-radius:0}
+body[data-gt] #v-home .pcard.f{color:var(--ink)}
+body[data-gt] #v-home .pcard.f h3{color:var(--ink)}
+body[data-gt] #v-home .pcard .who,body[data-gt] #v-home .pcard .who *{color:#fff}
+body[data-gt] .qtop .streak,body[data-gt] .qtop .streak b{color:var(--amber-text)}
+body[data-gt] .qtop .streak.s3,body[data-gt] .qtop .streak.s3 b{color:#BFD6FF}
+body[data-gt] header.top nav.links button{background:transparent!important}
+body[data-gt] header.top nav.links .ddm button{color:var(--ink-700)}
+body[data-gt] header.top nav.links .ddm button:hover{color:var(--ink)}
+body[data-gt] .rquote q{color:#fff}body[data-gt] .rquote cite{color:var(--ga)}
+body[data-gt] .rlist .dlink,body[data-gt] .rlist a{color:var(--ga)}
+body[data-gt] .rlist li b,body[data-gt] .rlist li strong{color:#fff}
+body[data-gt] .rmedal{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.18);box-shadow:none;color:#fff}
+body[data-gt] .rmedal .mname{color:#fff}body[data-gt] .rmedal .mtag{color:rgba(255,255,255,.7)}
+body[data-gt] .dmn,body[data-gt] .dmt{color:#fff}
+/* hierarquia: L1 CTA âmbar */
+body[data-gt] .btn.primary,body[data-gt] .btn.amber{background:var(--amber);border-color:var(--amber);color:#2A1A10;box-shadow:0 12px 26px -14px var(--amber)}
+body[data-gt] .btn.primary:disabled,body[data-gt] .btn.primary[disabled]{background:rgba(255,255,255,.16);border-color:transparent;color:rgba(255,255,255,.5);box-shadow:none}
+body[data-gt] .btn.ghost,body[data-gt] .btn.dghost{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.34);color:#fff}
+body[data-gt] .btn.ghost:hover,body[data-gt] .btn.dghost:hover{background:rgba(255,255,255,.16)}
+body[data-gt] .gback{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.28);color:#fff}
+body[data-gt] .gback:hover{border-color:#fff;color:#fff}
+/* textos sobre o fundo colorido */
+body[data-gt] #v-home .eyebrow{color:var(--ga)}
+body[data-gt] #v-home h1,body[data-gt] #v-home h2,body[data-gt] #v-home h3{color:#fff}
+body[data-gt] #v-home p,body[data-gt] #v-home .lead,body[data-gt] #v-home .pnote,body[data-gt] #v-home .sum,body[data-gt] #v-home .perks li,body[data-gt] #v-home .sxs,body[data-gt] #v-home .sxp,body[data-gt] #v-home .lszl{color:rgba(255,255,255,.8)}
+body[data-gt] #v-home .flabel,body[data-gt] #v-home .sxf>span{color:#fff}
+body[data-gt] #v-home .perks li::before{background:var(--ga)}
+body[data-gt] #v-home .hero h1 em.w,body[data-gt] #v-home .sec h2 em.w{background:none;color:var(--ga)}
+/* painéis de ajuste: vidro */
+body[data-gt] .panel,body[data-gt] .step,body[data-gt] .lvl,body[data-gt] .tin{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);color:#fff;box-shadow:none}
+body[data-gt] .lvl.feat{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.4)}
+body[data-gt] .lvl .big,body[data-gt] .lvl p,body[data-gt] .lvl .meta,body[data-gt] .lvl .best,body[data-gt] .lvl .big small,body[data-gt] .step p{color:rgba(255,255,255,.82)}
+body[data-gt] .lvl .big,body[data-gt] .step h3{color:#fff}
+body[data-gt] .lvl .k,body[data-gt] .step .n{color:var(--ga)}
+body[data-gt] .lvl .meta{border-top-color:rgba(255,255,255,.18)}
+body[data-gt] .lvl .dots i{background:rgba(255,255,255,.25)}body[data-gt] .lvl .dots i.on{background:var(--ga)}
+body[data-gt] .tin span{color:rgba(255,255,255,.8)}
+body[data-gt] .tin input,body[data-gt] .lrow input{background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.28);color:#fff}
+body[data-gt] .tin input::placeholder,body[data-gt] .lrow input::placeholder{color:rgba(255,255,255,.5)}
+/* L2 toggle segmentado */
+body[data-gt] .seg{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2)}
+body[data-gt] .seg button{color:rgba(255,255,255,.82)}
+body[data-gt] .seg button[aria-pressed="true"]{background:#fff;color:var(--g2)}
+/* L3 chips de opção: vidro, selecionado = borda branca + ✓ (nunca âmbar) */
+body[data-gt] .nchip,body[data-gt] .sx .nchip{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.26);color:#fff}
+body[data-gt] .nchip:hover,body[data-gt] .sx .nchip:hover{border-color:rgba(255,255,255,.7)}
+body[data-gt] .nchip[aria-pressed="true"],body[data-gt] .sx .nchip[aria-pressed="true"]{background:rgba(255,255,255,.18);border-color:#fff;color:#fff}
+body[data-gt] .nchip[aria-pressed="true"]::before{content:"\2713\00a0";font-weight:700}
+body[data-gt] .dtile{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.26);color:#fff}
+body[data-gt] .dtile[aria-pressed="true"]{background:rgba(255,255,255,.18);border-color:#fff;color:#fff}
+/* TL / DNA / Pôster: o fundo é a própria página */
+body[data-gt] .sx{background:none;box-shadow:none;padding:6px 0 10px;border-radius:0;overflow:visible}
+body[data-gt] .sx::before,body[data-gt] .sx::after,body[data-gt] .sx .sprk{display:none}
+body[data-gt] .sx .btn.amber{background:var(--amber);border-color:var(--amber);color:#2A1A10}
+body[data-gt] #v-home .sec.gp{padding-top:28px}
+body[data-gt] #v-home .sec.gp>h2{font-size:clamp(34px,5vw,54px);margin-bottom:6px}
+/* telas de jogo: topo e progresso sobre a cor; cartão claro */
+body[data-gt] .qtop,body[data-gt] .qtop b,body[data-gt] .qtop button{color:#fff}
+body[data-gt] .qtop{color:rgba(255,255,255,.8)}
+body[data-gt] .qtop button:hover{color:var(--ga)}
+body[data-gt] .prog i{background:rgba(255,255,255,.22)}
+body[data-gt] .prog i.cur{background:rgba(255,255,255,.7)}
+body[data-gt] .prog i.ok{background:#3FD0AE}body[data-gt] .prog i.bad{background:#FF6B6E}
+body[data-gt] .qcard{border-top-color:var(--ga);color:var(--ink);box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+body[data-gt] .qcard h1,body[data-gt] .qcard h2,body[data-gt] .qcard h3{color:var(--ink)}
+body[data-gt] .qcard .btn.ghost{background:transparent;border-color:var(--line);color:var(--ink-700)}
+/* resultados: tudo na cor do jogo */
+body[data-gt] #v-result,body[data-gt] #v-duel{color:#fff}
+body[data-gt] #v-result .eyebrow,body[data-gt] #v-duel .eyebrow{color:var(--ga)}
+body[data-gt] #v-result .score .n,body[data-gt] #v-result .score .of,body[data-gt] #v-result h1,body[data-gt] #v-duel h1,body[data-gt] .dscore,body[data-gt] .rank{color:#fff}
+body[data-gt] #v-result .lead,body[data-gt] #v-duel .lead,body[data-gt] .rnext,body[data-gt] .rquote{color:rgba(255,255,255,.82)}
+body[data-gt] .rquote{border-left-color:var(--ga)}
+body[data-gt] .rlist li{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.16);color:#fff}
+body[data-gt] .rlist small{color:rgba(255,255,255,.7)}
+body[data-gt] .rlist .tm.t0{background:rgba(255,255,255,.18);color:#fff}
+body[data-gt] .rlist .tm.t1{background:var(--amber);color:#2A1A10}
+
+.ti{flex:none;vertical-align:-3px;margin-right:7px}
+body[data-gt] .seg button{display:inline-flex;align-items:center}
+.seg.top2{margin-bottom:16px}.seg.top2 button{padding:10px 24px;font-size:15px}
+.subrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 22px}
+.sublab{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:rgba(255,255,255,.65)}
+.subrow .nchip{display:inline-flex;align-items:center}
+.seg.dwhere{margin:4px 0 18px;width:max-content;max-width:100%}.seg.dwhere button{flex:none}
+body[data-gt] #pM{display:inline-flex;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:4px;gap:4px}
+body[data-gt] #pM .nchip{border:0;background:none;color:rgba(255,255,255,.82);padding:9px 20px}
+body[data-gt] #pM .nchip[aria-pressed="true"]{background:#fff;color:var(--g2)}
+body[data-gt] #pM .nchip[aria-pressed="true"]::before{content:none}
 </style>
 </head>
 <body>
@@ -1153,11 +1259,14 @@ body.ms-on{padding-bottom:92px}
       <div class="eyebrow">Jogar</div>
       <h2>Escolha <em class="w">como jogar</em>.</h2>
       <p class="lead">Suba de nível e ganhe medalhas, misture tudo no modo livre ou desafie outra equipe em um duelo.</p>
-      <div class="seg modes" role="group" aria-label="Modo de jogo">
-        <button data-mode="level" aria-pressed="true">Por nível</button>
-        <button data-mode="free" aria-pressed="false">Modo livre</button>
-        <button data-mode="duel" aria-pressed="false">Duelo</button>
+      <div class="seg top2" id="topSeg" role="group" aria-label="Como jogar">
+        <button data-top="solo" aria-pressed="true"><svg class="ti" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>Sozinho</button>
+        <button data-top="duel" aria-pressed="false"><svg class="ti" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="3.2"/><circle cx="17" cy="9" r="2.6"/><path d="M2 20c0-3.5 2.8-5.6 6-5.6s6 2.1 6 5.6M15 14.6c3.4-.4 7 1.2 7 5"/></svg>Duelo</button>
       </div>
+      <div class="subrow" id="soloSub"><span class="sublab">Modo</span><div class="nchips" role="group" aria-label="Modo solo">
+        <button class="nchip" data-mode="level" aria-pressed="true"><svg class="ti" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20v-6M10 20V9M16 20V5M22 20V2"/></svg>Por nível</button>
+        <button class="nchip" data-mode="free" aria-pressed="false"><svg class="ti" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>Modo livre</button>
+      </div></div>
 
       <div id="pn-level">
         <p class="pnote">Cada rodada sorteia filmes do nível escolhido. Quanto mais alto o nível, menos dicas você tem. Aqui você ganha medalhas.</p>
@@ -1178,8 +1287,8 @@ body.ms-on{padding-bottom:92px}
             <div id="pn-duel" class="panel" hidden>
         <h3>Duelo</h3>
         <div class="seg dwhere" role="group" aria-label="Onde vão jogar">
-          <button data-dwhere="off" aria-pressed="true">Offline · mesmo aparelho</button>
-          <button data-dwhere="on" aria-pressed="false">Online · cada um no seu</button>
+          <button data-dwhere="off" aria-pressed="true"><svg class="ti" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M11 18h2"/></svg>Mesmo aparelho</button>
+          <button data-dwhere="on" aria-pressed="false"><svg class="ti" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>Online</button>
         </div>
         <div id="dOff">
         <p class="pnote">Duas equipes, um aparelho. As perguntas alternam entre as equipes e as duas recebem exatamente a mesma dificuldade. Vence quem fizer mais pontos e leva um troféu com o nome da equipe.</p>
@@ -1220,7 +1329,7 @@ body.ms-on{padding-bottom:92px}
     </section>
     <section class="sec gp" id="poster" data-g="poster">
       <div class="eyebrow">Jogo</div>
-      <h2>Pôster <em class="w">borrado</em>.</h2>
+      <h2>Acerte o <em class="w">Pôster</em>.</h2>
       <p class="lead">Só a capa do filme, bem borrada. O foco demora a chegar e as faixas de cima e de baixo, onde ficam título e créditos, só clareiam depois da resposta. Quanto mais nítido, menos pontos: descubra o filme cedo. Dá para jogar sozinho ou em duas equipes.</p>
       <div class="pst-wrap">
         <div class="pst-demo" aria-hidden="true"><div class="pst-img" id="pdImg"></div><div class="pst-pts"><b id="pdPts">100</b><span>pts</span></div></div>
@@ -1392,8 +1501,14 @@ const views = ["hub","home","quiz","result","duel","dir","poster","tl","live","d
 let size = 10;
 let S = null; // estado da partida
 
+const GT = {quiz:"qd", result:"qd", duel:"qd", live:"qd", poster:"poster", tl:"tl", dna:"dna"};
+function setGT(v){
+  const g = v === "home" ? $("v-home").dataset.g : (GT[v] || "");
+  if (g) document.body.dataset.gt = g; else delete document.body.dataset.gt;
+}
 function show(v){
   views.forEach(x => $("v-"+x).hidden = x !== v);
+  setGT(v);
   window.scrollTo({top:0});
 }
 function lsGet(k){ try { return JSON.parse(localStorage.getItem(k)); } catch(e){ return null; } }
@@ -1678,6 +1793,9 @@ function setMode(m){
   mode = m;
   document.querySelectorAll("[data-mode]").forEach(b => b.setAttribute("aria-pressed", b.dataset.mode === m));
   ["level","free","duel"].forEach(x => $("pn-" + x).hidden = x !== m);
+  if (m !== "duel") window.__soloMode = m;
+  document.querySelectorAll("#topSeg [data-top]").forEach(b => b.setAttribute("aria-pressed", (b.dataset.top === "duel") === (m === "duel")));
+  const ss = $("soloSub"); if (ss) ss.hidden = m === "duel";
 }
 function renderFreePanel(){
   $("fchips").innerHTML = FREE_N.map(n => `<button class="nchip" data-fn="${n}" aria-pressed="${n === freeN}">${chipTxt(n)}</button>`).join("");
@@ -2013,7 +2131,7 @@ function goSection(id, m){
   const GM = {how:"qd", levels:"qd", medals:"qd", poster:"poster", linha:"tl", descubra:"dna", "g-qd":"qd", "g-poster":"poster", "g-tl":"tl", "g-dna":"dna"};
   const g = GM[id];
   if (!g){ const el0 = $(id); if (el0 && $("v-hub").contains(el0)){ show("hub"); setTimeout(() => el0.scrollIntoView({behavior: "smooth"}), 40); return; } }
-  if (g) $("v-home").dataset.g = g;
+  if (g){ $("v-home").dataset.g = g; if (!$("v-home").hidden) setGT("home"); }
   const go = () => { if (m) setMode(m); const el = id.indexOf("g-") === 0 ? null : $(id); if (el) el.scrollIntoView({behavior: "smooth"}); else window.scrollTo({top:0, behavior:"smooth"}); };
   if ($("v-home").hidden){ show("home"); setTimeout(go, 40); } else go();
 }
@@ -2037,6 +2155,7 @@ function replay(){ if (S.mode === "duel") startDuel(); else if (S.mode === "free
 
 document.addEventListener("click", e => {
   const go = e.target.closest("[data-go]"); if (go){ goSection(go.dataset.go); return; }
+  const tp = e.target.closest("#topSeg [data-top]"); if (tp){ setMode(tp.dataset.top === "duel" ? "duel" : (window.__soloMode || "level")); return; }
   const md = e.target.closest("[data-mode]"); if (md){ setMode(md.dataset.mode); return; }
   const lv = e.target.closest("[data-lvl]"); if (lv){ start(lv.dataset.lvl); return; }
   const sz = e.target.closest("[data-ln]");
