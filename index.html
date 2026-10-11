@@ -4255,8 +4255,8 @@ addEventListener("hashchange",route);route();
     var k=fkey(f);(KEYS[k]=KEYS[k]||{})[d.s]=1;
     if(okF(f,200)){var tn=norm(f[1]);(TIT[tn]=TIT[tn]||[]).push({d:d,f:f});toks(f[1]).forEach(function(w){(TOK[w]=TOK[w]||[]).push({d:d,f:f})})}})});
   var LV={
-    facil:{name:"Fácil",desc:"Para aquecer.",from:0,to:100,a:0,b:8,vmin:1200,evmin:1200,near:[.1,.5],bmin:250},
-    medio:{name:"Médio",desc:"Já pede memória de filmografia.",from:0,to:150,a:3,b:14,vmin:500,evmin:400,sim:.55,tmin:.66,bmin:150},
+    facil:{name:"Fácil",desc:"Para aquecer.",from:0,to:100,a:0,b:8,vmin:1200,evmin:1200,near:[.1,.5],bmin:250,sim:.1,tmin:.66},
+    medio:{name:"Médio",desc:"Já pede memória de filmografia.",from:0,to:150,a:3,b:14,vmin:500,evmin:400,sim:.8,tmin:.5,bmin:150},
     dificil:{name:"Difícil",desc:"Para quem vive de cinema.",from:0,to:200,a:5,b:40,vmin:200,evmin:250,sim:.85,tmin:.34}
   };
   var LK=["facil","medio","dificil"];
@@ -4311,16 +4311,16 @@ addEventListener("hashchange",route);route();
       }
       if(!res){
         var pr=pickDistinct(good,3);if(!pr)continue;
-        var others;
+        var others,peg=!br&&Math.random()<.12;
         if(br)others=BR.filter(function(d){return d.s!==Dd.s&&efilms(d,lv,true).length});
         else{others=RANK.filter(function(d){return d.s!==Dd.s&&efilms(d,lv,false).length&&RANK.indexOf(d)<lv.to});
           others.sort(function(a,b){return dist(Dd,a)-dist(Dd,b)});
           var n=others.length;
-          if(lvk==="facil")others=others.slice(Math.floor(n*lv.near[0]),Math.floor(n*lv.near[1]));
+          if(peg)others=others.slice(0,4);else if(lvk==="facil")others=others.slice(Math.floor(n*lv.near[0]),Math.floor(n*lv.near[1]));
           else others=others.slice(0,lvk==="medio"?7:9)}
         others=C.shuf(others);
         for(var s=0;s<others.length&&!res;s++){var ef=C.shuf(efilms(others[s],lv,br));
-          for(var h=0;h<ef.length;h++){if(valid(Dd,pr,others[s],ef[h],lvk,true)){res=build(Dd,pr,others[s],ef[h],{});break}}}
+          for(var h=0;h<ef.length;h++){if(valid(Dd,pr,others[s],ef[h],lvk,!peg)){res=build(Dd,pr,others[s],ef[h],{});break}}}
       }
       if(res)return res
     }
