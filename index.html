@@ -4261,6 +4261,10 @@ addEventListener("hashchange",route);route();
   };
   var LK=["facil","medio","dificil"];
   var BR=D.filter(function(d){return d.pais==="Brasil"});
+  function gtop(d,n){return (d.gen||[]).slice().sort(function(a,b){return b[1]-a[1]}).slice(0,n).map(function(x){return x[0]})}
+  var SPEC=["Animação","Terror","Romance","Ficção científica","Crime","Documentário","Musical","Guerra","Faroeste","Thriller","Mistério","Fantasia","Família"];
+  function spec(d){return gtop(d,3).filter(function(g){return SPEC.indexOf(g)>=0})}
+  function gcompat(a,b){var sa=spec(a),sb=spec(b);if((sa.length||sb.length)&&!sa.some(function(g){return sb.indexOf(g)>=0}))return false;var a2=gtop(a,2),a3=gtop(a,3),b2=gtop(b,2),b3=gtop(b,3);return a2.some(function(g){return b3.indexOf(g)>=0})&&b2.some(function(g){return a3.indexOf(g)>=0})}
   function isBR(d){return d.pais==="Brasil"}
   function tierOf(d,lv,a,b,v,br){var l=d.films.filter(function(f){return okF(f,br?(lv.bmin||100):v)}).sort(function(x,y){return (y[6]||0)-(x[6]||0)});return br?l:l.slice(a,b)}
   function dfilms(d,lv,br){return tierOf(d,lv,lv.a,lv.b,lv.vmin,br)}
@@ -4298,7 +4302,7 @@ addEventListener("hashchange",route);route();
         var pr=pickDistinct(good,3);if(!pr)continue;
         var others;
         if(br)others=BR.filter(function(d){return d.s!==Dd.s&&efilms(d,lv,true).length});
-        else{others=RANK.filter(function(d){return d.s!==Dd.s&&efilms(d,lv,false).length&&RANK.indexOf(d)<lv.to});
+        else{others=RANK.filter(function(d){return d.s!==Dd.s&&gcompat(Dd,d)&&efilms(d,lv,false).length&&RANK.indexOf(d)<lv.to});
           others.sort(function(a,b){return dist(Dd,a)-dist(Dd,b)});
           var n=others.length;
           if(lvk==="facil")others=others.slice(Math.floor(n*lv.near[0]),Math.floor(n*lv.near[1]));
@@ -4355,7 +4359,7 @@ addEventListener("hashchange",route);route();
       var dr=el.querySelector(".dr");dr.hidden=false;dr.textContent=(x.intr?"É de ":"")+x.d.n});
     if(!ok)els[i].classList.add("wrong");
     var x=r.items.filter(function(z){return z.intr})[0];
-    var note=r.sim&&r.bait?(r.exact?"Tem o mesmo título de <b>"+esc(r.bait[1])+"</b>, de "+esc(r.d.n)+", mas é outro filme.":"Lembra <b>"+esc(r.bait[1])+"</b>, de "+esc(r.d.n)+", mas foi feito por outro diretor."):(r.e?"Estilo próximo ao dele: "+esc(r.e.n)+".":"");
+    var note="";
     g("inFb").innerHTML='<div class="infb"><div class="pgain'+(ok?'':' zero')+'">'+(ok?'Acertou!':'Não foi essa')+'</div><p>O intruso era <b>'+esc(x.f[1])+'</b> ('+x.f[0]+'), dirigido por <b>'+esc(x.d.n)+'</b>. '+note+'</p><button class="btn primary" id="inNext">'+(G.i+1>=G.n?'Ver resultado':'Próximo')+' <span aria-hidden="true">→</span></button></div>';
     var nb=g("inNext");if(nb){nb.focus({preventScroll:true});nb.scrollIntoView({block:"nearest",behavior:"smooth"})}
     var tot=document.querySelector("#inRoot .ptot b");if(tot)tot.textContent=G.score;
