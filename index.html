@@ -4466,6 +4466,7 @@ addEventListener("hashchange",route);route();
     if(common.length&&!common.some(function(g){return gx.indexOf(g)>=0}))return false;
     return true}
   function valid(Dd,real,E,x,lv,gen){
+    if(lv!=="facil"){var vs=real.map(function(r){return r[6]||1}).sort(function(a,b){return a-b}),md=vs[Math.floor(vs.length/2)],vx=x[6]||1,rt=lv==="dificil"?2.2:3.5;if(vx>md*rt||vx<md/rt)return false}
     if(gen&&!gOK(real,x))return false;
     if(gen&&lv!=="dificil"){var ys=real.map(function(r){return +r[0]}),mn=Math.min.apply(null,ys),mx=Math.max.apply(null,ys),yx=+x[0];if(yx<mn-5||yx>mx+5)return false}
     if(E.s===Dd.s)return false;var k=fkey(x);if(KEYS[k]&&KEYS[k][Dd.s])return false;
@@ -4486,7 +4487,9 @@ addEventListener("hashchange",route);route();
     var r={d:Dd,e:E,items:items,sim:false,exact:false,bait:null};for(var k in extra)r[k]=extra[k];return r}
   function round(lvk,used){
     var lv=LV[lvk],useBR=BR.length&&Math.random()<.2;
-    var pool=(useBR?BR:RANK.slice(lv.from,lv.to)).filter(function(d){return !used[d.s]&&pickDistinct(dfilms(d,lv,isBR(d)),3)});
+    var MINF=lvk==="dificil"?15:lvk==="medio"?10:0;
+    function deep(d){return !MINF||isBR(d)||d.films.filter(function(f){return okF(f,lv.vmin)}).length>=MINF}
+    var pool=(useBR?BR:RANK.slice(lv.from,lv.to)).filter(function(d){return !used[d.s]&&deep(d)&&pickDistinct(dfilms(d,lv,isBR(d)),3)});
     if(!pool.length)pool=RANK.slice(lv.from,lv.to).filter(function(d){return !used[d.s]&&dfilms(d,lv,false).length>=3});
     if(!pool.length)return null;
     for(var tries=0;tries<60;tries++){
