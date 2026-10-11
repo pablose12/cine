@@ -1478,6 +1478,10 @@ body[data-gt] #v-home .mrow .mhead .k{color:var(--amber-text)}
 /* Linha do Tempo (horizontal): títulos legíveis sobre fundo escuro */
 body[data-gt] #v-tl .tlarea.h .tlc .tt{color:#fff}
 body[data-gt] #v-tl .tlarea.h .tlc .tt small{color:rgba(255,255,255,.72)}
+
+/* ===== v28 ===== */
+.survbar{display:inline-flex;align-items:center;gap:8px;border-radius:999px;background:rgba(244,168,29,.16);border:1px solid rgba(244,168,29,.4);color:var(--amber);padding:4px 14px;font:700 11.5px var(--font-body,Poppins,sans-serif);letter-spacing:.08em;text-transform:uppercase}
+#donCfg .seg{margin-top:2px}
 </style>
 </head>
 <body>
@@ -1603,6 +1607,8 @@ body[data-gt] #v-tl .tlarea.h .tlc .tt small{color:rgba(255,255,255,.72)}
     </div>
     <div id="dOn" class="donl" hidden>
       <div class="grow"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg><span>Seu nome</span></div><div class="lrow" style="margin:0"><input id="donName" type="text" maxlength="16" placeholder="Jogador" autocomplete="off"></div></div>
+      <div class="grow" id="donCfg"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20v-6M10 20V9M16 20V5M22 20V2"/></svg><span>Como vão jogar?</span><small>você escolhe, o convidado joga o mesmo</small></div><div class="seg" role="group" aria-label="Estilo da sala"><button data-oscope="free" aria-pressed="true">Livre (todos os níveis)</button><button data-oscope="level" aria-pressed="false">Nível específico</button></div><div class="nchips" id="olvls" hidden></div></div>
+      <div class="grow"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Quantas perguntas</span></div><div class="nchips" id="onchips"></div><p class="ghint" id="onsum"></p></div>
       <div class="g2c">
         <div class="gcard2"><span class="gtag">Anfitrião</span><h4><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg> Criar sala</h4><p>Mande o link ou o código para um amigo. Cada um joga no seu aparelho, ao mesmo tempo, com as mesmas perguntas. Acertar vale 100 pontos, mais até 50 de bônus pela rapidez.</p><button class="btn primary" id="donCreate">Criar sala <span aria-hidden="true">→</span></button></div>
         <div class="gcard2"><span class="gtag g2t">Convidado</span><h4><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3"/></svg> Entrar com código</h4><p>Digite o código que o anfitrião te mandou.</p><div class="lrow" style="margin:0"><input class="cd" id="donCode" type="text" maxlength="6" placeholder="CÓDIGO" autocomplete="off"><button class="btn ghost" id="donJoin">Entrar</button></div></div>
@@ -2075,7 +2081,7 @@ function renderMedals(){
 /* ---------- escolha do modo ---------- */
 let mode = "level", freeN = 25;
 const duel = {a:"", b:"", scope:"free", lvl:"medio", n:25};
-const FREE_N = [10, 15, 25, 35, 50, 60, 100, 0];
+const FREE_N = [10, 15, 25, 35, 50, 60, 100, 0, -1];
 const DUEL_N = {free:[15, 25, 35, 50, 60, 100, 0], level:[5, 10, 15, 25, 40, 0]};
 function setMode(m){
   mode = m;
@@ -2087,7 +2093,7 @@ function setMode(m){
 }
 function renderFreePanel(){
   $("fchips").innerHTML = FREE_N.map(n => `<button class="nchip" data-fn="${n}" aria-pressed="${n === freeN}">${chipTxt(n)}</button>`).join("");
-  $("fsum").textContent = freeN === 0 ? `Todas as ${DATA.length} perguntas misturando os 4 níveis · vai levar um bom tempo, dá para parar quando quiser` : `${freeN} perguntas misturando os 4 níveis · cerca de ${Math.round(freeN * 0.45)} min`;
+  $("fsum").textContent = freeN === -1 ? `Até errar: os 4 níveis misturados, uma vida só · recorde ${((lsGet("qd_best") || {})["free_-1"]) || 0} seguidas` : freeN === 0 ? `Todas as ${DATA.length} perguntas misturando os 4 níveis · vai levar um bom tempo, dá para parar quando quiser` : `${freeN} perguntas misturando os 4 níveis · cerca de ${Math.round(freeN * 0.45)} min`;
 }
 function renderDuelPanel(){
   document.querySelectorAll("[data-dscope]").forEach(b => b.setAttribute("aria-pressed", b.dataset.dscope === duel.scope));
@@ -2101,17 +2107,17 @@ function renderDuelPanel(){
 }
 
 /* níveis */
-const LEVEL_N = [10, 15, 25, 30, 50, 0];
-const chipTxt = n => n === 0 ? "Todas" : n;
+const LEVEL_N = [10, 15, 25, 30, 50, 0, -1];
+const chipTxt = n => n === -1 ? "Até errar" : n === 0 ? "Todas" : n;
 let lvSel = lsGet("qd_lv"); if (!LEVELS[lvSel]) lvSel = "medio";
 function renderLevels(){
   $("lchips").innerHTML = LEVEL_N.map(n => `<button class="nchip" data-ln="${n}" aria-pressed="${n === size}">${chipTxt(n)}</button>`).join("");
   $("lvChips").innerHTML = Object.entries(LEVELS).map(([k,l]) => `<button class="nchip wide" data-lvsel="${k}" aria-pressed="${k === lvSel}">${l.name}</button>`).join("");
-  const L = LEVELS[lvSel], tot = DATA.filter(q => q.n === lvSel).length, sz0 = size || tot, bst = (lsGet("qd_best") || {})[lvSel + "_" + size];
+  const L = LEVELS[lvSel], tot = DATA.filter(q => q.n === lvSel).length, sv = size === -1, sz0 = size > 0 ? size : tot, bst = (lsGet("qd_best") || {})[lvSel + "_" + size];
   $("lvDesc").textContent = L.desc;
-  const tr = bst != null && typeof tierOf === "function" ? tierOf(bst, sz0) : 0;
-  $("lvBest").innerHTML = bst != null ? `Seu melhor: <b>${bst}/${sz0}</b>` + (tr ? ` · medalha <b>${MEDALS[lvSel].nomes[tr - 1]}</b>` : "") : `${tot} filmes neste nível`;
-  $("lvSum").innerHTML = `<b>${sz0} perguntas</b> · nível ${L.name.toLowerCase()} · cerca de ${Math.max(1, Math.round(L.min * sz0 / 10))} min`;
+  const tr = !sv && bst != null && typeof tierOf === "function" ? tierOf(bst, sz0) : 0;
+  $("lvBest").innerHTML = sv ? (bst != null ? `Seu recorde: <b>${bst} seguidas</b>` : `${tot} filmes neste nível`) : bst != null ? `Seu melhor: <b>${bst}/${sz0}</b>` + (tr ? ` · medalha <b>${MEDALS[lvSel].nomes[tr - 1]}</b>` : "") : `${tot} filmes neste nível`;
+  $("lvSum").innerHTML = sv ? `<b>Até errar</b> · nível ${L.name.toLowerCase()} · uma vida só, sem medalha` : `<b>${sz0} perguntas</b> · nível ${L.name.toLowerCase()} · cerca de ${Math.max(1, Math.round(L.min * sz0 / 10))} min`;
   return;
   const best = lsGet("qd_best") || {};
   $("lvls").innerHTML = Object.entries(LEVELS).map(([k,l]) => {
@@ -2142,8 +2148,8 @@ function begin(){
   renderQ();
 }
 function start(level){
-  const pool = shuffle(DATA.filter(q => q.n === level)).slice(0, size || 1e9);
-  S = {mode:"level", level, qs: pool};
+  const pool = shuffle(DATA.filter(q => q.n === level)).slice(0, size > 0 ? size : 1e9);
+  S = {mode:"level", level, qs: pool, surv: size === -1};
   begin();
 }
 function duelAll(){
@@ -2151,6 +2157,7 @@ function duelAll(){
   return duel.scope === "free" ? ORDER.reduce((a, k) => a + Math.floor(cnt(k) / 2), 0) : Math.floor(cnt(duel.lvl) / 2);
 }
 function startFree(n){
+  if (n === -1){ S = {mode:"free", level:"free", qs: shuffle(DATA), surv: true}; begin(); return; }
   if (n === 0){ S = {mode:"free", level:"free", qs: shuffle(DATA)}; begin(); return; }
   const P = pools(), cnt = {facil:0, medio:0, dificil:0, avancado:0};
   const base = Math.floor(n / 4), extra = shuffle(ORDER).slice(0, n % 4);
@@ -2178,10 +2185,12 @@ function startDuel(){
 
 /* ---------- progresso ---------- */
 function renderProg(){
+  if (S.surv){ $("prog").innerHTML = '<div class="survbar">Até errar · uma vida só</div>'; return; }
   if (S.size <= 30) $("prog").innerHTML = S.qs.map(() => "<i></i>").join("");
   else $("prog").innerHTML = '<div class="pbar"><i id="pfill"></i></div>';
 }
 function updProg(){
+  if (S.surv) return;
   if (S.size <= 30) [...$("prog").children].forEach((el, i) => { el.className = i < S.res.length ? (S.res[i].ok ? "ok" : "bad") : (i === S.res.length ? "cur" : ""); });
   else { const f = $("pfill"); if (f) f.style.width = (S.res.length / S.size * 100) + "%"; }
 }
@@ -2192,7 +2201,7 @@ function renderQ(){
   const q = S.qs[S.i];
   S.locked = false; S.sel = null;
   const t = splitTitle(q.f);
-  $("qcount").innerHTML = `Pergunta <b>${S.res.length+1}</b> de ${S.size}` + (S.sk && S.sk.has(q) ? " · <em>pulada antes</em>" : "");
+  $("qcount").innerHTML = `Pergunta <b>${S.res.length+1}</b>${S.surv ? " · até errar" : " de " + S.size}` + (S.sk && S.sk.has(q) ? " · <em>pulada antes</em>" : "");
   $("qlvl").textContent = LEVELS[q.n].name;
   $("qyear").textContent = q.y;
   $("qtitle").textContent = t.main;
@@ -2214,7 +2223,7 @@ function renderQ(){
   $("opts").innerHTML = S.opts.map((o,i) => `<button class="opt" data-i="${i}" aria-pressed="false"><span class="l">${"ABCD"[i]}</span><span>${esc(nm(o))}</span></button>`).join("");
   $("fb").innerHTML = "";
   $("confirmBtn").hidden = false; $("confirmBtn").disabled = true;
-  $("skipBtn").hidden = (S.i >= S.size - 1);
+  $("skipBtn").hidden = (S.i >= S.size - 1) || !!S.surv;
   $("nextBtn").hidden = true;
   { const qc = document.querySelector(".qcard"); qc.classList.remove("qin"); void qc.offsetWidth; qc.classList.add("qin"); }
   getPhoto(q.c);
@@ -2256,7 +2265,7 @@ async function answer(i){
   if (S.mode === "duel") $("turnScore").innerHTML = `${esc(S.teams[0])} <b>${S.scores[0]}</b> × <b>${S.scores[1]}</b> ${esc(S.teams[1])}`;
   $("confirmBtn").hidden = true; $("skipBtn").hidden = true;
   $("nextBtn").hidden = false;
-  $("nextBtn").innerHTML = (S.i+1 >= S.size ? (S.mode === "duel" ? "Ver o vencedor" : "Ver resultado") : (S.mode === "duel" ? "Próxima equipe" : "Próxima pergunta")) + ' <span aria-hidden="true">→</span>';
+  $("nextBtn").innerHTML = ((S.i+1 >= S.size || (S.surv && !ok)) ? (S.mode === "duel" ? "Ver o vencedor" : "Ver resultado") : (S.mode === "duel" ? "Próxima equipe" : "Próxima pergunta")) + ' <span aria-hidden="true">→</span>';
   $("nextBtn").focus({preventScroll:true});
   $("nextRow").scrollIntoView({block:"nearest", behavior:"smooth"});
   const url = await getPhoto(q.c);
@@ -2276,8 +2285,10 @@ function skipQ(){
 }
 function next(){
   if (!S.locked) return;
+  if (S.surv && S.res.length && !S.res[S.res.length - 1].ok) return renderSurvResult();
   S.i++;
   if (S.i >= S.size){
+    if (S.surv) return renderSurvResult();
     if (S.mode === "duel") return renderDuel();
     return S.mode === "free" ? renderFreeResult() : renderResult();
   }
@@ -2331,6 +2342,26 @@ function renderResult(){
   $("again").textContent = "Jogar de novo";
   $("other").textContent = "Mudar de nível";
   renderMedals();
+  renderLevels();
+  show("result");
+}
+
+function renderSurvResult(){
+  const n = S.score, key = (S.mode === "free" ? "free" : S.level) + "_-1";
+  const best = lsGet("qd_best") || {}, prev = best[key], rec = n > 0 && (prev == null || n > prev);
+  if (rec){ best[key] = n; lsSet("qd_best", best); }
+  const T = n >= 25 ? ["Lenda do cinema", "Nenhum diretor conseguiu te enganar por muito tempo."] : n >= 15 ? ["Memória de elefante", "Sequência de dar inveja em crítico."] : n >= 8 ? ["Cinéfilo de verdade", "Boa sequência. Dá para ir mais longe."] : n >= 3 ? ["Aquecendo", "Um erro derruba tudo. Tente de novo."] : ["Caiu cedo", "Acontece. A próxima sequência começa do zero."];
+  $("rlvl").textContent = "Resultado · até errar" + (S.mode === "level" ? " · nível " + LEVELS[S.level].name.toLowerCase() : " · todos os níveis");
+  $("rscore").textContent = n;
+  $("rof").textContent = n === 1 ? "seguida" : "seguidas";
+  $("rrank").textContent = T[0];
+  $("rmsg").textContent = T[1] + (rec && prev != null ? " Novo recorde!" : "");
+  setQuote($("rquote"));
+  $("rnext").textContent = rec ? "Esse é o seu melhor até agora." : prev != null ? "Seu recorde é de " + prev + " seguidas." : "Acerte ao menos uma para abrir o seu recorde.";
+  $("rmedal").innerHTML = `<div class="mghost">${n}</div><div class="mname">Sequência</div><div class="mtag">No até errar vale o recorde, não a medalha</div>`;
+  $("rlist").innerHTML = resList(S.res, false);
+  $("again").textContent = "Jogar de novo";
+  $("other").textContent = "Mudar de modo";
   renderLevels();
   show("result");
 }
@@ -2432,6 +2463,7 @@ function goSection(id, m){
   if ($("v-home").hidden){ show("home"); setTimeout(go, 40); } else go();
 }
 function shareText(){
+  if (S.surv) return `Acertei ${S.score} seguidas no "até errar" do Quem Dirigiu? Consegue passar?`;
   if (S.mode === "duel"){
     const [sa, sb] = S.scores;
     return `Duelo no Quem Dirigiu?: ${S.teams[0]} ${sa} × ${sb} ${S.teams[1]}. ` + (sa === sb ? "Empate!" : `${S.teams[sa > sb ? 0 : 1]} levou a taça.`) + " Topa uma revanche?";
@@ -2938,9 +2970,9 @@ addEventListener("hashchange",route);route();
     });
     return pool;
   }
-  var cfg={lv:"todos",n:10,m:"solo"},N=[5,10,15,25,35,50,100,0];
+  var cfg={lv:"todos",n:10,m:"solo"},N=[5,10,15,25,35,50,100,0,-1];
   function list(){var b=build();return cfg.lv==="todos"?b:b.filter(function(x){return x.q.n===cfg.lv})}
-  function per(){var tot=list().length,n=cfg.n||tot;if(cfg.m==="team"){n=cfg.n||Math.floor(tot/2);return Math.max(1,Math.min(n,Math.floor(tot/2)))}return Math.min(n,tot)}
+  function per(){var tot=list().length,n=cfg.n>0?cfg.n:tot;if(cfg.m==="team"){n=cfg.n>0?cfg.n:Math.floor(tot/2);return Math.max(1,Math.min(n,Math.floor(tot/2)))}return Math.min(n,tot)}
   function panel(){
     var el=document.getElementById("pLv");if(!el)return;
     var lv=[["todos","Todos"]].concat(Object.keys(LEVELS).map(function(k){return [k,LEVELS[k].name]}));
@@ -2948,10 +2980,12 @@ addEventListener("hashchange",route);route();
     document.getElementById("pM").innerHTML=[["solo","Sozinho",'<svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>'],["team","Duelo",'<svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="3.2"/><circle cx="17" cy="9" r="2.6"/><path d="M2 20c0-3.5 2.8-5.6 6-5.6s6 2.1 6 5.6M15 14.6c3.4-.4 7 1.2 7 5"/></svg>']].map(function(a){return '<button data-pm="'+a[0]+'" aria-pressed="'+(a[0]===cfg.m)+'">'+a[2]+a[1]+'</button>'}).join("");
     document.getElementById("pTeams").hidden=cfg.m!=="team";
     document.getElementById("pNL").textContent=cfg.m==="team"?"Quantos pôsteres para cada equipe":"Quantos pôsteres";
-    document.getElementById("pN").innerHTML=N.map(function(n){return '<button class="nchip" data-pn="'+n+'" aria-pressed="'+(n===cfg.n)+'">'+(n===0?"Todos":n)+'</button>'}).join("");
+    if(cfg.m==="team"&&cfg.n===-1)cfg.n=10;
+    document.getElementById("pN").innerHTML=N.filter(function(n){return cfg.m!=="team"||n>=0}).map(function(n){return '<button class="nchip" data-pn="'+n+'" aria-pressed="'+(n===cfg.n)+'">'+(n===-1?"Até errar":n===0?"Todos":n)+'</button>'}).join("");
     var n=per(),tot=cfg.m==="team"?n*2:n;
     document.getElementById("pSum").textContent=cfg.m==="team"?(n+" pôsteres para cada equipe ("+tot+" no total), alternando a vez · até 100 pontos cada · cerca de "+Math.max(1,Math.round(tot*0.6))+" min"):(n+" pôsteres · até 100 pontos cada, no máximo "+(n*100)+" · cerca de "+Math.max(1,Math.round(n*0.6))+" min");
     var b=lsGet("pstBest");var bb=b&&b[cfg.lv+"-"+cfg.n];
+    if(cfg.m==="solo"&&cfg.n===-1){document.getElementById("pSum").textContent="Até errar: a sequência acaba no primeiro erro ou quando o tempo esgota. Vale o recorde de acertos seguidos.";document.getElementById("pBest").textContent=bb?("Seu recorde: "+bb+" seguidos"):"Sem recorde ainda";return}
     document.getElementById("pBest").textContent=cfg.m==="team"?"Vence a equipe com mais pontos":(bb?("Seu recorde: "+bb+" pontos"):"Sem recorde nesta combinação");
   }
   document.addEventListener("click",function(e){
@@ -2985,7 +3019,7 @@ addEventListener("hashchange",route);route();
     var n=per(),l=shuffle(list());
     var team=cfg.m==="team";l=l.slice(0,team?n*2:n);if(l.length<2){return}
     var sp=document.querySelector(".ptot");if(sp)sp.innerHTML='Pontos <b id="pTot">0</b>';
-    G={items:l,i:0,total:0,res:[],bad:0,team:team,names:[tn(0),tn(1)],sc:[0,0]};if(window.streakUI)streakUI(document.getElementById('pStreak'),0,null);
+    G={items:l,i:0,total:0,res:[],bad:0,team:team,names:[tn(0),tn(1)],sc:[0,0],surv:cfg.n===-1&&!team};if(window.streakUI)streakUI(document.getElementById('pStreak'),0,null);
     show("poster");setTot2();round();
   }
   function setTot2(){
@@ -2996,7 +3030,7 @@ addEventListener("hashchange",route);route();
   function stop(){cancelAnimationFrame(raf);raf=0}
   function round(){
     stop();var it=G.items[G.i];if(!it) return end();
-    document.getElementById("pCount").innerHTML="Rodada <b>"+(G.i+1)+"</b> de "+G.items.length;if(G.team)setTot2();
+    document.getElementById("pCount").innerHTML=G.surv?"Rodada <b>"+(G.i+1)+"</b> · até errar":"Rodada <b>"+(G.i+1)+"</b> de "+G.items.length;if(G.team)setTot2();
     var q=it.q,opts=makeOpts(it);
     G.cur={it:it,opts:opts,t:0,done:false,loaded:false};
     var tm=G.team?(G.i%2):0;
@@ -3032,12 +3066,12 @@ addEventListener("hashchange",route);route();
     [].forEach.call(document.querySelectorAll("#pOpts .opt"),function(b,k){b.disabled=true;if(c.opts[k].ok)b.classList.add("ok");else if(k===i)b.classList.add("bad");else b.classList.add("dim")});
     var pf=document.getElementById("pf");pf.classList.add("done");document.getElementById("pImg").style.filter="blur(0px)";
     var m=splitTitle(q.f),who=G.team?esc(G.names[tm])+' ':'';
-    document.getElementById("pFb").innerHTML='<div style="text-align:center;margin-top:16px"><div class="pgain'+(gain?'':' zero')+'">'+(ok?who+'+'+gain+' pts':(i<0?'Tempo esgotado':who+'0 pts'))+'</div><p style="margin:6px 0 14px">'+(ok?'':'Era ')+'<b>'+esc(m.main)+'</b> ('+q.y+') · dirigido por <b>'+esc(nm(q.c))+'</b></p><button class="btn primary" id="pNext">'+(G.i+1>=G.items.length?'Ver resultado':(G.team?'Passar a vez':'Próximo pôster'))+' <span aria-hidden="true">→</span></button></div>';
+    document.getElementById("pFb").innerHTML='<div style="text-align:center;margin-top:16px"><div class="pgain'+(gain?'':' zero')+'">'+(ok?who+'+'+gain+' pts':(i<0?'Tempo esgotado':who+'0 pts'))+'</div><p style="margin:6px 0 14px">'+(ok?'':'Era ')+'<b>'+esc(m.main)+'</b> ('+q.y+') · dirigido por <b>'+esc(nm(q.c))+'</b></p><button class="btn primary" id="pNext">'+((G.i+1>=G.items.length||(G.surv&&!ok))?'Ver resultado':(G.team?'Passar a vez':'Próximo pôster'))+' <span aria-hidden="true">→</span></button></div>';
     var nb=document.getElementById("pNext");if(nb){nb.focus({preventScroll:true});nb.scrollIntoView({block:"nearest",behavior:"smooth"})}
   }
-  function next(){G.i++;if(G.i>=G.items.length)end();else round()}
+  function next(){if(G.surv&&G.res.length&&!G.res[G.res.length-1].ok)return end();G.i++;if(G.i>=G.items.length)end();else round()}
   function end(){
-    stop();var max=G.items.length*100,pc=G.total/max,hits=G.res.filter(function(r){return r.ok}).length,html;
+    stop();if(G.surv)G.items=G.items.slice(0,Math.max(1,G.res.length));var max=G.items.length*100,pc=G.total/max,hits=G.res.filter(function(r){return r.ok}).length,html;if(G.surv)pc=hits>=15?.85:hits>=8?.6:hits>=4?.35:.1;
     document.getElementById("pCount").innerHTML="Fim da partida";
     var rows=G.res.map(function(r){var m=splitTitle(r.q.f);return '<div><img alt="" src="'+TMDB+'w92'+r.p+'" onerror="this.style.visibility=\'hidden\'"><span style="text-align:left">'+esc(m.main)+' <small style="color:var(--ink-700)">· '+(G.team?esc(G.names[r.tm]):esc(nm(r.q.c)))+'</small></span><b style="color:var(--'+(r.ok?'ok':'bad')+')">'+(r.ok?'+'+r.gain:'0')+'</b></div>'}).join("");
     var btns='<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><button class="btn primary" id="pAgain">Jogar de novo</button><button class="btn ghost" id="pHome">Voltar ao início</button></div>';
@@ -3047,9 +3081,9 @@ addEventListener("hashchange",route);route();
       if(!tie&&window.confete)window.confete();
     }else{
       var tier=pc>=.8?["Olho de lince","Você reconhece um filme só pela sombra do cartaz."]:pc>=.55?["Cinéfilo de plantão","Poucos pixels e você já sabia."]:pc>=.3?["Foco em ajuste","Com um pouco mais de nitidez, você chega lá."]:["Ainda desfocado","Respire fundo, a próxima rodada vai mais nítida."];
-      var key=cfg.lv+"-"+cfg.n,bst=lsGet("pstBest")||{},rec=!bst[key]||G.total>bst[key];if(rec){bst[key]=G.total;lsSet("pstBest",bst)}
+      var key=cfg.lv+"-"+cfg.n,bst=lsGet("pstBest")||{},val=G.surv?hits:G.total,rec=val>0&&(!bst[key]||val>bst[key]);if(rec){bst[key]=val;lsSet("pstBest",bst)}
       var avg=hits?Math.round(G.res.filter(function(r){return r.ok}).reduce(function(a,r){return a+r.t},0)/hits/100)/10:0;
-      html='<div class="panel" style="text-align:center;margin-top:12px"><div class="eyebrow" style="justify-content:center">'+tier[0]+'</div><div style="font-family:var(--font-display);font-size:56px;font-weight:800;color:var(--pri);line-height:1.1">'+G.total+'<span style="font-size:18px;color:var(--ink-700)"> / '+max+'</span></div><p class="pnote">'+tier[1]+'</p><p>'+hits+' de '+G.res.length+' acertos'+(hits?' · tempo médio dos acertos: '+avg.toLocaleString("pt-BR")+' s':'')+'</p>'+(G.best>=2?'<p class="rstreak">🔥 Maior sequência: '+G.best+'</p>':'')+(rec?'<p class="pgain">Novo recorde!</p>':'')+'<div class="pres">'+rows+'</div>'+btns+'</div>';
+      html='<div class="panel" style="text-align:center;margin-top:12px"><div class="eyebrow" style="justify-content:center">'+tier[0]+'</div><div style="font-family:var(--font-display);font-size:56px;font-weight:800;color:var(--pri);line-height:1.1">'+(G.surv?hits:G.total)+'<span style="font-size:18px;color:var(--ink-700)"> '+(G.surv?(hits===1?"seguido":"seguidos"):"/ "+max)+'</span></div><p class="pnote">'+tier[1]+'</p><p>'+hits+' de '+G.res.length+' acertos'+(hits?' · tempo médio dos acertos: '+avg.toLocaleString("pt-BR")+' s':'')+'</p>'+(G.best>=2?'<p class="rstreak">🔥 Maior sequência: '+G.best+'</p>':'')+(rec?'<p class="pgain">Novo recorde!</p>':'')+'<div class="pres">'+rows+'</div>'+btns+'</div>';
       if(rec&&window.confete)window.confete();
     }
     stage().innerHTML=html;
@@ -3909,15 +3943,15 @@ addEventListener("hashchange",route);route();
       '<div class="flabel" style="margin-top:18px">Ou entre numa sala</div><div class="lrow"><input class="cd" id="lvCode" type="text" maxlength="6" placeholder="CÓDIGO" autocomplete="off"><button class="btn ghost" id="lvJoin">Entrar</button></div><p class="pnote small">A conexão é direta entre os dois aparelhos (WebRTC), intermediada por um serviço público gratuito apenas para os dois se encontrarem. Nada fica salvo.</p></div>';
   }
   function open(){show("live");entry()}
-  window.Modes.live={open:open,create:function(nm){lsSet("lvname",nm);show("live");createRoom()},join:function(nm,code){lsSet("lvname",nm);show("live");joinRoom(code)}};
+  window.Modes.live={open:open,create:function(nm,cfg){lsSet("lvname",nm);show("live");createRoom(cfg)},join:function(nm,code){lsSet("lvname",nm);show("live");joinRoom(code)}};
   function leave(silent){if(st){try{st.link&&st.link.close()}catch(e){}clearInterval(st.tm);clearTimeout(st.nx)}st=null}
-  function createRoom(){
+  function createRoom(cfg){
     var nm=myName();lsSet("lvname",nm);var code=rcode();
-    st={role:"host",code:code,me:nm,op:null,cfg:{lv:"todos",n:10},started:false};
+    st={role:"host",code:code,me:nm,op:null,cfg:{lv:(cfg&&cfg.lv)||"todos",n:(cfg&&cfg.n)||10},started:false};
     lobby("Criando sala…");
     st.link=Net.host(code,{
       onready:function(){lobby()},
-      onerror:function(k){var c=st&&st.code;if(k==="id"&&c){createRoom();return}entry("Não consegui criar a sala. Verifique a conexão e tente de novo.")},
+      onerror:function(k){var c=st&&st.code;if(k==="id"&&c){createRoom(cfg);return}entry("Não consegui criar a sala. Verifique a conexão e tente de novo.")},
       onconn:function(l){if(!st)return;st.link=l;st.op=null},
       onmsg:onMsg,
       onclose:function(){if(st&&st.started){oppLeft()}else if(st){st.op=null;lobby()}}
@@ -3941,7 +3975,7 @@ addEventListener("hashchange",route);route();
     if(h){
       var lk=link();
       root.innerHTML='<div class="tltop"><span></span><button id="lvBack">Voltar</button></div><div class="panel"><h3>Sua sala</h3><p class="pnote">Mande o código ou o link para o seu amigo.</p><div class="lcode" id="lvC">'+esc2(st.code)+'</div><div class="lrow"><button class="btn ghost" id="lvCopy" data-l="'+esc2(lk)+'">Copiar link</button><a class="btn ghost" target="_blank" rel="noopener" href="https://wa.me/?text='+encodeURIComponent("Bora um duelo no Quem Dirigiu? Entra aqui: "+lk)+'">Enviar no WhatsApp</a></div>'+pl+
-        (st.op?'<div class="flabel">Dificuldade</div><div class="nchips">'+LV.map(function(a){return '<button class="nchip wide" data-llv="'+a[0]+'" aria-pressed="'+(a[0]===st.cfg.lv)+'">'+a[1]+'</button>'}).join("")+'</div><div class="flabel" style="margin-top:14px">Perguntas</div><div class="nchips">'+NS.map(function(n){return '<button class="nchip" data-lln="'+n+'" aria-pressed="'+(n===st.cfg.n)+'">'+n+'</button>'}).join("")+'</div><div class="lrow" style="margin-top:16px"><button class="btn primary" id="lvGo">Começar duelo <span aria-hidden="true">→</span></button></div>':'<div class="lwait"><i></i><i></i><i></i>'+(msg||"Aguardando o seu amigo entrar…")+'</div>')+'</div>';
+        (st.op?'<div class="flabel">Dificuldade</div><div class="nchips">'+LV.map(function(a){return '<button class="nchip wide" data-llv="'+a[0]+'" aria-pressed="'+(a[0]===st.cfg.lv)+'">'+a[1]+'</button>'}).join("")+'</div><div class="flabel" style="margin-top:14px">Perguntas</div><div class="nchips">'+NS.map(function(n){return '<button class="nchip" data-lln="'+n+'" aria-pressed="'+(n===st.cfg.n)+'">'+n+'</button>'}).join("")+'</div><div class="lrow" style="margin-top:16px"><button class="btn primary" id="lvGo">Começar duelo <span aria-hidden="true">→</span></button></div>':'<p class="pnote small" style="margin:14px 0 0">Partida: <b>'+(st.cfg.lv==="todos"?"todos os níveis":LEVELS[st.cfg.lv].name.toLowerCase())+'</b>, '+st.cfg.n+' perguntas. Dá para mudar quando o amigo entrar.</p><div class="lwait"><i></i><i></i><i></i>'+(msg||"Aguardando o seu amigo entrar…")+'</div>')+'</div>';
     }else{
       root.innerHTML='<div class="tltop"><span></span><button id="lvBack">Voltar</button></div><div class="panel"><h3>Conectado!</h3>'+pl+'<div class="lwait"><i></i><i></i><i></i>Aguardando o anfitrião começar…</div></div>';
     }
@@ -4233,7 +4267,7 @@ addEventListener("hashchange",route);route();
   tiles();
   document.addEventListener("click",function(e){
     var b=e.target.closest("[data-dwhere]");if(b){setWhere(b.dataset.dwhere);return}
-    if(e.target.closest("#donCreate")){window.Modes.live.create(nm());return}
+    if(e.target.closest("#donCreate")){window.Modes.live.create(nm(),window.__onCfg&&window.__onCfg());return}
     if(e.target.closest("#donJoin")){window.Modes.live.join(nm(),$("donCode").value);return}
     var j=e.target.closest("[data-duelon]");if(j){e.preventDefault();goSection("levels","duel");setTimeout(function(){setWhere("on")},80);var dd=document.querySelector(".navdd");if(dd)dd.classList.remove("on");return}
     var t=e.target.closest("#dnTiles [data-dnq]");if(t){lsSet("dnaN",t.dataset.dnq);tiles();return}
@@ -4374,17 +4408,17 @@ addEventListener("hashchange",route);route();
 
   /* ---------- estado e preferências ---------- */
   var cfg={lv:"medio",n:10};
-  try{var c0=JSON.parse(localStorage.getItem("in_cfg")||"null");if(c0&&LV[c0.lv])cfg.lv=c0.lv;if(c0&&[5,10,15].indexOf(c0.n)>=0)cfg.n=c0.n}catch(e){}
+  try{var c0=JSON.parse(localStorage.getItem("in_cfg")||"null");if(c0&&LV[c0.lv])cfg.lv=c0.lv;if(c0&&[5,10,15,-1].indexOf(c0.n)>=0)cfg.n=c0.n}catch(e){}
   function save(){try{localStorage.setItem("in_cfg",JSON.stringify(cfg))}catch(e){}}
   function bests(){try{return JSON.parse(localStorage.getItem("in_best")||"{}")||{}}catch(e){return {}}}
-  var NS=[5,10,15];
+  var NS=[5,10,15,-1];
   function panel(){
     var lv=g("inLv");if(!lv)return;
     lv.innerHTML=LK.map(function(k){return '<button class="nchip wide" data-inlv="'+k+'" aria-pressed="'+(k===cfg.lv)+'">'+LV[k].name+'</button>'}).join("");
-    g("inN").innerHTML=NS.map(function(n){return '<button class="nchip" data-inn="'+n+'" aria-pressed="'+(n===cfg.n)+'">'+n+'</button>'}).join("");
+    g("inN").innerHTML=NS.map(function(n){return '<button class="nchip" data-inn="'+n+'" aria-pressed="'+(n===cfg.n)+'">'+(n===-1?"Até errar":n)+'</button>'}).join("");
     g("inLvDesc").textContent=LV[cfg.lv].desc;
-    g("inSum").innerHTML="<b>"+cfg.n+" rodadas</b> · nível "+LV[cfg.lv].name.toLowerCase()+" · cerca de "+Math.max(2,Math.round(cfg.n*0.45))+" min";
-    var b=bests()[cfg.lv+"_"+cfg.n];g("inBest").innerHTML=b!=null?"Seu melhor: <b>"+b+"/"+cfg.n+"</b>":"Ainda sem recorde"
+    g("inSum").innerHTML=cfg.n===-1?"<b>Até errar</b> · nível "+LV[cfg.lv].name.toLowerCase()+" · uma vida só":"<b>"+cfg.n+" rodadas</b> · nível "+LV[cfg.lv].name.toLowerCase()+" · cerca de "+Math.max(2,Math.round(cfg.n*0.45))+" min";
+    var b=bests()[cfg.lv+"_"+cfg.n];g("inBest").innerHTML=b!=null?(cfg.n===-1?"Seu recorde: <b>"+b+" seguidos</b>":"Seu melhor: <b>"+b+"/"+cfg.n+"</b>"):"Ainda sem recorde"
   }
   /* ---------- tela de jogo ---------- */
   var G=null,root=function(){return g("inRoot")};
@@ -4392,42 +4426,42 @@ addEventListener("hashchange",route);route();
   function poster(it,i){
     return '<button class="inp" data-ip="'+i+'" aria-label="'+esc(it.f[1])+(G&&G.lv==="dificil"?'':' ('+it.f[0]+')')+'"><span class="im" style="background-image:url('+img(it.f)+')"><b class="ifb">'+esc(it.f[1])+'</b></span><span class="itt">'+esc(it.f[1])+'<small>'+(G&&G.lv==="dificil"?'':it.f[0])+'</small></span><span class="dr" hidden></span></button>'}
   function start(){
-    var rs=make(cfg.lv,cfg.n);
+    var sv=cfg.n===-1,rs=make(cfg.lv,sv?6:cfg.n);
     if(rs.length<3){alert0("Não consegui montar as rodadas. Tente outro nível.");return}
-    G={lv:cfg.lv,n:rs.length,i:0,score:0,streak:0,best:0,rounds:rs,locked:false};
+    G={lv:cfg.lv,n:rs.length,i:0,score:0,streak:0,best:0,rounds:rs,locked:false,surv:sv,used:{},over:false};rs.forEach(function(r){G.used[r.d.s]=1});
     show("intruso");draw()
   }
   function alert0(m){var r=root();if(r)r.innerHTML='<div class="panel" style="margin-top:20px"><p class="pnote">'+m+'</p></div>'}
   function draw(){
-    var r=G.rounds[G.i];if(!r){return fin()}
+    var r=G.rounds[G.i];if(!r&&G.surv&&!G.over){r=round(G.lv,G.used);if(r){G.used[r.d.s]=1;G.rounds.push(r);G.n=G.rounds.length}}if(!r){return fin()}
     G.locked=false;
-    root().innerHTML='<div class="inhead"><span class="inlv">Nível '+LV[G.lv].name+'</span><span class="inrd">Rodada <b>'+(G.i+1)+'</b>/'+G.n+'</span><span class="ptot">Acertos <b>'+G.score+'</b></span><span class="streak" id="inStr"'+(G.streak>1?'':' hidden')+'>'+G.streak+' seguidos</span><button id="inQuit" class="inq2">Voltar</button></div>'+
+    root().innerHTML='<div class="inhead"><span class="inlv">Nível '+LV[G.lv].name+'</span><span class="inrd">Rodada <b>'+(G.i+1)+'</b>'+(G.surv?' · até errar':'/'+G.n)+'</span><span class="ptot">Acertos <b>'+G.score+'</b></span><span class="streak" id="inStr"'+(G.streak>1?'':' hidden')+'>'+G.streak+' seguidos</span><button id="inQuit" class="inq2">Voltar</button></div>'+
     '<div class="inq"><h2>Qual destes filmes <em>não</em> foi dirigido por</h2><span class="inwho"><span class="av3">'+esc(ini(r.d.n))+(r.d.foto?'<img alt="" src="https://image.tmdb.org/t/p/w185'+r.d.foto+'" onerror="this.remove()">':'')+'</span><b>'+esc(r.d.n)+'</b></span><h2>?</h2></div>'+
     '<div class="inposters" id="inPosters">'+r.items.map(poster).join("")+'</div><div id="inFb" aria-live="polite"></div>'
   }
   function answer(i){
     if(!G||G.locked)return;var r=G.rounds[G.i],it=r.items[i];if(!it)return;G.locked=true;
-    var ok=!!it.intr;if(ok){G.score++;G.streak++;if(G.streak>G.best)G.best=G.streak}else G.streak=0;
+    var ok=!!it.intr;if(!ok&&G.surv)G.over=true;if(ok){G.score++;G.streak++;if(G.streak>G.best)G.best=G.streak}else G.streak=0;
     var els=document.querySelectorAll("#inPosters .inp");
     r.items.forEach(function(x,k){var el=els[k];el.classList.add(x.intr?"intr":"real");el.disabled=true;
       var sm=el.querySelector(".itt small");if(sm)sm.textContent=x.f[0];var dr=el.querySelector(".dr");dr.hidden=false;dr.textContent=(x.intr?"É de ":"")+x.d.n});
     if(!ok)els[i].classList.add("wrong");
     var x=r.items.filter(function(z){return z.intr})[0];
     var note="";
-    g("inFb").innerHTML='<div class="infb"><div class="pgain'+(ok?'':' zero')+'">'+(ok?'Acertou!':'Não foi essa')+'</div><p>O intruso era <b>'+esc(x.f[1])+'</b> ('+x.f[0]+'), dirigido por <b>'+esc(x.d.n)+'</b>. '+note+'</p><button class="btn primary" id="inNext">'+(G.i+1>=G.n?'Ver resultado':'Próximo')+' <span aria-hidden="true">→</span></button></div>';
+    g("inFb").innerHTML='<div class="infb"><div class="pgain'+(ok?'':' zero')+'">'+(ok?'Acertou!':'Não foi essa')+'</div><p>O intruso era <b>'+esc(x.f[1])+'</b> ('+x.f[0]+'), dirigido por <b>'+esc(x.d.n)+'</b>. '+note+'</p><button class="btn primary" id="inNext">'+((G.i+1>=G.n&&!G.surv)||G.over?'Ver resultado':'Próximo')+' <span aria-hidden="true">→</span></button></div>';
     var nb=g("inNext");if(nb){nb.focus({preventScroll:true});nb.scrollIntoView({block:"nearest",behavior:"smooth"})}
     var tot=document.querySelector("#inRoot .ptot b");if(tot)tot.textContent=G.score;
     var st=g("inStr");if(st){st.hidden=G.streak<2;st.textContent=G.streak+" seguidos"}
   }
   function fin(){
-    var k=G.lv+"_"+cfg.n,b=bests(),pct=G.score/G.n,rec=false;
-    if(G.n===cfg.n&&G.score>0&&(b[k]==null||G.score>b[k])){b[k]=G.score;rec=true;try{localStorage.setItem("in_best",JSON.stringify(b))}catch(e){}}
+    var k=G.lv+"_"+(G.surv?-1:cfg.n),b=bests(),pct=G.surv?(G.score>=12?.95:G.score>=8?.75:G.score>=4?.5:.2):G.score/G.n,rec=false;
+    if((G.surv||G.n===cfg.n)&&G.score>0&&(b[k]==null||G.score>b[k])){b[k]=G.score;rec=true;try{localStorage.setItem("in_best",JSON.stringify(b))}catch(e){}}
     var t=pct>=.9?["Olho de lince","Nada escapa de você."]:pct>=.7?["Cinéfilo atento","Poucos intrusos passam."]:pct>=.45?["Bom começo","Dá para afiar o olho."]:["Os intrusos venceram",G.lv==="facil"?"Respira e tenta de novo, você chega lá.":G.lv==="dificil"?"Esse nível é duro. Tente de novo, ou aqueça no médio.":"Tente de novo, ou aqueça no nível fácil."];
-    root().innerHTML='<div class="panel inres"><div class="eyebrow" style="justify-content:center">'+t[0]+'</div><div class="inbig">'+G.score+'<span> / '+G.n+'</span></div><p class="pnote">'+t[1]+' Nível '+LV[G.lv].name+(G.best>1?' · melhor sequência: '+G.best:'')+(rec?' · <b>novo recorde!</b>':'')+'</p>'+
+    root().innerHTML='<div class="panel inres"><div class="eyebrow" style="justify-content:center">'+t[0]+'</div><div class="inbig">'+G.score+'<span>'+(G.surv?(G.score===1?' seguido':' seguidos'):' / '+G.n)+'</span></div><p class="pnote">'+t[1]+' Nível '+LV[G.lv].name+(G.best>1?' · melhor sequência: '+G.best:'')+(rec?' · <b>novo recorde!</b>':'')+'</p>'+
     '<div class="inbtns"><button class="btn primary" id="inAgain">Jogar de novo</button><button class="btn ghost" id="inShare">Compartilhar</button><button class="btn ghost" id="inHome">Voltar ao início</button></div></div>'
   }
   function share(btn){
-    var txt="Fiz "+G.score+"/"+G.n+" no nível "+LV[G.lv].name+" do Filme Intruso, no Sou Cinéfilo. Será que você acha o intruso?",old=btn.textContent;
+    var txt=G.surv?"Achei "+G.score+" intrusos seguidos no nível "+LV[G.lv].name+" do Filme Intruso, no Sou Cinéfilo. Consegue mais?":"Fiz "+G.score+"/"+G.n+" no nível "+LV[G.lv].name+" do Filme Intruso, no Sou Cinéfilo. Será que você acha o intruso?",old=btn.textContent;
     try{if(navigator.share)navigator.share({text:txt,url:location.origin});else{navigator.clipboard.writeText(txt+" "+location.origin).then(function(){btn.textContent="Copiado!";setTimeout(function(){btn.textContent=old},1800)})}}catch(e){}
   }
   document.addEventListener("click",function(e){
@@ -4437,7 +4471,7 @@ addEventListener("hashchange",route);route();
     if(t.closest("#inGo")){start();return}
     if(g("v-intruso")&&!g("v-intruso").hidden){
       if((a=t.closest("[data-ip]"))){answer(+a.dataset.ip);return}
-      if(t.closest("#inNext")){G.i++;draw();return}
+      if(t.closest("#inNext")){if(G.over){fin();return}G.i++;draw();return}
       if(t.closest("#inAgain")){start();return}
       if(t.closest("#inShare")){share(t.closest("#inShare"));return}
       if(t.closest("#inQuit")||t.closest("#inHome")){panel();goSection("intruso");return}
@@ -4646,6 +4680,30 @@ addEventListener("hashchange",route);route();
     else if(t.closest("#lvBack"))g="g-qd";
     if(g)setTimeout(function(){goSection(g)},0)
   });
+})();
+</script>
+<script>
+(function(){
+  function $(i){return document.getElementById(i)}
+  var OC={scope:"free",lv:"medio",n:10},ON=[5,10,15,20];
+  try{var s=JSON.parse(localStorage.getItem("on_cfg")||"null");if(s){if(s.scope==="level"||s.scope==="free")OC.scope=s.scope;if(LEVELS[s.lv])OC.lv=s.lv;if(ON.indexOf(s.n)>=0)OC.n=s.n}}catch(e){}
+  function save(){try{localStorage.setItem("on_cfg",JSON.stringify(OC))}catch(e){}}
+  function render(){
+    var lv=$("olvls"),nc=$("onchips");if(!lv||!nc)return;
+    document.querySelectorAll("[data-oscope]").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.oscope===OC.scope)});
+    lv.hidden=OC.scope!=="level";
+    lv.innerHTML=Object.keys(LEVELS).map(function(k){return '<button class="nchip wide" data-olvl="'+k+'" aria-pressed="'+(k===OC.lv)+'">'+LEVELS[k].name+'</button>'}).join("");
+    nc.innerHTML=ON.map(function(n){return '<button class="nchip" data-on="'+n+'" aria-pressed="'+(n===OC.n)+'">'+n+'</button>'}).join("");
+    var m=$("onsum");if(m)m.textContent=OC.n+" perguntas · "+(OC.scope==="free"?"os 4 níveis misturados":"só o nível "+LEVELS[OC.lv].name.toLowerCase())+". Dá para ajustar de novo quando o amigo entrar."
+  }
+  window.__onCfg=function(){return {lv:OC.scope==="free"?"todos":OC.lv,n:OC.n}};
+  document.addEventListener("click",function(e){
+    var a;
+    if((a=e.target.closest("[data-oscope]"))){OC.scope=a.dataset.oscope;save();render();return}
+    if((a=e.target.closest("[data-olvl]"))){OC.lv=a.dataset.olvl;save();render();return}
+    if((a=e.target.closest("[data-on]"))){OC.n=+a.dataset.on;save();render();return}
+  });
+  render();
 })();
 </script>
 </body>
