@@ -1416,10 +1416,10 @@ body[data-gt="cd"]{--g1:#0F3A8F;--g2:#08235E;--ga:#8EC5FF;--gi:#08235E}
 @media (max-width:700px){.inposters{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}
 .inp{display:flex;flex-direction:column;gap:8px;text-align:left;background:none;border:0;padding:0;color:#fff;cursor:pointer;font:inherit}
 .inp .im{position:relative;display:block;aspect-ratio:2/3;border-radius:14px;background:linear-gradient(160deg,#5A62C4,#2B1466) center/cover;box-shadow:0 20px 32px -18px rgba(0,0,0,.75);border:3px solid transparent;transition:transform .2s,border-color .25s,box-shadow .25s}
-.inp .fb{position:absolute;left:8px;right:8px;top:50%;transform:translateY(-50%);text-align:center;font:700 13px var(--font-display);color:rgba(255,255,255,.35);z-index:0}
+.inp .ifb{position:absolute;left:8px;right:8px;top:50%;transform:translateY(-50%);text-align:center;font:700 13px var(--font-display);color:rgba(255,255,255,.35);z-index:0}
 .inp:not([disabled]):hover .im{transform:translateY(-5px)}
 .inp:focus-visible .im{border-color:var(--ga)}
-.inp .tt{font:700 14px/1.2 var(--font-display);color:#fff}.inp .tt small{display:block;font:400 12px var(--font-body);opacity:.7;margin-top:2px}
+.inp .itt{font:700 14px/1.2 var(--font-display);color:#fff}.inp .itt small{display:block;font:400 12px var(--font-body);opacity:.7;margin-top:2px}
 .inp .dr{font:600 12.5px var(--font-body);color:rgba(255,255,255,.85)}
 .inp.intr .im{border-color:#F4A81D;box-shadow:0 24px 36px -16px rgba(244,168,29,.55)}
 .inp.intr .dr{color:#F4A81D}
@@ -1442,6 +1442,10 @@ body[data-gt="cd"]{--g1:#0F3A8F;--g2:#08235E;--ga:#8EC5FF;--gi:#08235E}
 @media (max-width:860px){.lgd{grid-template-columns:repeat(2,1fr)}.lvc{grid-template-columns:1fr}}
 body[data-gt="in"] #v-intruso,body[data-gt="cd"] #v-cinedle{color:#fff}
 .cdend .pnote,.infb .pnote{color:rgba(255,255,255,.78)}
+
+.inhead{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:2px 0 6px;font-size:13px;color:rgba(255,255,255,.78)}.inhead b{color:#fff}.inhead .inlv{margin:0}.inhead .inq2{margin-left:auto;background:none;border:0;color:rgba(255,255,255,.7);font:600 13px var(--font-body);padding:4px 2px;text-decoration:underline;text-underline-offset:3px;cursor:pointer}.inhead .streak{color:#5EE6C8;font-weight:700}
+.inres{max-width:560px;margin-left:auto;margin-right:auto}.inres .pnote{color:rgba(255,255,255,.88);margin:0 auto 6px;text-align:center}
+.inres .eyebrow{color:var(--ga)}.inres .eyebrow::before{background:var(--ga)}
 </style>
 </head>
 <body>
@@ -1633,13 +1637,13 @@ body[data-gt="in"] #v-intruso,body[data-gt="cd"] #v-cinedle{color:#fff}
               <button class="dtile" data-dnq="36" aria-pressed="false"><b>36</b><span>A fundo</span><small>cerca de 9 min</small></button>
             </div></div>
   <div class="gfoot"><div class="gs">Dá para voltar e mudar uma resposta antes de ver o resultado.</div><button class="btn primary" id="dnGo">Começar o teste <span aria-hidden="true">→</span></button></div>
-</div></section><section class="sec s2" data-g="dna"><div class="eyebrow">Como funciona</div><h2>Três passos, <em>sem enrolação</em>.</h2><div class="grid3"><div class="step"><div class="n">01</div><h3>Responda sem certo nem errado</h3><p>Perguntas sobre ritmo, silêncio, medo, humor, amor e imagem, cada uma com quatro respostas.</p></div><div class="step"><div class="n">02</div><h3>Veja o diretor</h3><p>O diretor mais parecido com você aparece com a porcentagem de compatibilidade.</p></div><div class="step"><div class="n">03</div><h3>Leia a sua carta</h3><p>Um texto escrito a partir das suas próprias escolhas e um cartão pronto para os stories.</p></div></div></section><section class="sec s2" data-g="dna"><div class="eyebrow">Quem pode aparecer</div><h2><span class="ndir">280</span> diretores, <em>um com a sua cara</em>.</h2><div class="dgrid" id="dnPeople"></div></section><section class="gpg" id="intruso" data-g="in"><div class="hero2"><div class="hl"><div class="eyebrow">Jogo de olho clínico</div><h1>Qual filme <em>não é dele</em>?</h1><p class="lead">Quatro pôsteres: três são do mesmo diretor e um é intruso. Ache o que não combina. No difícil, o intruso tem o nome parecido com o de um filme dele, ou é outro filme com o mesmo título.</p><ul class="perks2"><li>3 níveis</li><li>Pôsteres de verdade</li><li>Recorde por nível</li></ul></div><div class="art"><div class="inart" id="inArt" aria-hidden="true"><p class="inwho2">Qual não é de <b data-who>…</b>?</p><div class="ipr"><div class="ip"><span></span></div><div class="ip"><span></span></div><div class="ip"><span></span></div><div class="ip"><span></span></div></div></div></div></div>
+</div></section><section class="sec s2" data-g="dna"><div class="eyebrow">Como funciona</div><h2>Três passos, <em>sem enrolação</em>.</h2><div class="grid3"><div class="step"><div class="n">01</div><h3>Responda sem certo nem errado</h3><p>Perguntas sobre ritmo, silêncio, medo, humor, amor e imagem, cada uma com quatro respostas.</p></div><div class="step"><div class="n">02</div><h3>Veja o diretor</h3><p>O diretor mais parecido com você aparece com a porcentagem de compatibilidade.</p></div><div class="step"><div class="n">03</div><h3>Leia a sua carta</h3><p>Um texto escrito a partir das suas próprias escolhas e um cartão pronto para os stories.</p></div></div></section><section class="sec s2" data-g="dna"><div class="eyebrow">Quem pode aparecer</div><h2><span class="ndir">280</span> diretores, <em>um com a sua cara</em>.</h2><div class="dgrid" id="dnPeople"></div></section><section class="gpg" id="intruso" data-g="in"><div class="hero2"><div class="hl"><div class="eyebrow">Jogo de olho clínico</div><h1>Qual filme <em>não é dele</em>?</h1><p class="lead">Quatro pôsteres: três são do mesmo diretor e um é intruso. Ache o que não combina. Quanto mais alto o nível, menos óbvio fica.</p><ul class="perks2"><li>3 níveis</li><li>Pôsteres de verdade</li><li>Recorde por nível</li></ul></div><div class="art"><div class="inart" id="inArt" aria-hidden="true"><p class="inwho2">Qual não é de <b data-who>…</b>?</p><div class="ipr"><div class="ip"><span></span></div><div class="ip"><span></span></div><div class="ip"><span></span></div><div class="ip"><span></span></div></div></div></div></div>
 <div class="gp2" id="inPanel">
   <div class="gtop"><span class="gq" style="margin:0"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20v-6M10 20V9M16 20V5M22 20V2"/></svg><span>Seu jogo</span></span><span class="gsum" id="inBest"></span></div>
   <div class="grow"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20v-6M10 20V9M16 20V5M22 20V2"/></svg><span>Nível</span></div><div class="nchips" id="inLv" role="group" aria-label="Nível"></div><p class="ghint" id="inLvDesc"></p></div>
   <div class="grow"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Rodadas</span><small>um diretor por rodada</small></div><div class="nchips" id="inN" role="group" aria-label="Número de rodadas"></div></div>
   <div class="gfoot"><div class="gs" id="inSum"></div><button class="btn primary" id="inGo">Jogar o Filme Intruso <span aria-hidden="true">→</span></button></div>
-</div></section><section class="sec s2" data-g="in"><div class="eyebrow">Como funciona</div><h2>Três passos, <em>sem enrolação</em>.</h2><div class="grid3"><div class="step"><div class="n">01</div><h3>Veja os quatro pôsteres</h3><p>Aparece um diretor e quatro filmes, com título e ano. Três são dele.</p></div><div class="step"><div class="n">02</div><h3>Aponte o intruso</h3><p>Toque no filme que não foi dirigido por ele. Acertou ou errou, o jogo mostra quem dirigiu cada um.</p></div><div class="step"><div class="n">03</div><h3>Some acertos</h3><p>Ao final você vê quantos intrusos achou. O melhor resultado de cada nível fica salvo neste navegador.</p></div></div></section><section class="sec s2" data-g="in"><div class="eyebrow">Os níveis</div><h2>Como o intruso é <em>escolhido</em>.</h2><div class="lvc"><div><span class="gtag">Fácil</span><h3>Estilos bem diferentes</h3><p>Diretores muito famosos, e o intruso é de um estilo e de uma época bem diferentes dos outros três.</p></div><div><span class="gtag">Médio</span><h3>Estilos parecidos</h3><p>O intruso é de um diretor com traços parecidos (ritmo, tom, imagem). Só quem conhece a filmografia acerta.</p></div><div><span class="gtag">Difícil</span><h3>Nome que engana</h3><p>Diretores menos óbvios. O intruso tem o nome parecido com o de um filme dele, ou é outro filme com o mesmo título.</p></div></div></section><section class="gpg" id="cinedle" data-g="cd"><div class="hero2"><div class="hl"><div class="eyebrow">Desafio diário</div><h1>Quem é o <em>diretor do dia</em>?</h1><p class="lead">Um diretor secreto por dia, o mesmo para todo mundo. Chute nomes e use as cores para chegar nele: país, nascimento, gênero, número de filmes, estreia e Oscar. Você tem 6 tentativas.</p><ul class="perks2"><li>Um por dia</li><li>6 tentativas</li><li>Sequência de dias</li></ul></div><div class="art"><div class="cdart" id="cdArt" aria-hidden="true"></div></div></div>
+</div></section><section class="sec s2" data-g="in"><div class="eyebrow">Como funciona</div><h2>Três passos, <em>sem enrolação</em>.</h2><div class="grid3"><div class="step"><div class="n">01</div><h3>Veja os quatro pôsteres</h3><p>Aparece um diretor e quatro filmes, com título e ano. Três são dele.</p></div><div class="step"><div class="n">02</div><h3>Aponte o intruso</h3><p>Toque no filme que não foi dirigido por ele. Acertou ou errou, o jogo mostra quem dirigiu cada um.</p></div><div class="step"><div class="n">03</div><h3>Some acertos</h3><p>Ao final você vê quantos intrusos achou. O melhor resultado de cada nível fica salvo neste navegador.</p></div></div></section><section class="sec s2" data-g="in"><div class="eyebrow">Os níveis</div><h2>Como o intruso é <em>escolhido</em>.</h2><div class="lvc"><div><span class="gtag">Fácil</span><h3>Para aquecer</h3><p>Filmes que a maioria já viu, de diretores bem conhecidos.</p></div><div><span class="gtag">Médio</span><h3>Pede memória</h3><p>Entram filmes menos lembrados de diretores famosos, e nem tudo é o que parece.</p></div><div><span class="gtag">Difícil</span><h3>Para quem vive de cinema</h3><p>Filmografia a fundo, com armadilhas. Dá para acertar, mas só com muito repertório.</p></div></div></section><section class="gpg" id="cinedle" data-g="cd"><div class="hero2"><div class="hl"><div class="eyebrow">Desafio diário</div><h1>Quem é o <em>diretor do dia</em>?</h1><p class="lead">Um diretor secreto por dia, o mesmo para todo mundo. Chute nomes e use as cores para chegar nele: país, nascimento, gênero, número de filmes, estreia e Oscar. Você tem 6 tentativas.</p><ul class="perks2"><li>Um por dia</li><li>6 tentativas</li><li>Sequência de dias</li></ul></div><div class="art"><div class="cdart" id="cdArt" aria-hidden="true"></div></div></div>
 <div class="gp2" id="cdPanel">
   <div class="gtop"><div class="seg top2" id="cdModeSeg" role="group" aria-label="Modo"><button data-cdmode="daily" aria-pressed="true"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Diretor do dia</button><button data-cdmode="free" aria-pressed="false"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>Treino</button></div><span class="gsum" id="cdStatus"></span></div>
   <div class="gfoot"><div class="gs" id="cdSum"></div><button class="btn primary" id="cdGo"><span id="cdGoTxt">Jogar o diretor de hoje</span> <span aria-hidden="true">→</span></button></div>
@@ -4249,14 +4253,18 @@ addEventListener("hashchange",route);route();
   function toks(t){return norm(t).replace(/[^a-z0-9 ]/g," ").split(/\s+/).filter(function(w){return w.length>=4&&!STOP[w]&&!/^\d+$/.test(w)})}
   RANK.forEach(function(d){d.films.forEach(function(f){
     var k=fkey(f);(KEYS[k]=KEYS[k]||{})[d.s]=1;
-    if(okF(f,400)){var tn=norm(f[1]);(TIT[tn]=TIT[tn]||[]).push({d:d,f:f});toks(f[1]).forEach(function(w){(TOK[w]=TOK[w]||[]).push({d:d,f:f})})}})});
+    if(okF(f,200)){var tn=norm(f[1]);(TIT[tn]=TIT[tn]||[]).push({d:d,f:f});toks(f[1]).forEach(function(w){(TOK[w]=TOK[w]||[]).push({d:d,f:f})})}})});
   var LV={
-    facil:{name:"Fácil",desc:"Diretores muito famosos. O intruso é de um estilo e de uma época bem diferentes, dá para sentir.",from:0,to:80,minD:2500,minE:2500,mins:4},
-    medio:{name:"Médio",desc:"O intruso é de um diretor de estilo parecido. Só quem conhece a filmografia de cada um acerta.",from:0,to:170,minD:1200,minE:1200,mins:5},
-    dificil:{name:"Difícil",desc:"Diretores menos óbvios. O intruso tem o nome parecido com o de um filme dele, ou é outro filme com o mesmo título.",from:50,to:280,minD:700,minE:500,mins:7}
+    facil:{name:"Fácil",desc:"Para aquecer.",from:0,to:100,a:0,b:8,vmin:1200,evmin:1200,near:[.1,.5],bmin:250},
+    medio:{name:"Médio",desc:"Já pede memória de filmografia.",from:0,to:150,a:3,b:14,vmin:500,evmin:400,sim:.55,tmin:.66,bmin:150},
+    dificil:{name:"Difícil",desc:"Para quem vive de cinema.",from:0,to:200,a:5,b:40,vmin:200,evmin:250,sim:.85,tmin:.34}
   };
   var LK=["facil","medio","dificil"];
-  function dfilms(d,v){return d.films.filter(function(f){return okF(f,v)})}
+  var BR=D.filter(function(d){return d.pais==="Brasil"});
+  function isBR(d){return d.pais==="Brasil"}
+  function tierOf(d,lv,a,b,v,br){var l=d.films.filter(function(f){return okF(f,br?(lv.bmin||100):v)}).sort(function(x,y){return (y[6]||0)-(x[6]||0)});return br?l:l.slice(a,b)}
+  function dfilms(d,lv,br){return tierOf(d,lv,lv.a,lv.b,lv.vmin,br)}
+  function efilms(d,lv,br){return tierOf(d,lv,lv.ea==null?lv.a:lv.ea,lv.eb==null?lv.b:lv.eb,lv.evmin,br)}
   function pickDistinct(arr,n){var out=[],ys={};C.shuf(arr).forEach(function(f){if(out.length<n&&!ys[f[0]]){ys[f[0]]=1;out.push(f)}});return out.length===n?out:null}
   function valid(Dd,real,E,x,lv){
     if(E.s===Dd.s)return false;var k=fkey(x);if(KEYS[k]&&KEYS[k][Dd.s])return false;
@@ -4264,37 +4272,42 @@ addEventListener("hashchange",route);route();
       if(norm(r[1])===norm(x[1])&&(lv!=="dificil"||Math.abs(+r[0]-+x[0])<3))return false;
       if(r[4]===x[4])return false}
     return true}
+  function build(Dd,real,E,x,extra){
+    var items=C.shuf(real.map(function(f){return {f:f,d:Dd,intr:false}}).concat([{f:x,d:E,intr:true}]));
+    var r={d:Dd,e:E,items:items,sim:false,exact:false,bait:null};for(var k in extra)r[k]=extra[k];return r}
   function round(lvk,used){
-    var lv=LV[lvk],pool=RANK.slice(lv.from,lv.to).filter(function(d){return !used[d.s]&&dfilms(d,lv.minD).length>=3});
+    var lv=LV[lvk],useBR=BR.length&&Math.random()<.2;
+    var pool=(useBR?BR:RANK.slice(lv.from,lv.to)).filter(function(d){return !used[d.s]&&pickDistinct(dfilms(d,lv,isBR(d)),3)});
+    if(!pool.length)pool=RANK.slice(lv.from,lv.to).filter(function(d){return !used[d.s]&&dfilms(d,lv,false).length>=3});
     if(!pool.length)return null;
-    for(var tries=0;tries<40;tries++){
-      var Dd=pool[Math.floor(Math.random()*pool.length)],good=dfilms(Dd,lv.minD),real=null,E=null,x=null,sim=false,exact=false;
-      if(lvk==="dificil"){
-        var baits=C.shuf(good);
-        for(var b=0;b<baits.length&&!x;b++){var bf=baits[b],cands=[];
-          var bt=toks(bf[1]);
-          (TIT[norm(bf[1])]||[]).forEach(function(c){if(c.d.s!==Dd.s)cands.push({c:c,ex:true,sc:9})});
-          bt.forEach(function(w){(TOK[w]||[]).forEach(function(c){if(c.d.s!==Dd.s&&(c.f[6]||0)>=lv.minE){var ct=toks(c.f[1]),sh=bt.filter(function(z){return ct.indexOf(z)>=0}).length;cands.push({c:c,ex:false,sc:sh/Math.max(bt.length,ct.length)})}})});
-          cands=C.shuf(cands).sort(function(a,b){return b.sc-a.sc}).slice(0,10);cands=C.shuf(cands);
-          for(var q=0;q<cands.length&&!x;q++){var cc=cands[q].c,others=good.filter(function(f){return f!==bf&&f[0]!==bf[0]}),pick=pickDistinct(others,2);
-            if(!pick)break;var rr=[bf].concat(pick);
-            if(valid(Dd,rr,cc.d,cc.f,lvk)){real=rr;E=cc.d;x=cc.f;sim=true;exact=cands[q].ex}}}
+    for(var tries=0;tries<60;tries++){
+      var Dd=pool[Math.floor(Math.random()*pool.length)],br=isBR(Dd),good=dfilms(Dd,lv,br),res=null;
+      /* armadilha: filme parecido com um filme do diretor (sequência, mesmo título) */
+      if(lv.sim&&!br&&Math.random()<lv.sim){
+        var baits=C.shuf(Dd.films.filter(function(f){return okF(f,lvk==="dificil"?200:400)}));
+        for(var b=0;b<baits.length&&!res;b++){var bf=baits[b],bt=toks(bf[1]),cands=[];
+          (TIT[norm(bf[1])]||[]).forEach(function(c){if(c.d.s!==Dd.s&&(c.f[6]||0)>=lv.evmin)cands.push({c:c,ex:true,sc:9})});
+          bt.forEach(function(w){if((TOK[w]||[]).length>(lvk==="dificil"?26:8))return;(TOK[w]||[]).forEach(function(c){if(c.d.s!==Dd.s&&(c.f[6]||0)>=lv.evmin){var ct=toks(c.f[1]),sh=bt.filter(function(z){return ct.indexOf(z)>=0}).length,sc=sh/Math.max(bt.length,ct.length);if(sc>=lv.tmin&&(lvk==="dificil"||sh>=2))cands.push({c:c,ex:false,sc:sc})}})});
+          cands=C.shuf(cands).sort(function(a,b){return b.sc-a.sc}).slice(0,8);cands=C.shuf(cands);
+          var show=lvk==="dificil"&&Math.random()<.4;
+          for(var q=0;q<cands.length&&!res;q++){var cc=cands[q].c,others=good.filter(function(f){return f!==bf&&f[0]!==bf[0]}),pick=pickDistinct(others,show?2:3);
+            if(!pick)break;var rr=show?[bf].concat(pick):pick;
+            if(valid(Dd,rr,cc.d,cc.f,lvk))res=build(Dd,rr,cc.d,cc.f,{sim:true,exact:cands[q].ex,bait:bf})}}
       }
-      if(!x){
+      if(!res){
         var pr=pickDistinct(good,3);if(!pr)continue;
-        var others=RANK.filter(function(d){return d.s!==Dd.s&&dfilms(d,lv.minE).length>=1&&RANK.indexOf(d)<lv.to});
-        others.sort(function(a,b){return dist(Dd,a)-dist(Dd,b)});
-        var set;
-        if(lvk==="facil"){set=others.slice(Math.floor(others.length/2))}
-        else if(lvk==="medio"){set=others.slice(0,6)}
-        else{set=others.slice(0,8)}
-        set=C.shuf(set);
-        for(var s=0;s<set.length&&!x;s++){var ef=C.shuf(dfilms(set[s],lv.minE));
-          for(var h=0;h<ef.length;h++){if(valid(Dd,pr,set[s],ef[h],lvk)){E=set[s];x=ef[h];real=pr;break}}}
+        var others;
+        if(br)others=BR.filter(function(d){return d.s!==Dd.s&&efilms(d,lv,true).length});
+        else{others=RANK.filter(function(d){return d.s!==Dd.s&&efilms(d,lv,false).length&&RANK.indexOf(d)<lv.to});
+          others.sort(function(a,b){return dist(Dd,a)-dist(Dd,b)});
+          var n=others.length;
+          if(lvk==="facil")others=others.slice(Math.floor(n*lv.near[0]),Math.floor(n*lv.near[1]));
+          else others=others.slice(0,lvk==="medio"?7:9)}
+        others=C.shuf(others);
+        for(var s=0;s<others.length&&!res;s++){var ef=C.shuf(efilms(others[s],lv,br));
+          for(var h=0;h<ef.length;h++){if(valid(Dd,pr,others[s],ef[h],lvk)){res=build(Dd,pr,others[s],ef[h],{});break}}}
       }
-      if(!x)continue;
-      var items=C.shuf(real.map(function(f){return {f:f,d:Dd,intr:false}}).concat([{f:x,d:E,intr:true,sim:sim,exact:exact}]));
-      return {d:Dd,e:E,items:items,sim:sim,exact:exact}
+      if(res)return res
     }
     return null}
   /* gera n rodadas sem repetir diretor */
@@ -4319,7 +4332,7 @@ addEventListener("hashchange",route);route();
   var G=null,root=function(){return g("inRoot")};
   function img(f){return TMD+f[4]}
   function poster(it,i){
-    return '<button class="inp" data-ip="'+i+'" aria-label="'+esc(it.f[1])+' ('+it.f[0]+')"><span class="im" style="background-image:url('+img(it.f)+')"><b class="fb">'+esc(it.f[1])+'</b></span><span class="tt">'+esc(it.f[1])+'<small>'+it.f[0]+'</small></span><span class="dr" hidden></span></button>'}
+    return '<button class="inp" data-ip="'+i+'" aria-label="'+esc(it.f[1])+' ('+it.f[0]+')"><span class="im" style="background-image:url('+img(it.f)+')"><b class="ifb">'+esc(it.f[1])+'</b></span><span class="itt">'+esc(it.f[1])+'<small>'+it.f[0]+'</small></span><span class="dr" hidden></span></button>'}
   function start(){
     var rs=make(cfg.lv,cfg.n);
     if(rs.length<3){alert0("Não consegui montar as rodadas. Tente outro nível.");return}
@@ -4330,8 +4343,7 @@ addEventListener("hashchange",route);route();
   function draw(){
     var r=G.rounds[G.i];if(!r){return fin()}
     G.locked=false;
-    root().innerHTML='<div class="qtop"><span>Rodada <b>'+(G.i+1)+'</b> de '+G.n+'</span><span class="streak" id="inStr"'+(G.streak>1?'':' hidden')+'>'+G.streak+' seguidos</span><span class="ptot">Acertos <b>'+G.score+'</b></span><button id="inQuit">← Sair</button></div>'+
-    '<div class="inlv">Nível '+LV[G.lv].name+'</div>'+
+    root().innerHTML='<div class="inhead"><span class="inlv">Nível '+LV[G.lv].name+'</span><span class="inrd">Rodada <b>'+(G.i+1)+'</b>/'+G.n+'</span><span class="ptot">Acertos <b>'+G.score+'</b></span><span class="streak" id="inStr"'+(G.streak>1?'':' hidden')+'>'+G.streak+' seguidos</span><button id="inQuit" class="inq2">Sair</button></div>'+
     '<div class="inq"><h2>Qual destes filmes <em>não</em> foi dirigido por</h2><span class="inwho"><span class="av3">'+esc(ini(r.d.n))+(r.d.foto?'<img alt="" src="https://image.tmdb.org/t/p/w185'+r.d.foto+'" onerror="this.remove()">':'')+'</span><b>'+esc(r.d.n)+'</b></span><h2>?</h2></div>'+
     '<div class="inposters" id="inPosters">'+r.items.map(poster).join("")+'</div><div id="inFb" aria-live="polite"></div>'
   }
@@ -4343,7 +4355,7 @@ addEventListener("hashchange",route);route();
       var dr=el.querySelector(".dr");dr.hidden=false;dr.textContent=(x.intr?"É de ":"")+x.d.n});
     if(!ok)els[i].classList.add("wrong");
     var x=r.items.filter(function(z){return z.intr})[0];
-    var note=r.sim?(r.exact?"Mesmo título de um filme dele, mas é outro diretor.":"O nome engana: lembra um filme de "+esc(r.d.n)+", mas não é."):(r.e?"Estilo próximo ao dele: "+esc(r.e.n)+".":"");
+    var note=r.sim&&r.bait?(r.exact?"Tem o mesmo título de <b>"+esc(r.bait[1])+"</b>, de "+esc(r.d.n)+", mas é outro filme.":"Lembra <b>"+esc(r.bait[1])+"</b>, de "+esc(r.d.n)+", mas foi feito por outro diretor."):(r.e?"Estilo próximo ao dele: "+esc(r.e.n)+".":"");
     g("inFb").innerHTML='<div class="infb"><div class="pgain'+(ok?'':' zero')+'">'+(ok?'Acertou!':'Não foi essa')+'</div><p>O intruso era <b>'+esc(x.f[1])+'</b> ('+x.f[0]+'), dirigido por <b>'+esc(x.d.n)+'</b>. '+note+'</p><button class="btn primary" id="inNext">'+(G.i+1>=G.n?'Ver resultado':'Próximo')+' <span aria-hidden="true">→</span></button></div>';
     var nb=g("inNext");if(nb){nb.focus({preventScroll:true});nb.scrollIntoView({block:"nearest",behavior:"smooth"})}
     var tot=document.querySelector("#inRoot .ptot b");if(tot)tot.textContent=G.score;
@@ -4351,10 +4363,9 @@ addEventListener("hashchange",route);route();
   }
   function fin(){
     var k=G.lv+"_"+cfg.n,b=bests(),pct=G.score/G.n,rec=false;
-    if(G.n===cfg.n&&(b[k]==null||G.score>b[k])){b[k]=G.score;rec=true;try{localStorage.setItem("in_best",JSON.stringify(b))}catch(e){}}
+    if(G.n===cfg.n&&G.score>0&&(b[k]==null||G.score>b[k])){b[k]=G.score;rec=true;try{localStorage.setItem("in_best",JSON.stringify(b))}catch(e){}}
     var t=pct>=.9?["Olho de lince","Nada escapa de você."]:pct>=.7?["Cinéfilo atento","Poucos intrusos passam."]:pct>=.45?["Bom começo","Dá para afiar o olho."]:["Os intrusos venceram","Tente de novo, ou comece pelo nível fácil."];
-    root().innerHTML='<div class="qtop"><span>Fim da partida</span><span></span><button id="inQuit">← Sair</button></div>'+
-    '<div class="panel inres"><div class="eyebrow" style="justify-content:center">'+t[0]+'</div><div class="inbig">'+G.score+'<span> / '+G.n+'</span></div><p class="pnote">'+t[1]+' Nível '+LV[G.lv].name+(G.best>1?' · melhor sequência: '+G.best:'')+(rec?' · <b>novo recorde!</b>':'')+'</p>'+
+    root().innerHTML='<div class="panel inres"><div class="eyebrow" style="justify-content:center">'+t[0]+'</div><div class="inbig">'+G.score+'<span> / '+G.n+'</span></div><p class="pnote">'+t[1]+' Nível '+LV[G.lv].name+(G.best>1?' · melhor sequência: '+G.best:'')+(rec?' · <b>novo recorde!</b>':'')+'</p>'+
     '<div class="inbtns"><button class="btn primary" id="inAgain">Jogar de novo</button><button class="btn ghost" id="inShare">Compartilhar</button><button class="btn ghost" id="inHome">Voltar ao início</button></div></div>'
   }
   function share(btn){
