@@ -1469,6 +1469,9 @@ body[data-gt] #v-home .mrow p,body[data-gt] #v-home .mrow .mhead p{color:var(--i
 body[data-gt] #v-home .mrow .mhead .k{color:var(--amber-text)}
 .tlarea.h .tlrail{top:33px}.tlax{margin-bottom:44px}
 .infb .pgain{background:none;border:0;padding:0;box-shadow:none;min-width:0}
+#v-home .wrap{padding-bottom:72px}
+#v-home footer .wrap{padding-bottom:0}
+@media (max-width:700px){#v-home .wrap{padding-bottom:56px}}
 /* confirmar resposta sem quebrar */
 .next .btn{white-space:nowrap}
 @media (max-width:420px){.next .btn{padding-inline:16px;font-size:14px}}
@@ -4311,6 +4314,7 @@ addEventListener("hashchange",route);route();
     return true}
   function valid(Dd,real,E,x,lv,gen){
     if(gen&&!gOK(real,x))return false;
+    if(gen&&lv!=="dificil"){var ys=real.map(function(r){return +r[0]}),mn=Math.min.apply(null,ys),mx=Math.max.apply(null,ys),yx=+x[0];if(yx<mn-5||yx>mx+5)return false}
     if(E.s===Dd.s)return false;var k=fkey(x);if(KEYS[k]&&KEYS[k][Dd.s])return false;
     for(var i=0;i<real.length;i++){var r=real[i];if(fkey(r)===k)return false;
       if(norm(r[1])===norm(x[1])&&(lv!=="dificil"||Math.abs(+r[0]-+x[0])<3))return false;
@@ -4376,7 +4380,7 @@ addEventListener("hashchange",route);route();
   var G=null,root=function(){return g("inRoot")};
   function img(f){return TMD+f[4]}
   function poster(it,i){
-    return '<button class="inp" data-ip="'+i+'" aria-label="'+esc(it.f[1])+' ('+it.f[0]+')"><span class="im" style="background-image:url('+img(it.f)+')"><b class="ifb">'+esc(it.f[1])+'</b></span><span class="itt">'+esc(it.f[1])+'<small>'+it.f[0]+'</small></span><span class="dr" hidden></span></button>'}
+    return '<button class="inp" data-ip="'+i+'" aria-label="'+esc(it.f[1])+(G&&G.lv==="dificil"?'':' ('+it.f[0]+')')+'"><span class="im" style="background-image:url('+img(it.f)+')"><b class="ifb">'+esc(it.f[1])+'</b></span><span class="itt">'+esc(it.f[1])+'<small>'+(G&&G.lv==="dificil"?'':it.f[0])+'</small></span><span class="dr" hidden></span></button>'}
   function start(){
     var rs=make(cfg.lv,cfg.n);
     if(rs.length<3){alert0("Não consegui montar as rodadas. Tente outro nível.");return}
@@ -4396,7 +4400,7 @@ addEventListener("hashchange",route);route();
     var ok=!!it.intr;if(ok){G.score++;G.streak++;if(G.streak>G.best)G.best=G.streak}else G.streak=0;
     var els=document.querySelectorAll("#inPosters .inp");
     r.items.forEach(function(x,k){var el=els[k];el.classList.add(x.intr?"intr":"real");el.disabled=true;
-      var dr=el.querySelector(".dr");dr.hidden=false;dr.textContent=(x.intr?"É de ":"")+x.d.n});
+      var sm=el.querySelector(".itt small");if(sm)sm.textContent=x.f[0];var dr=el.querySelector(".dr");dr.hidden=false;dr.textContent=(x.intr?"É de ":"")+x.d.n});
     if(!ok)els[i].classList.add("wrong");
     var x=r.items.filter(function(z){return z.intr})[0];
     var note="";
