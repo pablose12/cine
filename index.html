@@ -1576,6 +1576,33 @@ body[data-gt] .rrow:disabled{opacity:.8}body[data-gt] .rrow:disabled em{color:#F
 .tlsug button .nm{font-style:normal}
 .selc{padding:4px 6px 4px 4px;gap:8px}
 .selc .tlav{width:26px;height:26px;font-size:10px;background:rgba(255,255,255,.22)}
+
+/* ===== v31 (celular) ===== */
+.inp .im{overflow:hidden}
+.inp .im .pim{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;display:block}
+@media (max-width:700px){
+  .gcard .art{height:auto;min-height:206px;padding:40px 0 14px}
+  .hx-mq{max-width:86%;transform:rotate(-1.5deg)}
+  .gcard .tg{font-size:12px;opacity:.85}
+  .hx-mt{width:340px;max-width:none;transform:scale(.92)}
+  .hx-mpo{width:96px;height:176px}.hx-mpo:nth-child(4){display:none}
+  .eyebrow{font-size:12px}
+  .gtag,.land small,.land .k,.land .r,.nf,.dtag,.tlc .tt small,.tlc small{font-size:12px}
+  .pt{font-size:9px}
+  main small,.land span.k,.land span.r,.nf,.g,.dlist small,.dirs small{font-size:12px!important}
+  .fb small,#fb small{font-size:12px}
+  .tlc .mv{gap:0}.tlc .mv button{width:36px;height:30px}
+}
+@media (max-width:380px){
+  .hx-mt{transform:scale(.8)}
+  .hx-mpo{width:88px;height:162px}
+}
+@media (max-width:420px){
+  .inhead{flex-wrap:nowrap;gap:7px}
+  .inhead .inlv{padding:3px 9px;font-size:11.5px;white-space:nowrap}
+  .inhead .inrd,.inhead .ptot{font-size:12px;white-space:nowrap}
+  body .inhead .inq2{padding:5px 11px 5px 7px;font-size:12.5px}
+}
 </style>
 </head>
 <body>
@@ -3461,7 +3488,7 @@ addEventListener("hashchange",route);route();
     if(e.target.closest("#tlClear")){mine=[];save();drawSel();drawRes();return}
     if(document.getElementById("v-tl").hidden)return;
     if(e.target.closest("#tlAgain")){start();return}
-    if((a2=e.target.closest("[data-tsel]"))){if(mine.length<15&&mine.indexOf(a2.dataset.tsel)<0){mine.push(a2.dataset.tsel);save()}qLast="";var qq=document.getElementById("tlQ");if(qq){qq.value="";qq.focus()}drawSel();drawRes();return}
+    if((a2=e.target.closest("[data-tsel]"))){if(mine.length<15&&mine.indexOf(a2.dataset.tsel)<0){mine.push(a2.dataset.tsel);save()}qLast="";var qq=document.getElementById("tlQ");if(qq){qq.value="";if(window.matchMedia&&matchMedia("(pointer:fine)").matches)qq.focus()}drawSel();drawRes();return}
     if((a2=e.target.closest("[data-trm]"))){mine=mine.filter(function(x){return x!==a2.dataset.trm});save();drawSel();drawRes();return}
     if(e.target.closest("#tlCfg")){var cu=T&&T.custom;T=null;if(cu)pickScreen();else goSection("linha");return}
     if(e.target.closest("#tlBack,#tlBack2,#tlQuit")){T=null;show("home");return}
@@ -4516,7 +4543,7 @@ addEventListener("hashchange",route);route();
   var G=null,root=function(){return g("inRoot")};
   function img(f){return TMD+f[4]}
   function poster(it,i){
-    return '<button class="inp" data-ip="'+i+'" aria-label="'+esc(it.f[1])+(G&&G.lv==="dificil"?'':' ('+it.f[0]+')')+'"><span class="im" style="background-image:url('+img(it.f)+')"><b class="ifb">'+esc(it.f[1])+'</b></span><span class="itt">'+esc(it.f[1])+'<small>'+(G&&G.lv==="dificil"?'':it.f[0])+'</small></span><span class="dr" hidden></span></button>'}
+    return '<button class="inp" data-ip="'+i+'" aria-label="'+esc(it.f[1])+(G&&G.lv==="dificil"?'':' ('+it.f[0]+')')+'"><span class="im"><b class="ifb">'+esc(it.f[1])+'</b><img class="pim" alt="" decoding="async" src="'+img(it.f)+'" onerror="this.remove()"></span><span class="itt">'+esc(it.f[1])+'<small>'+(G&&G.lv==="dificil"?'':it.f[0])+'</small></span><span class="dr" hidden></span></button>'}
   function start(){
     var sv=cfg.n===-1,rs=make(cfg.lv,sv?6:cfg.n);
     if(rs.length<3){alert0("Não consegui montar as rodadas. Tente outro nível.");return}
