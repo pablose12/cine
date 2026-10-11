@@ -4320,6 +4320,14 @@ addEventListener("hashchange",route);route();
       if(norm(r[1])===norm(x[1])&&(lv!=="dificil"||Math.abs(+r[0]-+x[0])<3))return false;
       if(r[4]===x[4])return false}
     return true}
+  /* pegadinha de ano: um dos filmes certos é muito mais velho/novo que os outros; o intruso é da mesma época dos outros dois */
+  function yearTrap(list){
+    var L=C.shuf(list.filter(function(f){return +f[0]}));
+    for(var i=0;i<L.length;i++){var o=L[i];
+      for(var a=0;a<L.length;a++){if(a===i)continue;for(var b=a+1;b<L.length;b++){if(b===i)continue;
+        var ya=+L[a][0],yb=+L[b][0],yo=+o[0];
+        if(ya!==yb&&Math.abs(ya-yb)<=10&&Math.abs(yo-(ya+yb)/2)>=25&&L[a][4]!==L[b][4])return {reals:[o,L[a],L[b]],mean:(ya+yb)/2}}}}
+    return null}
   function build(Dd,real,E,x,extra){
     var items=C.shuf(real.map(function(f){return {f:f,d:Dd,intr:false}}).concat([{f:x,d:E,intr:true}]));
     var r={d:Dd,e:E,items:items,sim:false,exact:false,bait:null};for(var k in extra)r[k]=extra[k];return r}
@@ -4343,8 +4351,10 @@ addEventListener("hashchange",route);route();
             if(valid(Dd,rr,cc.d,cc.f,lvk))res=build(Dd,rr,cc.d,cc.f,{sim:true,exact:cands[q].ex,bait:bf})}}
       }
       if(!res){
-        var pr=pickDistinct(good,3);if(!pr)continue;
-        var others,peg=!br&&Math.random()<(lvk==="facil"?.05:.12);
+        var pr=null,yt=null;
+        if(!br&&lvk!=="dificil"&&Math.random()<.14){yt=yearTrap(tierOf(Dd,lv,0,40,600,false));if(yt)pr=yt.reals}
+        if(!pr)pr=pickDistinct(good,3);if(!pr)continue;
+        var others,peg=!br&&!yt&&Math.random()<(lvk==="facil"?.05:.12);
         if(br)others=BR.filter(function(d){return d.s!==Dd.s&&efilms(d,lv,true).length});
         else{others=RANK.filter(function(d){return d.s!==Dd.s&&efilms(d,lv,false).length&&RANK.indexOf(d)<lv.to});
           others.sort(function(a,b){return dist(Dd,a)-dist(Dd,b)});
@@ -4353,7 +4363,7 @@ addEventListener("hashchange",route);route();
           else others=others.slice(0,lvk==="medio"?7:9)}
         others=C.shuf(others);
         for(var s=0;s<others.length&&!res;s++){var ef=C.shuf(efilms(others[s],lv,br));
-          for(var h=0;h<ef.length;h++){if(valid(Dd,pr,others[s],ef[h],lvk,!peg)){res=build(Dd,pr,others[s],ef[h],{});break}}}
+          for(var h=0;h<ef.length;h++){if(valid(Dd,pr,others[s],ef[h],lvk,!peg)&&(!yt||Math.abs(+ef[h][0]-yt.mean)<=6)){res=build(Dd,pr,others[s],ef[h],{});break}}}
       }
       if(res)return res
     }
