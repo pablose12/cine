@@ -1486,8 +1486,7 @@ body[data-gt] #v-tl .tlarea.h .tlc .tt small{color:rgba(255,255,255,.72)}
 /* ===== v29 ===== */
 input,select,textarea{font-family:var(--font-body,Poppins,sans-serif)}
 /* Voltar sem seta */
-body .qtop button::before,body .tltop button::before,body .inhead .inq2::before{display:none!important}
-body .qtop button,body .tltop button,body .inhead .inq2{padding:7px 17px}
+
 /* ícone de play nos botões */
 .btn .ico{margin-left:8px;vertical-align:-1px;flex:none}
 .gcard .go i{font-size:0}.gcard .go i svg{width:11px;height:11px;margin:0 0 0 2px}
@@ -1536,6 +1535,47 @@ body[data-gt] #confirmBtn:disabled,body[data-gt] .btn.primary:disabled,body[data
 .inp .ifb{color:rgba(255,255,255,.8)!important}
 .tlpick .btn:disabled{opacity:.7}
 .inres p{margin:6px 0}
+
+/* ===== v30 ===== */
+/* Voltar com chevron < */
+body .qtop button::before,body .tltop button::before,body .inhead .inq2::before,.gback::before{content:"";display:inline-block;width:13px;height:13px;flex:none;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 5l-7 7 7 7'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 5l-7 7 7 7'/%3E%3C/svg%3E") center/contain no-repeat}
+body .qtop button,body .tltop button,body .inhead .inq2{padding:7px 16px 7px 10px;gap:5px}
+.gback{gap:5px;padding-left:12px}
+.gback::before{margin-right:0}
+body .qtop button:hover::before,body .tltop button:hover::before,body .inhead .inq2:hover::before{transform:translateX(-2px)}
+/* resultado: cartão e Voltar na mesma largura */
+#v-poster #pStage>.panel{margin-left:auto;margin-right:auto}
+#v-poster:has(#pAgain) .qtop{max-width:760px;margin-left:auto;margin-right:auto}
+.tlw:has(.tlsum2) .tltop{max-width:760px;margin-left:auto;margin-right:auto}
+.inw:has(.inres) .tltop{max-width:560px;margin-left:auto;margin-right:auto;width:100%}
+.rtopbar{margin:0 0 6px}
+@media (max-width:860px){.rmedal{order:1}}
+/* Filme Intruso: cabeçalho compacto e "?" colado */
+.inwhow{display:inline-flex;align-items:center;gap:8px;white-space:nowrap}.inwhow h2{margin:0}
+.inhead{gap:6px 12px}
+@media (max-width:520px){.inhead{flex-wrap:nowrap;gap:8px}.inhead .inlv{padding:3px 10px;font-size:11px;white-space:nowrap}.inhead .inrd,.inhead .ptot{white-space:nowrap;font-size:12.5px}.inhead .inq2{margin-left:auto;padding:6px 12px 6px 8px}}
+/* anel de foco mais discreto */
+body[data-gt] .btn:focus-visible{outline:2px solid #fff;outline-offset:3px;box-shadow:none}
+/* Linha do Tempo: cartões verticais */
+.tlarea.v .tlc .tn{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.tlarea.v .tlc .tt small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tlc .yr{color:var(--ink)}.tlc.ok .yr{color:#0A6B4A}.tlc.bad .yr{color:#A12A2A}
+body[data-gt] #v-tl .tlc .yr{color:var(--ink)}body[data-gt] #v-tl .tlc.ok .yr{color:#0A6B4A}body[data-gt] #v-tl .tlc.bad .yr{color:#A12A2A}
+.tlarea.h .tlc .tn{display:block}
+@media (max-width:520px){.tlarea.v .tlc .yr{font-size:15px;margin-right:0}.tlarea.v .tlc .tt small{font-size:11px}.tlarea.v .tlc{gap:9px}}
+/* Descubra: % fora do traço do anel */
+.dring .num{gap:2px}.dring .num span{align-self:center;padding:0;margin:8px 0 0 1px;font-size:15px}
+/* fotos dos diretores na busca */
+body[data-gt] .rrow:disabled{opacity:.8}body[data-gt] .rrow:disabled em{color:#FFD27A}
+.tlav{position:relative;flex:none;width:34px;height:34px;border-radius:50%;overflow:hidden;display:grid;place-items:center;background:linear-gradient(135deg,#5A62C4,#17154B);color:#fff;font:800 12px var(--font-display)}
+.tlav i{font-style:normal}
+.tlav img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.rrow .rl{display:flex;align-items:center;gap:12px;min-width:0}.rrow .rl>span{min-width:0}
+.tlsug button{display:inline-flex;align-items:center;gap:8px;padding:4px 14px 4px 4px}
+.tlsug button .tlav{width:26px;height:26px;font-size:10px}
+.tlsug button .nm{font-style:normal}
+.selc{padding:4px 6px 4px 4px;gap:8px}
+.selc .tlav{width:26px;height:26px;font-size:10px;background:rgba(255,255,255,.22)}
 </style>
 </head>
 <body>
@@ -1779,6 +1819,7 @@ body[data-gt] #confirmBtn:disabled,body[data-gt] .btn.primary:disabled,body[data
 <!-- RESULT -->
 <main id="v-result" hidden>
   <div class="wrap screen">
+    <div class="tltop rtopbar"><span></span><button id="rback" type="button">Voltar</button></div>
     <div class="rgrid">
       <div class="rtext">
         <div class="eyebrow" id="rlvl">Resultado</div>
@@ -2555,6 +2596,7 @@ $("lvStart").onclick = () => start(lvSel);
 $("dstart").onclick = startDuel;
 $("again").onclick = replay;
 $("other").onclick = () => goSection("levels", S.mode === "free" ? "free" : "level");
+$("rback").onclick = $("other").onclick;
 $("share").onclick = () => doShare($("share"));
 $("drevanche").onclick = startDuel0;
 function startDuel0(){ duel.scope = S.scope; duel.lvl = S.scope === "level" ? S.level : duel.lvl; duel.n = S.per; $("dnameA").value = S.teams[0]; $("dnameB").value = S.teams[1]; startDuel(); }
@@ -3260,10 +3302,11 @@ addEventListener("hashchange",route);route();
       '<div class="tlbtns left"><button class="btn ghost" id="tlClear">Limpar lista</button></div><p class="pnote small" id="tlWarn"></p>';
     drawSel();drawRes()
   }
+  function av(d){var im=d.foto?'<img alt="" loading="lazy" src="https://image.tmdb.org/t/p/w185'+d.foto+'" onerror="this.remove()">':'';return '<span class="tlav" aria-hidden="true"><i>'+esc2(initials(d.n))+'</i>'+im+'</span>'}
   function drawSel(){
     var el=document.getElementById("tlSel");if(!el)return;
     var ds=mine.map(bySlug).filter(Boolean),good=0;
-    el.innerHTML=ds.length?ds.map(function(d){var ok=!!item(d,cfg.n);if(ok)good++;return '<span class="selc'+(ok?'':' bad')+'"><b>'+esc2(d.n)+'</b>'+(ok?'':'<small>poucos filmes para '+cfg.n+'</small>')+'<button data-trm="'+d.s+'" aria-label="Remover '+esc2(d.n)+'">×</button></span>'}).join(""):'<span class="tlempty">Nenhum ainda. Use a busca acima ou toque numa sugestão.</span>';
+    el.innerHTML=ds.length?ds.map(function(d){var ok=!!item(d,cfg.n);if(ok)good++;return '<span class="selc'+(ok?'':' bad')+'">'+av(d)+'<b>'+esc2(d.n)+'</b>'+(ok?'':'<small>poucos filmes para '+cfg.n+'</small>')+'<button data-trm="'+d.s+'" aria-label="Remover '+esc2(d.n)+'">×</button></span>'}).join(""):'<span class="tlempty">Nenhum ainda. Use a busca acima ou toque numa sugestão.</span>';
     var c=document.getElementById("tlCount");if(c)c.textContent=ds.length?"("+good+" "+(good===1?"pronto":"prontos")+" de "+ds.length+")":"";
     info();
     var w=document.getElementById("tlWarn");if(w)w.textContent=good&&good<ds.length?"Os diretores marcados em vermelho têm poucos filmes com datas diferentes para "+cfg.n+" por rodada e ficam de fora. Diminua o número de filmes para incluí-los.":"";
@@ -3271,10 +3314,10 @@ addEventListener("hashchange",route);route();
   function drawRes(){
     var el=document.getElementById("tlRes");if(!el)return;var q=norm(qLast.trim()),D=window.dirData||[],out;
     if(q.length<2){var sug=pool(cfg.n).slice(0,8).map(function(p){return p.d}).filter(function(d){return mine.indexOf(d.s)<0}).slice(0,6);
-      el.innerHTML=sug.length?'<div class="tlsug"><span>Sugestões</span>'+sug.map(function(d){return '<button data-tsel="'+d.s+'">'+esc2(d.n)+'</button>'}).join("")+'</div>':"";return}
+      el.innerHTML=sug.length?'<div class="tlsug"><span>Sugestões</span>'+sug.map(function(d){return '<button data-tsel="'+d.s+'">'+av(d)+'<i class="nm">'+esc2(d.n)+'</i></button>'}).join("")+'</div>':"";return}
     out=D.filter(function(d){return norm(d.n).indexOf(q)>=0}).slice(0,8);
     el.innerHTML=out.length?out.map(function(d){var it=item(d,cfg.n),has=mine.indexOf(d.s)>=0;
-      return '<button class="rrow" data-tsel="'+d.s+'"'+(it&&!has?'':' disabled')+'><span><b>'+esc2(d.n)+'</b><small>'+(d.pais||"")+(d.y&&d.y[0]?" · "+d.y[0]:"")+'</small></span><em>'+(has?"já na lista":it?"adicionar":"poucos filmes para "+cfg.n)+'</em></button>'}).join(""):'<div class="tlempty">Nenhum diretor encontrado com esse nome.</div>';
+      return '<button class="rrow" data-tsel="'+d.s+'"'+(it&&!has?'':' disabled')+'><span class="rl">'+av(d)+'<span><b>'+esc2(d.n)+'</b><small>'+(d.pais||"")+(d.y&&d.y[0]?" · "+d.y[0]:"")+'</small></span></span><em>'+(has?"já na lista":it?"adicionar":"poucos filmes para "+cfg.n)+'</em></button>'}).join(""):'<div class="tlempty">Nenhum diretor encontrado com esse nome.</div>';
   }
   function pickFilms(r){var f=shuffle(r.films).slice(0,T.n);return f.map(function(x){return {y:+x[0],t:x[1],p:x[4]}})}
   function round(){
@@ -3290,7 +3333,7 @@ addEventListener("hashchange",route);route();
       '<div class="tlist" id="tlList"></div></div>'+
       '<div class="tlact" id="tlAct"><button class="btn primary" id="tlCheck">Conferir ordem</button></div>';
     var L=document.getElementById("tlList");
-    L.innerHTML=films.map(function(f,i){return '<div class="tlc" data-k="'+i+'" tabindex="0" role="listitem" aria-label="'+esc2(f.t)+'"><div class="grip" aria-label="Arrastar"><svg width="14" height="20" viewBox="0 0 14 20" fill="currentColor"><circle cx="4" cy="4" r="1.6"/><circle cx="10" cy="4" r="1.6"/><circle cx="4" cy="10" r="1.6"/><circle cx="10" cy="10" r="1.6"/><circle cx="4" cy="16" r="1.6"/><circle cx="10" cy="16" r="1.6"/></svg></div><div class="pp"><span class="pt">'+esc2(f.t)+'</span>'+(f.p?'<img alt="" loading="lazy" draggable="false" src="'+TMDB+f.p+'" onerror="this.remove()">':'')+'<em class="yr2"></em></div><div class="tt">'+esc2(f.t)+'<small></small></div><div class="yr"></div><div class="mv"><button data-tup aria-label="Subir"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m2 8 4-4 4 4"/></svg></button><button data-tdn aria-label="Descer"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m2 4 4 4 4-4"/></svg></button></div></div>'}).join("");
+    L.innerHTML=films.map(function(f,i){return '<div class="tlc" data-k="'+i+'" tabindex="0" role="listitem" aria-label="'+esc2(f.t)+'"><div class="grip" aria-label="Arrastar"><svg width="14" height="20" viewBox="0 0 14 20" fill="currentColor"><circle cx="4" cy="4" r="1.6"/><circle cx="10" cy="4" r="1.6"/><circle cx="4" cy="10" r="1.6"/><circle cx="10" cy="10" r="1.6"/><circle cx="4" cy="16" r="1.6"/><circle cx="10" cy="16" r="1.6"/></svg></div><div class="pp"><span class="pt">'+esc2(f.t)+'</span>'+(f.p?'<img alt="" loading="lazy" draggable="false" src="'+TMDB+f.p+'" onerror="this.remove()">':'')+'<em class="yr2"></em></div><div class="tt"><span class="tn">'+esc2(f.t)+'</span><small></small></div><div class="yr"></div><div class="mv"><button data-tup aria-label="Subir"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m2 8 4-4 4 4"/></svg></button><button data-tdn aria-label="Descer"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m2 4 4 4 4-4"/></svg></button></div></div>'}).join("");
     L.setAttribute("role","list");
     measure();layout(false);
     if(window.getPhoto)getPhoto(r.d.n).then(function(u){var ph=document.getElementById("tlPh");if(!u||!ph)return;var im=new Image();im.onload=function(){ph.textContent="";ph.appendChild(im)};im.src=u});
@@ -4485,7 +4528,7 @@ addEventListener("hashchange",route);route();
     var r=G.rounds[G.i];if(!r&&G.surv&&!G.over){r=round(G.lv,G.used);if(r){G.used[r.d.s]=1;G.rounds.push(r);G.n=G.rounds.length}}if(!r){return fin()}
     G.locked=false;
     root().innerHTML='<div class="inhead"><span class="inlv">Nível '+LV[G.lv].name+'</span><span class="inrd">Rodada <b>'+(G.i+1)+'</b>'+(G.surv?' · até errar':'/'+G.n)+'</span><span class="ptot">Acertos <b>'+G.score+'</b></span><span class="streak" id="inStr"'+(G.streak>1?'':' hidden')+'>'+G.streak+' seguidos</span><button id="inQuit" class="inq2">Voltar</button></div>'+
-    '<div class="inq"><h2>Qual destes filmes <em>não</em> foi dirigido por</h2><span class="inwho"><span class="av3">'+esc(ini(r.d.n))+(r.d.foto?'<img alt="" src="https://image.tmdb.org/t/p/w185'+r.d.foto+'" onerror="this.remove()">':'')+'</span><b>'+esc(r.d.n)+'</b></span><h2>?</h2></div>'+
+    '<div class="inq"><h2>Qual destes filmes <em>não</em> foi dirigido por</h2><span class="inwhow"><span class="inwho"><span class="av3">'+esc(ini(r.d.n))+(r.d.foto?'<img alt="" src="https://image.tmdb.org/t/p/w185'+r.d.foto+'" onerror="this.remove()">':'')+'</span><b>'+esc(r.d.n)+'</b></span><h2>?</h2></span></div>'+
     '<div class="inposters" id="inPosters">'+r.items.map(poster).join("")+'</div><div id="inFb" aria-live="polite"></div>'
   }
   function answer(i){
@@ -4509,7 +4552,7 @@ addEventListener("hashchange",route);route();
     var t=pct>=.9?["Olho de lince","Nada escapa de você."]:pct>=.7?["Cinéfilo atento","Poucos intrusos passam."]:pct>=.45?["Bom começo","Dá para afiar o olho."]:["Os intrusos venceram",G.lv==="facil"?"Respira e tenta de novo, você chega lá.":G.lv==="dificil"?"Esse nível é duro. Tente de novo, ou aqueça no médio.":"Tente de novo, ou aqueça no nível fácil."];
     var hits=G.score,tot=(G.res||[]).length;
     var rows=(G.res||[]).map(function(r){return '<div><img alt="" src="https://image.tmdb.org/t/p/w92'+r.f[4]+'" onerror="this.style.visibility=\'hidden\'"><span style="text-align:left">'+esc(r.f[1])+' <small>('+r.f[0]+') · '+esc(r.d.n)+'</small></span><b class="'+(r.ok?'okc':'badc')+'">'+(r.ok?'Achou':'Errou')+'</b></div>'}).join("");
-    root().innerHTML='<div class="panel inres"><div class="eyebrow" style="justify-content:center">'+t[0]+'</div><div class="inbig">'+G.score+'<span>'+(G.surv?(G.score===1?' seguido':' seguidos'):' / '+G.n)+'</span></div><p class="pnote">'+t[1]+'</p><p>'+hits+' de '+tot+' intrusos encontrados · nível '+LV[G.lv].name.toLowerCase()+'</p>'+(G.best>=2?'<p class="rstreak">Maior sequência: '+G.best+'</p>':'')+(rec?'<p class="pgain">Novo recorde!</p>':'')+'<div class="pres">'+rows+'</div>'+
+    root().innerHTML='<div class="tltop"><span></span><button id="inBack" type="button">Voltar</button></div><div class="panel inres"><div class="eyebrow" style="justify-content:center">'+t[0]+'</div><div class="inbig">'+G.score+'<span>'+(G.surv?(G.score===1?' seguido':' seguidos'):' / '+G.n)+'</span></div><p class="pnote">'+t[1]+'</p><p>'+hits+' de '+tot+' intrusos encontrados · nível '+LV[G.lv].name.toLowerCase()+'</p>'+(G.best>=2?'<p class="rstreak">Maior sequência: '+G.best+'</p>':'')+(rec?'<p class="pgain">Novo recorde!</p>':'')+'<div class="pres">'+rows+'</div>'+
     '<div class="inbtns"><button class="btn primary" id="inAgain">Jogar de novo</button><button class="btn ghost" id="inShare">Compartilhar</button><button class="btn ghost" id="inHome">Voltar ao início</button></div></div>';
     if(rec&&window.confete)window.confete()
   }
@@ -4527,7 +4570,7 @@ addEventListener("hashchange",route);route();
       if(t.closest("#inNext")){if(G.over){fin();return}G.i++;draw();return}
       if(t.closest("#inAgain")){start();return}
       if(t.closest("#inShare")){share(t.closest("#inShare"));return}
-      if(t.closest("#inQuit")||t.closest("#inHome")){panel();goSection("intruso");return}
+      if(t.closest("#inQuit")||t.closest("#inHome")||t.closest("#inBack")){panel();goSection("intruso");return}
     }
   });
   panel();
