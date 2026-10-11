@@ -1446,6 +1446,35 @@ body[data-gt="in"] #v-intruso,body[data-gt="cd"] #v-cinedle{color:#fff}
 .inhead{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:2px 0 6px;font-size:13px;color:rgba(255,255,255,.78)}.inhead b{color:#fff}.inhead .inlv{margin:0}.inhead .inq2{margin-left:auto;background:none;border:0;color:rgba(255,255,255,.7);font:600 13px var(--font-body);padding:4px 2px;text-decoration:underline;text-underline-offset:3px;cursor:pointer}.inhead .streak{color:#5EE6C8;font-weight:700}
 .inres{max-width:560px;margin-left:auto;margin-right:auto}.inres .pnote{color:rgba(255,255,255,.88);margin:0 auto 6px;text-align:center}
 .inres .eyebrow{color:var(--ga)}.inres .eyebrow::before{background:var(--ga)}
+
+/* ===== v27 ===== */
+/* botão Voltar: pílula com seta */
+body .qtop button,body .tltop button,body .inhead .inq2{display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);border-radius:999px;padding:7px 15px 7px 11px;font:600 13px var(--font-body,Poppins,sans-serif);color:#fff;text-decoration:none;cursor:pointer;transition:background .2s,transform .2s,border-color .2s}
+body .qtop button::before,body .tltop button::before,body .inhead .inq2::before{content:"";width:14px;height:14px;flex:none;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 12H5M11 6l-6 6 6 6'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 12H5M11 6l-6 6 6 6'/%3E%3C/svg%3E") center/contain no-repeat;transition:transform .2s}
+body .qtop button:hover,body .tltop button:hover,body .inhead .inq2:hover{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.5);color:#fff}
+body .qtop button:hover::before,body .tltop button:hover::before,body .inhead .inq2:hover::before{transform:translateX(-3px)}
+body .qtop button:focus-visible,body .tltop button:focus-visible,body .inhead .inq2:focus-visible{outline:2px solid var(--amber,#F4A81D);outline-offset:2px}
+body .tltop button.dprev{}
+/* botão Jogar dos cards */
+.gcard .go{align-self:flex-start;gap:12px;padding:9px 9px 9px 20px;border-radius:999px;background:var(--ac);color:#150F05;font-weight:700;font-size:14.5px;box-shadow:0 14px 26px -16px var(--ac);transition:box-shadow .25s,filter .25s}
+.gcard .go i{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:rgba(10,6,30,.88);color:var(--ac);font-size:15px;line-height:1}
+.gcard:hover .go{filter:brightness(1.07);box-shadow:0 18px 30px -14px var(--ac)}
+.gcard.so .go{display:none}
+/* painel: "Seu jogo" vira rótulo discreto, sem ícone repetido */
+.gtop .gq .gi{display:none}
+.gtop .gq{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.8}
+/* medalhas: cartão claro, texto escuro */
+body[data-gt] #v-home .mrow h3,body[data-gt] #v-home .mrow strong,body[data-gt] #v-home .mrow .mcells strong{color:var(--ink)}
+body[data-gt] #v-home .mrow p,body[data-gt] #v-home .mrow .mhead p{color:var(--ink-700)}
+body[data-gt] #v-home .mrow .mhead .k{color:var(--amber-text)}
+.tlarea.h .tlrail{top:33px}.tlax{margin-bottom:44px}
+.infb .pgain{background:none;border:0;padding:0;box-shadow:none;min-width:0}
+/* confirmar resposta sem quebrar */
+.next .btn{white-space:nowrap}
+@media (max-width:420px){.next .btn{padding-inline:16px;font-size:14px}}
+/* Linha do Tempo (horizontal): títulos legíveis sobre fundo escuro */
+body[data-gt] #v-tl .tlarea.h .tlc .tt{color:#fff}
+body[data-gt] #v-tl .tlarea.h .tlc .tt small{color:rgba(255,255,255,.72)}
 </style>
 </head>
 <body>
@@ -1657,7 +1686,7 @@ body[data-gt="in"] #v-intruso,body[data-gt="cd"] #v-cinedle{color:#fff}
 <!-- DIRETORES -->
 <main id="v-poster" hidden>
   <div class="qwrap">
-    <div class="qtop"><span id="pCount">Rodada <b>1</b> de 10</span><span class="streak" id="pStreak" hidden></span><span class="ptot">Pontos <b id="pTot">0</b></span><button id="pQuit">← Sair</button></div>
+    <div class="qtop"><span id="pCount">Rodada <b>1</b> de 10</span><span class="streak" id="pStreak" hidden></span><span class="ptot">Pontos <b id="pTot">0</b></span><button id="pQuit">Voltar</button></div>
     <div id="pStage"></div>
   </div>
 </main>
@@ -1673,7 +1702,7 @@ body[data-gt="in"] #v-intruso,body[data-gt="cd"] #v-cinedle{color:#fff}
 <!-- QUIZ -->
 <main id="v-quiz" hidden>
   <div class="qwrap">
-    <div class="qtop"><span id="qcount">Pergunta <b>1</b> de 10</span><span class="streak" id="streak" hidden></span><button id="quit">← Sair</button></div>
+    <div class="qtop"><span id="qcount">Pergunta <b>1</b> de 10</span><span class="streak" id="streak" hidden></span><button id="quit">Voltar</button></div>
     <div class="prog" id="prog"></div>
     <div class="qcard">
       <div class="turn" id="turn" hidden><span class="tdot"></span><span class="tl">Vez da equipe</span><b id="turnName"></b><span class="ts" id="turnScore"></span></div>
@@ -3168,7 +3197,7 @@ addEventListener("hashchange",route);route();
     var order=shuffle(films);while(order.every(function(f,i){return f===sorted[i]}))order=shuffle(films);
     T.cur={r:r,films:films,sorted:sorted,order:order,done:false,h:horiz()};
     var n=T.n,H=T.cur.h;
-    root.innerHTML='<div class="tltop"><span>Rodada <b>'+(T.i+1)+'</b> de '+T.rounds.length+'</span><span class="streak" id="tlStreak" hidden></span><span>Pontos <b id="tlPts">'+T.score+'</b></span><button id="tlQuit">← Sair</button></div>'+
+    root.innerHTML='<div class="tltop"><span>Rodada <b>'+(T.i+1)+'</b> de '+T.rounds.length+'</span><span class="streak" id="tlStreak" hidden></span><span>Pontos <b id="tlPts">'+T.score+'</b></span><button id="tlQuit">Voltar</button></div>'+
       '<div class="tlhead"><div class="ph2" id="tlPh">'+esc2(initials(r.d.n))+'</div><div><h2>'+esc2(r.d.n)+'</h2><p>'+(H?"Arraste os pôsteres: do mais antigo, à esquerda, ao mais recente, à direita":"Do filme mais antigo ao mais recente")+'</p></div></div>'+
       '<div class="tlarea'+(H?' h':' v')+'" id="tlArea"><div class="tlrail" id="tlRail"><i id="tlFill"></i>'+films.map(function(_,k){return '<span data-k="'+k+'"></span>'}).join("")+'</div>'+
       (H?'<div class="tlax"><span>mais antigo</span><span>mais recente</span></div>':'')+
@@ -3276,7 +3305,7 @@ addEventListener("hashchange",route);route();
     var rows=T.res.map(function(r,i){
       var dots=(r.o||[]).map(function(o){return '<i class="'+(o?'ok':'bad')+'"></i>'}).join("");
       return '<div class="rrw" style="--i:'+i+'"><span class="rn">'+esc2(r.n)+'</span><span class="rd">'+dots+'</span><b>+'+r.g+'</b></div>'}).join("");
-    root.innerHTML='<div class="tltop"><span></span><button id="tlBack">← Início</button></div>'+
+    root.innerHTML='<div class="tltop"><span></span><button id="tlBack">Voltar</button></div>'+
       '<div class="tlsum2"><i class="sprk t"></i><i class="sprk b"></i>'+
         '<div class="tlhero"><div class="tlringw">'+ring(pc)+'<div class="tlscore"><b id="tlSc">0</b><span>de '+max+' pontos</span></div></div>'+
         '<div class="tlmsg"><div class="eyebrow">Fim da sessão</div><h2>'+tr[1]+'</h2><p>'+phr+'</p>'+hi+'</div></div>'+
@@ -3709,7 +3738,7 @@ addEventListener("hashchange",route);route();
   function ask(i){
     var qq=A.qs[i];A.i=i;
     var letters="ABCD";
-    root.innerHTML='<div class="tltop"><span>Pergunta <b>'+(i+1)+'</b> de '+A.qs.length+'</span><button id="dnBack">← Sair</button></div>'+
+    root.innerHTML='<div class="tltop"><span>Pergunta <b>'+(i+1)+'</b> de '+A.qs.length+'</span><button id="dnBack">Voltar</button></div>'+
       '<div class="dbar" role="progressbar" aria-valuemin="0" aria-valuemax="'+A.qs.length+'" aria-valuenow="'+i+'"><i style="width:'+(i/A.qs.length*100)+'%"></i></div>'+
       '<div class="dq2" id="dnQ"><div class="dtag">'+esc2(qq.a)+'</div><h2>'+esc2(qq.t)+'</h2><div class="dopts">'+
       qq.o.map(function(op,k){return '<button class="dop2'+(A.ans[i]===k?' pick':'')+'" data-k="'+k+'" style="--d:'+(k*60)+'ms"><span class="lt">'+letters[k]+'</span><span>'+esc2(op.t)+'</span></button>'}).join("")+
@@ -3730,7 +3759,7 @@ addEventListener("hashchange",route);route();
     R={P:P,v:P.u,top:top,d:d,pct:top.s.pct,also:rk.slice(1,4),text:tx,films:fl,genres:gtop};
     R.also.forEach(function(o){o.pct=o.s.pct});
     var meta=(d.pais||"")+(d.y&&d.y[0]?" · "+d.y[0]+(d.y[1]?"–"+d.y[1]:""):"");
-    root.innerHTML='<div class="tltop"><span></span><button id="dnBack">← Início</button></div>'+
+    root.innerHTML='<div class="tltop"><span></span><button id="dnBack">Voltar</button></div>'+
       '<div class="dres dres2" id="dnRes">'+
       '<div class="dhero"><div class="dphoto" id="dnPh">'+esc2(initials(d.n))+(d.foto?'<img alt="'+esc2(d.n)+'" src="https://image.tmdb.org/t/p/w500'+d.foto+'" onerror="this.remove()">':'')+'</div>'+
       '<div class="dhead"><div class="eb">Seu diretor é</div><h2>'+esc2(d.n)+'</h2><div class="dmeta">'+esc2(meta)+'</div>'+
@@ -3871,7 +3900,7 @@ addEventListener("hashchange",route);route();
   function myName(){var el=document.getElementById("lvName");var v=(el&&el.value||"").trim().slice(0,16);return v||lsGet("lvname")||"Jogador"}
   function entry(err){
     leave(true);var nm0=lsGet("lvname")||"";
-    root.innerHTML='<div class="tltop"><span></span><button id="lvBack">← Início</button></div><div class="panel"><h3>Duelo ao vivo</h3><p class="pnote">Cada um joga no seu aparelho, ao mesmo tempo, com as mesmas perguntas. Quem acerta mais rápido ganha mais pontos: 100 por acerto, mais até 50 de bônus pela rapidez.</p>'+(err?'<div class="lerr">'+err+'</div>':'')+
+    root.innerHTML='<div class="tltop"><span></span><button id="lvBack">Voltar</button></div><div class="panel"><h3>Duelo ao vivo</h3><p class="pnote">Cada um joga no seu aparelho, ao mesmo tempo, com as mesmas perguntas. Quem acerta mais rápido ganha mais pontos: 100 por acerto, mais até 50 de bônus pela rapidez.</p>'+(err?'<div class="lerr">'+err+'</div>':'')+
       '<div class="flabel">Seu nome</div><div class="lrow"><input id="lvName" type="text" maxlength="16" placeholder="Jogador" value="'+esc2(nm0)+'" autocomplete="off"></div>'+
       '<div class="lrow"><button class="btn primary" id="lvCreate">Criar sala</button></div>'+
       '<div class="flabel" style="margin-top:18px">Ou entre numa sala</div><div class="lrow"><input class="cd" id="lvCode" type="text" maxlength="6" placeholder="CÓDIGO" autocomplete="off"><button class="btn ghost" id="lvJoin">Entrar</button></div><p class="pnote small">A conexão é direta entre os dois aparelhos (WebRTC), intermediada por um serviço público gratuito apenas para os dois se encontrarem. Nada fica salvo.</p></div>';
@@ -3894,7 +3923,7 @@ addEventListener("hashchange",route);route();
   function joinRoom(code){
     code=(code||"").toUpperCase().replace(/[^A-Z0-9]/g,"");if(code.length!==6){entry("O código tem 6 letras e números.");return}
     var nm=myName();lsSet("lvname",nm);st={role:"guest",code:code,me:nm,op:null,started:false};
-    root.innerHTML='<div class="tltop"><span></span><button id="lvBack">← Sair</button></div><div class="panel"><h3>Entrando na sala '+esc2(code)+'…</h3><div class="lwait"><i></i><i></i><i></i></div></div>';
+    root.innerHTML='<div class="tltop"><span></span><button id="lvBack">Voltar</button></div><div class="panel"><h3>Entrando na sala '+esc2(code)+'…</h3><div class="lwait"><i></i><i></i><i></i></div></div>';
     st.link=Net.join(code,{
       onopen:function(l){if(!st)return;st.link=l;st.link.ok=true;l.send({t:"hello",name:nm,n:DATA.length});lobby()},
       onerror:function(k){entry(k==="notfound"?"Sala não encontrada. Confira o código ou peça outro link.":"Não consegui conectar. Verifique a conexão e tente de novo.")},
@@ -3908,10 +3937,10 @@ addEventListener("hashchange",route);route();
     var pl='<div class="lplayers"><div class="lpl me">'+esc2(st.me)+'<small>você</small></div><div class="lvs">×</div>'+(st.op?'<div class="lpl op">'+esc2(st.op)+'<small>adversário</small></div>':'<div class="lpl empty">aguardando…<small>&nbsp;</small></div>')+'</div>';
     if(h){
       var lk=link();
-      root.innerHTML='<div class="tltop"><span></span><button id="lvBack">← Sair</button></div><div class="panel"><h3>Sua sala</h3><p class="pnote">Mande o código ou o link para o seu amigo.</p><div class="lcode" id="lvC">'+esc2(st.code)+'</div><div class="lrow"><button class="btn ghost" id="lvCopy" data-l="'+esc2(lk)+'">Copiar link</button><a class="btn ghost" target="_blank" rel="noopener" href="https://wa.me/?text='+encodeURIComponent("Bora um duelo no Quem Dirigiu? Entra aqui: "+lk)+'">Enviar no WhatsApp</a></div>'+pl+
+      root.innerHTML='<div class="tltop"><span></span><button id="lvBack">Voltar</button></div><div class="panel"><h3>Sua sala</h3><p class="pnote">Mande o código ou o link para o seu amigo.</p><div class="lcode" id="lvC">'+esc2(st.code)+'</div><div class="lrow"><button class="btn ghost" id="lvCopy" data-l="'+esc2(lk)+'">Copiar link</button><a class="btn ghost" target="_blank" rel="noopener" href="https://wa.me/?text='+encodeURIComponent("Bora um duelo no Quem Dirigiu? Entra aqui: "+lk)+'">Enviar no WhatsApp</a></div>'+pl+
         (st.op?'<div class="flabel">Dificuldade</div><div class="nchips">'+LV.map(function(a){return '<button class="nchip wide" data-llv="'+a[0]+'" aria-pressed="'+(a[0]===st.cfg.lv)+'">'+a[1]+'</button>'}).join("")+'</div><div class="flabel" style="margin-top:14px">Perguntas</div><div class="nchips">'+NS.map(function(n){return '<button class="nchip" data-lln="'+n+'" aria-pressed="'+(n===st.cfg.n)+'">'+n+'</button>'}).join("")+'</div><div class="lrow" style="margin-top:16px"><button class="btn primary" id="lvGo">Começar duelo <span aria-hidden="true">→</span></button></div>':'<div class="lwait"><i></i><i></i><i></i>'+(msg||"Aguardando o seu amigo entrar…")+'</div>')+'</div>';
     }else{
-      root.innerHTML='<div class="tltop"><span></span><button id="lvBack">← Sair</button></div><div class="panel"><h3>Conectado!</h3>'+pl+'<div class="lwait"><i></i><i></i><i></i>Aguardando o anfitrião começar…</div></div>';
+      root.innerHTML='<div class="tltop"><span></span><button id="lvBack">Voltar</button></div><div class="panel"><h3>Conectado!</h3>'+pl+'<div class="lwait"><i></i><i></i><i></i>Aguardando o anfitrião começar…</div></div>';
     }
   }
   /* ---------- mensagens ---------- */
@@ -3947,7 +3976,7 @@ addEventListener("hashchange",route);route();
     if(!st||!st.qs)return;clearInterval(st.tm);clearTimeout(st.nx);
     st.r=r;st.my=null;st.rev=false;st.t0=performance.now();var it=st.qs[r],q=DATA[it.i],mm=splitTitle(q.f);
     var sc=st.tot;
-    root.innerHTML='<div class="tltop"><span>Pergunta <b>'+(r+1)+'</b> de '+st.qs.length+'</span><span class="streak" id="lvStreak" hidden></span><button id="lvBack">← Sair</button></div>'+
+    root.innerHTML='<div class="tltop"><span>Pergunta <b>'+(r+1)+'</b> de '+st.qs.length+'</span><span class="streak" id="lvStreak" hidden></span><button id="lvBack">Voltar</button></div>'+
       '<div class="lscore"><div class="sc me" id="scMe"><span>'+esc2(st.me)+'</span><b>'+sc[me()]+'</b></div><span class="lvs">×</span><div class="sc op" id="scOp"><span>'+esc2(st.op)+'</span><b>'+sc[1-me()]+'</b></div></div>'+
       '<div class="ltime" id="lvTime"><i id="lvBar"></i></div>'+
       '<div class="lq"><div class="eyebrow">'+LEVELS[q.n].name+'</div><h2>'+esc2(mm.main)+'</h2><p class="oy">'+q.y+(mm.orig?' · título original: '+esc2(mm.orig):'')+(q.d&&q.n==="facil"?' · '+esc2(q.d):'')+'</p><div class="ask">Quem dirigiu este filme?</div><div class="opts" id="lvOpts">'+it.o.map(function(o,i){return '<button class="opt" data-lo="'+i+'"><span class="l">'+"ABCD"[i]+'</span><span>'+esc2(nm(o))+'</span><span class="tags"></span></button>'}).join("")+'</div><div class="lmsg" id="lvMsg"></div><div id="lvGain"></div></div>';
@@ -3993,7 +4022,7 @@ addEventListener("hashchange",route);route();
   }
   function endGame(m){
     clearInterval(st.tm);st.tot=m.tot;var mi=me(),a=m.tot[mi],b=m.tot[1-mi],win=a>b,tie=a===b;st.started=false;
-    root.innerHTML='<div class="tltop"><span></span><button id="lvBack">← Sair</button></div><div class="panel tlsum"><div class="eyebrow" style="justify-content:center">'+(tie?"Empate":win?"Vitória":"Derrota")+'</div><div class="big" style="font-size:44px">'+a+' <span style="font-size:20px;color:var(--ink-700)">×</span> '+b+'</div><p class="pnote">'+esc2(st.me)+' × '+esc2(st.op)+'</p><p style="font-weight:600">'+(tie?"Ninguém tirou o olho do outro!":win?"Você levou o duelo. Parabéns!":esc2(st.op)+" levou desta vez. Peça a revanche!")+'</p><div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">'+(st.role==="host"?'<button class="btn primary" id="lvAgain">Jogar de novo</button>':'<span class="pnote">O anfitrião pode iniciar a revanche.</span>')+'<button class="btn ghost" id="lvBack2">Sair da sala</button></div></div>';
+    root.innerHTML='<div class="tltop"><span></span><button id="lvBack">Voltar</button></div><div class="panel tlsum"><div class="eyebrow" style="justify-content:center">'+(tie?"Empate":win?"Vitória":"Derrota")+'</div><div class="big" style="font-size:44px">'+a+' <span style="font-size:20px;color:var(--ink-700)">×</span> '+b+'</div><p class="pnote">'+esc2(st.me)+' × '+esc2(st.op)+'</p><p style="font-weight:600">'+(tie?"Ninguém tirou o olho do outro!":win?"Você levou o duelo. Parabéns!":esc2(st.op)+" levou desta vez. Peça a revanche!")+'</p><div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">'+(st.role==="host"?'<button class="btn primary" id="lvAgain">Jogar de novo</button>':'<span class="pnote">O anfitrião pode iniciar a revanche.</span>')+'<button class="btn ghost" id="lvBack2">Sair da sala</button></div></div>';
     if(win){if(window.confete)window.confete();if(window.sfx)sfx("done")}
   }
   function oppLeft(){if(!st)return;clearInterval(st.tm);clearTimeout(st.nx);st.started=false;root.innerHTML='<div class="panel tlsum"><h3>O adversário saiu</h3><p class="pnote">A conexão foi encerrada.</p><button class="btn primary" id="lvBack2">Voltar</button></div>'}
@@ -4358,7 +4387,7 @@ addEventListener("hashchange",route);route();
   function draw(){
     var r=G.rounds[G.i];if(!r){return fin()}
     G.locked=false;
-    root().innerHTML='<div class="inhead"><span class="inlv">Nível '+LV[G.lv].name+'</span><span class="inrd">Rodada <b>'+(G.i+1)+'</b>/'+G.n+'</span><span class="ptot">Acertos <b>'+G.score+'</b></span><span class="streak" id="inStr"'+(G.streak>1?'':' hidden')+'>'+G.streak+' seguidos</span><button id="inQuit" class="inq2">Sair</button></div>'+
+    root().innerHTML='<div class="inhead"><span class="inlv">Nível '+LV[G.lv].name+'</span><span class="inrd">Rodada <b>'+(G.i+1)+'</b>/'+G.n+'</span><span class="ptot">Acertos <b>'+G.score+'</b></span><span class="streak" id="inStr"'+(G.streak>1?'':' hidden')+'>'+G.streak+' seguidos</span><button id="inQuit" class="inq2">Voltar</button></div>'+
     '<div class="inq"><h2>Qual destes filmes <em>não</em> foi dirigido por</h2><span class="inwho"><span class="av3">'+esc(ini(r.d.n))+(r.d.foto?'<img alt="" src="https://image.tmdb.org/t/p/w185'+r.d.foto+'" onerror="this.remove()">':'')+'</span><b>'+esc(r.d.n)+'</b></span><h2>?</h2></div>'+
     '<div class="inposters" id="inPosters">'+r.items.map(poster).join("")+'</div><div id="inFb" aria-live="polite"></div>'
   }
@@ -4379,7 +4408,7 @@ addEventListener("hashchange",route);route();
   function fin(){
     var k=G.lv+"_"+cfg.n,b=bests(),pct=G.score/G.n,rec=false;
     if(G.n===cfg.n&&G.score>0&&(b[k]==null||G.score>b[k])){b[k]=G.score;rec=true;try{localStorage.setItem("in_best",JSON.stringify(b))}catch(e){}}
-    var t=pct>=.9?["Olho de lince","Nada escapa de você."]:pct>=.7?["Cinéfilo atento","Poucos intrusos passam."]:pct>=.45?["Bom começo","Dá para afiar o olho."]:["Os intrusos venceram","Tente de novo, ou comece pelo nível fácil."];
+    var t=pct>=.9?["Olho de lince","Nada escapa de você."]:pct>=.7?["Cinéfilo atento","Poucos intrusos passam."]:pct>=.45?["Bom começo","Dá para afiar o olho."]:["Os intrusos venceram",G.lv==="facil"?"Respira e tenta de novo, você chega lá.":G.lv==="dificil"?"Esse nível é duro. Tente de novo, ou aqueça no médio.":"Tente de novo, ou aqueça no nível fácil."];
     root().innerHTML='<div class="panel inres"><div class="eyebrow" style="justify-content:center">'+t[0]+'</div><div class="inbig">'+G.score+'<span> / '+G.n+'</span></div><p class="pnote">'+t[1]+' Nível '+LV[G.lv].name+(G.best>1?' · melhor sequência: '+G.best:'')+(rec?' · <b>novo recorde!</b>':'')+'</p>'+
     '<div class="inbtns"><button class="btn primary" id="inAgain">Jogar de novo</button><button class="btn ghost" id="inShare">Compartilhar</button><button class="btn ghost" id="inHome">Voltar ao início</button></div></div>'
   }
@@ -4475,7 +4504,7 @@ addEventListener("hashchange",route);route();
   }
   function build(){
     var n=S.mode==="daily"?"#"+(S.day-BASE+1):"treino";
-    root().innerHTML='<div class="qtop"><span>Cinedle <b>'+n+'</b></span><span class="ptot">Tentativa <b id="cdTry">'+Math.min(S.g.length+1,MAX)+'</b> de '+MAX+'</span><button id="cdQuit">← Sair</button></div>'+
+    root().innerHTML='<div class="qtop"><span>Cinedle <b>'+n+'</b></span><span class="ptot">Tentativa <b id="cdTry">'+Math.min(S.g.length+1,MAX)+'</b> de '+MAX+'</span><button id="cdQuit">Voltar</button></div>'+
     '<div class="cdhead"><h2>'+(S.mode==="daily"?'Quem é o <em>diretor do dia</em>?':'Treino: quem é <em>este diretor</em>?')+'</h2><p>Chute um diretor. As cores mostram o quanto ele se parece com o secreto: <i class="lg g"></i> igual, <i class="lg y"></i> perto, <i class="lg n"></i> longe. A seta aponta para onde está o secreto.</p></div>'+
     '<div class="cdsearch" id="cdBox"><input id="cdIn" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Digite o nome de um diretor" aria-label="Chutar um diretor" role="combobox" aria-expanded="false" aria-controls="cdSug"><div class="cdsug" id="cdSug" role="listbox" hidden></div></div>'+
     '<div class="cdcols" aria-hidden="true"><span>Diretor</span><span>País</span><span>Nascimento</span><span>Gênero</span><span>Filmes</span><span>Estreia</span><span>Oscar de direção</span></div>'+
@@ -4592,6 +4621,17 @@ addEventListener("hashchange",route);route();
   if(H.tl)document.querySelectorAll(".hx-mt .pp").forEach(function(el){var f=H.tl[+el.dataset.ti];if(f){el.querySelector("span").textContent=f[1];bg(el,f[0],"w154")}});
   var mr=document.querySelector(".hx-mr");
   if(mr){if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){mr.classList.add("on");io.disconnect()}})},{threshold:.6});io.observe(mr)}else mr.classList.add("on")}
+})();
+</script>
+<script>
+(function(){
+  document.addEventListener("click",function(e){
+    var t=e.target;if(!t.closest)return;var g=null;
+    if(t.closest("#tlBack,#tlBack2,#tlQuit"))g="linha";
+    else if(t.closest("#dnBack"))g="descubra";
+    else if(t.closest("#lvBack"))g="g-qd";
+    if(g)setTimeout(function(){goSection(g)},0)
+  });
 })();
 </script>
 </body>
