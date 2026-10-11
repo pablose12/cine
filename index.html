@@ -451,7 +451,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--ink-700);font
 .mv{height:120px;border-radius:14px;background:var(--pri-deep);position:relative;overflow:hidden}
 .mv-tl{display:flex;align-items:center;justify-content:space-around;padding:0 16px}
 .mv-tl i{width:34px;height:52px;border-radius:5px;background:linear-gradient(160deg,#5A62C4,#2B2A7A);animation:tlBob 3.2s ease-in-out infinite}
-.mv-tl i:nth-child(2){animation-delay:.3s;background:linear-gradient(160deg,#C9772F,#7A3A12)}.mv-tl i:nth-child(3){animation-delay:.6s}.mv-tl i:nth-child(4){animation-delay:.9s;background:linear-gradient(160deg,#2F7F8F,#0F2F4A)}.mv-tl i:nth-child(5){animation-delay:1.2s}
+.mv-tl i:nth-child(2){animation-delay:.3s;background:linear-gradient(160deg,#C94F7C,#7A3A12)}.mv-tl i:nth-child(3){animation-delay:.6s}.mv-tl i:nth-child(4){animation-delay:.9s;background:linear-gradient(160deg,#2F7F8F,#0F2F4A)}.mv-tl i:nth-child(5){animation-delay:1.2s}
 @keyframes tlBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
 .mv-tl .ln{position:absolute;left:14px;right:14px;bottom:16px;height:3px;border-radius:9px;background:var(--amber);transform-origin:left;animation:lnGrow 4s ease-in-out infinite}
 @keyframes lnGrow{0%{transform:scaleX(0)}70%,100%{transform:scaleX(1)}}
@@ -759,7 +759,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--ink-700);font
 #msPlayer{position:fixed;left:50%;bottom:calc(14px + env(safe-area-inset-bottom,0px));transform:translate(-50%,160%);z-index:70;width:min(640px,calc(100% - 24px));background:rgba(23,21,75,.97);color:#fff;border-radius:22px;box-shadow:0 22px 44px -14px rgba(10,10,40,.75);backdrop-filter:blur(10px);transition:transform .55s cubic-bezier(.2,.9,.3,1);overflow:hidden}
 #msPlayer.on{transform:translate(-50%,0)}
 .msrow{display:flex;align-items:center;gap:12px;padding:10px 12px}
-.msdisc{width:46px;height:46px;border-radius:50%;flex:none;background:conic-gradient(#F4A81D,#C9772F,#5A62C4,#F4A81D);display:grid;place-items:center}
+.msdisc{width:46px;height:46px;border-radius:50%;flex:none;background:conic-gradient(#F4A81D,#C94F7C,#5A62C4,#F4A81D);display:grid;place-items:center}
 .msdisc i{width:13px;height:13px;border-radius:50%;background:var(--pri-deep)}
 #msPlayer.play .msdisc{animation:msSpin 4.5s linear infinite}
 @keyframes msSpin{to{transform:rotate(360deg)}}
@@ -791,10 +791,10 @@ body.ms-on{padding-bottom:92px}
 @media (max-width:520px){.tld{height:190px}.tlr{top:122px}.tlds span{top:115px}.tlen{top:150px}.tlp b{font-size:11px;bottom:5px}.tlp::after{bottom:22px}}
 
 /* identidade própria de cada seção */
-.sx.tl{--a:#F4A81D;--ai:#2A1A10;background:linear-gradient(135deg,#2a1a10,#4a2b14 58%,#1d130c);padding-block:58px}
+.sx.tl{--a:#5EE6C8;--ai:#04302A;background:linear-gradient(135deg,#17154B,#1E1C75 58%,#0E0D33);padding-block:58px}
 .sx.dn{--a:#5EE6C8;--ai:#04302A;background:radial-gradient(rgba(255,255,255,.08) 1.2px,transparent 1.7px) 0 0/22px 22px,linear-gradient(135deg,#06323a,#0b5560 55%,#062a31)}
-.sx.tl::before{background:radial-gradient(circle,rgba(244,168,29,.28),transparent 62%)}
-.sx.tl::after{background:radial-gradient(circle,rgba(210,90,30,.32),transparent 62%)}
+.sx.tl::before{background:radial-gradient(circle,rgba(94,230,200,.22),transparent 62%)}
+.sx.tl::after{background:radial-gradient(circle,rgba(77,134,255,.3),transparent 62%)}
 .sx.dn::before{background:radial-gradient(circle,rgba(94,230,200,.26),transparent 62%)}
 .sx.dn::after{background:radial-gradient(circle,rgba(60,160,230,.28),transparent 62%)}
 .sprk{position:absolute;left:0;right:0;height:12px;z-index:0;pointer-events:none;background:repeating-linear-gradient(90deg,transparent 0 12px,rgba(255,235,200,.2) 12px 26px,transparent 26px 38px);-webkit-mask-image:linear-gradient(transparent,#000 0,#000 100%);opacity:.9}
@@ -809,7 +809,7 @@ body.ms-on{padding-bottom:92px}
 .tlr i{background:linear-gradient(90deg,var(--a),#F47A1D)}
 .tld.on .tlds span{background:var(--a);border-color:var(--a)}
 .tlp b{color:var(--a)}
-.tlds span{background:#2a1a10}
+.tlds span{background:#1B1440}
 .dtile:hover{border-color:var(--a)}
 .dtile[aria-pressed="true"]{background:rgba(94,230,200,.14);border-color:var(--a)}
 .dtile[aria-pressed="true"] b{color:var(--a)}
@@ -848,7 +848,7 @@ body.ms-on{padding-bottom:92px}
 @media (max-width:860px){.sx.tl{padding-block:50px}}
 
 /* resultado da linha do tempo */
-.tlsum2{position:relative;max-width:760px;margin:12px auto 0;padding:52px 30px 32px;border-radius:28px;background:linear-gradient(135deg,#2a1a10,#4a2b14 58%,#1d130c);color:#fff;overflow:hidden;box-shadow:0 30px 60px -28px rgba(30,16,6,.7)}
+.tlsum2{position:relative;max-width:760px;margin:12px auto 0;padding:52px 30px 32px;border-radius:28px;background:linear-gradient(135deg,#1E1C75,#17154B 58%,#0E0D33);color:#fff;overflow:hidden;box-shadow:0 30px 60px -28px rgba(10,10,50,.8)}
 .tlsum2 .sprk{position:absolute;left:0;right:0;height:14px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.14) 0 14px,transparent 14px 30px);-webkit-mask:linear-gradient(#000,#000);opacity:.8}
 .tlsum2 .sprk.t{top:14px}.tlsum2 .sprk.b{bottom:14px}
 .tlhero{display:flex;gap:28px;align-items:center}
@@ -875,7 +875,7 @@ body.ms-on{padding-bottom:92px}
 .rrw .rd i{width:12px;height:12px;border-radius:50%;background:#52D49A}.rrw .rd i.bad{background:#F0605D}
 .rrw b{font-variant-numeric:tabular-nums;color:#F4A81D;min-width:44px;text-align:right}
 .tlsum2 .tlbtns{margin-top:24px}
-.btn.tlpri{background:#F4A81D;color:#2A1A10;border-color:#F4A81D}
+.btn.tlpri{background:#F4A81D;color:#1B1440;border-color:#F4A81D}
 @media (max-width:620px){.tlsum2{padding:46px 16px 26px}.tlhero{flex-direction:column;text-align:center;gap:18px}.tlmsg h2{font-size:26px}.tltiles b{font-size:22px}}
 @media (max-width:620px){.tlmsg .eyebrow{justify-content:center}}
 
@@ -976,7 +976,7 @@ body.ms-on{padding-bottom:92px}
 .gcard .go i{font-style:normal;transition:transform .2s}.gcard:hover .go i{transform:translateX(5px)}
 .gcard .tg{position:absolute;top:18px;right:20px;z-index:2;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.7}
 .gcard.qd{background:linear-gradient(160deg,#1E1C75,#17154B 70%);--gl:#7B78E8;--ac:#F4A81D}
-.gcard.ps{background:linear-gradient(160deg,#3A2410,#2A1A10 70%);--gl:#F4A81D;--ac:#F4A81D}
+.gcard.ps{background:linear-gradient(160deg,#7A1B45,#4A0F2B 70%);--gl:#FFC857;--ac:#FFC857}
 .gcard.tl{background:linear-gradient(160deg,#17154B,#0E0D33 70%);--gl:#5EE6C8;--ac:#5EE6C8}
 .gcard.dn{background:linear-gradient(160deg,#083D34,#04302A 70%);--gl:#5EE6C8;--ac:#5EE6C8}
 .gcard.du{background:linear-gradient(160deg,#26238C,#17154B 70%);--gl:#F4A81D;--ac:#F4A81D}
@@ -1041,8 +1041,8 @@ body.ms-on{padding-bottom:92px}
 }
 
 /* ===== v20: páginas de jogo coloridas (mesma cor do card da Home) ===== */
-body[data-gt="qd"]{--g1:#1E1C75;--g2:#17154B;--ga:#F4A81D;--gi:#2A1A10}
-body[data-gt="poster"]{--g1:#3A2410;--g2:#2A1A10;--ga:#F4A81D;--gi:#2A1A10}
+body[data-gt="qd"]{--g1:#1E1C75;--g2:#17154B;--ga:#F4A81D;--gi:#1B1440}
+body[data-gt="poster"]{--g1:#7A1B45;--g2:#4A0F2B;--ga:#FFC857;--gi:#1B1440}
 body[data-gt="tl"]{--g1:#17154B;--g2:#0E0D33;--ga:#5EE6C8;--gi:#04302A}
 body[data-gt="dna"]{--g1:#083D34;--g2:#04302A;--ga:#5EE6C8;--gi:#04302A}
 body[data-gt]{background:linear-gradient(160deg,var(--g1),var(--g2)) fixed;color:#fff}
@@ -1072,7 +1072,7 @@ body[data-gt] .rmedal{background:rgba(255,255,255,.07);border-color:rgba(255,255
 body[data-gt] .rmedal .mname{color:#fff}body[data-gt] .rmedal .mtag{color:rgba(255,255,255,.7)}
 body[data-gt] .dmn,body[data-gt] .dmt{color:#fff}
 /* hierarquia: L1 CTA âmbar */
-body[data-gt] .btn.primary,body[data-gt] .btn.amber{background:var(--amber);border-color:var(--amber);color:#2A1A10;box-shadow:0 12px 26px -14px var(--amber)}
+body[data-gt] .btn.primary,body[data-gt] .btn.amber{background:var(--amber);border-color:var(--amber);color:#1B1440;box-shadow:0 12px 26px -14px var(--amber)}
 body[data-gt] .btn.primary:disabled,body[data-gt] .btn.primary[disabled]{background:rgba(255,255,255,.16);border-color:transparent;color:rgba(255,255,255,.5);box-shadow:none}
 body[data-gt] .btn.ghost,body[data-gt] .btn.dghost{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.34);color:#fff}
 body[data-gt] .btn.ghost:hover,body[data-gt] .btn.dghost:hover{background:rgba(255,255,255,.16)}
@@ -1110,7 +1110,7 @@ body[data-gt] .dtile[aria-pressed="true"]{background:rgba(255,255,255,.18);borde
 /* TL / DNA / Pôster: o fundo é a própria página */
 body[data-gt] .sx{background:none;box-shadow:none;padding:6px 0 10px;border-radius:0;overflow:visible}
 body[data-gt] .sx::before,body[data-gt] .sx::after,body[data-gt] .sx .sprk{display:none}
-body[data-gt] .sx .btn.amber{background:var(--amber);border-color:var(--amber);color:#2A1A10}
+body[data-gt] .sx .btn.amber{background:var(--amber);border-color:var(--amber);color:#1B1440}
 body[data-gt] #v-home .sec.gp{padding-top:28px}
 body[data-gt] #v-home .sec.gp>h2{font-size:clamp(34px,5vw,54px);margin-bottom:6px}
 /* telas de jogo: topo e progresso sobre a cor; cartão claro */
@@ -1132,7 +1132,7 @@ body[data-gt] .rquote{border-left-color:var(--ga)}
 body[data-gt] .rlist li{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.16);color:#fff}
 body[data-gt] .rlist small{color:rgba(255,255,255,.7)}
 body[data-gt] .rlist .tm.t0{background:rgba(255,255,255,.18);color:#fff}
-body[data-gt] .rlist .tm.t1{background:var(--amber);color:#2A1A10}
+body[data-gt] .rlist .tm.t1{background:var(--amber);color:#1B1440}
 
 .ti{flex:none;vertical-align:-3px;margin-right:7px}
 body[data-gt] .seg button{display:inline-flex;align-items:center}
@@ -1166,7 +1166,7 @@ body[data-gt] #pStage .opt{color:var(--ink)}
 body[data-gt] .pres div{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.16);color:#fff}
 body[data-gt] .pres small{color:rgba(255,255,255,.7)}
 body[data-gt] .pturn.t0{background:rgba(255,255,255,.16);color:#fff}
-body[data-gt] .pturn.t1{background:var(--amber);color:#2A1A10}
+body[data-gt] .pturn.t1{background:var(--amber);color:#1B1440}
 body[data-gt] .ptime{background:rgba(255,255,255,.22)}
 body[data-gt] #v-poster .pnote,body[data-gt] #v-tl .pnote,body[data-gt] #v-dna .pnote,body[data-gt] #v-live .pnote{color:rgba(255,255,255,.78)}
 body[data-gt] #v-tl .panel,body[data-gt] #v-tl .panel h3,body[data-gt] #v-poster .panel h3,body[data-gt] #v-live .panel,body[data-gt] #v-live .panel h3{color:#fff}
@@ -1239,7 +1239,7 @@ body[data-gt] .dprev{color:rgba(255,255,255,.8)}body[data-gt] .dprev:hover{color
 body[data-gt] .step{color:#fff}
 .scl{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .scl>div{border-radius:18px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);padding:16px;display:flex;flex-direction:column;gap:8px;align-items:center;text-align:center}
-.scl .bl{width:100%;aspect-ratio:3/2;border-radius:10px;background:linear-gradient(160deg,#5A62C4,#C9772F,#7A2F3F) center/cover;overflow:hidden}
+.scl .bl{width:100%;aspect-ratio:3/2;border-radius:10px;background:linear-gradient(160deg,#5A62C4,#C94F7C,#7A2F3F) center/cover;overflow:hidden}
 .scl b{font:800 24px var(--font-display);color:#fff}.scl small{font-size:12.5px;opacity:.8}
 .dgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .dper{display:flex;align-items:center;gap:12px;border-radius:16px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);padding:12px 14px;font:600 14px var(--font-display);color:#fff;text-decoration:none;min-width:0;transition:background .2s,transform .2s}
@@ -1336,7 +1336,7 @@ body[data-gt="cd"]{--g1:#0F3A8F;--g2:#08235E;--ga:#8EC5FF;--gi:#08235E}
 .ip::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(10,6,40,.85))}
 .ip span{position:absolute;left:8px;right:8px;bottom:8px;z-index:1;font:700 11.5px/1.2 var(--font-display);color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.6)}
 .hit .ip.intr{border-color:#F4A81D;transform:translateY(-10px) rotate(-2deg);box-shadow:0 26px 40px -16px rgba(244,168,29,.55)}
-.hit .ip.intr::before{content:"Intruso";position:absolute;top:8px;left:8px;z-index:2;border-radius:999px;background:#F4A81D;color:#2A1A10;padding:2px 9px;font:800 10px var(--font-body);letter-spacing:.08em;text-transform:uppercase}
+.hit .ip.intr::before{content:"Intruso";position:absolute;top:8px;left:8px;z-index:2;border-radius:999px;background:#F4A81D;color:#1B1440;padding:2px 9px;font:800 10px var(--font-body);letter-spacing:.08em;text-transform:uppercase}
 .hx-mi{display:flex;gap:9px;justify-content:center;align-items:flex-end;padding-bottom:6px}
 .hx-mi .mp{position:relative;width:60px;aspect-ratio:2/3;border-radius:9px;background:linear-gradient(160deg,#5A62C4,#2B1466) center/cover;border:2px solid transparent;box-shadow:0 14px 22px -12px rgba(0,0,0,.7);transition:transform .5s,border-color .5s,opacity .4s}
 .hx-mi.swap .mp{opacity:0}
@@ -1347,7 +1347,7 @@ body[data-gt="cd"]{--g1:#0F3A8F;--g2:#08235E;--ga:#8EC5FF;--gi:#08235E}
 .cdt b{font-weight:700}
 .cdt i{font-style:normal;font-size:17px;line-height:1;font-weight:800}
 .cdt.g{background:#1F9D6B;border-color:#43c995}
-.cdt.y{background:#F4A81D;border-color:#FFD27A;color:#2A1A10}
+.cdt.y{background:#F4A81D;border-color:#FFD27A;color:#1B1440}
 @keyframes cdflip{0%{transform:rotateX(90deg);opacity:0}100%{transform:none;opacity:1}}
 .cdrow.still .cdt{animation:none}
 .lg{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.35);margin:0 2px}
@@ -1482,6 +1482,60 @@ body[data-gt] #v-tl .tlarea.h .tlc .tt small{color:rgba(255,255,255,.72)}
 /* ===== v28 ===== */
 .survbar{display:inline-flex;align-items:center;gap:8px;border-radius:999px;background:rgba(244,168,29,.16);border:1px solid rgba(244,168,29,.4);color:var(--amber);padding:4px 14px;font:700 11.5px var(--font-body,Poppins,sans-serif);letter-spacing:.08em;text-transform:uppercase}
 #donCfg .seg{margin-top:2px}
+
+/* ===== v29 ===== */
+input,select,textarea{font-family:var(--font-body,Poppins,sans-serif)}
+/* Voltar sem seta */
+body .qtop button::before,body .tltop button::before,body .inhead .inq2::before{display:none!important}
+body .qtop button,body .tltop button,body .inhead .inq2{padding:7px 17px}
+/* ícone de play nos botões */
+.btn .ico{margin-left:8px;vertical-align:-1px;flex:none}
+.gcard .go i{font-size:0}.gcard .go i svg{width:11px;height:11px;margin:0 0 0 2px}
+/* hero dos jogos: respiro abaixo da animação */
+.gpg .hero2{padding-bottom:36px}.gpg .hero2 .art{padding-bottom:28px}
+@media (max-width:760px){.gpg .hero2{padding-bottom:20px}.gpg .hero2 .art{padding-bottom:16px}}
+/* lobby online */
+.lwait{color:rgba(255,255,255,.9);font-size:14px;gap:10px;margin:18px 0 6px}
+.lwait i{width:6px;height:6px}
+.lvs{color:rgba(255,255,255,.75)!important}
+.lpl.empty{opacity:1;background:rgba(255,255,255,.06);border:1.5px dashed rgba(255,255,255,.45);color:rgba(255,255,255,.88)}
+.lpl.empty small{display:none}
+.opanel .flabel{display:flex;align-items:center;gap:8px}
+body[data-gt] .flabel{color:rgba(255,255,255,.92)}
+.opanel .seg{margin-top:2px}
+@media (max-width:520px){.opanel .seg{display:grid;grid-template-columns:1fr 1fr;width:100%;border-radius:22px}.opanel .seg button{padding:10px 6px;font-size:13px;text-align:center;justify-content:center;white-space:normal}}
+/* campos de nome das equipes */
+.tin{gap:8px;padding:12px 14px 14px}
+.tin input,body[data-gt] .tin input{padding:11px 14px;border-radius:10px;margin-top:0}
+/* chamas legíveis */
+body[data-gt] .streak{background:rgba(255,255,255,.14)!important;border:1px solid rgba(255,255,255,.4)!important;color:#fff!important}
+body[data-gt] .streak b{color:inherit!important}
+body[data-gt] .streak .fl{filter:grayscale(1) opacity(.9)}
+body[data-gt] .streak.s1{background:rgba(244,168,29,.28)!important;border-color:#F4A81D!important;color:#FFE2A6!important}
+body[data-gt] .streak.s1 .fl,body[data-gt] .streak.s2 .fl,body[data-gt] .streak.s3 .fl{filter:none}
+body[data-gt] .streak.s2{background:rgba(244,168,29,.4)!important;border-color:#FFC857!important;color:#FFF1CF!important}
+body[data-gt] .streak.s3{background:#0E0D33!important;border-color:#7FA8FF!important;color:#D5E4FF!important}
+body[data-gt] .rstreak{color:#FFE2A6}
+/* textos secundários inline em telas escuras */
+body[data-gt] #v-quiz [style*="color:var(--ink-700)"],body[data-gt] #v-result [style*="color:var(--ink-700)"],body[data-gt] #v-duel [style*="color:var(--ink-700)"],body[data-gt] #v-live [style*="color:var(--ink-700)"],body[data-gt] #v-intruso [style*="color:var(--ink-700)"],body[data-gt] #v-cinedle [style*="color:var(--ink-700)"]{color:rgba(255,255,255,.78)!important}
+body[data-gt] .rlist li span[style*="ink-700"]{color:rgba(255,255,255,.78)!important}
+/* Linha do tempo: resultado no azul do jogo, com menta */
+.tlring .tr1{stroke:#5EE6C8}
+.tlmsg .eyebrow{color:#5EE6C8}
+.tltiles b,.rrw b{color:#5EE6C8}
+.btn.tlpri{background:#5EE6C8;border-color:#5EE6C8;color:#04302A}
+/* Pôster em vinho */
+body[data-gt="poster"] .btn.primary,body[data-gt="poster"] .btn.amber{background:#FFC857;border-color:#FFC857;color:#1B1440;box-shadow:0 12px 26px -14px #FFC857}
+/* resultado do Filme Intruso, no mesmo molde do Pôster */
+.pres b.okc{color:#4FE3C1}.pres b.badc{color:#FF8A8C}
+body[data-gt] .pres small{color:rgba(255,255,255,.72)}
+.inres .pres{margin:18px 0}.inres .pres div span{min-width:0}
+
+.inres .rstreak{margin:2px 0}
+body[data-gt] #confirmBtn:disabled,body[data-gt] .btn.primary:disabled,body[data-gt] .btn.primary[disabled]{background:#3B3C93!important;border:1px solid #6F72C9!important;color:#fff!important;box-shadow:none!important}
+.inp .ifb{color:rgba(255,255,255,.8)!important}
+.tlpick .btn:disabled{opacity:.7}
+.inres p{margin:6px 0}
 </style>
 </head>
 <body>
@@ -1499,7 +1553,7 @@ body[data-gt] #v-tl .tlarea.h .tlc .tt small{color:rgba(255,255,255,.72)}
     <div class="spacer"></div>
     <button class="snd msb" id="msBtn" type="button" aria-label="Trilha sonora" aria-pressed="false" title="Trilha sonora: fechada"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg></button>
     <button class="snd" id="sndBtn" type="button" aria-label="Efeitos sonoros" aria-pressed="false" title="Efeitos sonoros: desligados"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path class="w1" d="M15.5 8.5a5 5 0 0 1 0 7"/><path class="w2" d="M18.5 5.5a9 9 0 0 1 0 13"/><path class="x" d="m16 9 5 6m0-6-5 6"/></svg></button>
-    <button class="btn primary sm" data-hub="games">Jogar <span aria-hidden="true">→</span></button>
+    <button class="btn primary sm" data-hub="games">Jogar <svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg></button>
   </div>
 </header>
 
@@ -1510,17 +1564,14 @@ body[data-gt] #v-tl .tlarea.h .tlc .tt small{color:rgba(255,255,255,.72)}
         <div class="eyebrow">Jogos de cinema</div>
         <h1>Será que você é <em class="w">cinéfilo</em> de verdade?</h1>
         <p class="lead">O Sou Cinéfilo reúne jogos para quem ama filmes: adivinhe diretores, ordene a história do cinema, descubra qual diretor combina com você e desafie os amigos.</p>
-        <div class="cta"><button class="btn amber" data-hub="games">Escolher um jogo <span aria-hidden="true">→</span></button><button class="btn dghost" data-hub="sobre">Sobre o projeto</button></div>
+        <div class="cta"><button class="btn amber" data-hub="games">Escolher um jogo <svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg></button><button class="btn dghost" data-hub="sobre">Sobre o projeto</button></div>
         <ul class="perks"><li>Grátis</li><li>Sem cadastro</li><li>Para jogar sozinho ou em grupo</li></ul>
       </div>
     </div>
     <div class="hx-r" aria-hidden="true">
       <div class="hx-fade"></div>
       <div class="hx-wall" id="hxWall"></div>
-      <div class="hx-stage"><div class="hx-fl hx-q" style="left:14px;top:34%;animation-delay:-1s">Quem dirigiu?</div>
-      <div class="hx-fl" style="right:18px;top:15%;animation-delay:-3s"><span class="hx-m" id="hxA1" style="background:linear-gradient(135deg,#5A62C4,#17154B)">QT</span><span>Quentin Tarantino<small>Diretor · 1963</small></span></div>
-      <div class="hx-fl" style="left:28px;bottom:17%;animation-delay:-2s"><span class="hx-m" id="hxA2" style="background:linear-gradient(135deg,#C9772F,#5A2A0E)">GG</span><span>Greta Gerwig<small>87% compatível</small></span></div>
-      <div class="hx-fl hx-k" style="right:34px;bottom:24%;animation-delay:-4s">+100 pts</div></div>
+      
     </div>
   </section>
   <div class="wrap">
@@ -1528,7 +1579,7 @@ body[data-gt] #v-tl .tlarea.h .tlc .tt small{color:rgba(255,255,255,.72)}
       <div class="eyebrow">Jogos</div>
       <h2>Escolha <em class="w">o que jogar</em>.</h2>
       <p class="lead">Cada jogo testa um jeito diferente de conhecer cinema. Comece por qualquer um.</p>
-      <div class="hgames2"><button class="gcard qd" data-go="g-qd"><span class="tg">2367 filmes</span><div class="art"><div class="hx-mq"><div class="hx-tg2"><span>NÍVEL MÉDIO</span><span>1994</span></div><h4>Pulp Fiction</h4><div class="hx-o"><b>A</b>George Lucas</div><div class="hx-o r"><b>B</b>Quentin Tarantino</div><div class="hx-o"><b>C</b>Guillermo del Toro</div></div></div><div class="tx"><h3>Quem Dirigiu?</h3><p>Um filme na tela, quatro diretores e uma única resposta certa. Níveis, medalhas, modo livre e duelo.</p><span class="go">Jogar <i aria-hidden="true">→</i></span></div></button><button class="gcard ps" data-go="g-poster"><span class="tg">Visual</span><div class="art" style="align-items:flex-start"><div class="hx-mps"><div class="hx-mpo" data-pi="0" style="--a:#C9772F;--b:#5A2A0E;--h:#FFD27A;transform:rotate(-4deg);margin-top:14px"><div class="im" style="animation-delay:0s"></div></div><div class="hx-mpo" data-pi="1" style="--a:#5A62C4;--b:#17154B;--h:#C9CAEC;transform:rotate(3deg);margin-top:0px"><div class="im" style="animation-delay:-1.4s"></div><div class="pt">72<small>pts</small></div></div><div class="hx-mpo" data-pi="2" style="--a:#3C8B63;--b:#103B2B;--h:#BFF6EA;transform:rotate(-2deg);margin-top:14px"><div class="im" style="animation-delay:-2.8s"></div></div><div class="hx-mpo" data-pi="3" style="--a:#B8423D;--b:#4A1414;--h:#FFC8B8;transform:rotate(4deg);margin-top:0px"><div class="im" style="animation-delay:-4.2s"></div></div></div></div><div class="tx"><h3>Acerte o Pôster</h3><p>Só a capa do filme, bem borrada, que vai clareando aos poucos. Quanto antes você acertar, mais pontos.</p><span class="go">Jogar <i aria-hidden="true">→</i></span></div></button><button class="gcard tl" data-go="g-tl"><span class="tg">Ordem</span><div class="art"><div class="hx-mt"><div class="ln"></div><div class="pp" data-ti="0" style="left:10px;--c1:#5A62C4;--c2:#17154B;animation-delay:-0.2s"><span>1950</span></div><span class="dt" style="left:28.5px"></span><div class="pp" data-ti="1" style="left:76px;--c1:#C9772F;--c2:#5A2A0E;animation-delay:-0.7s"><span>1954</span></div><span class="dt" style="left:94.5px"></span><div class="pp" data-ti="2" style="left:142px;--c1:#2F7F8F;--c2:#0F2F4A;animation-delay:-1.2s"><span>1961</span></div><span class="dt" style="left:160.5px"></span><div class="pp" data-ti="3" style="left:208px;--c1:#9A4F9F;--c2:#2B1450;animation-delay:-1.7s"><span>1975</span></div><span class="dt" style="left:226.5px"></span><div class="pp" data-ti="4" style="left:274px;--c1:#3C8B63;--c2:#103B2B;animation-delay:-2.2s"><span>1985</span></div><span class="dt" style="left:292.5px"></span><span class="yr" style="left:0">mais antigo</span><span class="yr" style="right:0">mais recente</span></div></div><div class="tx"><h3>Linha do Tempo</h3><p>Arraste os filmes de um diretor do mais antigo ao mais recente e veja a linha se acender a cada acerto.</p><span class="go">Jogar <i aria-hidden="true">→</i></span></div></button><button class="gcard dn" data-go="g-dna"><span class="tg">Teste</span><div class="art" style="gap:20px"><div class="hx-mr"><svg width="132" height="132" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="44" fill="none" stroke="rgba(94,230,200,.18)" stroke-width="7"/><circle class="rg" cx="50" cy="50" r="44" fill="none" stroke="#5EE6C8" stroke-width="7" stroke-linecap="round" transform="rotate(-90 50 50)"/></svg><div class="pc"><span></span><small>%</small></div></div><div class="hx-chs"><span class="chp" style="left:0;top:0">ritmo lento</span><span class="chp" style="left:30px;top:32px">humor ácido</span><span class="chp" style="left:6px;top:64px">cores fortes</span></div></div><div class="tx"><h3>Descubra seu Diretor</h3><p>Responda sobre ritmo, medo e humor e descubra qual diretor combina com o seu jeito de ver cinema.</p><span class="go">Começar o teste <i aria-hidden="true">→</i></span></div></button><button class="gcard in" data-go="g-in"><span class="tg">Olho clínico</span><div class="art"><div class="hx-mi" aria-hidden="true"><span class="mp"></span><span class="mp"></span><span class="mp"></span><span class="mp"></span></div></div><div class="tx"><h3>Filme Intruso</h3><p>Três filmes do mesmo diretor e um intruso no meio. Ache o que não combina, do fácil ao difícil.</p><span class="go">Jogar <i aria-hidden="true">→</i></span></div></button><button class="gcard cd" data-go="g-cd"><span class="tg">Diário</span><div class="art"><div class="hx-mc" aria-hidden="true"></div></div><div class="tx"><h3>Cinedle</h3><p>Um diretor secreto por dia. Chute nomes, siga as cores e chegue nele em 6 tentativas.</p><span class="go">Jogar hoje <i aria-hidden="true">→</i></span></div></button><button class="gcard du" data-duelon="1"><span class="tg">2 equipes</span><div class="art"><div class="hx-mv"><div class="tm">Equipe A<b>7</b></div><div class="vs">VS</div><div class="tm">Equipe B<b>5</b></div></div></div><div class="tx"><h3>Duelo</h3><p>Duas equipes no mesmo aparelho ou cada uma no seu celular. Vence quem souber mais.</p><span class="go">Desafiar <i aria-hidden="true">→</i></span></div></button><div class="gcard so" aria-disabled="true"><div class="art"><svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#25226E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9h14l-1.5 12h-11zM9 9l.5 12M15 9l-.5 12M6 9a3 3 0 0 1 2.5-4.7A3 3 0 0 1 12 3a3 3 0 0 1 3.5 1.3A3 3 0 0 1 18 9"/></svg></div><div class="tx"><h3>Mais jogos a caminho</h3><p>O Sou Cinéfilo está crescendo. Novos jeitos de testar o seu repertório vão chegar aqui.</p><span class="go">Em breve</span></div></div></div>
+      <div class="hgames2"><button class="gcard qd" data-go="g-qd"><span class="tg">2367 filmes</span><div class="art"><div class="hx-mq"><div class="hx-tg2"><span>NÍVEL MÉDIO</span><span>1994</span></div><h4>Pulp Fiction</h4><div class="hx-o"><b>A</b>George Lucas</div><div class="hx-o r"><b>B</b>Quentin Tarantino</div><div class="hx-o"><b>C</b>Guillermo del Toro</div></div></div><div class="tx"><h3>Quem Dirigiu?</h3><p>Um filme na tela, quatro diretores e uma única resposta certa. Níveis, medalhas, modo livre e duelo.</p><span class="go">Jogar <i aria-hidden="true"><svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg></i></span></div></button><button class="gcard ps" data-go="g-poster"><span class="tg">Visual</span><div class="art" style="align-items:flex-start"><div class="hx-mps"><div class="hx-mpo" data-pi="0" style="--a:#C94F7C;--b:#4B0F2A;--h:#FFD27A;transform:rotate(-4deg);margin-top:14px"><div class="im" style="animation-delay:0s"></div></div><div class="hx-mpo" data-pi="1" style="--a:#5A62C4;--b:#17154B;--h:#C9CAEC;transform:rotate(3deg);margin-top:0px"><div class="im" style="animation-delay:-1.4s"></div><div class="pt">72<small>pts</small></div></div><div class="hx-mpo" data-pi="2" style="--a:#3C8B63;--b:#103B2B;--h:#BFF6EA;transform:rotate(-2deg);margin-top:14px"><div class="im" style="animation-delay:-2.8s"></div></div><div class="hx-mpo" data-pi="3" style="--a:#B8423D;--b:#4A1414;--h:#FFC8B8;transform:rotate(4deg);margin-top:0px"><div class="im" style="animation-delay:-4.2s"></div></div></div></div><div class="tx"><h3>Acerte o Pôster</h3><p>Só a capa do filme, bem borrada, que vai clareando aos poucos. Quanto antes você acertar, mais pontos.</p><span class="go">Jogar <i aria-hidden="true"><svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg></i></span></div></button><button class="gcard tl" data-go="g-tl"><span class="tg">Ordem</span><div class="art"><div class="hx-mt"><div class="ln"></div><div class="pp" data-ti="0" style="left:10px;--c1:#5A62C4;--c2:#17154B;animation-delay:-0.2s"><span>1950</span></div><span class="dt" style="left:28.5px"></span><div class="pp" data-ti="1" style="left:76px;--c1:#C94F7C;--c2:#4B0F2A;animation-delay:-0.7s"><span>1954</span></div><span class="dt" style="left:94.5px"></span><div class="pp" data-ti="2" style="left:142px;--c1:#2F7F8F;--c2:#0F2F4A;animation-delay:-1.2s"><span>1961</span></div><span class="dt" style="left:160.5px"></span><div class="pp" data-ti="3" style="left:208px;--c1:#9A4F9F;--c2:#2B1450;animation-delay:-1.7s"><span>1975</span></div><span class="dt" style="left:226.5px"></span><div class="pp" data-ti="4" style="left:274px;--c1:#3C8B63;--c2:#103B2B;animation-delay:-2.2s"><span>1985</span></div><span class="dt" style="left:292.5px"></span><span class="yr" style="left:0">mais antigo</span><span class="yr" style="right:0">mais recente</span></div></div><div class="tx"><h3>Linha do Tempo</h3><p>Arraste os filmes de um diretor do mais antigo ao mais recente e veja a linha se acender a cada acerto.</p><span class="go">Jogar <i aria-hidden="true"><svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg></i></span></div></button><button class="gcard dn" data-go="g-dna"><span class="tg">Teste</span><div class="art" style="gap:20px"><div class="hx-mr"><svg width="132" height="132" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="44" fill="none" stroke="rgba(94,230,200,.18)" stroke-width="7"/><circle class="rg" cx="50" cy="50" r="44" fill="none" stroke="#5EE6C8" stroke-width="7" stroke-linecap="round" transform="rotate(-90 50 50)"/></svg><div class="pc"><span></span><small>%</small></div></div><div class="hx-chs"><span class="chp" style="left:0;top:0">ritmo lento</span><span class="chp" style="left:30px;top:32px">humor ácido</span><span class="chp" style="left:6px;top:64px">cores fortes</span></div></div><div class="tx"><h3>Descubra seu Diretor</h3><p>Responda sobre ritmo, medo e humor e descubra qual diretor combina com o seu jeito de ver cinema.</p><span class="go">Começar o teste <i aria-hidden="true"><svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg></i></span></div></button><button class="gcard in" data-go="g-in"><span class="tg">Olho clínico</span><div class="art"><div class="hx-mi" aria-hidden="true"><span class="mp"></span><span class="mp"></span><span class="mp"></span><span class="mp"></span></div></div><div class="tx"><h3>Filme Intruso</h3><p>Três filmes do mesmo diretor e um intruso no meio. Ache o que não combina, do fácil ao difícil.</p><span class="go">Jogar <i aria-hidden="true"><svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg></i></span></div></button><button class="gcard cd" data-go="g-cd"><span class="tg">Diário</span><div class="art"><div class="hx-mc" aria-hidden="true"></div></div><div class="tx"><h3>Cinedle</h3><p>Um diretor secreto por dia. Chute nomes, siga as cores e chegue nele em 6 tentativas.</p><span class="go">Jogar hoje <i aria-hidden="true"><svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg></i></span></div></button><button class="gcard du" data-duelon="1"><span class="tg">2 equipes</span><div class="art"><div class="hx-mv"><div class="tm">Equipe A<b>7</b></div><div class="vs">VS</div><div class="tm">Equipe B<b>5</b></div></div></div><div class="tx"><h3>Duelo</h3><p>Duas equipes no mesmo aparelho ou cada uma no seu celular. Vence quem souber mais.</p><span class="go">Desafiar <i aria-hidden="true"><svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg></i></span></div></button><div class="gcard so" aria-disabled="true"><div class="art"><svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#25226E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9h14l-1.5 12h-11zM9 9l.5 12M15 9l-.5 12M6 9a3 3 0 0 1 2.5-4.7A3 3 0 0 1 12 3a3 3 0 0 1 3.5 1.3A3 3 0 0 1 18 9"/></svg></div><div class="tx"><h3>Mais jogos a caminho</h3><p>O Sou Cinéfilo está crescendo. Novos jeitos de testar o seu repertório vão chegar aqui.</p><span class="go">Em breve</span></div></div></div>
     </section>
 
     <section class="sec" id="frases">
@@ -1547,7 +1598,7 @@ body[data-gt] #v-tl .tlarea.h .tlc .tt small{color:rgba(255,255,255,.72)}
       <h2>Conheça quem está <em class="w">por trás da câmera</em>.</h2>
       <p class="lead">Filmografia, prêmios e um retrato do estilo de cada um dos 280 diretores do quiz, com um cartão para compartilhar.</p>
       <div class="dmq" id="dmq" aria-label="Alguns diretores do quiz"></div>
-      <button class="btn primary" data-dir="1">Ver os diretores <span aria-hidden="true">→</span></button>
+      <button class="btn primary" data-dir="1">Ver os diretores</button>
     </section>
 
     <section class="sec" id="sobre">
@@ -1567,7 +1618,7 @@ body[data-gt] #v-tl .tlarea.h .tlc .tt small{color:rgba(255,255,255,.72)}
 <!-- HOME DO JOGO QUEM DIRIGIU / PÁGINAS DOS JOGOS -->
 <main id="v-home" data-g="qd" hidden>
   <div class="wrap">
-    <div class="gbar"><button class="gback" data-hub="top"><span aria-hidden="true">←</span> Todos os jogos</button></div>
+    <div class="gbar"><button class="gback" data-hub="top">Todos os jogos</button></div>
     <section class="gpg" data-g="qd"><div class="hero2"><div class="hl"><div class="eyebrow">Quiz de cinema</div><h1>Você sabe mesmo <em>quem dirigiu</em> esse filme?</h1><p class="lead">Um título na tela, quatro diretores e uma única resposta certa. Do blockbuster ao filme esquecido de um mestre: descubra até onde vai o seu repertório.</p><ul class="perks2"><li>Gratuito</li><li>4 níveis</li><li>2367 filmes</li><li>Duelo para 2 equipes</li></ul></div><div class="art"><div class="stack pre" id="heroStack" aria-hidden="true"><div class="pcard f p0"><div class="tag"><span class="t-lvl"></span><span class="t-ano"></span></div><h3 class="t-tit"></h3><div class="orig t-orig"></div><div class="mini t-opts"></div><div class="who"><div class="mono t-ini"></div><div><small>Dirigido por</small><strong class="t-dir"></strong></div></div><div class="ov"></div></div><div class="pcard f p1"><div class="tag"><span class="t-lvl"></span><span class="t-ano"></span></div><h3 class="t-tit"></h3><div class="orig t-orig"></div><div class="mini t-opts"></div><div class="who"><div class="mono t-ini"></div><div><small>Dirigido por</small><strong class="t-dir"></strong></div></div><div class="ov"></div></div><div class="pcard f p2"><div class="tag"><span class="t-lvl"></span><span class="t-ano"></span></div><h3 class="t-tit"></h3><div class="orig t-orig"></div><div class="mini t-opts"></div><div class="who"><div class="mono t-ini"></div><div><small>Dirigido por</small><strong class="t-dir"></strong></div></div><div class="ov"></div></div></div>
     </div></div></section><section class="gp2" id="levels" data-g="qd">
   <div class="gtop"><div class="seg top2" id="topSeg" role="group" aria-label="Como jogar">
@@ -1579,12 +1630,12 @@ body[data-gt] #v-tl .tlarea.h .tlc .tt small{color:rgba(255,255,255,.72)}
   <div id="pn-level">
     <div class="grow"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20v-6M10 20V9M16 20V5M22 20V2"/></svg><span>Nível</span></div><div class="nchips" id="lvChips" role="group" aria-label="Nível"></div><p class="ghint" id="lvDesc"></p></div>
     <div class="grow"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Quantas perguntas</span></div><div class="nchips" id="lchips" role="group" aria-label="Quantidade de perguntas"></div></div>
-    <div class="gfoot"><div class="gs" id="lvSum"></div><button class="btn primary" id="lvStart">Começar o jogo <span aria-hidden="true">→</span></button></div>
+    <div class="gfoot"><div class="gs" id="lvSum"></div><button class="btn primary" id="lvStart">Começar o jogo <svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg></button></div>
   </div>
 
   <div id="pn-free" hidden>
     <div class="grow"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Quantas perguntas</span><small>mistura os 4 níveis em partes iguais, sem repetir filme</small></div><div class="nchips" id="fchips"></div></div>
-    <div class="gfoot"><div class="gs"><span id="fsum"></span></div><button class="btn primary" id="fstart">Jogar modo livre <span aria-hidden="true">→</span></button></div>
+    <div class="gfoot"><div class="gs"><span id="fsum"></span></div><button class="btn primary" id="fstart">Jogar modo livre <svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg></button></div>
     <p class="pnote small">O modo livre não vale medalha. Elas são conquistadas nas rodadas por nível.</p>
   </div>
 
@@ -1603,14 +1654,12 @@ body[data-gt] #v-tl .tlarea.h .tlc .tt small{color:rgba(255,255,255,.72)}
           <button data-dscope="level" aria-pressed="false">Nível específico</button>
         </div><div class="nchips" id="dlvls" hidden></div></div>
       <div class="grow"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Perguntas por equipe</span></div><div class="nchips" id="dnchips"></div></div>
-      <div class="gfoot"><div class="gs"><span id="dsum"></span></div><button class="btn primary" id="dstart">Começar duelo <span aria-hidden="true">→</span></button></div>
+      <div class="gfoot"><div class="gs"><span id="dsum"></span></div><button class="btn primary" id="dstart">Começar duelo <svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg></button></div>
     </div>
     <div id="dOn" class="donl" hidden>
       <div class="grow"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg><span>Seu nome</span></div><div class="lrow" style="margin:0"><input id="donName" type="text" maxlength="16" placeholder="Jogador" autocomplete="off"></div></div>
-      <div class="grow" id="donCfg"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20v-6M10 20V9M16 20V5M22 20V2"/></svg><span>Como vão jogar?</span><small>você escolhe, o convidado joga o mesmo</small></div><div class="seg" role="group" aria-label="Estilo da sala"><button data-oscope="free" aria-pressed="true">Livre (todos os níveis)</button><button data-oscope="level" aria-pressed="false">Nível específico</button></div><div class="nchips" id="olvls" hidden></div></div>
-      <div class="grow"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Quantas perguntas</span></div><div class="nchips" id="onchips"></div><p class="ghint" id="onsum"></p></div>
       <div class="g2c">
-        <div class="gcard2"><span class="gtag">Anfitrião</span><h4><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg> Criar sala</h4><p>Mande o link ou o código para um amigo. Cada um joga no seu aparelho, ao mesmo tempo, com as mesmas perguntas. Acertar vale 100 pontos, mais até 50 de bônus pela rapidez.</p><button class="btn primary" id="donCreate">Criar sala <span aria-hidden="true">→</span></button></div>
+        <div class="gcard2"><span class="gtag">Anfitrião</span><h4><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg> Criar sala</h4><p>Mande o link ou o código para um amigo. Cada um joga no seu aparelho, ao mesmo tempo, com as mesmas perguntas. Acertar vale 100 pontos, mais até 50 de bônus pela rapidez.</p><button class="btn primary" id="donCreate">Criar sala <svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg></button></div>
         <div class="gcard2"><span class="gtag g2t">Convidado</span><h4><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3"/></svg> Entrar com código</h4><p>Digite o código que o anfitrião te mandou.</p><div class="lrow" style="margin:0"><input class="cd" id="donCode" type="text" maxlength="6" placeholder="CÓDIGO" autocomplete="off"><button class="btn ghost" id="donJoin">Entrar</button></div></div>
       </div>
       <p class="pnote small">A conexão é direta entre os dois aparelhos, intermediada por um serviço público gratuito só para eles se encontrarem. Nada fica salvo.</p>
@@ -1645,11 +1694,11 @@ body[data-gt] #v-tl .tlarea.h .tlc .tt small{color:rgba(255,255,255,.72)}
     <div class="tnames"><label class="tin t0"><span>Equipe 1</span><input id="pnA" type="text" maxlength="18" placeholder="Equipe A" autocomplete="off"></label><label class="tin t1"><span>Equipe 2</span><input id="pnB" type="text" maxlength="18" placeholder="Equipe B" autocomplete="off"></label></div></div>
   <div class="grow"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20v-6M10 20V9M16 20V5M22 20V2"/></svg><span>Dificuldade</span></div><div class="nchips" id="pLv"></div></div>
   <div class="grow"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span id="pNL">Quantos pôsteres</span></div><div class="nchips" id="pN"></div></div>
-  <div class="gfoot"><div class="gs"><span id="pSum"></span></div><button class="btn primary" id="pStart">Jogar Acerte o Pôster <span aria-hidden="true">→</span></button></div>
+  <div class="gfoot"><div class="gs"><span id="pSum"></span></div><button class="btn primary" id="pStart">Jogar Acerte o Pôster <svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg></button></div>
 </div></section><section class="sec s2" data-g="poster"><div class="eyebrow">Como funciona</div><h2>Três passos, <em>sem enrolação</em>.</h2><div class="grid3"><div class="step"><div class="n">01</div><h3>Veja a capa borrada</h3><p>Só a capa do filme, bem desfocada. As faixas de título e créditos só aparecem depois da resposta.</p></div><div class="step"><div class="n">02</div><h3>Escolha o filme</h3><p>Quatro opções. O foco vai chegando com o tempo, e quanto mais nítido o pôster, menos a resposta vale.</p></div><div class="step"><div class="n">03</div><h3>Some pontos</h3><p>Acertar logo vale até 100 pontos. Passados 16 segundos a rodada vale zero. Seu recorde fica salvo neste navegador.</p></div></div></section><section class="sec s2" data-g="poster"><div class="eyebrow">Pontuação</div><h2>Quanto <em>mais nítido</em>, menos pontos.</h2><div class="scl"><div><div class="bl" style="filter:blur(20px)"></div><b>100 pts</b><small>logo ao abrir</small></div><div><div class="bl" style="filter:blur(14px)"></div><b>63 pts</b><small>depois de 4 segundos</small></div><div><div class="bl" style="filter:blur(6px)"></div><b>33 pts</b><small>depois de 8 segundos</small></div><div><div class="bl" style="filter:blur(1px)"></div><b>11 pts</b><small>depois de 12 segundos</small></div></div></section>
     <section class="gpg" id="linha" data-g="tl"><div class="hero2"><div class="hl"><div class="eyebrow">Linha do tempo</div><h1>Coloque a história do cinema <em>em ordem</em>.</h1><p class="lead">Os filmes de um mesmo diretor aparecem embaralhados. Arraste os pôsteres da esquerda para a direita, do mais antigo ao mais recente, e veja a linha se acender a cada acerto.</p><ul class="perks2"><li>3 a 10 filmes por rodada</li><li>Arraste para ordenar</li><li><span class="ndir">280</span> diretores</li></ul></div><div class="art"><div class="sx tl sxart"><div class="sxr"><div class="tld" id="tld" aria-hidden="true">
           <div class="tlp" style="--o:3;--n:0;--c1:#5A62C4;--c2:#17154B"><b>1941</b></div>
-          <div class="tlp" style="--o:0;--n:1;--c1:#C9772F;--c2:#5A2A0E"><b>1957</b></div>
+          <div class="tlp" style="--o:0;--n:1;--c1:#C94F7C;--c2:#4B0F2A"><b>1957</b></div>
           <div class="tlp" style="--o:4;--n:2;--c1:#2F7F8F;--c2:#0F2F4A"><b>1975</b></div>
           <div class="tlp" style="--o:1;--n:3;--c1:#9A4F9F;--c2:#2B1450"><b>1994</b></div>
           <div class="tlp" style="--o:2;--n:4;--c1:#3C8B63;--c2:#103B2B"><b>2014</b></div>
@@ -1662,7 +1711,7 @@ body[data-gt] #v-tl .tlarea.h .tlc .tt small{color:rgba(255,255,255,.72)}
   <div class="grow"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="4"/><path d="M2 21c0-4 3-6.5 7-6.5M16 17l2 2 4-4"/></svg><span>Diretores</span></div><div class="seg sm" id="tlModeSeg" role="group" aria-label="Diretores"><button data-tlmode="rand" aria-pressed="true"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>Aleatórios</button><button data-tlmode="mine" aria-pressed="false"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="4"/><path d="M2 21c0-4 3-6.5 7-6.5M16 17l2 2 4-4"/></svg>Escolher os meus</button></div></div><div class="grow" id="tlPickSec" hidden><div id="tlPickHost"></div></div>
   <div class="grow"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Filmes por rodada</span></div><div class="nchips" id="tlFilms" role="group" aria-label="Filmes por rodada"></div></div>
   <div id="tlRoundsRow"><div class="grow"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Rodadas</span><small>cada uma com um diretor</small></div><div class="nchips" id="tlRounds" role="group" aria-label="Número de rodadas"></div></div></div>
-  <div class="gfoot"><div class="gs" id="tlSum"></div><button class="btn primary" id="tlGo">Jogar a linha do tempo <span aria-hidden="true">→</span></button></div>
+  <div class="gfoot"><div class="gs" id="tlSum"></div><button class="btn primary" id="tlGo">Jogar a linha do tempo <svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg></button></div>
 </div></section><section class="sec s2" data-g="tl"><div class="eyebrow">Como funciona</div><h2>Três passos, <em>sem enrolação</em>.</h2><div class="grid3"><div class="step"><div class="n">01</div><h3>Veja os pôsteres</h3><p>Os filmes de um diretor aparecem embaralhados, sem o ano.</p></div><div class="step"><div class="n">02</div><h3>Arraste para ordenar</h3><p>Do mais antigo, à esquerda, ao mais recente, à direita. No celular a lista fica na vertical e você move cada filme com as setas.</p></div><div class="step"><div class="n">03</div><h3>Confira a ordem</h3><p>Verde acertou, vermelho errou, e o ano aparece embaixo de cada filme.</p></div></div></section>
     <section class="gpg" id="descubra" data-g="dna"><div class="hero2"><div class="hl"><div class="eyebrow">Descubra seu diretor</div><h1>Qual diretor <em>combina com você</em>?</h1><p class="lead">Perguntas sobre ritmo, silêncio, medo, humor, amor, imagem e muito mais, cada uma com quatro respostas. No fim, o diretor mais parecido com você aparece com uma carta escrita a partir das suas próprias escolhas e a porcentagem de compatibilidade.</p><ul class="perks2"><li>Sem certo ou errado</li><li>12 a 36 perguntas</li><li>Cartão para os stories</li></ul></div><div class="art"><div class="sx dn sxart"><div class="sxr"><div class="dmo" id="dmo" aria-hidden="true">
           <div class="dmr"><svg viewBox="0 0 120 120"><circle class="bg" cx="60" cy="60" r="54"/><circle class="fg" id="dmArc" cx="60" cy="60" r="54"/></svg><div class="num"><b id="dmPct">0</b><span>%</span></div></div>
@@ -1674,17 +1723,17 @@ body[data-gt] #v-tl .tlarea.h .tlc .tt small{color:rgba(255,255,255,.72)}
               <button class="dtile" data-dnq="24" aria-pressed="true"><b>24</b><span>Completo</span><small>cerca de 6 min</small></button>
               <button class="dtile" data-dnq="36" aria-pressed="false"><b>36</b><span>A fundo</span><small>cerca de 9 min</small></button>
             </div></div>
-  <div class="gfoot"><div class="gs">Dá para voltar e mudar uma resposta antes de ver o resultado.</div><button class="btn primary" id="dnGo">Começar o teste <span aria-hidden="true">→</span></button></div>
+  <div class="gfoot"><div class="gs">Dá para voltar e mudar uma resposta antes de ver o resultado.</div><button class="btn primary" id="dnGo">Começar o teste <svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg></button></div>
 </div></section><section class="sec s2" data-g="dna"><div class="eyebrow">Como funciona</div><h2>Três passos, <em>sem enrolação</em>.</h2><div class="grid3"><div class="step"><div class="n">01</div><h3>Responda sem certo nem errado</h3><p>Perguntas sobre ritmo, silêncio, medo, humor, amor e imagem, cada uma com quatro respostas.</p></div><div class="step"><div class="n">02</div><h3>Veja o diretor</h3><p>O diretor mais parecido com você aparece com a porcentagem de compatibilidade.</p></div><div class="step"><div class="n">03</div><h3>Leia a sua carta</h3><p>Um texto escrito a partir das suas próprias escolhas e um cartão pronto para os stories.</p></div></div></section><section class="sec s2" data-g="dna"><div class="eyebrow">Quem pode aparecer</div><h2><span class="ndir">280</span> diretores, <em>um com a sua cara</em>.</h2><div class="dgrid" id="dnPeople"></div></section><section class="gpg" id="intruso" data-g="in"><div class="hero2"><div class="hl"><div class="eyebrow">Jogo de olho clínico</div><h1>Qual filme <em>não é dele</em>?</h1><p class="lead">Quatro pôsteres: três são do mesmo diretor e um é intruso. Ache o que não combina. Quanto mais alto o nível, menos óbvio fica.</p><ul class="perks2"><li>3 níveis</li><li>Pôsteres de verdade</li><li>Recorde por nível</li></ul></div><div class="art"><div class="inart" id="inArt" aria-hidden="true"><p class="inwho2">Qual não é de <b data-who>…</b>?</p><div class="ipr"><div class="ip"><span></span></div><div class="ip"><span></span></div><div class="ip"><span></span></div><div class="ip"><span></span></div></div></div></div></div>
 <div class="gp2" id="inPanel">
   <div class="gtop"><span class="gq" style="margin:0"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20v-6M10 20V9M16 20V5M22 20V2"/></svg><span>Seu jogo</span></span><span class="gsum" id="inBest"></span></div>
   <div class="grow"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20v-6M10 20V9M16 20V5M22 20V2"/></svg><span>Nível</span></div><div class="nchips" id="inLv" role="group" aria-label="Nível"></div><p class="ghint" id="inLvDesc"></p></div>
   <div class="grow"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Rodadas</span><small>um diretor por rodada</small></div><div class="nchips" id="inN" role="group" aria-label="Número de rodadas"></div></div>
-  <div class="gfoot"><div class="gs" id="inSum"></div><button class="btn primary" id="inGo">Jogar o Filme Intruso <span aria-hidden="true">→</span></button></div>
+  <div class="gfoot"><div class="gs" id="inSum"></div><button class="btn primary" id="inGo">Jogar o Filme Intruso <svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg></button></div>
 </div></section><section class="sec s2" data-g="in"><div class="eyebrow">Como funciona</div><h2>Três passos, <em>sem enrolação</em>.</h2><div class="grid3"><div class="step"><div class="n">01</div><h3>Veja os quatro pôsteres</h3><p>Aparece um diretor e quatro filmes, com título e ano. Três são dele.</p></div><div class="step"><div class="n">02</div><h3>Aponte o intruso</h3><p>Toque no filme que não foi dirigido por ele. Acertou ou errou, o jogo mostra quem dirigiu cada um.</p></div><div class="step"><div class="n">03</div><h3>Some acertos</h3><p>Ao final você vê quantos intrusos achou. O melhor resultado de cada nível fica salvo neste navegador.</p></div></div></section><section class="sec s2" data-g="in"><div class="eyebrow">Os níveis</div><h2>Como o intruso é <em>escolhido</em>.</h2><div class="lvc"><div><span class="gtag">Fácil</span><h3>Para aquecer</h3><p>Filmes que a maioria já viu, de diretores bem conhecidos.</p></div><div><span class="gtag">Médio</span><h3>Pede memória</h3><p>Entram filmes menos lembrados de diretores famosos, e nem tudo é o que parece.</p></div><div><span class="gtag">Difícil</span><h3>Para quem vive de cinema</h3><p>Filmografia a fundo, com armadilhas. Dá para acertar, mas só com muito repertório.</p></div></div></section><section class="gpg" id="cinedle" data-g="cd"><div class="hero2"><div class="hl"><div class="eyebrow">Desafio diário</div><h1>Quem é o <em>diretor do dia</em>?</h1><p class="lead">Um diretor secreto por dia, o mesmo para todo mundo. Chute nomes e use as cores para chegar nele: país, nascimento, gênero, número de filmes, estreia e Oscar. Você tem 6 tentativas.</p><ul class="perks2"><li>Um por dia</li><li>6 tentativas</li><li>Sequência de dias</li></ul></div><div class="art"><div class="cdart" id="cdArt" aria-hidden="true"></div></div></div>
 <div class="gp2" id="cdPanel">
   <div class="gtop"><div class="seg top2" id="cdModeSeg" role="group" aria-label="Modo"><button data-cdmode="daily" aria-pressed="true"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Diretor do dia</button><button data-cdmode="free" aria-pressed="false"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>Treino</button></div><span class="gsum" id="cdStatus"></span></div>
-  <div class="gfoot"><div class="gs" id="cdSum"></div><button class="btn primary" id="cdGo"><span id="cdGoTxt">Jogar o diretor de hoje</span> <span aria-hidden="true">→</span></button></div>
+  <div class="gfoot"><div class="gs" id="cdSum"></div><button class="btn primary" id="cdGo"><span id="cdGoTxt">Jogar o diretor de hoje</span></button></div>
 </div></section><section class="sec s2" data-g="cd"><div class="eyebrow">Como funciona</div><h2>Três passos, <em>sem enrolação</em>.</h2><div class="grid3"><div class="step"><div class="n">01</div><h3>Chute um diretor</h3><p>Digite o nome e escolha na lista. Vale qualquer um dos 280 diretores do site.</p></div><div class="step"><div class="n">02</div><h3>Leia as cores</h3><p>Cada palpite mostra seis pistas. Verde é igual, amarelo é perto, cinza é longe, e a seta aponta para o secreto.</p></div><div class="step"><div class="n">03</div><h3>Acerte em 6</h3><p>Se acertar, a sequência de dias cresce. Depois dá para compartilhar o resultado sem entregar o nome.</p></div></div></section><section class="sec s2" data-g="cd"><div class="eyebrow">As pistas</div><h2>O que cada <em>cor</em> quer dizer.</h2><div class="lgd"><div><div class="cdt g"><b>EUA</b></div><p><b>Verde:</b> igual ao do diretor secreto.</p></div><div><div class="cdt y"><b>Drama</b></div><p><b>Amarelo:</b> perto. Por exemplo, o gênero aparece entre os principais dele, ou o ano é próximo.</p></div><div><div class="cdt n"><b>Japão</b></div><p><b>Cinza:</b> longe, ou diferente.</p></div><div><div class="cdt n"><b>1965</b><i>↑</i></div><p><b>Seta:</b> o valor do secreto é maior. ↑ nasceu depois, ↓ nasceu antes.</p></div></div></section>
     
     
@@ -1722,7 +1771,7 @@ body[data-gt] #v-tl .tlarea.h .tlc .tt small{color:rgba(255,255,255,.72)}
       <div class="ask">Quem dirigiu este filme?</div>
       <div class="opts" id="opts"></div>
       <div id="fb" aria-live="polite"></div>
-      <div class="next" id="nextRow"><button class="btn ghost" id="skipBtn" type="button" title="Volta no fim">Pular</button><button class="btn primary" id="confirmBtn" disabled>Confirmar resposta</button><button class="btn primary" id="nextBtn" hidden>Próxima pergunta <span aria-hidden="true">→</span></button></div>
+      <div class="next" id="nextRow"><button class="btn ghost" id="skipBtn" type="button" title="Volta no fim">Pular</button><button class="btn primary" id="confirmBtn" disabled>Confirmar resposta</button><button class="btn primary" id="nextBtn" hidden>Próxima pergunta</button></div>
     </div>
   </div>
 </main>
@@ -1739,7 +1788,7 @@ body[data-gt] #v-tl .tlarea.h .tlc .tt small{color:rgba(255,255,255,.72)}
         <blockquote class="rquote" id="rquote" hidden></blockquote>
         <p class="rnext" id="rnext"></p>
         <div class="ract">
-          <button class="btn primary" id="again">Jogar de novo <span aria-hidden="true">→</span></button>
+          <button class="btn primary" id="again">Jogar de novo <svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg></button>
           <button class="btn ghost" id="other">Mudar de nível</button>
           <button class="btn ghost" id="share">Compartilhar</button>
         </div>
@@ -1762,7 +1811,7 @@ body[data-gt] #v-tl .tlarea.h .tlc .tt small{color:rgba(255,255,255,.72)}
         <blockquote class="rquote" id="dquote" hidden></blockquote>
         <div class="dteams" id="dteams"></div>
         <div class="ract">
-          <button class="btn primary" id="drevanche">Revanche <span aria-hidden="true">→</span></button>
+          <button class="btn primary" id="drevanche">Revanche <svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg></button>
           <button class="btn ghost" id="dnovo">Novo duelo</button>
           <button class="btn ghost" id="dshare">Compartilhar</button>
           <button class="btn ghost" id="dhome">Início</button>
@@ -2131,7 +2180,7 @@ function renderLevels(){
       <p>${l.desc}</p>
       <span class="meta"><span>Aprox. ${Math.max(1, Math.round(l.min*sz/10))} min</span><span>Dificuldade <span class="dots">${dots}</span></span></span>
       <span class="best">${b!=null ? "Seu melhor: "+b+"/"+sz : total+" filmes no banco"}</span>
-      <span class="btn ${l.feat?"light":"primary"} go">Jogar ${l.name.toLowerCase()} <span aria-hidden="true">→</span></span>
+      <span class="btn ${l.feat?"light":"primary"} go">Jogar ${l.name.toLowerCase()} <svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg></span>
     </button>`;
   }).join("");
 }
@@ -2265,7 +2314,7 @@ async function answer(i){
   if (S.mode === "duel") $("turnScore").innerHTML = `${esc(S.teams[0])} <b>${S.scores[0]}</b> × <b>${S.scores[1]}</b> ${esc(S.teams[1])}`;
   $("confirmBtn").hidden = true; $("skipBtn").hidden = true;
   $("nextBtn").hidden = false;
-  $("nextBtn").innerHTML = ((S.i+1 >= S.size || (S.surv && !ok)) ? (S.mode === "duel" ? "Ver o vencedor" : "Ver resultado") : (S.mode === "duel" ? "Próxima equipe" : "Próxima pergunta")) + ' <span aria-hidden="true">→</span>';
+  $("nextBtn").innerHTML = ((S.i+1 >= S.size || (S.surv && !ok)) ? (S.mode === "duel" ? "Ver o vencedor" : "Ver resultado") : (S.mode === "duel" ? "Próxima equipe" : "Próxima pergunta")) + '';
   $("nextBtn").focus({preventScroll:true});
   $("nextRow").scrollIntoView({block:"nearest", behavior:"smooth"});
   const url = await getPhoto(q.c);
@@ -2932,7 +2981,7 @@ addEventListener("hashchange",route);route();
   var top=D.filter(function(d){return d.foto&&d.films&&d.films.length>4}).sort(function(a,b){return fame(b)-fame(a)}).slice(0,24);
   function esc2(x){return String(x).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
   function ini(n){return n.split(" ").filter(function(w){return /^[A-ZÀ-Ý]/.test(w)}).map(function(w){return w[0]}).slice(0,2).join("")}
-  var PAL=[["#7A4B9E","#2B1B5E"],["#C9772F","#4A2412"],["#2F7F8F","#0F2F4A"],["#9E3D54","#3A1230"],["#3F7F5C","#12302A"],["#5A62C4","#1B1A55"]];
+  var PAL=[["#7A4B9E","#2B1B5E"],["#C94F7C","#4A2412"],["#2F7F8F","#0F2F4A"],["#9E3D54","#3A1230"],["#3F7F5C","#12302A"],["#5A62C4","#1B1A55"]];
   function card(d,k){
     var h=0;for(var i=0;i<d.n.length;i++)h=(h*31+d.n.charCodeAt(i))>>>0;var c=PAL[h%PAL.length];
     var g=(d.kn&&d.kn[0])||(d.gen&&d.gen[0]&&d.gen[0][0])||"";var n=d.tot>=100?"100+":d.tot;
@@ -3066,7 +3115,7 @@ addEventListener("hashchange",route);route();
     [].forEach.call(document.querySelectorAll("#pOpts .opt"),function(b,k){b.disabled=true;if(c.opts[k].ok)b.classList.add("ok");else if(k===i)b.classList.add("bad");else b.classList.add("dim")});
     var pf=document.getElementById("pf");pf.classList.add("done");document.getElementById("pImg").style.filter="blur(0px)";
     var m=splitTitle(q.f),who=G.team?esc(G.names[tm])+' ':'';
-    document.getElementById("pFb").innerHTML='<div style="text-align:center;margin-top:16px"><div class="pgain'+(gain?'':' zero')+'">'+(ok?who+'+'+gain+' pts':(i<0?'Tempo esgotado':who+'0 pts'))+'</div><p style="margin:6px 0 14px">'+(ok?'':'Era ')+'<b>'+esc(m.main)+'</b> ('+q.y+') · dirigido por <b>'+esc(nm(q.c))+'</b></p><button class="btn primary" id="pNext">'+((G.i+1>=G.items.length||(G.surv&&!ok))?'Ver resultado':(G.team?'Passar a vez':'Próximo pôster'))+' <span aria-hidden="true">→</span></button></div>';
+    document.getElementById("pFb").innerHTML='<div style="text-align:center;margin-top:16px"><div class="pgain'+(gain?'':' zero')+'">'+(ok?who+'+'+gain+' pts':(i<0?'Tempo esgotado':who+'0 pts'))+'</div><p style="margin:6px 0 14px">'+(ok?'':'Era ')+'<b>'+esc(m.main)+'</b> ('+q.y+') · dirigido por <b>'+esc(nm(q.c))+'</b></p><button class="btn primary" id="pNext">'+((G.i+1>=G.items.length||(G.surv&&!ok))?'Ver resultado':(G.team?'Passar a vez':'Próximo pôster'))+'</button></div>';
     var nb=document.getElementById("pNext");if(nb){nb.focus({preventScroll:true});nb.scrollIntoView({block:"nearest",behavior:"smooth"})}
   }
   function next(){if(G.surv&&G.res.length&&!G.res[G.res.length-1].ok)return end();G.i++;if(G.i>=G.items.length)end();else round()}
@@ -3322,7 +3371,7 @@ addEventListener("hashchange",route);route();
     setTimeout(function(){
       C.order=C.sorted.slice();layout();
       var last=T.i+1>=T.rounds.length;
-      document.getElementById("tlAct").innerHTML='<div class="tlgain'+(gain?'':' zero')+'">'+(correct===n?'Perfeito! +'+gain:'+'+gain)+' pts · '+correct+' de '+n+'</div><button class="btn primary" id="tlNext">'+(last?'Ver resultado':'Próximo diretor')+' <span aria-hidden="true">→</span></button>';
+      document.getElementById("tlAct").innerHTML='<div class="tlgain'+(gain?'':' zero')+'">'+(correct===n?'Perfeito! +'+gain:'+'+gain)+' pts · '+correct+' de '+n+'</div><button class="btn primary" id="tlNext">'+(last?'Ver resultado':'Próximo diretor')+'</button>';
       var nb=document.getElementById("tlNext");if(nb){nb.focus({preventScroll:true});nb.scrollIntoView({block:"nearest",behavior:"smooth"})}
     },700);
   }
@@ -3394,7 +3443,7 @@ addEventListener("hashchange",route);route();
   var D=window.dirData||[];
   document.querySelectorAll(".ndir").forEach(function(n){n.textContent=D.length||280});
   var box=document.getElementById("dnPeople");if(!box)return;
-  var PAL=[["#5A62C4","#17154B"],["#C9772F","#5A2A0E"],["#2F7F8F","#0F2F4A"],["#9A4F9F","#2B1450"],["#3C8B63","#103B2B"],["#B8423D","#4A1414"]];
+  var PAL=[["#5A62C4","#17154B"],["#C94F7C","#4B0F2A"],["#2F7F8F","#0F2F4A"],["#9A4F9F","#2B1450"],["#3C8B63","#103B2B"],["#B8423D","#4A1414"]];
   function esc(x){return String(x).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
   var pick=window.cineRnd?window.cineRnd.shuf(window.cineRnd.topDirs(40)).slice(0,8):[];
   box.innerHTML=pick.map(function(d,i){
@@ -3779,7 +3828,7 @@ addEventListener("hashchange",route);route();
       '<div class="dbar" role="progressbar" aria-valuemin="0" aria-valuemax="'+A.qs.length+'" aria-valuenow="'+i+'"><i style="width:'+(i/A.qs.length*100)+'%"></i></div>'+
       '<div class="dq2" id="dnQ"><div class="dtag">'+esc2(qq.a)+'</div><h2>'+esc2(qq.t)+'</h2><div class="dopts">'+
       qq.o.map(function(op,k){return '<button class="dop2'+(A.ans[i]===k?' pick':'')+'" data-k="'+k+'" style="--d:'+(k*60)+'ms"><span class="lt">'+letters[k]+'</span><span>'+esc2(op.t)+'</span></button>'}).join("")+
-      '</div><div class="dnav">'+(i>0?'<button class="dprev" id="dnPrev">← Voltar</button>':'<span></span>')+'<span class="dhint">Escolha a que mais combina com você</span></div></div>';
+      '</div><div class="dnav">'+(i>0?'<button class="dprev" id="dnPrev">Voltar</button>':'<span></span>')+'<span class="dhint">Escolha a que mais combina com você</span></div></div>';
     var f=root.querySelector(".dbar i");if(f)requestAnimationFrame(function(){requestAnimationFrame(function(){f.style.width=((i+1)/A.qs.length*100)+"%"})});
   }
   function answer(k){
@@ -3975,7 +4024,7 @@ addEventListener("hashchange",route);route();
     if(h){
       var lk=link();
       root.innerHTML='<div class="tltop"><span></span><button id="lvBack">Voltar</button></div><div class="panel"><h3>Sua sala</h3><p class="pnote">Mande o código ou o link para o seu amigo.</p><div class="lcode" id="lvC">'+esc2(st.code)+'</div><div class="lrow"><button class="btn ghost" id="lvCopy" data-l="'+esc2(lk)+'">Copiar link</button><a class="btn ghost" target="_blank" rel="noopener" href="https://wa.me/?text='+encodeURIComponent("Bora um duelo no Quem Dirigiu? Entra aqui: "+lk)+'">Enviar no WhatsApp</a></div>'+pl+
-        (st.op?'<div class="flabel">Dificuldade</div><div class="nchips">'+LV.map(function(a){return '<button class="nchip wide" data-llv="'+a[0]+'" aria-pressed="'+(a[0]===st.cfg.lv)+'">'+a[1]+'</button>'}).join("")+'</div><div class="flabel" style="margin-top:14px">Perguntas</div><div class="nchips">'+NS.map(function(n){return '<button class="nchip" data-lln="'+n+'" aria-pressed="'+(n===st.cfg.n)+'">'+n+'</button>'}).join("")+'</div><div class="lrow" style="margin-top:16px"><button class="btn primary" id="lvGo">Começar duelo <span aria-hidden="true">→</span></button></div>':'<p class="pnote small" style="margin:14px 0 0">Partida: <b>'+(st.cfg.lv==="todos"?"todos os níveis":LEVELS[st.cfg.lv].name.toLowerCase())+'</b>, '+st.cfg.n+' perguntas. Dá para mudar quando o amigo entrar.</p><div class="lwait"><i></i><i></i><i></i>'+(msg||"Aguardando o seu amigo entrar…")+'</div>')+'</div>';
+        (st.op?'<div class="flabel">Dificuldade</div><div class="nchips">'+LV.map(function(a){return '<button class="nchip wide" data-llv="'+a[0]+'" aria-pressed="'+(a[0]===st.cfg.lv)+'">'+a[1]+'</button>'}).join("")+'</div><div class="flabel" style="margin-top:14px">Perguntas</div><div class="nchips">'+NS.map(function(n){return '<button class="nchip" data-lln="'+n+'" aria-pressed="'+(n===st.cfg.n)+'">'+n+'</button>'}).join("")+'</div><div class="lrow" style="margin-top:16px"><button class="btn primary" id="lvGo">Começar duelo <svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg></button></div>':'<p class="pnote small" style="margin:14px 0 0">Partida: <b>'+(st.cfg.lv==="todos"?"todos os níveis":LEVELS[st.cfg.lv].name.toLowerCase())+'</b>, '+st.cfg.n+' perguntas. Dá para mudar quando o amigo entrar.</p><div class="lwait"><i></i><i></i><i></i>'+(msg||"Aguardando o seu amigo entrar…")+'</div>')+'</div>';
     }else{
       root.innerHTML='<div class="tltop"><span></span><button id="lvBack">Voltar</button></div><div class="panel"><h3>Conectado!</h3>'+pl+'<div class="lwait"><i></i><i></i><i></i>Aguardando o anfitrião começar…</div></div>';
     }
@@ -4267,7 +4316,7 @@ addEventListener("hashchange",route);route();
   tiles();
   document.addEventListener("click",function(e){
     var b=e.target.closest("[data-dwhere]");if(b){setWhere(b.dataset.dwhere);return}
-    if(e.target.closest("#donCreate")){window.Modes.live.create(nm(),window.__onCfg&&window.__onCfg());return}
+    if(e.target.closest("#donCreate")){window.__onOpts&&window.__onOpts(nm());return}
     if(e.target.closest("#donJoin")){window.Modes.live.join(nm(),$("donCode").value);return}
     var j=e.target.closest("[data-duelon]");if(j){e.preventDefault();goSection("levels","duel");setTimeout(function(){setWhere("on")},80);var dd=document.querySelector(".navdd");if(dd)dd.classList.remove("on");return}
     var t=e.target.closest("#dnTiles [data-dnq]");if(t){lsSet("dnaN",t.dataset.dnq);tiles();return}
@@ -4447,8 +4496,9 @@ addEventListener("hashchange",route);route();
       var sm=el.querySelector(".itt small");if(sm)sm.textContent=x.f[0];var dr=el.querySelector(".dr");dr.hidden=false;dr.textContent=(x.intr?"É de ":"")+x.d.n});
     if(!ok)els[i].classList.add("wrong");
     var x=r.items.filter(function(z){return z.intr})[0];
+    (G.res=G.res||[]).push({f:x.f,d:x.d,ok:ok});
     var note="";
-    g("inFb").innerHTML='<div class="infb"><div class="pgain'+(ok?'':' zero')+'">'+(ok?'Acertou!':'Não foi essa')+'</div><p>O intruso era <b>'+esc(x.f[1])+'</b> ('+x.f[0]+'), dirigido por <b>'+esc(x.d.n)+'</b>. '+note+'</p><button class="btn primary" id="inNext">'+((G.i+1>=G.n&&!G.surv)||G.over?'Ver resultado':'Próximo')+' <span aria-hidden="true">→</span></button></div>';
+    g("inFb").innerHTML='<div class="infb"><div class="pgain'+(ok?'':' zero')+'">'+(ok?'Acertou!':'Não foi essa')+'</div><p>O intruso era <b>'+esc(x.f[1])+'</b> ('+x.f[0]+'), dirigido por <b>'+esc(x.d.n)+'</b>. '+note+'</p><button class="btn primary" id="inNext">'+((G.i+1>=G.n&&!G.surv)||G.over?'Ver resultado':'Próximo')+'</button></div>';
     var nb=g("inNext");if(nb){nb.focus({preventScroll:true});nb.scrollIntoView({block:"nearest",behavior:"smooth"})}
     var tot=document.querySelector("#inRoot .ptot b");if(tot)tot.textContent=G.score;
     var st=g("inStr");if(st){st.hidden=G.streak<2;st.textContent=G.streak+" seguidos"}
@@ -4457,8 +4507,11 @@ addEventListener("hashchange",route);route();
     var k=G.lv+"_"+(G.surv?-1:cfg.n),b=bests(),pct=G.surv?(G.score>=12?.95:G.score>=8?.75:G.score>=4?.5:.2):G.score/G.n,rec=false;
     if((G.surv||G.n===cfg.n)&&G.score>0&&(b[k]==null||G.score>b[k])){b[k]=G.score;rec=true;try{localStorage.setItem("in_best",JSON.stringify(b))}catch(e){}}
     var t=pct>=.9?["Olho de lince","Nada escapa de você."]:pct>=.7?["Cinéfilo atento","Poucos intrusos passam."]:pct>=.45?["Bom começo","Dá para afiar o olho."]:["Os intrusos venceram",G.lv==="facil"?"Respira e tenta de novo, você chega lá.":G.lv==="dificil"?"Esse nível é duro. Tente de novo, ou aqueça no médio.":"Tente de novo, ou aqueça no nível fácil."];
-    root().innerHTML='<div class="panel inres"><div class="eyebrow" style="justify-content:center">'+t[0]+'</div><div class="inbig">'+G.score+'<span>'+(G.surv?(G.score===1?' seguido':' seguidos'):' / '+G.n)+'</span></div><p class="pnote">'+t[1]+' Nível '+LV[G.lv].name+(G.best>1?' · melhor sequência: '+G.best:'')+(rec?' · <b>novo recorde!</b>':'')+'</p>'+
-    '<div class="inbtns"><button class="btn primary" id="inAgain">Jogar de novo</button><button class="btn ghost" id="inShare">Compartilhar</button><button class="btn ghost" id="inHome">Voltar ao início</button></div></div>'
+    var hits=G.score,tot=(G.res||[]).length;
+    var rows=(G.res||[]).map(function(r){return '<div><img alt="" src="https://image.tmdb.org/t/p/w92'+r.f[4]+'" onerror="this.style.visibility=\'hidden\'"><span style="text-align:left">'+esc(r.f[1])+' <small>('+r.f[0]+') · '+esc(r.d.n)+'</small></span><b class="'+(r.ok?'okc':'badc')+'">'+(r.ok?'Achou':'Errou')+'</b></div>'}).join("");
+    root().innerHTML='<div class="panel inres"><div class="eyebrow" style="justify-content:center">'+t[0]+'</div><div class="inbig">'+G.score+'<span>'+(G.surv?(G.score===1?' seguido':' seguidos'):' / '+G.n)+'</span></div><p class="pnote">'+t[1]+'</p><p>'+hits+' de '+tot+' intrusos encontrados · nível '+LV[G.lv].name.toLowerCase()+'</p>'+(G.best>=2?'<p class="rstreak">Maior sequência: '+G.best+'</p>':'')+(rec?'<p class="pgain">Novo recorde!</p>':'')+'<div class="pres">'+rows+'</div>'+
+    '<div class="inbtns"><button class="btn primary" id="inAgain">Jogar de novo</button><button class="btn ghost" id="inShare">Compartilhar</button><button class="btn ghost" id="inHome">Voltar ao início</button></div></div>';
+    if(rec&&window.confete)window.confete()
   }
   function share(btn){
     var txt=G.surv?"Achei "+G.score+" intrusos seguidos no nível "+LV[G.lv].name+" do Filme Intruso, no Sou Cinéfilo. Consegue mais?":"Fiz "+G.score+"/"+G.n+" no nível "+LV[G.lv].name+" do Filme Intruso, no Sou Cinéfilo. Será que você acha o intruso?",old=btn.textContent;
@@ -4635,19 +4688,21 @@ addEventListener("hashchange",route);route();
 <script>
 (function(){
   var H={"p":[["/wRKwrfQ7p0ttrb09G3mcOSyN1pk.jpg","2014","O Hobbit: A Batalha dos Cinco Exércitos"],["/5dGufuaIG5vNcxPm8QPij5MSPeQ.jpg","2017","Star Wars: Os Últimos Jedi"],["/tR1XVa5bxgdh2bRw2u0DzrgkO2l.jpg","2014","Interestelar"],["/7gwtDnEJ39QarOyzt9bSxEj3SkD.jpg","2014","Birdman ou (A Inesperada Virtude da Ignorância)"],["/k1GZVllOORTiN0XTPdumt9CSAcc.jpg","2012","Prometheus"],["/xfbnEVFKS26YHLuuckP0i58GPlo.jpg","2013","O Lobo de Wall Street"],["/ar63Sx8jeqk0OOu2uchS477S2zE.jpg","2012","Django Livre"],["/lNyuX5XibtzRImuhACGy42jHXIs.jpg","1994","O Profissional"],["/xaKydnMw6wR1MBAjS5seGPVusbs.jpg","2021","Homem-Aranha: Sem Volta Para Casa"],["/jfTo9U9OgOXODEEspNnYFuZdR1q.jpg","2015","Os Oito Odiados"],["/3mEoGWyJCZTSoYyjFD3gFd6hzU4.jpg","1998","O Show de Truman: O Show da Vida"],["/hhoKhsyJ3hFaxEm5pMdZRiTu2lJ.jpg","2001","A Viagem de Chihiro"],["/rJEU0u6hvtqBy344z0bpI194LeQ.jpg","1979","Alien: O Oitavo Passageiro"],["/vSl1u0z4TCKL4VPVyr6KDtZibYT.jpg","2005","A Fantástica Fábrica de Chocolate"],["/1nkwRL17cAGO8A1yu3miRBdvOsl.jpg","2017","Homem-Aranha: De Volta ao Lar"],["/hMVzCXh2vmCMzZS2mM2QvMqQZZs.jpg","2011","X-Men: Primeira Classe"],["/6VDrtm6rLEW4hByVA45V0Gpime0.jpg","2003","Kill Bill: Volume 1"],["/z8k5EhZZTLsCRF8NWjSe6snWNZg.jpg","2004","Os Incríveis"],["/dZXYPSEaXCeigR2GEuZoukNmLTf.jpg","1995","Seven - Os Sete Crimes Capitais"],["/lfJAj9OGsiSsbFxouRkGKqibHxf.jpg","1993","A Lista de Schindler"],["/j15lZasREutscon6e61LSSNJoN7.jpg","2007","Piratas do Caribe: No Fim do Mundo"],["/yabOguSrb8ffUXCkI6t8Rw7xtSh.jpg","2014","O Grande Hotel Budapeste"],["/4DUClyGA6OqjXv6yC0Imf6THGfp.jpg","2000","Gladiador"],["/y5ibL0vFnzsRiIHosw0WOfHtIj1.jpg","1982","Blade Runner: O Caçador de Andróides"],["/yvD1G41HwHgj8afCjmfGbyRmBBR.jpg","2006","Piratas do Caribe: O Baú da Morte"],["/kRAHy9CQnNT16vTvtJtu9pRgjEG.jpg","2017","John Wick: Um Novo Dia para Matar"],["/vzROjQbgKWMVf2EldXipCcjpuBL.jpg","2010","Homem de Ferro 2"],["/tqlmLBt2i5SHNpXEj2nqk10Crwa.jpg","2010","Cisne Negro"],["/zqbwK2ugTPauBQwzcNAM3PxVoww.jpg","2004","Brilho Eterno de uma Mente sem Lembranças"],["/nAE3BCzE5S4NmUHSmO9mXVqZRUa.jpg","2012","As Aventuras de Pi"],["/uYxz0lIiNgErrPhQbSjUdwYxtFc.jpg","2017","It: A Coisa"],["/dw7X9YPjjAfIxKHW04V64Bb9TB0.jpg","1977","Guerra nas Estrelas"],["/xB05Gyeo2w4RBwt7nZlPkjZzt9X.jpg","2004","Homem-Aranha 2"],["/9e3Dz7aCANy5aRUQF745IlNloJ1.jpg","2010","A Origem"],["/5p6cdAeUevsLOX0oI1T4JIul4QO.jpg","2001","Monstros S.A."],["/5831VrgpYNPEokBwxurLVpQ3twM.jpg","2007","Homem-Aranha 3"],["/fo4SSoNT1ASI4JP7dOLrosWNWKa.jpg","1984","O Exterminador do Futuro"],["/hm6nONQOgVpKmRK5YUX9EqfJ0NH.jpg","2022","Avatar: O Caminho da Água"],["/lZtmn2pLw1kgDYj4Ig4s3DYBQCD.jpg","2012","O Hobbit: Uma Jornada Inesperada"],["/wbo0CYG6SOFxFkoe9BiqvivLggN.jpg","2018","Aquaman"],["/lRRMQhlOLM9xgvjKKFndOmptqKR.jpg","2009","Avatar"],["/ujQthWB6c0ojlARk28NSTmqidbF.jpg","2017","Mulher-Maravilha"],["/19wxfSXHhuJBRbbfUweCsfXFhpv.jpg","2011","Capitão América: O Primeiro Vingador"],["/19ZNLpF6ibwcFIynGb65X3Z1bnL.jpg","2009","Sherlock Holmes"],["/9m1nJ2MfTG5QEmjOCg0b4YCo4W8.jpg","2002","Star Wars: Episódio II - Ataque dos Clones"],["/gNk8UNAumXlfCdtaxDqsQe7ZGlt.jpg","1999","Star Wars: Episódio I - A Ameaça Fantasma"],["/wOMxE93W6KcZTuCeNUByNTSaLLt.jpg","1972","O Poderoso Chefão"],["/rtBRW9xkP94PRuyDa9zTZahuo27.jpg","2010","Alice no País das Maravilhas"],["/6f10Yn1vooCMhb6DrY6AvsK19Yh.jpg","2014","Lucy"],["/tX0o4AdHpidgniTWwfzK0dNTKrc.jpg","2019","Homem-Aranha: Longe de Casa"],["/jdlY8Bhcb4Qzfldr1JaexYBgyW3.jpg","2007","Onde os Fracos Não Têm Vez"],["/lBcQGk1ygGM2wYmpypFrPp0YohN.jpg","2014","John Wick - De Volta ao Jogo"],["/hMLxNLCXRDd62acfCBn6mIyW1HU.jpg","1998","O Resgate do Soldado Ryan"],["/tH64gzAHDFg7EFcgfkkZyHdGM5P.jpg","2015","Mad Max: Estrada da Fúria"],["/686F0CEPmI4ZXjFbWtIHQOBwnfI.jpg","1995","Toy Story: Um Mundo de Aventuras"],["/hfpnFtgcYom9Gk9s1IyWiovpZYg.jpg","2015","Ex_Machina: Instinto Artificial"],["/z0Vd21WWJUtGN48FJAI8rmd0RPN.jpg","2012","007: Operação Skyfall"],["/aEV9QmgBqjRTdjsvdCgdK89tavQ.jpg","2011","Thor"],["/qNiwJPVCO4cgiM8LVtxwPV2HxHS.jpg","2008","WALL-E"],["/A4kvp7vY1BDLrrQIagRCffLKj1t.jpg","2018","Vingadores: Guerra Infinita"],["/RbZQL5hXmydecu82UHw9ZGyytB.jpg","2002","Homem-Aranha"],["/602vevIURmpDfzbnv5Ubi6wIkQm.jpg","2011","Drive"],["/4lj1ikfsSmMZNyfdi8R8Tv5tsgb.jpg","2008","Batman: O Cavaleiro das Trevas"],["/cAGrjXVQoNyqHgxPoXr68JGqmp0.jpg","2014","X-Men: Dias de um Futuro Esquecido"],["/A0RoSZh8PEYJgDMgM2EV7Ycz3dR.jpg","2017","Corra!"],["/6UjYycIR6VLYgggfNpmSPJHmFS0.jpg","2009","Bastardos Inglórios"],["/7leBWM27Q0TUnvmhw6WnFNgGn4G.jpg","2000","Amnésia"],["/mCs8vxvScCqVM3YFMQIdbrdFEhu.jpg","2002","O Senhor dos Anéis: As Duas Torres"],["/auVn38xLZRTlogkwFuS4Ikeiwrl.jpg","2007","300"],["/41Co0TRUJNyvjr2vHBEcAKAEFpX.jpg","2007","Ratatouille"],["/zgr02U2Fh0sR5JtaAXY5yBU1wka.jpg","2019","Era Uma Vez em… Hollywood"],["/6et98yxnctR6uH16x3uJuIVKsPf.jpg","2018","Os Incríveis 2"],["/qlwCuP4QC79QV5pjOI08Z7KAYxP.jpg","2003","Piratas do Caribe: A Maldição do Pérola Negra"],["/pbX7hM03cHmpMPbpZ3lYmF2aABK.jpg","1989","De Volta para o Futuro II"],["/bNGW8zYA91VqTZfV3jnKHPEKKvB.jpg","2019","Parasita"],["/qtnAwzDapzOML4Q9p7lv2bk5gvz.jpg","2006","Os Infiltrados"],["/5fCrBDJLHxywiFr19o4aOWf92VN.jpg","1991","O Silêncio dos Inocentes"],["/2msJb27jMeuA101ox4MuTQK4mDa.jpg","2014","Whiplash: Em Busca da Perfeição"],["/eTIY2LO5cDclxgKtCHuvIKdF3c3.jpg","1991","O Exterminador do Futuro 2: O Julgamento Final"],["/mqN7RxojEiPoh3FTSTwOtwg7KAu.jpg","2008","Homem de Ferro"],["/30YtzPOimO7eG30r8K8rUkqTGNj.jpg","2013","Os Suspeitos"],["/mtf7iKZRdsL6qbbCnd2TAxOfJYg.jpg","1981","Indiana Jones e os Caçadores da Arca Perdida"],["/mAXzc2oDTTYcnn6IGHlSXvmXloG.jpg","2014","Sniper Americano"],["/3FULGtzNuDSYkc4Ndopn21UC3M9.jpg","2010","A Rede Social"],["/djbivExXSZb0sTO8uYaaQC5vMRM.jpg","2003","Procurando Nemo"],["/hRotKKijqV6YibxnhSOureF5efx.jpg","2015","O Regresso"],["/yyDGhBY8RYXyXYADeFq1BDxpLkl.jpg","2013","Ela"],["/rDRIx1J63HVXUkjWTf4RUiNOa3D.jpg","2018","Deadpool 2"],["/fG3S4zdgnsaF77tJGK3rA9tHBu4.jpg","2015","Perdido em Marte"],["/m6VVgmwNdOWvLo8nlheLPQU5wr7.jpg","2019","1917"],["/m0tQyMdp3fy5ooUOQkJMd1fQKBJ.jpg","2009","Se Beber, Não Case!"],["/czKpsvSmpzMoOuuJXGjBHMoH1qq.jpg","2016","X-Men: Apocalipse"],["/vh6pjeGH0GQupLepPCZn5PylcRg.jpg","2016","Batman vs Superman: A Origem da Justiça"],["/62SAZfLfzhxJWUFJvfIPMw6QUpE.jpg","2015","Divertida Mente"],["/pSaqcj3pwTKt34cyn6NrBE7V4eH.jpg","2002","Prenda-Me se For Capaz"],["/d74WpIsH8379TIL4wUxDneRCYv2.jpg","1994","Forrest Gump: O Contador de Histórias"],["/4AUW2bGbQjWACUREckGJWXmyF0d.jpg","2006","O Grande Truque"],["/4rtsbE9aQ1qw4gv7yYwaNYfWFoS.jpg","2001","Harry Potter e a Pedra Filosofal"],["/eHLufJ1bHy4PtEBJdPSTu4jIhZ0.jpg","2013","Gravidade"],["/mgjJ7FH4V3exsmoHwXrmsUhn0h1.jpg","1993","Jurassic Park: O Parque dos Dinossauros"],["/j2AtZFsflxiluaNtajMTI0Avm8C.jpg","2001","Donnie Darko"],["/lqMDbo4rXnakFgc4C6LzPv6pG7F.jpg","2015","Star Wars: O Despertar da Força"],["/uFaWzdxzITZxHKaKwyG26QfzHiG.jpg","2013","Círculo de Fogo"],["/sN46sgCsWqwgHMu4mEtKJ19knVr.jpg","2018","Jogador N° 1"],["/nuF5yWtTJEEAd4Qa6cVkYz1XCST.jpg","2005","Star Wars: Episódio III - A Vingança dos Sith"],["/ws5z2UmmVzRDD8hZtHTHfcqTOAW.jpg","2013","O Hobbit: A Desolação de Smaug"],["/xLxgVxFWvb9hhUyCDDXxRPPnFck.jpg","2019","Coringa"],["/v9emaesXHtzXcca0tuSPDsSh3K9.jpg","2008","O Curioso Caso de Benjamin Button"],["/74C2YX0NLWnozVMRS56d5CKDdEv.jpg","2016","Rogue One: Uma História Star Wars"],["/49pANIZXRAdHUiWjjBv4vxPeqRC.jpg","2017","Blade Runner 2049"],["/sTReXuaND1AjkXUfjl1gqRcuGfI.jpg","1990","Os Bons Companheiros"],["/oo5gvGDIiPwbXc3R0snZIuOc517.jpg","2009","Up: Altas Aventuras"],["/9H8PNc4JJRjPnfSh8gGukD0CbqQ.jpg","2019","Entre Facas e Segredos"],["/3ViYPhSAPwH2avQjdMl49F8PklB.jpg","1974","O Poderoso Chefão: Parte II"],["/AvMietG6xuobpSSdmVnKuTjv4bL.jpg","2016","La La Land: Cantando Estações"],["/hvJvOYRrF9xxvNzg2Jd9PYWu7c3.jpg","1976","Taxi Driver: Motorista de Táxi"],["/9sTDXtIIfHza1rAbmHU2djyzEXA.jpg","2014","Capitão América: O Soldado Invernal"],["/2K45Fp6koAVoeeYS6aMb9BeNt4F.jpg","2017","Thor: Ragnarok"],["/8vmYMcvWaqqhEWt9EnTPdXDdy2F.jpg","1990","Edward Mãos de Tesoura"],["/qUe5LcD5gnbRFHNZBZf5qt56ylv.jpg","2004","Kill Bill: Volume 2"],["/wDhy1Ga9BoLwkHOI0jJISQem28v.jpg","2015","Kingsman: Serviço Secreto"],["/mCICnh7QBH0gzYaTQChBDDVIKdm.jpg","1999","Clube da Luta"],["/1HdMUghqlgOIvbsU9ZtO40IPRzl.jpg","2004","Harry Potter e o Prisioneiro de Azkaban"],["/tptjnB2LDbuUWya9Cx5sQtv5hqb.jpg","1994","Pulp Fiction: Tempo de Violência"],["/f0CtZbae9cXj8bkWdCHzUHx5lsR.jpg","2017","Logan"],["/mXJOgvCZm4PJ9I4zEbAH3CVCjfa.jpg","2017","Dunkirk"],["/7gprs7louiwHnO0LN6xP9fQ1nEF.jpg","2018","Bohemian Rhapsody"],["/e8jIwfP8jr81UTFbh2qJVjBhIUL.jpg","1971","Laranja Mecânica"],["/3rDwbFpn6z5HJUgDjpfhEePx8VI.jpg","2016","A Chegada"],["/7EyhcdfiLtH0xa6CZkyYuoWL2GJ.jpg","2005","Batman Begins"],["/rU4oIKv5I4C59DpcXKmT7kNwGI0.jpg","2003","O Senhor dos Anéis: O Retorno do Rei"],["/A7nssMRIPauZhEVf2dzwsf4EALO.jpg","2006","Carros"],["/811j0Jf2D0mK1U6RxXJoZgOB29n.jpg","2002","Harry Potter e a Câmara Secreta"],["/47BdQqDWnj3VIzpH9bd2agho2PN.jpg","1980","O Iluminado"],["/erl801HYIodoIBGZeFk0GTwCUBh.jpg","2010","Ilha do Medo"],["/uzERcfV2rSHNhW5eViQiO9hNiA7.jpg","2021","Duna"],["/xVhEI1WCgNCCa5I86AqiwuZoog3.jpg","1999","Toy Story 2"],["/dsvUR5aEVSkB1Sro7nT6Khqik71.jpg","2016","Capitão América: Guerra Civil"],["/q6725aR8Zs4IwGMXzZT8aC8lh41.jpg","2019","Vingadores: Ultimato"],["/54nI3vSKlPp42WhJmKVRdmMbkzl.jpg","2014","Garota Exemplar"],["/dkK48wCY4aVpWFDdPpS6DxQ1bvB.jpg","1997","A Vida é Bela"],["/As0zX43h3w6kD2NS4uVHu9HKdEh.jpg","1997","Titanic"],["/cheo9jDPfyW1GevfPjXtnO91KNe.jpg","2013","O Homem de Aço"],["/ubXNpxL2ASSzY0f8Hxv08pOsV2L.jpg","2018","Pantera Negra"],["/vQIwxoGxW46Skq5ipu0pBFKZTKd.jpg","2017","Liga da Justiça"],["/j4z01cnbTCaVX69bik1612pSuH6.jpg","2012","Batman: O Cavaleiro das Trevas Ressurge"],["/tlvsNCwWEIgwAM23aNzTmMIcPEZ.jpg","2001","O Senhor dos Anéis: A Sociedade do Anel"],["/84dzLDiFiACIqKtqQwzmB6GL7uC.jpg","1992","Cães de Aluguel"],["/i996T0lI1fGtFEowiH3V6eZthL0.jpg","1985","De Volta para o Futuro"],["/1rYTtQ14rPB3KOgk5TjkUqiQFch.jpg","2017","Em Ritmo de Fuga"]],"d":{"qt":"/1gjcpAa99FAOWGnrUvHEXXsRs7o.jpg","gg":"/dxKAhpkz4XNwmRzMG5QOpXjPZ1N.jpg"},"tl":[["/wNCx5AdhBgSn0ddva3SEUFLs81K.jpg","1950"],["/2f3Aw6GCzpn1qw56xq78dH0VBgn.jpg","1954"],["/7JBlG28700Zx2r4xbVv3n1ssOQU.jpg","1961"],["/9Bggg2bios1LsGUAYXuqd6BuVJl.jpg","1975"],["/gWw6iyVEoWtYLRNeyS9nv6sgXlx.jpg","1985"]]},TM="https://image.tmdb.org/t/p/";
-  var PAL=[["#5A62C4","#17154B"],["#C9772F","#5A2A0E"],["#2F7F8F","#0F2F4A"],["#9A4F9F","#2B1450"],["#3C8B63","#103B2B"],["#B8423D","#4A1414"]];
+  var PAL=[["#5A62C4","#17154B"],["#C94F7C","#4B0F2A"],["#2F7F8F","#0F2F4A"],["#9A4F9F","#2B1450"],["#3C8B63","#103B2B"],["#B8423D","#4A1414"]];
   function pimg(p,w,alt){var i=new Image();i.alt=alt||"";i.decoding="async";i.src=TM+w+p;return i}
   var wall=document.getElementById("hxWall");
   if(wall&&H.p&&H.p.length){
     var P=H.p.slice();for(var z=P.length-1;z>0;z--){var j=Math.floor(Math.random()*(z+1)),tmp=P[z];P[z]=P[j];P[j]=tmp}
     H.p=P;var cls=window.innerWidth>900?["","b","c","d"]:["","b","c"];
+    var DP=[];try{DP=window.cineRnd.shuf(window.cineRnd.topDirs(80)).filter(function(d){return d.foto})}catch(e){}
     cls.forEach(function(c,k){
-      var items=P.slice(k*9,k*9+9);
+      var items=P.slice(k*9,k*9+9).map(function(f){return {p:f[0],a:f[2],w:"w342"}});
+      for(var q=1,di=k*3;q<items.length&&di<DP.length;q+=3,di++){items[q]={p:DP[di].foto,a:DP[di].n,w:"w185"}}
       var col=document.createElement("div");col.className="hx-col "+c;
       for(var rep=0;rep<2;rep++)items.forEach(function(f,i){
         var d=document.createElement("div");d.className="hx-po";var pc=PAL[(i+k*2)%PAL.length];
         d.style.setProperty("--c1",pc[0]);d.style.setProperty("--c2",pc[1]);
-        var im=pimg(f[0],"w342",f[2]);im.loading="lazy";im.onerror=function(){im.remove()};d.appendChild(im);
+        var im=pimg(f.p,f.w,f.a);im.loading="lazy";im.onerror=function(){im.remove()};d.appendChild(im);
         col.appendChild(d);
       });
       wall.appendChild(col);
@@ -4685,25 +4740,36 @@ addEventListener("hashchange",route);route();
 <script>
 (function(){
   function $(i){return document.getElementById(i)}
-  var OC={scope:"free",lv:"medio",n:10},ON=[5,10,15,20];
+  var OC={scope:"free",lv:"medio",n:10,nm:"Jogador"},ON=[5,10,15,20];
   try{var s=JSON.parse(localStorage.getItem("on_cfg")||"null");if(s){if(s.scope==="level"||s.scope==="free")OC.scope=s.scope;if(LEVELS[s.lv])OC.lv=s.lv;if(ON.indexOf(s.n)>=0)OC.n=s.n}}catch(e){}
-  function save(){try{localStorage.setItem("on_cfg",JSON.stringify(OC))}catch(e){}}
+  function save(){try{localStorage.setItem("on_cfg",JSON.stringify({scope:OC.scope,lv:OC.lv,n:OC.n}))}catch(e){}}
+  function ico(d){return '<svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+d+'</svg>'}
+  function screen(){
+    var r=$("liveRoot");if(!r)return;
+    r.innerHTML='<div class="tltop"><span></span><button id="opBack" type="button">Voltar</button></div><div class="panel opanel"><h3>Como vai ser a partida?</h3><p class="pnote">Você escolhe e o seu amigo joga igual. Dá para ajustar de novo quando ele entrar na sala.</p>'+
+      '<div class="flabel">'+ico('<path d="M4 20v-6M10 20V9M16 20V5M22 20V2"/>')+'Estilo</div><div class="seg" role="group" aria-label="Estilo da sala"><button type="button" data-oscope="free">Livre (todos os níveis)</button><button type="button" data-oscope="level">Nível específico</button></div><div class="nchips" id="olvls" style="margin-top:12px" hidden></div>'+
+      '<div class="flabel" style="margin-top:20px">'+ico('<path d="M4 6h16M4 12h16M4 18h10"/>')+'Quantas perguntas</div><div class="nchips" id="onchips"></div><p class="pnote small" id="onsum" style="margin-top:14px"></p>'+
+      '<div class="lrow" style="margin-top:18px"><button class="btn primary" id="opCreate" type="button">Criar sala '+'<svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg>'+'</button></div></div>';
+    render();
+  }
   function render(){
     var lv=$("olvls"),nc=$("onchips");if(!lv||!nc)return;
     document.querySelectorAll("[data-oscope]").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.oscope===OC.scope)});
     lv.hidden=OC.scope!=="level";
-    lv.innerHTML=Object.keys(LEVELS).map(function(k){return '<button class="nchip wide" data-olvl="'+k+'" aria-pressed="'+(k===OC.lv)+'">'+LEVELS[k].name+'</button>'}).join("");
-    nc.innerHTML=ON.map(function(n){return '<button class="nchip" data-on="'+n+'" aria-pressed="'+(n===OC.n)+'">'+n+'</button>'}).join("");
-    var m=$("onsum");if(m)m.textContent=OC.n+" perguntas · "+(OC.scope==="free"?"os 4 níveis misturados":"só o nível "+LEVELS[OC.lv].name.toLowerCase())+". Dá para ajustar de novo quando o amigo entrar."
+    lv.innerHTML=Object.keys(LEVELS).map(function(k){return '<button type="button" class="nchip wide" data-olvl="'+k+'" aria-pressed="'+(k===OC.lv)+'">'+LEVELS[k].name+'</button>'}).join("");
+    nc.innerHTML=ON.map(function(n){return '<button type="button" class="nchip" data-on="'+n+'" aria-pressed="'+(n===OC.n)+'">'+n+'</button>'}).join("");
+    var m=$("onsum");if(m)m.textContent=OC.n+" perguntas · "+(OC.scope==="free"?"os 4 níveis misturados":"só o nível "+LEVELS[OC.lv].name.toLowerCase())+"."
   }
+  window.__onOpts=function(nm){OC.nm=nm||"Jogador";show("live");screen();window.scrollTo(0,0)};
   window.__onCfg=function(){return {lv:OC.scope==="free"?"todos":OC.lv,n:OC.n}};
   document.addEventListener("click",function(e){
     var a;
     if((a=e.target.closest("[data-oscope]"))){OC.scope=a.dataset.oscope;save();render();return}
     if((a=e.target.closest("[data-olvl]"))){OC.lv=a.dataset.olvl;save();render();return}
     if((a=e.target.closest("[data-on]"))){OC.n=+a.dataset.on;save();render();return}
+    if(e.target.closest("#opCreate")){window.Modes.live.create(OC.nm,window.__onCfg());return}
+    if(e.target.closest("#opBack")){show("home");goSection("levels","duel");setTimeout(function(){var b=document.querySelector('[data-dwhere="on"]');if(b)b.click()},120);return}
   });
-  render();
 })();
 </script>
 </body>
