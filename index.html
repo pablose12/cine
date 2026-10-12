@@ -4918,7 +4918,16 @@ addEventListener("hashchange",route);route();
   var TROPHY='<svg class="osi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4zM7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3"/></svg>';
   function avatar(e,big){
     var p=photo(e);
-    return '<span class="osav'+(big?' big':'')+'">'+esc(ini(e.name))+(p?'<img alt="" loading="lazy" src="'+TMS+p+'" onerror="this.remove()">':'')+'</span>'}
+    return '<span class="osav'+(big?' big':'')+'"'+(p?'':' data-pn="'+esc(e.name)+'"')+'>'+esc(ini(e.name))+(p?'<img alt="" loading="lazy" src="'+TMS+p+'" onerror="this.remove()">':'')+'</span>'}
+  /* fotos de atores e diretores sem foto nos dados: Wikipédia, com iniciais como reserva */
+  function hydrate(){
+    if(typeof getPhoto!=="function")return;
+    document.querySelectorAll("#osRoot .osav[data-pn]").forEach(function(el){
+      var n=el.getAttribute("data-pn");el.removeAttribute("data-pn");
+      var tries=[n];if(/ e /.test(n))tries.push(n.split(" e ")[0]);
+      (function go(i){if(i>=tries.length)return;getPhoto(tries[i]).then(function(src){
+        if(!src){go(i+1);return}
+        if(!el.isConnected)return;var im=new Image();im.alt="";im.onload=function(){if(el.isConnected)el.appendChild(im)};im.onerror=function(){};im.src=src})})(0)})}
   function optWho(e,i,q){
     var hint=q.lv==="facil"&&q.c!=="filme"&&q.c!=="dir"?'<small class="osh">por '+esc(e.film)+'</small>':'<small class="osh"></small>';
     if(q.c==="filme"){var p=poster(e);
@@ -4940,7 +4949,8 @@ addEventListener("hashchange",route);route();
     var opts=q.t==="who"?q.opts.map(function(e,i){return optWho(e,i,q)}).join(""):q.opts.map(optYear).join("");
     root().innerHTML='<div class="inhead"><span class="inlv">Nível '+LV[G.lv].name+'</span><span class="inrd">Pergunta <b>'+(G.i+1)+'</b>'+(G.surv?' · até errar':'/'+G.n)+'</span><span class="ptot">Acertos <b>'+G.score+'</b></span><span class="streak" id="osStr"'+(G.streak>1?'':' hidden')+'>'+G.streak+' seguidos</span><button id="osQuit" class="inq2" type="button">Sair</button></div>'+
     '<div class="osq"><span class="osk">'+TROPHY+CATS[q.c]+'</span>'+sub+'<p class="osn">'+note+'</p></div>'+
-    '<div class="oopts'+(q.t==="who"&&q.c==="filme"?' four':'')+(q.t==="year"?' years':'')+'" id="osOpts">'+opts+'</div><div id="osFb" aria-live="polite"></div>'
+    '<div class="oopts'+(q.t==="who"&&q.c==="filme"?' four':'')+(q.t==="year"?' years':'')+'" id="osOpts">'+opts+'</div><div id="osFb" aria-live="polite"></div>';
+    hydrate()
   }
   function answer(i){
     if(!G||G.locked)return;var q=G.q,pick=q.opts[i];if(pick==null)return;G.locked=true;
