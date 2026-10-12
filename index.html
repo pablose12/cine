@@ -4918,20 +4918,28 @@ addEventListener("hashchange",route);route();
   var TROPHY='<svg class="osi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4zM7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3"/></svg>';
   function avatar(e,big){
     var p=photo(e);
-    return '<span class="osav'+(big?' big':'')+'"'+(p?'':' data-pn="'+esc(e.name)+'"')+'>'+esc(ini(e.name))+(p?'<img alt="" loading="lazy" src="'+TMS+p+'" onerror="this.remove()">':'')+'</span>'}
-  /* fotos de atores e diretores sem foto nos dados: Wikipédia, com iniciais como reserva */
+    return '<span class="osav'+(big?' big':'')+'"'+(p?'':' data-pn="'+esc(e.name)+'" data-pd="'+(e.c==="dir"?"Directing":"Acting")+'"')+'>'+esc(ini(e.name))+(p?'<img alt="" loading="lazy" src="'+TMS+p+'" onerror="this.remove()">':'')+'</span>'}
+  /* fotos e pôsteres que faltam nos dados: TMDB (via /api/oscar) e, para pessoas, Wikipédia como reserva */
+  var RC={};
+  function remote(k,q,y,d){var key=k+"|"+q+"|"+y+"|"+d;if(RC[key])return RC[key];
+    var u="/api/oscar?k="+k+"&q="+encodeURIComponent(q)+(y?"&y="+y:"")+(d?"&d="+d:"");
+    return RC[key]=fetch(u).then(function(r){return r.ok?r.json():null}).then(function(j){return j&&j.p?j.p:null}).catch(function(){return null})}
+  function addImg(el,src){var im=new Image();im.alt="";if(el.classList.contains("osp")){im.className="pim";im.decoding="async"}im.onload=function(){if(el.isConnected)el.appendChild(im)};im.onerror=function(){};im.src=src}
   function hydrate(){
-    if(typeof getPhoto!=="function")return;
+    document.querySelectorAll("#osRoot .osp[data-fm]").forEach(function(el){
+      var n=el.getAttribute("data-fm"),y=+el.getAttribute("data-fy");el.removeAttribute("data-fm");
+      remote("movie",n,y,"").then(function(p){if(p&&el.isConnected)addImg(el,TMD+p)})});
     document.querySelectorAll("#osRoot .osav[data-pn]").forEach(function(el){
-      var n=el.getAttribute("data-pn");el.removeAttribute("data-pn");
-      var tries=[n];if(/ e /.test(n))tries.push(n.split(" e ")[0]);
-      (function go(i){if(i>=tries.length)return;getPhoto(tries[i]).then(function(src){
-        if(!src){go(i+1);return}
-        if(!el.isConnected)return;var im=new Image();im.alt="";im.onload=function(){if(el.isConnected)el.appendChild(im)};im.onerror=function(){};im.src=src})})(0)})}
+      var n=el.getAttribute("data-pn"),d=el.getAttribute("data-pd")||"";el.removeAttribute("data-pn");
+      remote("person",n,0,d).then(function(p){
+        if(p){if(el.isConnected)addImg(el,TMS+p);return}
+        if(typeof getPhoto!=="function")return;
+        var tries=[n];if(/ e /.test(n))tries.push(n.split(" e ")[0]);
+        (function go(i){if(i>=tries.length)return;getPhoto(tries[i]).then(function(src){if(!src){go(i+1);return}if(el.isConnected)addImg(el,src)})})(0)})})}
   function optWho(e,i,q){
     var hint=q.lv==="facil"&&q.c!=="filme"&&q.c!=="dir"?'<small class="osh">por '+esc(e.film)+'</small>':'<small class="osh"></small>';
     if(q.c==="filme"){var p=poster(e);
-      return '<button class="oop pos" data-oo="'+i+'" aria-label="'+esc(e.name)+'"><span class="osp"><b class="ifb">'+esc(e.name)+'</b>'+(p?'<img class="pim" alt="" decoding="async" src="'+TMD+p+'" onerror="this.remove()">':'')+'</span><span class="otx"><b>'+esc(e.name)+'</b><small class="osh"></small></span></button>'}
+      return '<button class="oop pos" data-oo="'+i+'" aria-label="'+esc(e.name)+'"><span class="osp"'+(p?'':' data-fm="'+esc(e.name)+'" data-fy="'+(e.y-1)+'"')+'><b class="ifb">'+esc(e.name)+'</b>'+(p?'<img class="pim" alt="" decoding="async" src="'+TMD+p+'" onerror="this.remove()">':'')+'</span><span class="otx"><b>'+esc(e.name)+'</b><small class="osh"></small></span></button>'}
     return '<button class="oop" data-oo="'+i+'" aria-label="'+esc(e.name)+'">'+avatar(e)+'<span class="otx"><b>'+esc(e.name)+'</b>'+hint+'</span></button>'}
   function optYear(y,i){return '<button class="oop yr" data-oo="'+i+'" aria-label="'+y+'"><b>'+y+'</b><small class="osh"></small></button>'}
   function start(){
