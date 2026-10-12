@@ -1603,6 +1603,68 @@ body[data-gt] .rrow:disabled{opacity:.8}body[data-gt] .rrow:disabled em{color:#F
   .inhead .inrd,.inhead .ptot{font-size:12px;white-space:nowrap}
   body .inhead .inq2{padding:5px 11px 5px 7px;font-size:12.5px}
 }
+/* ===== v33: Quem levou o Oscar? (dourado) ===== */
+body[data-gt="os"]{--g1:#3B2A06;--g2:#1A1203;--ga:#F5C95C;--gi:#1A1203}
+#v-home[data-g="os"] [data-g]:not([data-g="os"]){display:none!important}
+body[data-gt="os"] #v-oscar{color:#fff}
+.gcard.os{background:linear-gradient(160deg,#3B2A06,#1A1203 72%);--gl:#F5C95C;--ac:#F5C95C}
+.osart,.hx-mo{width:100%;max-width:440px;margin:0 auto;border-radius:20px;padding:16px;background:rgba(255,255,255,.07);border:1px solid rgba(245,201,92,.28);box-shadow:0 24px 44px -26px rgba(0,0,0,.8);transition:opacity .4s}
+.osart.swap>*,.hx-mo.swap>*{opacity:0;transform:translateY(6px)}
+.osart>*,.hx-mo>*{transition:all .4s}
+.osq0{display:flex;align-items:center;gap:8px;margin:0 0 12px;font:800 12px var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:#F5C95C}
+.osq0 svg{flex:none}
+.oo2{display:flex;align-items:center;min-height:42px;margin-top:8px;padding:9px 14px;border-radius:12px;border:2px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);font:600 14.5px/1.2 var(--font-display);color:#fff;transition:border-color .5s,background .5s,transform .5s}
+.hit .oo2.win{border-color:#F5C95C;background:rgba(245,201,92,.18);transform:scale(1.02)}
+.hit .oo2.win::after{content:"Oscar";margin-left:auto;padding:2px 9px;border-radius:999px;background:#F5C95C;color:#1A1203;font:800 10.5px var(--font-body);letter-spacing:.08em;text-transform:uppercase}
+.hx-mo{max-width:260px;padding:14px}
+.hx-mo .oo2{min-height:36px;padding:7px 11px;font-size:13px;margin-top:6px}
+.hx-mo .osq0{margin-bottom:8px}
+/* jogo */
+.osq{margin:6px 0 20px;display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.osk{display:inline-flex;align-items:center;gap:7px;padding:5px 12px;border-radius:999px;background:rgba(245,201,92,.16);border:1px solid rgba(245,201,92,.4);color:#F5C95C;font:800 12px var(--font-body);letter-spacing:.08em;text-transform:uppercase}
+.osq h2{margin:0;font:800 clamp(22px,3vw,32px)/1.2 var(--font-display);color:#fff;text-wrap:balance}
+.osq h2 em{font-style:normal;color:#F5C95C}
+.osn{margin:0;font:400 13.5px var(--font-body);color:rgba(255,255,255,.72)}
+.oopts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.oopts.four{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+@media (max-width:700px){.oopts.four{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}
+@media (max-width:520px){.oopts:not(.four):not(.years){grid-template-columns:1fr}}
+.oop{display:flex;align-items:center;gap:12px;min-height:68px;padding:12px 14px;text-align:left;border-radius:16px;background:rgba(255,255,255,.07);border:2px solid rgba(255,255,255,.16);color:#fff;font:inherit;cursor:pointer;transition:border-color .25s,background .25s,transform .25s}
+.oop:not([disabled]):hover{border-color:rgba(245,201,92,.7);transform:translateY(-2px)}
+.oop:focus-visible{outline:3px solid #F5C95C;outline-offset:2px}
+.oop .otx{display:flex;flex-direction:column;gap:2px;min-width:0}
+.oop .otx b{font:700 15.5px/1.25 var(--font-display);color:#fff;overflow-wrap:anywhere}
+.oop .osh{font:400 12.5px/1.3 var(--font-body);color:rgba(255,255,255,.72)}
+.oop .osh:empty{display:none}
+.oop.yr{justify-content:center;flex-direction:column;gap:2px;min-height:84px;text-align:center}
+.oop.yr b{font:800 30px/1 var(--font-display);color:#fff;font-variant-numeric:tabular-nums}
+.oop.pos{flex-direction:column;align-items:stretch;gap:8px;padding:0;background:none;border:0;min-height:0}
+.oop.pos .osp{position:relative;display:block;aspect-ratio:2/3;border-radius:14px;overflow:hidden;background:linear-gradient(160deg,#6B4F12,#241904);border:3px solid transparent;box-shadow:0 20px 32px -18px rgba(0,0,0,.75);transition:transform .25s,border-color .25s}
+.oop.pos .osp .ifb{position:absolute;left:10px;right:10px;top:50%;transform:translateY(-50%);text-align:center;font:700 14px/1.25 var(--font-display);color:rgba(255,255,255,.55)}
+.oop.pos .osp .pim{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;display:block}
+.oop.pos:not([disabled]):hover{transform:none}.oop.pos:not([disabled]):hover .osp{transform:translateY(-5px);border-color:rgba(245,201,92,.7)}
+.oop.pos .otx b{font-size:14px}
+.osav{position:relative;flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;overflow:hidden;font:800 14px var(--font-display);color:#1A1203;background:linear-gradient(135deg,#F5C95C,#B98A1E)}
+.osav img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top}
+.oop.win{border-color:#F5C95C;background:rgba(245,201,92,.16)}
+.oop.win .osh{color:#F5C95C}
+.oop.pos.win{background:none}.oop.pos.win .osp{border-color:#F5C95C;box-shadow:0 24px 36px -16px rgba(245,201,92,.5)}
+.oop.lose{opacity:.78}
+.oop.wrong{border-color:#E5484D;background:rgba(229,72,77,.14);opacity:1}
+.oop.pos.wrong{background:none}.oop.pos.wrong .osp{border-color:#E5484D}
+.osmiss{margin:16px auto 0;max-width:560px;text-align:left;padding:14px 16px;border-radius:14px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16)}
+.osmiss h3{margin:0 0 6px;font:800 14px var(--font-display);color:#F5C95C}
+.osmiss ul{margin:0;padding-left:18px;font-size:14px;line-height:1.55;color:rgba(255,255,255,.88)}
+.osmiss small{color:rgba(255,255,255,.7);font-size:12.5px}
+#v-oscar:has(.inres) .tltop{max-width:560px}
+@media (max-width:420px){.oop .otx b{font-size:15px}.oop.yr b{font-size:26px}.osq h2{font-size:21px}}
+
+.hx-mo .oo2{min-height:34px}
+.osq0 span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}.hx-mo .osq0{letter-spacing:.06em;font-size:11.5px}
+@media (min-width:701px){.gcard.os .art{padding:0}.hx-mo{padding:10px 12px}.hx-mo .oo2{min-height:30px;margin-top:5px;padding:5px 11px}.hx-mo .osq0{margin-bottom:6px}}
+.gtop .gq>span,.gq small,.eyebrow{font-size:12px}
+.inhead .inlv{font-size:12px}
+@media (max-width:420px){.inhead .inlv{font-size:12px!important}}
 </style>
 </head>
 <body>
@@ -1613,7 +1675,7 @@ body[data-gt] .rrow:disabled{opacity:.8}body[data-gt] .rrow:disabled em{color:#F
     <nav class="links" aria-label="Principal">
       <button data-hub="top">Início</button>
       <div class="navdd"><button class="ddb" id="ddb" aria-haspopup="true" aria-expanded="false">Jogos <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 3.5 3 3 3-3"/></svg></button>
-        <div class="ddm" role="menu"><button data-go="g-qd" role="menuitem">Quem Dirigiu?</button><button data-go="g-poster" role="menuitem">Acerte o Pôster</button><button data-go="g-tl" role="menuitem">Linha do tempo</button><button data-go="g-dna" role="menuitem">Descubra seu diretor</button><button data-go="g-in" role="menuitem">Filme intruso</button><button data-go="g-cd" role="menuitem">Cinedle</button><button data-duelon="1" role="menuitem">Duelo online</button></div></div>
+        <div class="ddm" role="menu"><button data-go="g-qd" role="menuitem">Quem Dirigiu?</button><button data-go="g-poster" role="menuitem">Acerte o Pôster</button><button data-go="g-tl" role="menuitem">Linha do tempo</button><button data-go="g-dna" role="menuitem">Descubra seu diretor</button><button data-go="g-in" role="menuitem">Filme intruso</button><button data-go="g-cd" role="menuitem">Cinedle</button><button data-go="g-os" role="menuitem">Quem levou o Oscar?</button><button data-duelon="1" role="menuitem">Duelo online</button></div></div>
       <button data-dir="1">Diretores</button>
       <button data-hub="sobre">Sobre</button>
     </nav>
@@ -1646,7 +1708,7 @@ body[data-gt] .rrow:disabled{opacity:.8}body[data-gt] .rrow:disabled em{color:#F
       <div class="eyebrow">Jogos</div>
       <h2>Escolha <em class="w">o que jogar</em>.</h2>
       <p class="lead">Cada jogo testa um jeito diferente de conhecer cinema. Comece por qualquer um.</p>
-      <div class="hgames2"><button class="gcard qd" data-go="g-qd"><span class="tg">2367 filmes</span><div class="art"><div class="hx-mq"><div class="hx-tg2"><span>NÍVEL MÉDIO</span><span>1994</span></div><h4>Pulp Fiction</h4><div class="hx-o"><b>A</b>George Lucas</div><div class="hx-o r"><b>B</b>Quentin Tarantino</div><div class="hx-o"><b>C</b>Guillermo del Toro</div></div></div><div class="tx"><h3>Quem Dirigiu?</h3><p>Um filme na tela, quatro diretores e uma única resposta certa. Níveis, medalhas, modo livre e duelo.</p><span class="go">Jogar <i aria-hidden="true"><svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg></i></span></div></button><button class="gcard ps" data-go="g-poster"><span class="tg">Visual</span><div class="art" style="align-items:flex-start"><div class="hx-mps"><div class="hx-mpo" data-pi="0" style="--a:#C94F7C;--b:#4B0F2A;--h:#FFD27A;transform:rotate(-4deg);margin-top:14px"><div class="im" style="animation-delay:0s"></div></div><div class="hx-mpo" data-pi="1" style="--a:#5A62C4;--b:#17154B;--h:#C9CAEC;transform:rotate(3deg);margin-top:0px"><div class="im" style="animation-delay:-1.4s"></div><div class="pt">72<small>pts</small></div></div><div class="hx-mpo" data-pi="2" style="--a:#3C8B63;--b:#103B2B;--h:#BFF6EA;transform:rotate(-2deg);margin-top:14px"><div class="im" style="animation-delay:-2.8s"></div></div><div class="hx-mpo" data-pi="3" style="--a:#B8423D;--b:#4A1414;--h:#FFC8B8;transform:rotate(4deg);margin-top:0px"><div class="im" style="animation-delay:-4.2s"></div></div></div></div><div class="tx"><h3>Acerte o Pôster</h3><p>Só a capa do filme, bem borrada, que vai clareando aos poucos. Quanto antes você acertar, mais pontos.</p><span class="go">Jogar <i aria-hidden="true"><svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg></i></span></div></button><button class="gcard tl" data-go="g-tl"><span class="tg">Ordem</span><div class="art"><div class="hx-mt"><div class="ln"></div><div class="pp" data-ti="0" style="left:10px;--c1:#5A62C4;--c2:#17154B;animation-delay:-0.2s"><span>1950</span></div><span class="dt" style="left:28.5px"></span><div class="pp" data-ti="1" style="left:76px;--c1:#C94F7C;--c2:#4B0F2A;animation-delay:-0.7s"><span>1954</span></div><span class="dt" style="left:94.5px"></span><div class="pp" data-ti="2" style="left:142px;--c1:#2F7F8F;--c2:#0F2F4A;animation-delay:-1.2s"><span>1961</span></div><span class="dt" style="left:160.5px"></span><div class="pp" data-ti="3" style="left:208px;--c1:#9A4F9F;--c2:#2B1450;animation-delay:-1.7s"><span>1975</span></div><span class="dt" style="left:226.5px"></span><div class="pp" data-ti="4" style="left:274px;--c1:#3C8B63;--c2:#103B2B;animation-delay:-2.2s"><span>1985</span></div><span class="dt" style="left:292.5px"></span><span class="yr" style="left:0">mais antigo</span><span class="yr" style="right:0">mais recente</span></div></div><div class="tx"><h3>Linha do Tempo</h3><p>Arraste os filmes de um diretor do mais antigo ao mais recente e veja a linha se acender a cada acerto.</p><span class="go">Jogar <i aria-hidden="true"><svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg></i></span></div></button><button class="gcard dn" data-go="g-dna"><span class="tg">Teste</span><div class="art" style="gap:20px"><div class="hx-mr"><svg width="132" height="132" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="44" fill="none" stroke="rgba(94,230,200,.18)" stroke-width="7"/><circle class="rg" cx="50" cy="50" r="44" fill="none" stroke="#5EE6C8" stroke-width="7" stroke-linecap="round" transform="rotate(-90 50 50)"/></svg><div class="pc"><span></span><small>%</small></div></div><div class="hx-chs"><span class="chp" style="left:0;top:0">ritmo lento</span><span class="chp" style="left:30px;top:32px">humor ácido</span><span class="chp" style="left:6px;top:64px">cores fortes</span></div></div><div class="tx"><h3>Descubra seu Diretor</h3><p>Responda sobre ritmo, medo e humor e descubra qual diretor combina com o seu jeito de ver cinema.</p><span class="go">Começar o teste <i aria-hidden="true"><svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg></i></span></div></button><button class="gcard in" data-go="g-in"><span class="tg">Olho clínico</span><div class="art"><div class="hx-mi" aria-hidden="true"><span class="mp"></span><span class="mp"></span><span class="mp"></span><span class="mp"></span></div></div><div class="tx"><h3>Filme Intruso</h3><p>Três filmes do mesmo diretor e um intruso no meio. Ache o que não combina, do fácil ao difícil.</p><span class="go">Jogar <i aria-hidden="true"><svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg></i></span></div></button><button class="gcard cd" data-go="g-cd"><span class="tg">Diário</span><div class="art"><div class="hx-mc" aria-hidden="true"></div></div><div class="tx"><h3>Cinedle</h3><p>Um diretor secreto por dia. Chute nomes, siga as cores e chegue nele em 6 tentativas.</p><span class="go">Jogar hoje <i aria-hidden="true"><svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg></i></span></div></button><button class="gcard du" data-duelon="1"><span class="tg">2 equipes</span><div class="art"><div class="hx-mv"><div class="tm">Equipe A<b>7</b></div><div class="vs">VS</div><div class="tm">Equipe B<b>5</b></div></div></div><div class="tx"><h3>Duelo</h3><p>Duas equipes no mesmo aparelho ou cada uma no seu celular. Vence quem souber mais.</p><span class="go">Desafiar <i aria-hidden="true"><svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg></i></span></div></button><div class="gcard so" aria-disabled="true"><div class="art"><svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#25226E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9h14l-1.5 12h-11zM9 9l.5 12M15 9l-.5 12M6 9a3 3 0 0 1 2.5-4.7A3 3 0 0 1 12 3a3 3 0 0 1 3.5 1.3A3 3 0 0 1 18 9"/></svg></div><div class="tx"><h3>Mais jogos a caminho</h3><p>O Sou Cinéfilo está crescendo. Novos jeitos de testar o seu repertório vão chegar aqui.</p><span class="go">Em breve</span></div></div></div>
+      <div class="hgames2"><button class="gcard qd" data-go="g-qd"><span class="tg">2367 filmes</span><div class="art"><div class="hx-mq"><div class="hx-tg2"><span>NÍVEL MÉDIO</span><span>1994</span></div><h4>Pulp Fiction</h4><div class="hx-o"><b>A</b>George Lucas</div><div class="hx-o r"><b>B</b>Quentin Tarantino</div><div class="hx-o"><b>C</b>Guillermo del Toro</div></div></div><div class="tx"><h3>Quem Dirigiu?</h3><p>Um filme na tela, quatro diretores e uma única resposta certa. Níveis, medalhas, modo livre e duelo.</p><span class="go">Jogar <i aria-hidden="true"><svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg></i></span></div></button><button class="gcard ps" data-go="g-poster"><span class="tg">Visual</span><div class="art" style="align-items:flex-start"><div class="hx-mps"><div class="hx-mpo" data-pi="0" style="--a:#C94F7C;--b:#4B0F2A;--h:#FFD27A;transform:rotate(-4deg);margin-top:14px"><div class="im" style="animation-delay:0s"></div></div><div class="hx-mpo" data-pi="1" style="--a:#5A62C4;--b:#17154B;--h:#C9CAEC;transform:rotate(3deg);margin-top:0px"><div class="im" style="animation-delay:-1.4s"></div><div class="pt">72<small>pts</small></div></div><div class="hx-mpo" data-pi="2" style="--a:#3C8B63;--b:#103B2B;--h:#BFF6EA;transform:rotate(-2deg);margin-top:14px"><div class="im" style="animation-delay:-2.8s"></div></div><div class="hx-mpo" data-pi="3" style="--a:#B8423D;--b:#4A1414;--h:#FFC8B8;transform:rotate(4deg);margin-top:0px"><div class="im" style="animation-delay:-4.2s"></div></div></div></div><div class="tx"><h3>Acerte o Pôster</h3><p>Só a capa do filme, bem borrada, que vai clareando aos poucos. Quanto antes você acertar, mais pontos.</p><span class="go">Jogar <i aria-hidden="true"><svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg></i></span></div></button><button class="gcard tl" data-go="g-tl"><span class="tg">Ordem</span><div class="art"><div class="hx-mt"><div class="ln"></div><div class="pp" data-ti="0" style="left:10px;--c1:#5A62C4;--c2:#17154B;animation-delay:-0.2s"><span>1950</span></div><span class="dt" style="left:28.5px"></span><div class="pp" data-ti="1" style="left:76px;--c1:#C94F7C;--c2:#4B0F2A;animation-delay:-0.7s"><span>1954</span></div><span class="dt" style="left:94.5px"></span><div class="pp" data-ti="2" style="left:142px;--c1:#2F7F8F;--c2:#0F2F4A;animation-delay:-1.2s"><span>1961</span></div><span class="dt" style="left:160.5px"></span><div class="pp" data-ti="3" style="left:208px;--c1:#9A4F9F;--c2:#2B1450;animation-delay:-1.7s"><span>1975</span></div><span class="dt" style="left:226.5px"></span><div class="pp" data-ti="4" style="left:274px;--c1:#3C8B63;--c2:#103B2B;animation-delay:-2.2s"><span>1985</span></div><span class="dt" style="left:292.5px"></span><span class="yr" style="left:0">mais antigo</span><span class="yr" style="right:0">mais recente</span></div></div><div class="tx"><h3>Linha do Tempo</h3><p>Arraste os filmes de um diretor do mais antigo ao mais recente e veja a linha se acender a cada acerto.</p><span class="go">Jogar <i aria-hidden="true"><svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg></i></span></div></button><button class="gcard dn" data-go="g-dna"><span class="tg">Teste</span><div class="art" style="gap:20px"><div class="hx-mr"><svg width="132" height="132" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="44" fill="none" stroke="rgba(94,230,200,.18)" stroke-width="7"/><circle class="rg" cx="50" cy="50" r="44" fill="none" stroke="#5EE6C8" stroke-width="7" stroke-linecap="round" transform="rotate(-90 50 50)"/></svg><div class="pc"><span></span><small>%</small></div></div><div class="hx-chs"><span class="chp" style="left:0;top:0">ritmo lento</span><span class="chp" style="left:30px;top:32px">humor ácido</span><span class="chp" style="left:6px;top:64px">cores fortes</span></div></div><div class="tx"><h3>Descubra seu Diretor</h3><p>Responda sobre ritmo, medo e humor e descubra qual diretor combina com o seu jeito de ver cinema.</p><span class="go">Começar o teste <i aria-hidden="true"><svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg></i></span></div></button><button class="gcard in" data-go="g-in"><span class="tg">Olho clínico</span><div class="art"><div class="hx-mi" aria-hidden="true"><span class="mp"></span><span class="mp"></span><span class="mp"></span><span class="mp"></span></div></div><div class="tx"><h3>Filme Intruso</h3><p>Três filmes do mesmo diretor e um intruso no meio. Ache o que não combina, do fácil ao difícil.</p><span class="go">Jogar <i aria-hidden="true"><svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg></i></span></div></button><button class="gcard cd" data-go="g-cd"><span class="tg">Diário</span><div class="art"><div class="hx-mc" aria-hidden="true"></div></div><div class="tx"><h3>Cinedle</h3><p>Um diretor secreto por dia. Chute nomes, siga as cores e chegue nele em 6 tentativas.</p><span class="go">Jogar hoje <i aria-hidden="true"><svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg></i></span></div></button><button class="gcard os" data-go="g-os"><span class="tg">Prêmios</span><div class="art"><div class="hx-mo" aria-hidden="true"><p class="osq0"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4zM7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3"/></svg><span data-oq>Melhor Filme</span></p><div class="oo2" data-oo2><span>…</span></div><div class="oo2" data-oo2><span>…</span></div><div class="oo2" data-oo2><span>…</span></div></div></div><div class="tx"><h3>Quem levou o Oscar?</h3><p>Uma categoria, um ano de cerimônia e quatro opções. Descubra quem ficou com a estatueta, de 1950 até hoje.</p><span class="go">Jogar <svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg></span></div></button><button class="gcard du" data-duelon="1"><span class="tg">2 equipes</span><div class="art"><div class="hx-mv"><div class="tm">Equipe A<b>7</b></div><div class="vs">VS</div><div class="tm">Equipe B<b>5</b></div></div></div><div class="tx"><h3>Duelo</h3><p>Duas equipes no mesmo aparelho ou cada uma no seu celular. Vence quem souber mais.</p><span class="go">Desafiar <i aria-hidden="true"><svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg></i></span></div></button><div class="gcard so" aria-disabled="true"><div class="art"><svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#25226E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9h14l-1.5 12h-11zM9 9l.5 12M15 9l-.5 12M6 9a3 3 0 0 1 2.5-4.7A3 3 0 0 1 12 3a3 3 0 0 1 3.5 1.3A3 3 0 0 1 18 9"/></svg></div><div class="tx"><h3>Mais jogos a caminho</h3><p>O Sou Cinéfilo está crescendo. Novos jeitos de testar o seu repertório vão chegar aqui.</p><span class="go">Em breve</span></div></div></div>
     </section>
 
     <section class="sec" id="frases">
@@ -1804,6 +1866,14 @@ body[data-gt] .rrow:disabled{opacity:.8}body[data-gt] .rrow:disabled em{color:#F
 </div></section><section class="sec s2" data-g="cd"><div class="eyebrow">Como funciona</div><h2>Três passos, <em>sem enrolação</em>.</h2><div class="grid3"><div class="step"><div class="n">01</div><h3>Chute um diretor</h3><p>Digite o nome e escolha na lista. Vale qualquer um dos 280 diretores do site.</p></div><div class="step"><div class="n">02</div><h3>Leia as cores</h3><p>Cada palpite mostra seis pistas. Verde é igual, amarelo é perto, cinza é longe, e a seta aponta para o secreto.</p></div><div class="step"><div class="n">03</div><h3>Acerte em 6</h3><p>Se acertar, a sequência de dias cresce. Depois dá para compartilhar o resultado sem entregar o nome.</p></div></div></section><section class="sec s2" data-g="cd"><div class="eyebrow">As pistas</div><h2>O que cada <em>cor</em> quer dizer.</h2><div class="lgd"><div><div class="cdt g"><b>EUA</b></div><p><b>Verde:</b> igual ao do diretor secreto.</p></div><div><div class="cdt y"><b>Drama</b></div><p><b>Amarelo:</b> perto. Por exemplo, o gênero aparece entre os principais dele, ou o ano é próximo.</p></div><div><div class="cdt n"><b>Japão</b></div><p><b>Cinza:</b> longe, ou diferente.</p></div><div><div class="cdt n"><b>1965</b><i>↑</i></div><p><b>Seta:</b> o valor do secreto é maior. ↑ nasceu depois, ↓ nasceu antes.</p></div></div></section>
     
     
+<section class="gpg" id="oscar" data-g="os"><div class="hero2"><div class="hl"><div class="eyebrow">Quiz do Oscar</div><h1>Quem <em>levou o Oscar</em>?</h1><p class="lead">Melhor Filme, Direção, Ator, Atriz e os coadjuvantes, de 1950 até a cerimônia mais recente. Descubra quem ganhou a estatueta em cada ano, ou em que ano ela foi parar nas mãos certas.</p><ul class="perks2"><li>3 níveis</li><li>Só as categorias principais</li><li>Até errar</li></ul></div><div class="art"><div class="osart" id="osArt" aria-hidden="true"><p class="osq0"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4zM7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3"/></svg><span data-oq>Melhor Filme</span></p><div class="oo2" data-oo2><span>…</span></div><div class="oo2" data-oo2><span>…</span></div><div class="oo2" data-oo2><span>…</span></div><div class="oo2" data-oo2><span>…</span></div></div></div></div>
+<div class="gp2" id="osPanel">
+  <div class="gtop"><span class="gq" style="margin:0"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20v-6M10 20V9M16 20V5M22 20V2"/></svg><span>Seu jogo</span></span><span class="gsum" id="osBest"></span></div>
+  <div class="grow"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20v-6M10 20V9M16 20V5M22 20V2"/></svg><span>Nível</span></div><div class="nchips" id="osLv" role="group" aria-label="Nível"></div><p class="ghint" id="osLvDesc"></p></div>
+  <div class="grow"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4zM7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3"/></svg><span>Categoria</span></div><div class="nchips" id="osCat" role="group" aria-label="Categoria"></div></div>
+  <div class="grow"><div class="gq"><svg class="gi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Perguntas</span><small>ou jogue até errar</small></div><div class="nchips" id="osN" role="group" aria-label="Número de perguntas"></div></div>
+  <div class="gfoot"><div class="gs" id="osSum"></div><button class="btn primary" id="osGo" type="button">Jogar o Quem Levou o Oscar? <svg class="ico" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.1-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z"/></svg></button></div>
+</div></section><section class="sec s2" data-g="os"><div class="eyebrow">Como funciona</div><h2>Três passos, <em>sem enrolação</em>.</h2><div class="grid3"><div class="step"><div class="n">01</div><h3>Leia a pergunta</h3><p>Aparece uma categoria e um ano de cerimônia, por exemplo Melhor Direção em 2019. Em outras, você vê o vencedor e descobre o ano.</p></div><div class="step"><div class="n">02</div><h3>Escolha entre quatro</h3><p>Quatro opções, uma só estatueta. O jogo mostra na hora quem levou e por qual filme.</p></div><div class="step"><div class="n">03</div><h3>Some acertos</h3><p>Termine as perguntas ou jogue até errar. Seu recorde fica salvo para cada nível e categoria.</p></div></div></section><section class="sec s2" data-g="os"><div class="eyebrow">Os níveis</div><h2>Do tapete vermelho ao <em>fundo da sala</em>.</h2><div class="lvc"><div><span class="gtag">Fácil</span><h3>Cerimônias recentes</h3><p>De 1995 em diante, com opções de épocas bem diferentes.</p></div><div><span class="gtag">Médio</span><h3>Meio século de Oscar</h3><p>Desde 1975, com perguntas de ano e opções de qualquer época.</p></div><div><span class="gtag">Difícil</span><h3>A história toda</h3><p>Desde 1950, com vencedores da mesma época nas opções e sem dicas de filme.</p></div></div><p class="ghint" style="margin-top:14px">O ano é o da cerimônia: o Oscar de 2019, por exemplo, premiou filmes lançados em 2018. Categorias: Filme, Direção, Ator, Atriz, Ator Coadjuvante e Atriz Coadjuvante.</p></section>
   </div>
   <footer><div class="wrap">Sou Cinéfilo · Jogos de cinema · Fotos nas perguntas: Wikipédia / Wikimedia Commons · Dados e imagens da página Diretores: TMDB (este produto usa a API do TMDB, mas não é endossado nem certificado por ele)</div></footer>
 </main>
@@ -1820,6 +1890,7 @@ body[data-gt] .rrow:disabled{opacity:.8}body[data-gt] .rrow:disabled em{color:#F
 <main id="v-dna" hidden><div class="qwrap dnaw" id="dnaRoot"></div></main>
 <main id="v-intruso" hidden><div class="qwrap inw" id="inRoot"></div></main>
 <main id="v-cinedle" hidden><div class="qwrap cdw" id="cdRoot"></div></main>
+<main id="v-oscar" hidden><div class="qwrap inw" id="osRoot"></div></main>
 <main id="v-live" hidden><div class="qwrap livew" id="liveRoot"></div></main>
 
 <main id="v-dir" hidden><div id="dirHost"></div></main>
@@ -1908,11 +1979,11 @@ const WIKI = {
 const SHOW = {"Coen brothers":"Irmãos Coen"};
 
 const $ = id => document.getElementById(id);
-const views = ["hub","home","quiz","result","duel","dir","poster","tl","live","dna","intruso","cinedle"];
+const views = ["hub","home","quiz","result","duel","dir","poster","tl","live","dna","intruso","cinedle","oscar"];
 let size = 10;
 let S = null; // estado da partida
 
-const GT = {quiz:"qd", result:"qd", duel:"qd", live:"qd", poster:"poster", tl:"tl", dna:"dna", intruso:"in", cinedle:"cd"};
+const GT = {quiz:"qd", result:"qd", duel:"qd", live:"qd", poster:"poster", tl:"tl", dna:"dna", intruso:"in", cinedle:"cd", oscar:"os"};
 function setGT(v){
   const g = v === "home" ? $("v-home").dataset.g : (GT[v] || "");
   if (g) document.body.dataset.gt = g; else delete document.body.dataset.gt;
@@ -2572,7 +2643,7 @@ function renderDuel(){
 
 /* ---------- eventos ---------- */
 function goSection(id, m){
-  const GM = {how:"qd", levels:"qd", medals:"qd", poster:"poster", linha:"tl", descubra:"dna", "g-qd":"qd", "g-poster":"poster", "g-tl":"tl", "g-dna":"dna", intruso:"in", "g-in":"in", cinedle:"cd", "g-cd":"cd"};
+  const GM = {how:"qd", levels:"qd", medals:"qd", poster:"poster", linha:"tl", descubra:"dna", "g-qd":"qd", "g-poster":"poster", "g-tl":"tl", "g-dna":"dna", intruso:"in", "g-in":"in", cinedle:"cd", "g-cd":"cd", oscar:"os", "g-os":"os"};
   const g = GM[id];
   if (!g){ const el0 = $(id); if (el0 && $("v-hub").contains(el0)){ show("hub"); setTimeout(() => el0.scrollIntoView({behavior: "smooth"}), 40); return; } }
   if (g){ $("v-home").dataset.g = g; if (!$("v-home").hidden) setGT("home"); }
@@ -4755,6 +4826,182 @@ addEventListener("hashchange",route);route();
   function loop(box,rows,lbl,ms){if(!box)return;demo(box,rows,lbl);var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;if(rm)return;setInterval(function(){if(document.hidden)return;demo(box,rows,lbl)},ms)}
   loop(g("cdArt"),3,true,6500);
   loop(document.querySelector(".hx-mc"),3,false,4800);
+})();
+
+</script>
+<script>
+(function(){
+  var D=window.dirData||[],C=window.cineRnd;if(!D.length||!C)return;
+  var TMD="https://image.tmdb.org/t/p/w342",TMS="https://image.tmdb.org/t/p/w185";
+  function g(i){return document.getElementById(i)}
+  function norm(x){return String(x||"").normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase().replace(/[^a-z0-9 ]/g," ").replace(/\s+/g," ").trim()}
+  function esc(x){return String(x==null?"":x).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+  function ini(n){return n.split(" ").filter(function(w){return /^[A-ZÀ-Ý]/.test(w)}).map(function(w){return w[0]}).slice(0,2).join("")}
+  var RAW=["1950|Todos os Homens do Rei|Joseph L. Mankiewicz~Quem É o Infiel?|Broderick Crawford~Todos os Homens do Rei|Olivia de Havilland~Tarde Demais|Dean Jagger~Almas em Chamas|Mercedes McCambridge~Todos os Homens do Rei", "1951|A Malvada|Joseph L. Mankiewicz~A Malvada|José Ferrer~Cyrano de Bergerac|Judy Holliday~Nasci Ontem|George Sanders~A Malvada|Josephine Hull~Meu Amigo Harvey", "1952|Sinfonia de Paris|George Stevens~Um Lugar ao Sol|Humphrey Bogart~Uma Aventura na África|Vivien Leigh~Uma Rua Chamada Pecado|Karl Malden~Uma Rua Chamada Pecado|Kim Hunter~Uma Rua Chamada Pecado", "1953|O Maior Espetáculo da Terra|John Ford~Depois do Vendaval|Gary Cooper~Matar ou Morrer|Shirley Booth~Volta, Pequena Sheba|Anthony Quinn~Viva Zapata!|Gloria Grahame~Assim Estava Escrito", "1954|A Um Passo da Eternidade|Fred Zinnemann~A Um Passo da Eternidade|William Holden~Inferno 17|Audrey Hepburn~A Princesa e o Plebeu|Frank Sinatra~A Um Passo da Eternidade|Donna Reed~A Um Passo da Eternidade", "1955|Sindicato de Ladrões|Elia Kazan~Sindicato de Ladrões|Marlon Brando~Sindicato de Ladrões|Grace Kelly~Amar É Sofrer|Edmond O'Brien~A Condessa Descalça|Eva Marie Saint~Sindicato de Ladrões", "1956|Marty|Delbert Mann~Marty|Ernest Borgnine~Marty|Anna Magnani~A Rosa Tatuada|Jack Lemmon~Mister Roberts|Jo Van Fleet~Vidas Amargas", "1957|A Volta ao Mundo em 80 Dias|George Stevens~Assim Caminha a Humanidade|Yul Brynner~O Rei e Eu|Ingrid Bergman~Anastácia|Anthony Quinn~Sede de Viver|Dorothy Malone~Palavras ao Vento", "1958|A Ponte do Rio Kwai|David Lean~A Ponte do Rio Kwai|Alec Guinness~A Ponte do Rio Kwai|Joanne Woodward~As Três Máscaras de Eva|Red Buttons~Sayonara|Miyoshi Umeki~Sayonara", "1959|Gigi|Vincente Minnelli~Gigi|David Niven~Vidas Separadas|Susan Hayward~Quero Viver!|Burl Ives~Da Terra Nascem os Homens|Wendy Hiller~Vidas Separadas", "1960|Ben-Hur|William Wyler~Ben-Hur|Charlton Heston~Ben-Hur|Simone Signoret~Almas em Leilão|Hugh Griffith~Ben-Hur|Shelley Winters~O Diário de Anne Frank", "1961|Se Meu Apartamento Falasse|Billy Wilder~Se Meu Apartamento Falasse|Burt Lancaster~Entre Deus e o Pecado|Elizabeth Taylor~Disque Butterfield 8|Peter Ustinov~Spartacus|Shirley Jones~Entre Deus e o Pecado", "1962|Amor, Sublime Amor|Robert Wise e Jerome Robbins~Amor, Sublime Amor|Maximilian Schell~Julgamento em Nuremberg|Sophia Loren~Duas Mulheres|George Chakiris~Amor, Sublime Amor|Rita Moreno~Amor, Sublime Amor", "1963|Lawrence da Arábia|David Lean~Lawrence da Arábia|Gregory Peck~O Sol É para Todos|Anne Bancroft~O Milagre de Anne Sullivan|Ed Begley~Doce Pássaro da Juventude|Patty Duke~O Milagre de Anne Sullivan", "1964|Tom Jones|Tony Richardson~Tom Jones|Sidney Poitier~Lilies of the Field|Patricia Neal~Hud|Melvyn Douglas~Hud|Margaret Rutherford~Os VIPs", "1965|Minha Bela Dama|George Cukor~Minha Bela Dama|Rex Harrison~Minha Bela Dama|Julie Andrews~Mary Poppins|Peter Ustinov~Topkapi|Lila Kedrova~Zorba, o Grego", "1966|A Noviça Rebelde|Robert Wise~A Noviça Rebelde|Lee Marvin~Cat Ballou|Julie Christie~Darling, a Que Amou Demais|Martin Balsam~A Thousand Clowns|Shelley Winters~A Patch of Blue", "1967|O Homem que Não Vendeu Sua Alma|Fred Zinnemann~O Homem que Não Vendeu Sua Alma|Paul Scofield~O Homem que Não Vendeu Sua Alma|Elizabeth Taylor~Quem Tem Medo de Virginia Woolf?|Walter Matthau~Pagando Bem, que Mal Tem?|Sandy Dennis~Quem Tem Medo de Virginia Woolf?", "1968|No Calor da Noite|Mike Nichols~A Primeira Noite de um Homem|Rod Steiger~No Calor da Noite|Katharine Hepburn~Adivinhe Quem Vem para Jantar|George Kennedy~Rebeldia Indomável|Estelle Parsons~Bonnie e Clyde", "1969|Oliver!|Carol Reed~Oliver!|Cliff Robertson~Os Dois Mundos de Charly||Jack Albertson~The Subject Was Roses|Ruth Gordon~O Bebê de Rosemary", "1970|Perdidos na Noite|John Schlesinger~Perdidos na Noite|John Wayne~Bravura Indômita|Maggie Smith~Primavera de uma Solteirona|Gig Young~A Noite dos Desesperados|Goldie Hawn~A Flor do Cacto", "1971|Patton, Rebelde ou Herói?|Franklin J. Schaffner~Patton, Rebelde ou Herói?|George C. Scott~Patton, Rebelde ou Herói?|Glenda Jackson~Mulheres Apaixonadas|John Mills~A Filha de Ryan|Helen Hayes~Aeroporto", "1972|Operação França|William Friedkin~Operação França|Gene Hackman~Operação França|Jane Fonda~Klute, o Passado Condena|Ben Johnson~A Última Sessão de Cinema|Cloris Leachman~A Última Sessão de Cinema", "1973|O Poderoso Chefão|Bob Fosse~Cabaret|Marlon Brando~O Poderoso Chefão|Liza Minnelli~Cabaret|Joel Grey~Cabaret|Eileen Heckart~Butterflies Are Free", "1974|Golpe de Mestre|George Roy Hill~Golpe de Mestre|Jack Lemmon~Salve a Tigresa|Glenda Jackson~Um Toque de Classe|John Houseman~The Paper Chase|Tatum O'Neal~Lua de Papel", "1975|O Poderoso Chefão II|Francis Ford Coppola~O Poderoso Chefão II|Art Carney~Harry e Tonto|Ellen Burstyn~Alice Não Mora Mais Aqui|Robert De Niro~O Poderoso Chefão II|Ingrid Bergman~Assassinato no Expresso do Oriente", "1976|Um Estranho no Ninho|Miloš Forman~Um Estranho no Ninho|Jack Nicholson~Um Estranho no Ninho|Louise Fletcher~Um Estranho no Ninho|George Burns~Dupla do Barulho|Lee Grant~Shampoo", "1977|Rocky, um Lutador|John G. Avildsen~Rocky, um Lutador|Peter Finch~Rede de Intrigas|Faye Dunaway~Rede de Intrigas|Jason Robards~Todos os Homens do Presidente|Beatrice Straight~Rede de Intrigas", "1978|Noivo Neurótico, Noiva Nervosa|Woody Allen~Noivo Neurótico, Noiva Nervosa|Richard Dreyfuss~Adeus, Amor|Diane Keaton~Noivo Neurótico, Noiva Nervosa|Jason Robards~Júlia|Vanessa Redgrave~Júlia", "1979|O Franco Atirador|Michael Cimino~O Franco Atirador|Jon Voight~Amargo Regresso|Jane Fonda~Amargo Regresso|Christopher Walken~O Franco Atirador|Maggie Smith~Califórnia Suite", "1980|Kramer vs. Kramer|Robert Benton~Kramer vs. Kramer|Dustin Hoffman~Kramer vs. Kramer|Sally Field~Norma Rae|Melvyn Douglas~Muito Além do Jardim|Meryl Streep~Kramer vs. Kramer", "1981|Gente como a Gente|Robert Redford~Gente como a Gente|Robert De Niro~Touro Indomável|Sissy Spacek~O Destino Mudou Sua Vida|Timothy Hutton~Gente como a Gente|Mary Steenburgen~Melvin and Howard", "1982|Carruagens de Fogo|Warren Beatty~Reds|Henry Fonda~Num Lago Dourado|Katharine Hepburn~Num Lago Dourado|John Gielgud~Arthur, o Milionário Sedutor|Maureen Stapleton~Reds", "1983|Gandhi|Richard Attenborough~Gandhi|Ben Kingsley~Gandhi|Meryl Streep~A Escolha de Sofia|Louis Gossett Jr.~A Força do Destino|Jessica Lange~Tootsie", "1984|Laços de Ternura|James L. Brooks~Laços de Ternura|Robert Duvall~A Força do Carinho|Shirley MacLaine~Laços de Ternura|Jack Nicholson~Laços de Ternura|Linda Hunt~O Ano em que Vivemos em Perigo", "1985|Amadeus|Miloš Forman~Amadeus|F. Murray Abraham~Amadeus|Sally Field~Um Lugar no Coração|Haing S. Ngor~Os Gritos do Silêncio|Peggy Ashcroft~Passagem para a Índia", "1986|Entre Dois Amores|Sydney Pollack~Entre Dois Amores|William Hurt~O Beijo da Mulher-Aranha|Geraldine Page~The Trip to Bountiful|Don Ameche~Cocoon|Anjelica Huston~A Honra do Poderoso Prizzi", "1987|Platoon|Oliver Stone~Platoon|Paul Newman~A Cor do Dinheiro|Marlee Matlin~Filhos do Silêncio|Michael Caine~Hannah e Suas Irmãs|Dianne Wiest~Hannah e Suas Irmãs", "1988|O Último Imperador|Bernardo Bertolucci~O Último Imperador|Michael Douglas~Wall Street|Cher~Feitiço da Lua|Sean Connery~Os Intocáveis|Olympia Dukakis~Feitiço da Lua", "1989|Rain Man|Barry Levinson~Rain Man|Dustin Hoffman~Rain Man|Jodie Foster~Acusados|Kevin Kline~Um Peixe Chamado Wanda|Geena Davis~O Turista Acidental", "1990|Conduzindo Miss Daisy|Oliver Stone~Nascido em 4 de Julho|Daniel Day-Lewis~Meu Pé Esquerdo|Jessica Tandy~Conduzindo Miss Daisy|Denzel Washington~Tempo de Glória|Brenda Fricker~Meu Pé Esquerdo", "1991|Dança com Lobos|Kevin Costner~Dança com Lobos|Jeremy Irons~O Reverso da Fortuna|Kathy Bates~Louca Obsessão|Joe Pesci~Os Bons Companheiros|Whoopi Goldberg~Ghost: Do Outro Lado da Vida", "1992|O Silêncio dos Inocentes|Jonathan Demme~O Silêncio dos Inocentes|Anthony Hopkins~O Silêncio dos Inocentes|Jodie Foster~O Silêncio dos Inocentes|Jack Palance~Amigos, Nem Mais Nem Menos|Mercedes Ruehl~O Pescador de Ilusões", "1993|Os Imperdoáveis|Clint Eastwood~Os Imperdoáveis|Al Pacino~Perfume de Mulher|Emma Thompson~Retorno a Howards End|Gene Hackman~Os Imperdoáveis|Marisa Tomei~Meu Primo Vinny", "1994|A Lista de Schindler|Steven Spielberg~A Lista de Schindler|Tom Hanks~Filadélfia|Holly Hunter~O Piano|Tommy Lee Jones~O Fugitivo|Anna Paquin~O Piano", "1995|Forrest Gump|Robert Zemeckis~Forrest Gump|Tom Hanks~Forrest Gump|Jessica Lange~Blue Sky|Martin Landau~Ed Wood|Dianne Wiest~Tiros na Broadway", "1996|Coração Valente|Mel Gibson~Coração Valente|Nicolas Cage~Despedida em Las Vegas|Susan Sarandon~Os Últimos Passos de um Homem|Kevin Spacey~Os Suspeitos|Mira Sorvino~Poderosa Afrodite", "1997|O Paciente Inglês|Anthony Minghella~O Paciente Inglês|Geoffrey Rush~Shine: Brilhante|Frances McDormand~Fargo|Cuba Gooding Jr.~Jerry Maguire|Juliette Binoche~O Paciente Inglês", "1998|Titanic|James Cameron~Titanic|Jack Nicholson~Melhor É Impossível|Helen Hunt~Melhor É Impossível|Robin Williams~Gênio Indomável|Kim Basinger~Los Angeles: Cidade Proibida", "1999|Shakespeare Apaixonado|Steven Spielberg~O Resgate do Soldado Ryan|Roberto Benigni~A Vida É Bela|Gwyneth Paltrow~Shakespeare Apaixonado|James Coburn~Aflição|Judi Dench~Shakespeare Apaixonado", "2000|Beleza Americana|Sam Mendes~Beleza Americana|Kevin Spacey~Beleza Americana|Hilary Swank~Meninos Não Choram|Michael Caine~Regras da Vida|Angelina Jolie~Garota, Interrompida", "2001|Gladiador|Steven Soderbergh~Traffic|Russell Crowe~Gladiador|Julia Roberts~Erin Brockovich|Benicio del Toro~Traffic|Marcia Gay Harden~Pollock", "2002|Uma Mente Brilhante|Ron Howard~Uma Mente Brilhante|Denzel Washington~Dia de Treinamento|Halle Berry~A Última Ceia|Jim Broadbent~Iris|Jennifer Connelly~Uma Mente Brilhante", "2003|Chicago|Roman Polanski~O Pianista|Adrien Brody~O Pianista|Nicole Kidman~As Horas|Chris Cooper~Adaptação|Catherine Zeta-Jones~Chicago", "2004|O Senhor dos Anéis: O Retorno do Rei|Peter Jackson~O Senhor dos Anéis: O Retorno do Rei|Sean Penn~Sobre Meninos e Lobos|Charlize Theron~Monster: Desejo Assassino|Tim Robbins~Sobre Meninos e Lobos|Renée Zellweger~Cold Mountain", "2005|Menina de Ouro|Clint Eastwood~Menina de Ouro|Jamie Foxx~Ray|Hilary Swank~Menina de Ouro|Morgan Freeman~Menina de Ouro|Cate Blanchett~O Aviador", "2006|Crash: No Limite|Ang Lee~O Segredo de Brokeback Mountain|Philip Seymour Hoffman~Capote|Reese Witherspoon~Johnny & June|George Clooney~Syriana|Rachel Weisz~O Jardineiro Fiel", "2007|Os Infiltrados|Martin Scorsese~Os Infiltrados|Forest Whitaker~O Último Rei da Escócia|Helen Mirren~A Rainha|Alan Arkin~Pequena Miss Sunshine|Jennifer Hudson~Dreamgirls", "2008|Onde os Fracos Não Têm Vez|Joel e Ethan Coen~Onde os Fracos Não Têm Vez|Daniel Day-Lewis~Sangue Negro|Marion Cotillard~Piaf: Um Hino ao Amor|Javier Bardem~Onde os Fracos Não Têm Vez|Tilda Swinton~Conduta de Risco", "2009|Quem Quer Ser um Milionário?|Danny Boyle~Quem Quer Ser um Milionário?|Sean Penn~Milk: A Voz da Igualdade|Kate Winslet~O Leitor|Heath Ledger~Batman: O Cavaleiro das Trevas|Penélope Cruz~Vicky Cristina Barcelona", "2010|Guerra ao Terror|Kathryn Bigelow~Guerra ao Terror|Jeff Bridges~Coração Louco|Sandra Bullock~Um Sonho Possível|Christoph Waltz~Bastardos Inglórios|Mo'Nique~Preciosa", "2011|O Discurso do Rei|Tom Hooper~O Discurso do Rei|Colin Firth~O Discurso do Rei|Natalie Portman~Cisne Negro|Christian Bale~O Vencedor|Melissa Leo~O Vencedor", "2012|O Artista|Michel Hazanavicius~O Artista|Jean Dujardin~O Artista|Meryl Streep~A Dama de Ferro|Christopher Plummer~Toda Forma de Amor|Octavia Spencer~Histórias Cruzadas", "2013|Argo|Ang Lee~As Aventuras de Pi|Daniel Day-Lewis~Lincoln|Jennifer Lawrence~O Lado Bom da Vida|Christoph Waltz~Django Livre|Anne Hathaway~Os Miseráveis", "2014|12 Anos de Escravidão|Alfonso Cuarón~Gravidade|Matthew McConaughey~Clube de Compras Dallas|Cate Blanchett~Blue Jasmine|Jared Leto~Clube de Compras Dallas|Lupita Nyong'o~12 Anos de Escravidão", "2015|Birdman|Alejandro G. Iñárritu~Birdman|Eddie Redmayne~A Teoria de Tudo|Julianne Moore~Para Sempre Alice|J.K. Simmons~Whiplash|Patricia Arquette~Boyhood", "2016|Spotlight: Segredos Revelados|Alejandro G. Iñárritu~O Regresso|Leonardo DiCaprio~O Regresso|Brie Larson~O Quarto de Jack|Mark Rylance~Ponte dos Espiões|Alicia Vikander~A Garota Dinamarquesa", "2017|Moonlight|Damien Chazelle~La La Land|Casey Affleck~Manchester à Beira-Mar|Emma Stone~La La Land|Mahershala Ali~Moonlight|Viola Davis~Um Limite entre Nós", "2018|A Forma da Água|Guillermo del Toro~A Forma da Água|Gary Oldman~O Destino de uma Nação|Frances McDormand~Três Anúncios para um Crime|Sam Rockwell~Três Anúncios para um Crime|Allison Janney~Eu, Tonya", "2019|Green Book: O Guia|Alfonso Cuarón~Roma|Rami Malek~Bohemian Rhapsody|Olivia Colman~A Favorita|Mahershala Ali~Green Book: O Guia|Regina King~Se a Rua Beale Falasse", "2020|Parasita|Bong Joon-ho~Parasita|Joaquin Phoenix~Coringa|Renée Zellweger~Judy: Muito Além do Arco-Íris|Brad Pitt~Era uma Vez em... Hollywood|Laura Dern~História de um Casamento", "2021|Nomadland|Chloé Zhao~Nomadland|Anthony Hopkins~Meu Pai|Frances McDormand~Nomadland|Daniel Kaluuya~Judas e o Messias Negro|Youn Yuh-jung~Minari", "2022|No Ritmo do Coração|Jane Campion~Ataque dos Cães|Will Smith~King Richard: Criando Campeãs|Jessica Chastain~Os Olhos de Tammy Faye|Troy Kotsur~No Ritmo do Coração|Ariana DeBose~Amor, Sublime Amor", "2023|Tudo em Todo o Lugar ao Mesmo Tempo|Daniel Kwan e Daniel Scheinert~Tudo em Todo o Lugar ao Mesmo Tempo|Brendan Fraser~A Baleia|Michelle Yeoh~Tudo em Todo o Lugar ao Mesmo Tempo|Ke Huy Quan~Tudo em Todo o Lugar ao Mesmo Tempo|Jamie Lee Curtis~Tudo em Todo o Lugar ao Mesmo Tempo", "2024|Oppenheimer|Christopher Nolan~Oppenheimer|Cillian Murphy~Oppenheimer|Emma Stone~Pobres Criaturas|Robert Downey Jr.~Oppenheimer|Da'Vine Joy Randolph~Os Rejeitados", "2025|Anora|Sean Baker~Anora|Adrien Brody~O Brutalista|Mikey Madison~Anora|Kieran Culkin~A Verdadeira Dor|Zoe Saldaña~Emilia Pérez", "2026|Uma Batalha Após a Outra|Paul Thomas Anderson~Uma Batalha Após a Outra|Michael B. Jordan~Pecadores|Jessie Buckley~Hamnet|Sean Penn~Uma Batalha Após a Outra|Amy Madigan~A Hora do Mal"];
+  var CATS={filme:"Melhor Filme",dir:"Melhor Direção",ator:"Melhor Ator",atriz:"Melhor Atriz",coa:"Melhor Ator Coadjuvante",coz:"Melhor Atriz Coadjuvante"};
+  var CK=["filme","dir","ator","atriz","coa","coz"];
+  var GROUPS={todas:CK,filme:["filme"],dir:["dir"],ator:["ator"],atriz:["atriz"],coad:["coa","coz"]};
+  var GL={todas:"Todas",filme:"Filme",dir:"Direção",ator:"Ator",atriz:"Atriz",coad:"Coadjuvantes"};
+  var GK=["todas","filme","dir","ator","atriz","coad"];
+  var LV={
+    facil:{name:"Fácil",desc:"Anos recentes e opções bem diferentes entre si.",from:1995,gap:8,tj:0},
+    medio:{name:"Médio",desc:"Mais anos, opções variadas e perguntas de ano.",from:1975,gap:0,tj:.3},
+    dificil:{name:"Difícil",desc:"Desde 1950, com vencedores da mesma época nas opções.",from:1950,gap:-10,tj:.5}
+  };
+  var LK=["facil","medio","dificil"];
+  var BYC={},BYY={};
+  RAW.forEach(function(r){var p=r.split("|"),y=+p[0];BYY[y]={};
+    CK.forEach(function(k,i){var s=p[i+1];if(!s)return;var q=s.split("~"),e=k==="filme"?{y:y,c:k,name:q[0],film:q[0]}:{y:y,c:k,name:q[0],film:q[1]};(BYC[k]=BYC[k]||[]).push(e);BYY[y][k]=e})});
+  /* pôsteres e fotos vindos dos dados do site, quando o título bate */
+  var FT={},DP={};
+  D.forEach(function(d){DP[norm(d.n)]=d;(d.films||[]).forEach(function(f){if(!f[4]||!+f[0])return;var k=norm(f[1]);(FT[k]=FT[k]||[]).push(f)})});
+  var ALLF=null;
+  function poster(e){if(e.pp!==undefined)return e.pp;var l=FT[norm(e.film)]||[],b=null;l.forEach(function(f){if(Math.abs(+f[0]-(e.y-1))<=1&&(!b||(f[6]||0)>(b[6]||0)))b=f});
+    if(!b){if(!ALLF){ALLF=[];Object.keys(FT).forEach(function(k){FT[k].forEach(function(f){ALLF.push({f:f,t:norm(f[1]).split(" ")})})})}
+      var tk=norm(e.film).split(" ").filter(function(w){return w.length>2});
+      if(tk.length)ALLF.forEach(function(x){if(Math.abs(+x.f[0]-(e.y-1))<=1&&tk.every(function(w){return x.t.indexOf(w)>=0})&&(!b||(x.f[6]||0)>(b[6]||0)))b=x.f})}
+    return e.pp=b?b[4]:null}
+  function photo(e){if(e.c!=="dir")return null;if(e.ph!==undefined)return e.ph;var d=DP[norm(e.name)]||DP[norm(e.name.split(" e ")[0])];return e.ph=d&&d.foto?d.foto:null}
+  /* ---------- preferências ---------- */
+  var cfg={lv:"medio",cat:"todas",n:10};
+  try{var c0=JSON.parse(localStorage.getItem("os_cfg")||"null");if(c0){if(LV[c0.lv])cfg.lv=c0.lv;if(GROUPS[c0.cat])cfg.cat=c0.cat;if([5,10,15,-1].indexOf(c0.n)>=0)cfg.n=c0.n}}catch(e){}
+  function save(){try{localStorage.setItem("os_cfg",JSON.stringify(cfg))}catch(e){}}
+  function bests(){try{return JSON.parse(localStorage.getItem("os_best")||"{}")||{}}catch(e){return {}}}
+  var NS=[5,10,15,-1];
+  function panel(){
+    var lv=g("osLv");if(!lv)return;
+    lv.innerHTML=LK.map(function(k){return '<button class="nchip wide" data-oslv="'+k+'" aria-pressed="'+(k===cfg.lv)+'">'+LV[k].name+'</button>'}).join("");
+    g("osCat").innerHTML=GK.map(function(k){return '<button class="nchip wide" data-oscat="'+k+'" aria-pressed="'+(k===cfg.cat)+'">'+GL[k]+'</button>'}).join("");
+    g("osN").innerHTML=NS.map(function(n){return '<button class="nchip" data-osn="'+n+'" aria-pressed="'+(n===cfg.n)+'">'+(n===-1?"Até errar":n)+'</button>'}).join("");
+    g("osLvDesc").textContent=LV[cfg.lv].desc;
+    g("osSum").innerHTML=cfg.n===-1?"<b>Até errar</b> · "+GL[cfg.cat].toLowerCase()+" · nível "+LV[cfg.lv].name.toLowerCase()+" · uma vida só":"<b>"+cfg.n+" perguntas</b> · "+GL[cfg.cat].toLowerCase()+" · nível "+LV[cfg.lv].name.toLowerCase();
+    var b=bests()[bk()];g("osBest").innerHTML=b!=null?(cfg.n===-1?"Seu recorde: <b>"+b+" seguidos</b>":"Seu melhor: <b>"+b+"/"+cfg.n+"</b>"):"Ainda sem recorde"
+  }
+  function bk(){return cfg.lv+"_"+cfg.cat+"_"+cfg.n}
+  /* ---------- geração das perguntas ---------- */
+  function pick(a,n){return C.shuf(a).slice(0,n)}
+  function yearsOf(c,from){return BYC[c].filter(function(e){return e.y>=from}).map(function(e){return e.y})}
+  function ukey(e){return e.c==="filme"?norm(e.film):norm(e.name)}
+  function whoQ(lv,used){
+    var L=LV[lv],cs=GROUPS[cfg.cat],tries=0;
+    while(tries++<80){
+      var c=cs[Math.floor(Math.random()*cs.length)],ys=yearsOf(c,L.from);
+      var y=ys[Math.floor(Math.random()*ys.length)],e=BYY[y]&&BYY[y][c];if(!e||used[c+y])continue;
+      var pool=BYC[c].filter(function(x){return x.y!==y&&ukey(x)!==ukey(e)}),dy=function(x){return Math.abs(x.y-y)};
+      var p1=pool.filter(function(x){return L.gap>0?dy(x)>=L.gap:L.gap<0?dy(x)<=-L.gap:true});
+      var seen={};seen[ukey(e)]=1;var ds=[];
+      C.shuf(p1.length>=3?p1:pool).forEach(function(x){if(ds.length<3&&!seen[ukey(x)]){seen[ukey(x)]=1;ds.push(x)}});
+      if(ds.length<3)continue;
+      return {t:"who",c:c,y:y,ans:e,opts:C.shuf([e].concat(ds)),lv:lv,k:c+y}
+    }
+    return null}
+  function yearQ(lv,used){
+    var L=LV[lv],cs=GROUPS[cfg.cat],tries=0;
+    while(tries++<80){
+      var c=cs[Math.floor(Math.random()*cs.length)],ys=yearsOf(c,L.from);
+      var y=ys[Math.floor(Math.random()*ys.length)],e=BYY[y]&&BYY[y][c];if(!e||used[c+y])continue;
+      var rep=BYC[c].filter(function(x){return ukey(x)===ukey(e)&&x.y!==y});if(rep.length&&false)continue;
+      var lo=lv==="dificil"?1:4,hi=lv==="dificil"?5:12,all=[];
+      for(var d=lo;d<=hi;d++){[y-d,y+d].forEach(function(z){if(z>=1950&&z<=2026&&z!==y&&BYY[z]&&BYY[z][c])all.push(z)})}
+      var seen={},ds=[];seen[y]=1;
+      C.shuf(all).forEach(function(z){if(ds.length<3&&!seen[z]&&Math.abs(z-y)>=lo){var close=ds.every(function(w){return Math.abs(w-z)>=(lv==="dificil"?1:3)});if(close){seen[z]=1;ds.push(z)}}});
+      if(ds.length<3)continue;
+      return {t:"year",c:c,y:y,ans:e,opts:C.shuf([y].concat(ds)),lv:lv,k:c+y}
+    }
+    return null}
+  function makeQ(lv,used){
+    var tj=LV[lv].tj,q=(Math.random()<tj?yearQ(lv,used):null)||whoQ(lv,used);
+    if(q)used[q.k]=1;return q}
+  window.cineOs={make:makeQ,BYC:BYC,BYY:BYY,LV:LV,cfg:cfg,poster:poster,photo:photo};
+  /* ---------- tela de jogo ---------- */
+  var G=null,root=function(){return g("osRoot")};
+  var TROPHY='<svg class="osi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4zM7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3"/></svg>';
+  function avatar(e,big){
+    var p=photo(e);
+    return '<span class="osav'+(big?' big':'')+'">'+esc(ini(e.name))+(p?'<img alt="" loading="lazy" src="'+TMS+p+'" onerror="this.remove()">':'')+'</span>'}
+  function optWho(e,i,q){
+    var hint=q.lv==="facil"&&q.c!=="filme"&&q.c!=="dir"?'<small class="osh">por '+esc(e.film)+'</small>':'<small class="osh"></small>';
+    if(q.c==="filme"){var p=poster(e);
+      return '<button class="oop pos" data-oo="'+i+'" aria-label="'+esc(e.name)+'"><span class="osp"><b class="ifb">'+esc(e.name)+'</b>'+(p?'<img class="pim" alt="" decoding="async" src="'+TMD+p+'" onerror="this.remove()">':'')+'</span><span class="otx"><b>'+esc(e.name)+'</b><small class="osh"></small></span></button>'}
+    return '<button class="oop" data-oo="'+i+'" aria-label="'+esc(e.name)+'">'+avatar(e)+'<span class="otx"><b>'+esc(e.name)+'</b>'+hint+'</span></button>'}
+  function optYear(y,i){return '<button class="oop yr" data-oo="'+i+'" aria-label="'+y+'"><b>'+y+'</b><small class="osh"></small></button>'}
+  function start(){
+    var sv=cfg.n===-1,used={},n=sv?0:cfg.n;
+    G={lv:cfg.lv,cat:cfg.cat,n:n,i:0,score:0,streak:0,best:0,locked:false,surv:sv,used:used,over:false,q:null,miss:[]};
+    show("oscar");draw()
+  }
+  function draw(){
+    var q=(G.surv||G.i<G.n)?makeQ(G.lv,G.used):null;
+    if(!q){return fin()}
+    G.q=q;G.locked=false;
+    var sub=q.t==="who"?'<h2>Quem levou o Oscar de <em>'+CATS[q.c]+'</em> em <em>'+q.y+'</em>?</h2>':
+      '<h2>Em que ano '+(q.c==="filme"?'<em>'+esc(q.ans.film)+'</em> levou':'<em>'+esc(q.ans.name)+'</em> levou')+' o Oscar de <em>'+CATS[q.c]+'</em>?</h2>';
+    var note=q.t==="who"?'Cerimônia de '+q.y+' · filmes lançados em '+(q.y-1):(q.c==="filme"?'Ano da cerimônia':'Por '+esc(q.ans.film)+' · ano da cerimônia');
+    var opts=q.t==="who"?q.opts.map(function(e,i){return optWho(e,i,q)}).join(""):q.opts.map(optYear).join("");
+    root().innerHTML='<div class="inhead"><span class="inlv">Nível '+LV[G.lv].name+'</span><span class="inrd">Pergunta <b>'+(G.i+1)+'</b>'+(G.surv?' · até errar':'/'+G.n)+'</span><span class="ptot">Acertos <b>'+G.score+'</b></span><span class="streak" id="osStr"'+(G.streak>1?'':' hidden')+'>'+G.streak+' seguidos</span><button id="osQuit" class="inq2" type="button">Sair</button></div>'+
+    '<div class="osq"><span class="osk">'+TROPHY+CATS[q.c]+'</span>'+sub+'<p class="osn">'+note+'</p></div>'+
+    '<div class="oopts'+(q.t==="who"&&q.c==="filme"?' four':'')+(q.t==="year"?' years':'')+'" id="osOpts">'+opts+'</div><div id="osFb" aria-live="polite"></div>'
+  }
+  function answer(i){
+    if(!G||G.locked)return;var q=G.q,pick=q.opts[i];if(pick==null)return;G.locked=true;
+    var ok=q.t==="who"?pick===q.ans:pick===q.y;
+    if(!ok&&G.surv)G.over=true;
+    if(ok){G.score++;G.streak++;if(G.streak>G.best)G.best=G.streak}else{G.streak=0;G.miss.push(q)}
+    var els=document.querySelectorAll("#osOpts .oop");
+    q.opts.forEach(function(o,k){var el=els[k],right=q.t==="who"?o===q.ans:o===q.y;el.disabled=true;el.classList.add(right?"win":"lose");
+      var sm=el.querySelector(".osh");
+      if(sm){if(q.t==="who")sm.textContent=right?"Oscar "+q.y:(o.c==="filme"?"Venceu em ":"Venceu em ")+o.y+(q.c==="filme"?"":" · "+o.film);else sm.textContent=right?"Cerimônia de "+o+" · filmes de "+(o-1):(BYY[o]&&BYY[o][q.c]?"Foi para "+BYY[o][q.c].name:"")}});
+    if(!ok)els[i].classList.add("wrong");
+    var e=q.ans,por=q.c==="filme"?'':' por <b>'+esc(e.film)+'</b>';
+    var msg=q.c==="filme"?'Em <b>'+q.y+'</b>, o Oscar de Melhor Filme foi para <b>'+esc(e.name)+'</b>.':'Em <b>'+q.y+'</b>, <b>'+esc(e.name)+'</b> levou '+CATS[q.c]+por+'.';
+    var last=(!G.surv&&G.i+1>=G.n)||G.over;
+    g("osFb").innerHTML='<div class="infb"><div class="pgain'+(ok?'':' zero')+'">'+(ok?'Acertou!':'Não foi essa')+'</div><p>'+msg+'</p><button class="btn primary" id="osNext" type="button">'+(last?'Ver resultado':'Próxima')+'</button></div>';
+    var nb=g("osNext");if(nb){nb.focus({preventScroll:true});nb.scrollIntoView({block:"nearest",behavior:"smooth"})}
+    var tot=document.querySelector("#osRoot .ptot b");if(tot)tot.textContent=G.score;
+    var st=g("osStr");if(st){st.hidden=G.streak<2;st.textContent=G.streak+" seguidos"}
+  }
+  function fin(){
+    var n=G.surv?G.score:G.n,k=bk(),b=bests(),rec=false,key=G.lv+"_"+G.cat+"_"+(G.surv?-1:G.n);
+    if(G.score>0&&(b[key]==null||G.score>b[key])){b[key]=G.score;rec=true;try{localStorage.setItem("os_best",JSON.stringify(b))}catch(e){}}
+    var pct=G.surv?(G.score>=15?.95:G.score>=10?.75:G.score>=5?.5:.2):G.score/Math.max(1,G.n);
+    var t=pct>=.9?["Pronto para a cerimônia","Você conhece cada estatueta."]:pct>=.7?["Cinéfilo da Academia","Poucos vencedores escapam de você."]:pct>=.45?["Indicado, mas não levou","Falta pouco para a estatueta."]:["Ficou de fora desta vez","Tente de novo ou comece pelo nível fácil."];
+    var miss=G.miss.slice(0,4).map(function(q){var e=q.ans;return '<li><b>'+q.y+'</b> · '+CATS[q.c]+': '+esc(e.name)+(q.c==="filme"?'':' <small>('+esc(e.film)+')</small>')+'</li>'}).join("");
+    root().innerHTML='<div class="tltop"><span></span><button id="osBack" type="button">Voltar</button></div><div class="panel inres"><div class="eyebrow" style="justify-content:center">'+t[0]+'</div><div class="inbig">'+G.score+'<span>'+(G.surv?(G.score===1?' seguido':' seguidos'):' / '+G.n)+'</span></div><p class="pnote">'+t[1]+' Nível '+LV[G.lv].name+' · '+GL[G.cat]+(G.best>1&&!G.surv?' · melhor sequência: '+G.best:'')+(rec?' · <b>novo recorde!</b>':'')+'</p>'+
+    (miss?'<div class="osmiss"><h3>Para lembrar</h3><ul>'+miss+'</ul></div>':'')+
+    '<div class="inbtns"><button class="btn primary" id="osAgain" type="button">Jogar de novo</button><button class="btn ghost" id="osShare" type="button">Compartilhar</button></div></div>'
+  }
+  function share(btn){
+    var txt=G.surv?"Acertei "+G.score+" seguidas no Quem Levou o Oscar?, do Sou Cinéfilo. Consegue passar?":"Fiz "+G.score+"/"+G.n+" no nível "+LV[G.lv].name+" do Quem Levou o Oscar?, no Sou Cinéfilo. Será que você sabe mais?",old=btn.textContent;
+    try{if(navigator.share)navigator.share({text:txt,url:location.origin});else{navigator.clipboard.writeText(txt+" "+location.origin).then(function(){btn.textContent="Copiado!";setTimeout(function(){btn.textContent=old},1800)})}}catch(e){}
+  }
+  document.addEventListener("click",function(e){
+    var t=e.target,a;
+    if((a=t.closest("[data-oslv]"))){cfg.lv=a.dataset.oslv;save();panel();return}
+    if((a=t.closest("[data-oscat]"))){cfg.cat=a.dataset.oscat;save();panel();return}
+    if((a=t.closest("[data-osn]"))){cfg.n=+a.dataset.osn;save();panel();return}
+    if(t.closest("#osGo")){start();return}
+    if(g("v-oscar")&&!g("v-oscar").hidden){
+      if((a=t.closest("[data-oo]"))){answer(+a.dataset.oo);return}
+      if(t.closest("#osNext")){var last=(!G.surv&&G.i+1>=G.n)||G.over;if(last){fin()}else{G.i++;draw()}return}
+      if(t.closest("#osAgain")){start();return}
+      if(t.closest("#osShare")){share(t.closest("#osShare"));return}
+      if(t.closest("#osQuit")||t.closest("#osBack")){panel();goSection("oscar");return}
+    }
+  });
+  panel();
+  /* ---------- animações: landing e card da home ---------- */
+  function fillArt(box){
+    var save0=cfg.cat;cfg.cat="todas";var q=whoQ("medio",{});cfg.cat=save0;if(!q)return;
+    box.classList.remove("hit");
+    var h=box.querySelector("[data-oq]");if(h)h.textContent=({coa:"Melhor Ator coad.",coz:"Melhor Atriz coad."}[q.c]||CATS[q.c])+" · "+q.y;
+    var els=box.querySelectorAll("[data-oo2]");
+    if(els.length<q.opts.length){q.opts=C.shuf([q.ans].concat(q.opts.filter(function(o){return o!==q.ans}).slice(0,els.length-1)))}
+    q.opts.forEach(function(o,i){var el=els[i];if(!el)return;el.classList.remove("win");var s=el.querySelector("span");if(s)s.textContent=o.name;if(o===q.ans)el.dataset.w="1";else delete el.dataset.w});
+    setTimeout(function(){els.forEach(function(el){if(el.dataset.w)el.classList.add("win")});box.classList.add("hit")},1500)
+  }
+  function loop(box,ms){if(!box)return;fillArt(box);var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;if(rm)return;setInterval(function(){if(document.hidden)return;box.classList.add("swap");setTimeout(function(){fillArt(box);box.classList.remove("swap")},400)},ms)}
+  loop(g("osArt"),5400);
+  loop(document.querySelector(".hx-mo"),4600);
 })();
 
 </script>
