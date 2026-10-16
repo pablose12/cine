@@ -1708,6 +1708,69 @@ body[data-gt="os"] #v-oscar{color:#fff}
   #pStage:has(#pf) .opts .opt{padding:8px 12px;min-height:44px}
   #pStage:has(#pf) #pFb{grid-column:2;grid-row:4;align-self:start}
 }
+/* ===== v34: chat de ajuda e contato ===== */
+.cwb{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:60;width:54px;height:54px;border-radius:50%;border:0;background:#F4A81D;color:#1B1440;display:grid;place-items:center;cursor:pointer;box-shadow:0 10px 24px -8px rgba(15,10,40,.55),0 0 0 3px rgba(255,255,255,.85);transition:transform .2s,box-shadow .2s}
+.cwb:hover{transform:translateY(-2px) scale(1.04)}
+.cwb:focus-visible{outline:3px solid #25226E;outline-offset:3px}
+.cwb svg{width:26px;height:26px}
+body.ms-on .cwb{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
+body:has(#v-quiz:not([hidden])) .cwb,body:has(#v-result:not([hidden])) .cwb,body:has(#v-poster:not([hidden])) .cwb,body:has(#v-tl:not([hidden])) .cwb,body:has(#v-dna:not([hidden])) .cwb,body:has(#v-intruso:not([hidden])) .cwb,body:has(#v-cinedle:not([hidden])) .cwb,body:has(#v-oscar:not([hidden])) .cwb,body:has(#v-live:not([hidden])) .cwb,body:has(#v-duel:not([hidden])) .cwb{display:none}
+.cwp{position:fixed;right:16px;bottom:calc(82px + env(safe-area-inset-bottom,0px));z-index:61;width:min(380px,calc(100vw - 32px));max-height:min(620px,calc(100dvh - 110px));display:flex;flex-direction:column;background:#fff;color:#15163A;border-radius:20px;box-shadow:0 24px 60px -16px rgba(10,8,40,.6),0 0 0 1px rgba(37,34,110,.12);overflow:hidden;font:400 14px/1.45 var(--font-body,Poppins,system-ui,sans-serif);animation:cwin .22s cubic-bezier(.2,.9,.3,1) both}
+.cwp[hidden]{display:none}
+body.ms-on .cwp{bottom:calc(160px + env(safe-area-inset-bottom,0px))}
+@keyframes cwin{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.cwp{animation:none}.cwb{transition:none}}
+.cwh{display:flex;align-items:center;gap:10px;padding:14px 14px 14px 18px;background:#25226E;color:#fff}
+.cwh b{font:700 16px/1.2 var(--font-display,Sora,sans-serif);flex:1}
+.cwh button{border:0;background:rgba(255,255,255,.14);color:#fff;width:34px;height:34px;border-radius:50%;cursor:pointer;display:grid;place-items:center;font-size:18px;line-height:1}
+.cwh button:hover{background:rgba(255,255,255,.26)}
+.cwh button:focus-visible{outline:2px solid #F4A81D;outline-offset:2px}
+.cwb2{overflow:auto;padding:16px 18px 18px;display:flex;flex-direction:column;gap:12px;overscroll-behavior:contain}
+.cwb2 p{margin:0}
+.cwlead{color:#4E5078}
+.cwopts{display:grid;gap:8px}
+.cwo{display:flex;align-items:center;gap:12px;text-align:left;width:100%;border:1.5px solid #D8DBEE;background:#F6F7FC;border-radius:14px;padding:11px 13px;cursor:pointer;font:inherit;color:inherit;min-height:52px}
+.cwo:hover{border-color:#25226E;background:#fff}
+.cwo:focus-visible{outline:3px solid #F4A81D;outline-offset:2px}
+.cwo i{flex:none;width:34px;height:34px;border-radius:10px;background:#25226E;color:#F4A81D;display:grid;place-items:center;font-style:normal;font-size:17px}
+.cwo span{display:flex;flex-direction:column;min-width:0}
+.cwo b{font:700 14px/1.2 var(--font-display,Sora,sans-serif)}
+.cwo small{color:#4E5078;font-size:12.5px}
+.cwback{align-self:flex-start;border:0;background:none;color:#25226E;font:600 13px var(--font-body,Poppins,sans-serif);cursor:pointer;padding:4px 0;min-height:32px}
+.cwback:focus-visible{outline:2px solid #F4A81D;outline-offset:2px}
+.cwfaq details{border:1px solid #D8DBEE;border-radius:12px;background:#F6F7FC;margin-bottom:8px}
+.cwfaq summary{cursor:pointer;padding:11px 13px;font-weight:600;list-style:none;display:flex;gap:8px;justify-content:space-between;align-items:center;min-height:44px}
+.cwfaq summary::-webkit-details-marker{display:none}
+.cwfaq summary::after{content:"+";font-weight:700;color:#25226E;flex:none}
+.cwfaq details[open] summary::after{content:"–"}
+.cwfaq details p{padding:0 13px 12px;color:#33355C}
+.cwf{display:flex;flex-direction:column;gap:10px}
+.cwf label{font-weight:600;font-size:13px}
+.cwf textarea,.cwf input[type=text]{width:100%;box-sizing:border-box;border:1.5px solid #B9BDDD;border-radius:12px;padding:10px 12px;font:inherit;font-size:15px;color:#15163A;background:#fff}
+.cwf textarea{min-height:110px;resize:vertical}
+.cwf textarea:focus,.cwf input:focus{outline:3px solid #F4A81D;outline-offset:1px;border-color:#25226E}
+.cwf .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.cwf small{color:#4E5078;font-size:12px}
+.cwbtn{border:0;border-radius:999px;background:#25226E;color:#fff;font:700 14px var(--font-body,Poppins,sans-serif);padding:12px 20px;cursor:pointer;min-height:44px}
+.cwbtn:hover{background:#34308F}
+.cwbtn:disabled{opacity:.55;cursor:default}
+.cwbtn:focus-visible{outline:3px solid #F4A81D;outline-offset:2px}
+.cwerr{color:#B3261E;font-size:13px;min-height:18px}
+.cwok{text-align:center;padding:14px 4px}
+.cwok b{display:block;font:700 18px var(--font-display,Sora,sans-serif);margin-bottom:6px}
+.cwlog{display:flex;flex-direction:column;gap:8px;max-height:300px;overflow:auto;padding-right:2px}
+.cwm{max-width:88%;padding:9px 12px;border-radius:14px;word-wrap:break-word}
+.cwm.bot{background:#EEF0FA;border-bottom-left-radius:4px;align-self:flex-start}
+.cwm.me{background:#25226E;color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.cwm a{color:#25226E;font-weight:600;text-decoration:underline}
+.cwchips{display:flex;flex-wrap:wrap;gap:6px}
+.cwchips button{border:1.5px solid #B9BDDD;background:#fff;color:#25226E;border-radius:999px;padding:6px 12px;font:600 12.5px var(--font-body,Poppins,sans-serif);cursor:pointer;min-height:34px}
+.cwchips button:hover{background:#EEF0FA}
+.cwchips button:focus-visible{outline:2px solid #F4A81D;outline-offset:2px}
+.cwin{display:flex;gap:8px}
+.cwin input{flex:1;min-width:0;border:1.5px solid #B9BDDD;border-radius:999px;padding:10px 14px;font:inherit;font-size:15px}
+.cwin input:focus{outline:3px solid #F4A81D;outline-offset:1px;border-color:#25226E}
+.cwnote{font-size:12px;color:#4E5078}
 </style>
 </head>
 <body>
@@ -5217,6 +5280,86 @@ addEventListener("hashchange",route);route();
     if(k.length===1&&i>=0){var o=document.querySelectorAll(sel[0])[i];if(o&&!o.disabled){e.preventDefault();o.click()}}
     else if(k==="enter"){var n=document.querySelector(sel[1]),a=document.activeElement;if(n&&a!==n&&(!a||!/^(BUTTON|A)$/.test(a.tagName)||a.matches(sel[0]))){e.preventDefault();n.click()}}
   });
+})();
+</script>
+<script>
+(function(){
+var URL_="https://script.google.com/macros/s/AKfycbztk04JjsXEihKfhY5hVlgyGH7-tSOUnbxkSvTIz6l55TE5K2QuPH3NXwZzeD_sEflYVQ/exec";
+if(document.getElementById("cwBtn"))return;
+var ico='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>';
+var b=document.createElement("button");b.id="cwBtn";b.className="cwb";b.type="button";b.setAttribute("aria-label","Abrir ajuda e contato");b.setAttribute("aria-expanded","false");b.innerHTML=ico;
+var p=document.createElement("div");p.id="cwPanel";p.className="cwp";p.hidden=true;p.setAttribute("role","dialog");p.setAttribute("aria-label","Ajuda e contato");
+p.innerHTML='<div class="cwh"><b id="cwTitle">Fale com a gente</b><button type="button" id="cwX" aria-label="Fechar">✕</button></div><div class="cwb2" id="cwBody" aria-live="polite"></div>';
+document.body.appendChild(b);document.body.appendChild(p);
+var body=p.querySelector("#cwBody"),title=p.querySelector("#cwTitle");
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function page(){var v=["hub","home","dir"].filter(function(x){var e=document.getElementById("v-"+x);return e&&!e.hidden})[0];return v||"site"}
+var mp=document.getElementById("msPlayer");
+function sync(){document.body.classList.toggle("ms-on",!!(mp&&mp.classList.contains("on")))}
+if(!mp){var t=setInterval(function(){mp=document.getElementById("msPlayer");if(mp){clearInterval(t);new MutationObserver(sync).observe(mp,{attributes:true,attributeFilter:["class"]});sync()}},1500)}else{new MutationObserver(sync).observe(mp,{attributes:true,attributeFilter:["class"]});sync()}
+function menu(){
+ title.textContent="Fale com a gente";
+ body.innerHTML='<p class="cwlead">Oi! Como posso ajudar?</p><div class="cwopts">'+
+ [["duv","?","Dúvida","Como funciona, regras, pontuação"],["sug","💡","Sugestão","Ideias de filmes, jogos e melhorias"],["rec","⚠","Reclamação","Erro, bug ou algo que incomodou"],["bot","💬","Conversar","Bate-papo sobre cinema e o site"]].map(function(o){return'<button type="button" class="cwo" data-k="'+o[0]+'"><i aria-hidden="true">'+o[1]+'</i><span><b>'+o[2]+'</b><small>'+o[3]+'</small></span></button>'}).join("")+'</div><p class="cwnote">Mensagens vão direto para o criador do site.</p>';
+}
+var FAQ=[["Como funciona a pontuação?","Nos jogos com tempo, quanto mais rápido você acerta, mais pontos ganha. Errar ou deixar o tempo acabar vale 0 naquela rodada."],["O que muda no modo Difícil do Oscar?","Sem dicas, e Filme, Ator e Atriz (principais) só entram até a cerimônia de 2012, sem os recentes. As demais categorias continuam completas."],["Como funciona o Duelo ao vivo?","Uma pessoa cria a sala e envia o código; a outra entra com ele. As duas respondem a mesma pergunta ao mesmo tempo, depois de uma contagem de 3-2-1."],["Meu recorde sumiu. E agora?","Os recordes ficam salvos no navegador deste aparelho. Limpar dados do site, usar aba anônima ou trocar de aparelho zera tudo."],["Os jogos funcionam no celular?","Sim, o site é feito para celular e computador. Se algo ficar estranho, conte em Reclamação."]];
+function faq(){return'<div class="cwfaq">'+FAQ.map(function(f){return'<details><summary>'+esc(f[0])+'</summary><p>'+esc(f[1])+'</p></details>'}).join("")+'</div>'}
+var LAB={duv:["Dúvida","Qual é a sua dúvida?","Escreva sua dúvida…"],sug:["Sugestão","Qual é a sua sugestão?","Conte sua ideia: filme, diretor, jogo…"],rec:["Reclamação","O que aconteceu?","Descreva o problema e onde ele apareceu…"]};
+function form(k){
+ var L=LAB[k];title.textContent=L[0];
+ body.innerHTML='<button type="button" class="cwback" data-k="menu">← Voltar</button>'+(k==="duv"?'<p class="cwlead">Veja se a resposta já está aqui:</p>'+faq()+'<p class="cwlead">Não achou? Envie sua dúvida:</p>':'')+
+ '<form class="cwf" novalidate><label for="cwMsg">'+L[1]+'</label><textarea id="cwMsg" maxlength="1500" placeholder="'+L[2]+'" required></textarea><label for="cwCt">E-mail ou @ para resposta <small>(opcional)</small></label><input type="text" id="cwCt" maxlength="120" autocomplete="email" placeholder="voce@email.com"><input class="hp" type="text" name="site" tabindex="-1" autocomplete="off" aria-hidden="true"><div class="cwerr" role="alert"></div><button class="cwbtn" type="submit">Enviar</button><small>Não peça nem envie senhas ou dados pessoais sensíveis.</small></form>';
+ var f=body.querySelector("form");f.addEventListener("submit",function(e){e.preventDefault();send(k,f)});
+ setTimeout(function(){var m=document.getElementById("cwMsg");m&&m.focus()},30);
+}
+function send(k,f){
+ var m=f.querySelector("#cwMsg").value.trim(),c=f.querySelector("#cwCt").value.trim(),hp=f.querySelector(".hp").value,er=f.querySelector(".cwerr"),bt=f.querySelector(".cwbtn");
+ if(m.length<5){er.textContent="Escreva pelo menos algumas palavras.";f.querySelector("#cwMsg").focus();return}
+ try{var last=+localStorage.getItem("cw_last")||0;if(Date.now()-last<15000){er.textContent="Aguarde alguns segundos antes de enviar outra.";return}}catch(_){}
+ er.textContent="";bt.disabled=true;bt.textContent="Enviando…";
+ var d=new URLSearchParams({tipo:LAB[k][0],mensagem:m,contato:c,pagina:page(),site:hp});
+ var done=false;function ok(){if(done)return;done=true;try{localStorage.setItem("cw_last",Date.now())}catch(_){}
+  body.innerHTML='<div class="cwok"><b>Mensagem enviada! 🎬</b><p>Obrigado — o criador do site vai ler.</p></div><button type="button" class="cwbtn" data-k="menu">Voltar ao início</button>'}
+ function bad(){if(done)return;bt.disabled=false;bt.textContent="Enviar";er.textContent="Não consegui enviar agora. Tente de novo em instantes."}
+ var to=setTimeout(bad,12000);
+ fetch(URL_,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:d.toString()}).then(function(){clearTimeout(to);ok()},function(){clearTimeout(to);bad()});
+}
+/* bot por regras */
+var KB=[
+ [/oscar|academia|estatueta/,"No <b>Quem levou o Oscar?</b> você escolhe categorias (Filme, Roteiro, Direção, Ator, Atriz), a dificuldade e quantas perguntas quer — até 30 ou “até errar”.","oscar"],
+ [/duelo|multijogador|amig|online|sala/,"No <b>Duelo</b> você joga contra um amigo: um cria a sala e passa o código, o outro entra. Dá para jogar também ao vivo, pergunta por pergunta.","duel"],
+ [/post|p[ôo]ster|cartaz/,"No <b>Acerte o Pôster</b> o pôster começa borrado e vai ficando nítido. Quanto antes você acertar, mais pontos ganha.","poster"],
+ [/diretor|dire[çc][ãa]o|quem dirigiu/,"No <b>Quem Dirigiu?</b> você descobre o diretor de cada filme. Também há o <b>Descubra seu Diretor</b>, um teste de perfil.","quiz"],
+ [/linha|tempo|cronolog/,"Na <b>Linha do Tempo</b> você coloca filmes na ordem em que foram lançados.","tl"],
+ [/intruso/,"No <b>Filme Intruso</b> um dos pôsteres não pertence ao grupo — ache o diferente!","intruso"],
+ [/cinedle|wordle|palavra/,"O <b>Cinedle</b> é um jogo diário de adivinhar o filme com pistas.","cinedle"],
+ [/recomend|indic|assistir|filme bom/,"Para escolher o que ver: pense num diretor que você gostou nos quizzes e explore os outros filmes dele na página do diretor. Quer que eu anote isso como sugestão? Use o botão <b>Sugestão</b>!",""],
+ [/oi|ol[áa]|e a[íi]|bom dia|boa tarde|boa noite|hello|hey/,"Oi! 🎬 Sou o assistente do Sou Cinéfilo. Pergunte sobre os jogos, pontuação ou regras.",""],
+ [/pontu|ponto|score|recorde/,"Nos jogos com tempo, acertar rápido vale mais pontos. Os recordes ficam salvos no seu navegador.",""],
+ [/obrigad|valeu|thanks/,"Por nada! Bom jogo 🍿",""],
+ [/quem (te|[ée] voc)|voc[êe] [ée]|rob[ôo]|ia\b/,"Sou um assistente simples do site, com respostas prontas. Para falar com uma pessoa, use Dúvida, Sugestão ou Reclamação.",""]
+];
+function bot(){
+ title.textContent="Conversar";
+ body.innerHTML='<button type="button" class="cwback" data-k="menu">← Voltar</button><div class="cwlog" id="cwLog" role="log"></div><div class="cwchips"><button type="button" data-q="Como funciona a pontuação?">Pontuação</button><button type="button" data-q="Como jogar o Oscar?">Oscar</button><button type="button" data-q="Como funciona o duelo?">Duelo</button><button type="button" data-q="Acerte o pôster">Pôster</button></div><form class="cwin"><input type="text" id="cwQ" maxlength="200" placeholder="Digite sua pergunta…" aria-label="Sua pergunta" autocomplete="off"><button class="cwbtn" type="submit">Enviar</button></form><p class="cwnote">Respostas automáticas e limitadas. Para falar com o criador, use Dúvida, Sugestão ou Reclamação.</p>';
+ say("bot","Oi! 🎬 Pergunte sobre os jogos, pontuação ou regras do site.");
+ var f=body.querySelector("form");f.addEventListener("submit",function(e){e.preventDefault();var i=document.getElementById("cwQ"),v=i.value.trim();if(!v)return;i.value="";ask(v)});
+ [].forEach.call(body.querySelectorAll(".cwchips button"),function(c){c.addEventListener("click",function(){ask(c.getAttribute("data-q"))})});
+}
+function say(w,h){var l=document.getElementById("cwLog");if(!l)return;var d=document.createElement("div");d.className="cwm "+w;d.innerHTML=h;l.appendChild(d);l.scrollTop=l.scrollHeight}
+function ask(q){
+ say("me",esc(q));var n=q.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");
+ var r=null;for(var i=0;i<KB.length;i++){var rx=new RegExp(KB[i][0].source.normalize("NFD").replace(/[̀-ͯ]/g,""),"i");if(rx.test(n)){r=KB[i];break}}
+ setTimeout(function(){say("bot",r?r[1]:"Não tenho certeza sobre isso 🤔. Tente perguntar sobre os jogos (Oscar, Duelo, Pôster…) ou envie como <b>Dúvida</b> para uma pessoa responder.")},350);
+}
+function open(){p.hidden=false;b.setAttribute("aria-expanded","true");b.setAttribute("aria-label","Fechar ajuda e contato");menu();setTimeout(function(){var f=p.querySelector(".cwo");f&&f.focus()},40)}
+function close(){p.hidden=true;b.setAttribute("aria-expanded","false");b.setAttribute("aria-label","Abrir ajuda e contato");b.focus()}
+b.addEventListener("click",function(){p.hidden?open():close()});
+p.querySelector("#cwX").addEventListener("click",close);
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!p.hidden){e.stopPropagation();close()}},true);
+body.addEventListener("click",function(e){var t=e.target.closest("[data-k]");if(!t)return;var k=t.getAttribute("data-k");if(k==="menu")menu();else if(k==="bot")bot();else form(k)});
+/* fecha ao entrar num jogo */
+setInterval(function(){if(!p.hidden&&getComputedStyle(b).display==="none")p.hidden=true},500);
 })();
 </script>
 </body>
