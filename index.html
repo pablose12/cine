@@ -1665,6 +1665,49 @@ body[data-gt="os"] #v-oscar{color:#fff}
 .gtop .gq>span,.gq small,.eyebrow{font-size:12px}
 .inhead .inlv{font-size:12px}
 @media (max-width:420px){.inhead .inlv{font-size:12px!important}}
+/* ===== v34: auditoria de UX ===== */
+/* contagem regressiva antes de cada rodada com tempo */
+.lq{position:relative}
+.cdov{position:absolute;inset:0;z-index:6;display:grid;place-content:center;justify-items:center;gap:6px;background:rgba(14,8,26,.62);-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);color:#fff;text-align:center;border-radius:inherit;transition:opacity .4s}
+.cdov small{font:600 12px/1 var(--font-body,Poppins,sans-serif);letter-spacing:.16em;text-transform:uppercase;opacity:.9;min-height:12px}
+.cdov b{font:800 clamp(72px,26vw,120px)/1 var(--font-display,Sora,sans-serif);animation:cdpop .8s cubic-bezier(.2,.9,.3,1) both;text-shadow:0 6px 30px rgba(0,0,0,.4);font-variant-numeric:tabular-nums}
+.cdov b.go{color:var(--ga,#F4A81D);font-size:clamp(56px,20vw,92px)}
+.cdov.out{opacity:0;pointer-events:none}
+.cdov.opq{background:var(--g2,#17154B);-webkit-backdrop-filter:none;backdrop-filter:none}
+@keyframes cdpop{0%{transform:scale(1.7);opacity:0}30%{opacity:1}100%{transform:scale(.92);opacity:.88}}
+@media (prefers-reduced-motion:reduce){.cdov b{animation:none}.cdov{transition:none}}
+/* contraste */
+.inp .ifb{color:rgba(255,255,255,.92)!important}
+.oop.pos .osp .ifb{color:rgba(255,255,255,.92)}
+.cdt.g{background:#17835A;border-color:#43c995}
+.dc small{opacity:.94}
+.dc .nf{background:rgba(10,10,40,.82)}
+.dc .g{background:rgba(255,255,255,.22)}
+/* fontes mínimas */
+.pt{font-size:11px!important}
+#v-dna .tg,.gtag,.gcard .tg,.dc .nf{font-size:11px}
+.yr{font-size:11px}
+/* alvos de toque */
+.tlc .mv button{width:40px;height:36px}
+.qdots button{box-sizing:content-box;padding:15px 0;background-clip:content-box}
+.qdots button i{inset:15px 0}
+.dlink{display:inline-block;padding:5px 0}
+@media (max-width:900px){body .qtop button,body .tltop button,body .inhead .inq2{min-height:40px}}
+@media (min-width:901px){header.top nav.links button{min-height:36px}}
+/* cabeçalho de jogo em telas bem estreitas (320px) */
+@media (max-width:350px){.inhead{flex-wrap:wrap!important}}
+/* pôster em paisagem no celular: pôster ao lado das respostas, tudo na tela */
+@media (orientation:landscape) and (max-height:520px) and (min-width:560px) and (max-width:899.98px){
+  #v-poster .qwrap{max-width:820px}
+  #pStage:has(#pf){display:grid;grid-template-columns:150px minmax(0,1fr);grid-template-rows:auto auto auto 1fr auto;column-gap:22px;align-items:start}
+  #pStage:has(#pf) .pturn{grid-column:1/-1}
+  #pStage:has(#pf) .pframe{grid-column:1;grid-row:2/5;width:150px;margin:2px 0 8px}
+  #pStage:has(#pf) .ptime{grid-column:1;grid-row:5;width:150px}
+  #pStage:has(#pf) .ask{grid-column:2;grid-row:2;margin-top:0}
+  #pStage:has(#pf) .opts{grid-column:2;grid-row:3;gap:7px}
+  #pStage:has(#pf) .opts .opt{padding:8px 12px;min-height:44px}
+  #pStage:has(#pf) #pFb{grid-column:2;grid-row:4;align-self:start}
+}
 </style>
 </head>
 <body>
@@ -3216,7 +3259,7 @@ addEventListener("hashchange",route);route();
     if(G.team)sp.innerHTML=esc(G.names[0])+' <b>'+G.sc[0]+'</b> × <b>'+G.sc[1]+'</b> '+esc(G.names[1]);
     else sp.innerHTML='Pontos <b id="pTot">'+G.total+'</b>';
   }
-  function stop(){cancelAnimationFrame(raf);raf=0}
+  function stop(){cancelAnimationFrame(raf);raf=0;if(G&&G.cur&&G.cur.cancel){G.cur.cancel();G.cur.cancel=null}}
   function round(){
     stop();var it=G.items[G.i];if(!it) return end();
     document.getElementById("pCount").innerHTML=G.surv?"Rodada <b>"+(G.i+1)+"</b> · até errar":"Rodada <b>"+(G.i+1)+"</b> de "+G.items.length;if(G.team)setTot2();
@@ -3226,8 +3269,8 @@ addEventListener("hashchange",route);route();
     stage().innerHTML=(G.team?'<div class="pturn t'+tm+'">Vez da equipe <b>'+esc(G.names[tm])+'</b></div>':'')+'<div class="pframe" id="pf"><img id="pImg" alt="Pôster desfocado de um filme"><span class="ptag" id="pTag"></span><div class="ppts" id="pPts"><b>100</b><span>pts</span></div></div><div class="ptime"><i id="pBar"></i></div>'+
       '<div class="ask">Qual é este filme?</div><div class="opts" id="pOpts">'+opts.map(function(o,i){return '<button class="opt" data-pi="'+i+'" disabled><span class="l">'+"ABCD"[i]+'</span><span>'+esc(o.t)+'</span></button>'}).join("")+'</div><div id="pFb" aria-live="polite"></div>';
     var im=document.getElementById("pImg");
-    im.onload=function(){if(!G||G.cur.it!==it)return;G.bad=0;G.cur.loaded=true;[].forEach.call(document.querySelectorAll("#pOpts .opt"),function(b){b.disabled=false});var last=performance.now();
-      (function loop(now){ if(!G||G.cur.done) return; var dt=Math.min(100,now-last);last=now;G.cur.t+=dt;frame();if(G.cur.t>=T_MAX)return answer(-1);raf=requestAnimationFrame(loop)})(last)};
+    im.onload=function(){if(!G||G.cur.it!==it)return;G.bad=0;var c0=G.cur;c0.cancel=(window.cineCount||function(h,d){d();return function(){}})(document.getElementById("pf"),function(){if(!G||G.cur!==c0)return;c0.loaded=true;[].forEach.call(document.querySelectorAll("#pOpts .opt"),function(b){b.disabled=false});var last=performance.now();
+      (function loop(now){ if(!G||G.cur.done) return; var dt=Math.min(100,now-last);last=now;G.cur.t+=dt;frame();if(G.cur.t>=T_MAX)return answer(-1);raf=requestAnimationFrame(loop)})(last)})};
     im.onerror=function(){if(!G||G.cur.it!==it)return;G.bad++;if(G.bad>=3){stage().innerHTML='<div class="panel" style="margin-top:20px"><h3>Não consegui carregar os pôsteres</h3><p class="pnote">Parece que as imagens do TMDB estão fora do ar ou sem conexão. Tente de novo em instantes.</p><button class="btn primary" id="pBack">Voltar ao início</button></div>';return}
       G.items.splice(G.i,1);if(G.i>=G.items.length)end();else round()};
     im.src=TMDB+"w500"+it.p;
@@ -3249,9 +3292,9 @@ addEventListener("hashchange",route);route();
     var tg=document.getElementById("pTag");if(t>6000&&!tg.textContent){tg.textContent=G.cur.it.q.y;tg.classList.add("on")}
   }
   function answer(i){
-    var c=G.cur;if(!c||c.done||!c.loaded)return;c.done=true;stop();
+    var c=G.cur;if(!c||c.done||!c.loaded)return;c.done=true;stop();var nx0=G.items[G.i+1];if(nx0&&nx0.p){var pi0=new Image();pi0.src=TMDB+"w500"+nx0.p}
     var q=c.it.q,ok=i>=0&&c.opts[i].ok,gain=ok?pts():0,tm=G.team?(G.i%2):0;
-    G.total+=gain;G.sc[tm]+=gain;if(!G.team){G.streak=ok?(G.streak||0)+1:0;G.best=Math.max(G.best||0,G.streak);if(window.streakUI)streakUI(document.getElementById('pStreak'),G.streak,ok)}if(!ok&&window.sfx)sfx('bad');G.res.push({q:q,p:c.it.p,ok:ok,gain:gain,t:c.t,timeout:i<0,tm:tm});setTot2();
+    G.total+=gain;G.sc[tm]+=gain;(function(pe){if(pe){pe.firstChild.textContent=gain;pe.classList.toggle("low",!gain)}})(document.getElementById("pPts"));if(!G.team){G.streak=ok?(G.streak||0)+1:0;G.best=Math.max(G.best||0,G.streak);if(window.streakUI)streakUI(document.getElementById('pStreak'),G.streak,ok)}if(!ok&&window.sfx)sfx('bad');G.res.push({q:q,p:c.it.p,ok:ok,gain:gain,t:c.t,timeout:i<0,tm:tm});setTot2();
     [].forEach.call(document.querySelectorAll("#pOpts .opt"),function(b,k){b.disabled=true;if(c.opts[k].ok)b.classList.add("ok");else if(k===i)b.classList.add("bad");else b.classList.add("dim")});
     var pf=document.getElementById("pf");pf.classList.add("done");document.getElementById("pImg").style.filter="blur(0px)";
     var m=splitTitle(q.f),who=G.team?esc(G.names[tm])+' ':'';
@@ -3270,7 +3313,7 @@ addEventListener("hashchange",route);route();
       if(!tie&&window.confete)window.confete();
     }else{
       var tier=pc>=.8?["Olho de lince","Você reconhece um filme só pela sombra do cartaz."]:pc>=.55?["Cinéfilo de plantão","Poucos pixels e você já sabia."]:pc>=.3?["Foco em ajuste","Com um pouco mais de nitidez, você chega lá."]:["Ainda desfocado","Respire fundo, a próxima rodada vai mais nítida."];
-      var key=cfg.lv+"-"+cfg.n,bst=lsGet("pstBest")||{},val=G.surv?hits:G.total,rec=val>0&&(!bst[key]||val>bst[key]);if(rec){bst[key]=val;lsSet("pstBest",bst)}
+      var key=cfg.lv+"-"+cfg.n,bst=lsGet("pstBest")||{},val=G.surv?hits:G.total,prevB=bst[key],rec=val>0&&(!prevB||val>prevB);if(rec){bst[key]=val;lsSet("pstBest",bst);if(!prevB)rec=false}
       var avg=hits?Math.round(G.res.filter(function(r){return r.ok}).reduce(function(a,r){return a+r.t},0)/hits/100)/10:0;
       html='<div class="panel" style="text-align:center;margin-top:12px"><div class="eyebrow" style="justify-content:center">'+tier[0]+'</div><div style="font-family:var(--font-display);font-size:56px;font-weight:800;color:var(--pri);line-height:1.1">'+(G.surv?hits:G.total)+'<span style="font-size:18px;color:var(--ink-700)"> '+(G.surv?(hits===1?"seguido":"seguidos"):"/ "+max)+'</span></div><p class="pnote">'+tier[1]+'</p><p>'+hits+' de '+G.res.length+' acertos'+(hits?' · tempo médio dos acertos: '+avg.toLocaleString("pt-BR")+' s':'')+'</p>'+(G.best>=2?'<p class="rstreak">🔥 Maior sequência: '+G.best+'</p>':'')+(rec?'<p class="pgain">Novo recorde!</p>':'')+'<div class="pres">'+rows+'</div>'+btns+'</div>';
       if(rec&&window.confete)window.confete();
@@ -4201,14 +4244,14 @@ addEventListener("hashchange",route);route();
   function me(){return st.role==="host"?0:1}
   function showQ(r){
     if(!st||!st.qs)return;clearInterval(st.tm);clearTimeout(st.nx);
-    st.r=r;st.my=null;st.rev=false;st.t0=performance.now();var it=st.qs[r],q=DATA[it.i],mm=splitTitle(q.f);
+    if(st.cdc){st.cdc();st.cdc=null}st.r=r;st.my=null;st.rev=false;st.t0=null;var it=st.qs[r],q=DATA[it.i],mm=splitTitle(q.f);
     var sc=st.tot;
     root.innerHTML='<div class="tltop"><span>Pergunta <b>'+(r+1)+'</b> de '+st.qs.length+'</span><span class="streak" id="lvStreak" hidden></span><button id="lvBack">Voltar</button></div>'+
       '<div class="lscore"><div class="sc me" id="scMe"><span>'+esc2(st.me)+'</span><b>'+sc[me()]+'</b></div><span class="lvs">×</span><div class="sc op" id="scOp"><span>'+esc2(st.op)+'</span><b>'+sc[1-me()]+'</b></div></div>'+
       '<div class="ltime" id="lvTime"><i id="lvBar"></i></div>'+
       '<div class="lq"><div class="eyebrow">'+LEVELS[q.n].name+'</div><h2>'+esc2(mm.main)+'</h2><p class="oy">'+q.y+(mm.orig?' · título original: '+esc2(mm.orig):'')+(q.d&&q.n==="facil"?' · '+esc2(q.d):'')+'</p><div class="ask">Quem dirigiu este filme?</div><div class="opts" id="lvOpts">'+it.o.map(function(o,i){return '<button class="opt" data-lo="'+i+'"><span class="l">'+"ABCD"[i]+'</span><span>'+esc2(nm(o))+'</span><span class="tags"></span></button>'}).join("")+'</div><div class="lmsg" id="lvMsg"></div><div id="lvGain"></div></div>';
     if(window.streakUI)streakUI(document.getElementById("lvStreak"),st.streak,null);
-    st.tm=setInterval(tick,100);
+    var rr=r;st.cdc=(window.cineCount||function(h,d){d();return function(){}})(root.querySelector(".lq"),function(){if(!st||st.r!==rr||st.rev)return;st.t0=performance.now();st.tm=setInterval(tick,100)},{cls:"opq"});
   }
   function tick(){
     if(!st||st.rev)return;var t=performance.now()-st.t0,bar=document.getElementById("lvBar");if(!bar)return;
@@ -4216,7 +4259,7 @@ addEventListener("hashchange",route);route();
     if(t>=QT&&st.my==null)choose(-1)
   }
   function choose(i){
-    if(!st||st.my!=null||st.rev)return;var ms=Math.min(QT,Math.round(performance.now()-st.t0));st.my={c:i,ms:ms};
+    if(!st||st.my!=null||st.rev||st.t0==null)return;var ms=Math.min(QT,Math.round(performance.now()-st.t0));st.my={c:i,ms:ms};
     [].forEach.call(document.querySelectorAll("#lvOpts .opt"),function(b,k){b.disabled=true;if(k===i)b.classList.add("sel")});
     document.getElementById("lvMsg").textContent=i<0?"Tempo esgotado. Aguardando o resultado…":"Resposta enviada. Aguardando o adversário…";
     if(window.sfx)sfx("tick");
@@ -4649,7 +4692,7 @@ addEventListener("hashchange",route);route();
   }
   function fin(){
     var k=G.lv+"_"+(G.surv?-1:cfg.n),b=bests(),pct=G.surv?(G.score>=12?.95:G.score>=8?.75:G.score>=4?.5:.2):G.score/G.n,rec=false;
-    if((G.surv||G.n===cfg.n)&&G.score>0&&(b[k]==null||G.score>b[k])){b[k]=G.score;rec=true;try{localStorage.setItem("in_best",JSON.stringify(b))}catch(e){}}
+    if((G.surv||G.n===cfg.n)&&G.score>0&&(b[k]==null||G.score>b[k])){rec=b[k]!=null;b[k]=G.score;try{localStorage.setItem("in_best",JSON.stringify(b))}catch(e){}}
     var t=pct>=.9?["Olho de lince","Nada escapa de você."]:pct>=.7?["Cinéfilo atento","Poucos intrusos passam."]:pct>=.45?["Bom começo","Dá para afiar o olho."]:["Os intrusos venceram",G.lv==="facil"?"Respira e tenta de novo, você chega lá.":G.lv==="dificil"?"Esse nível é duro. Tente de novo, ou aqueça no médio.":"Tente de novo, ou aqueça no nível fácil."];
     var hits=G.score,tot=(G.res||[]).length;
     var rows=(G.res||[]).map(function(r){return '<div><img alt="" src="https://image.tmdb.org/t/p/w92'+r.f[4]+'" onerror="this.style.visibility=\'hidden\'"><span style="text-align:left">'+esc(r.f[1])+' <small>('+r.f[0]+') · '+esc(r.d.n)+'</small></span><b class="'+(r.ok?'okc':'badc')+'">'+(r.ok?'Achou':'Errou')+'</b></div>'}).join("");
@@ -5000,7 +5043,7 @@ addEventListener("hashchange",route);route();
   }
   function fin(){
     var n=G.surv?G.score:G.n,k=bk(),b=bests(),rec=false,key=G.lv+"_"+G.cat+"_"+(G.surv?-1:G.n);
-    if(G.score>0&&(b[key]==null||G.score>b[key])){b[key]=G.score;rec=true;try{localStorage.setItem("os_best",JSON.stringify(b))}catch(e){}}
+    if(G.score>0&&(b[key]==null||G.score>b[key])){rec=b[key]!=null;b[key]=G.score;try{localStorage.setItem("os_best",JSON.stringify(b))}catch(e){}}
     var pct=G.surv?(G.score>=15?.95:G.score>=10?.75:G.score>=5?.5:.2):G.score/Math.max(1,G.n);
     var t=pct>=.9?["Pronto para a cerimônia","Você conhece cada estatueta."]:pct>=.7?["Cinéfilo da Academia","Poucos vencedores escapam de você."]:pct>=.45?["Indicado, mas não levou","Falta pouco para a estatueta."]:["Ficou de fora desta vez","Tente de novo ou comece pelo nível fácil."];
     var miss=G.miss.slice(0,4).map(function(q){var e=q.ans;return '<li><b>'+q.y+'</b> · '+CATS[q.c]+': '+esc(e.name)+(isF(q.c)?'':' <small>('+esc(e.film)+')</small>')+'</li>'}).join("");
@@ -5127,6 +5170,52 @@ addEventListener("hashchange",route);route();
     if((a=e.target.closest("[data-on]"))){OC.n=+a.dataset.on;save();render();return}
     if(e.target.closest("#opCreate")){window.Modes.live.create(OC.nm,window.__onCfg());return}
     if(e.target.closest("#opBack")){show("home");goSection("levels","duel");setTimeout(function(){var b=document.querySelector('[data-dwhere="on"]');if(b)b.click()},120);return}
+  });
+})();
+</script>
+<script>
+(function(){
+  /* contagem regressiva: window.cineCount(elemento, fn, {n,ms,cls}); devolve a função que cancela */
+  window.cineCount=function(host,done,o){
+    o=o||{};var N=o.n||3,MS=o.ms||800,el=document.createElement("div"),t=null,dead=false;
+    el.className="cdov"+(o.cls?" "+o.cls:"");el.setAttribute("role","status");el.setAttribute("aria-live","assertive");
+    if(!host){done();return function(){}}
+    host.appendChild(el);
+    function paint(txt,go){el.innerHTML='<small>'+(go?'':'Prepare-se')+'</small><b'+(go?' class="go"':'')+'>'+txt+'</b>'}
+    function step(k){
+      if(dead)return;
+      if(k===0){paint("Já!",true);if(window.sfx)window.sfx("ok");el.classList.add("out");t=setTimeout(function(){if(el.parentNode)el.remove()},450);done();return}
+      paint(k);if(window.sfx)window.sfx("tick");t=setTimeout(function(){step(k-1)},MS)}
+    step(N);
+    return function(){dead=true;clearTimeout(t);if(el.parentNode)el.remove()}
+  };
+  /* botão voltar do celular/navegador: volta da partida para a tela do jogo, em vez de sair do site */
+  var GV={quiz:1,result:1,poster:1,tl:1,dna:1,intruso:1,cinedle:1,oscar:1},cur="hub",pushed=false,ign=false,_show=window.show;
+  if(typeof _show==="function"&&window.history&&history.pushState){
+    window.show=function(v){
+      var was=cur;_show.apply(this,arguments);cur=v;
+      if(GV[v]&&!GV[was]&&!pushed){try{history.pushState({sc:1},"",location.href);pushed=true}catch(e){}}
+      else if(!GV[v]&&GV[was]&&pushed){setTimeout(function(){if(pushed&&!GV[cur]){pushed=false;ign=true;try{history.back()}catch(e){ign=false}}},80)}
+    };
+    window.addEventListener("popstate",function(){
+      if(ign){ign=false;return}
+      if(!GV[cur])return;
+      pushed=false;
+      var ids=["#pBack","#pHome","#pQuit","#inQuit","#inBack","#osQuit","#osBack","#tlQuit","#tlBack","#dnBack","#cdQuit",".qtop button"].map(function(s){return "#v-"+cur+" "+s}).join(",");
+      var b=document.querySelector(ids);
+      if(b)b.click();else window.show("hub")
+    })
+  }
+  /* teclado no Intruso e no Quem levou o Oscar?: A–D ou 1–4 respondem, Enter segue */
+  document.addEventListener("keydown",function(e){
+    if(e.ctrlKey||e.metaKey||e.altKey)return;
+    if(e.target&&/INPUT|TEXTAREA|SELECT/.test(e.target.tagName))return;
+    var vi=document.getElementById("v-intruso"),vo=document.getElementById("v-oscar");
+    var sel=vi&&!vi.hidden?["#inPosters .inp","#inNext"]:vo&&!vo.hidden?["#osOpts button","#osNext"]:null;
+    if(!sel)return;
+    var k=e.key.toLowerCase(),i="abcd".indexOf(k);if(i<0)i="1234".indexOf(k);
+    if(k.length===1&&i>=0){var o=document.querySelectorAll(sel[0])[i];if(o&&!o.disabled){e.preventDefault();o.click()}}
+    else if(k==="enter"){var n=document.querySelector(sel[1]),a=document.activeElement;if(n&&a!==n&&(!a||!/^(BUTTON|A)$/.test(a.tagName)||a.matches(sel[0]))){e.preventDefault();n.click()}}
   });
 })();
 </script>
